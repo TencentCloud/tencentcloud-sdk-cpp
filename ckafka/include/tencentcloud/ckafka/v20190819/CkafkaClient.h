@@ -75,6 +75,8 @@
 #include <tencentcloud/ckafka/v20190819/model/DescribeTopicAttributesResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeTopicDetailRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeTopicDetailResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeTopicSubscribeGroupRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeTopicSubscribeGroupResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeUserRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeUserResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/FetchMessageByOffsetRequest.h>
@@ -179,6 +181,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeTopicDetailResponse> DescribeTopicDetailOutcome;
                 typedef std::future<DescribeTopicDetailOutcome> DescribeTopicDetailOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeTopicDetailRequest&, DescribeTopicDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicDetailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTopicSubscribeGroupResponse> DescribeTopicSubscribeGroupOutcome;
+                typedef std::future<DescribeTopicSubscribeGroupOutcome> DescribeTopicSubscribeGroupOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::DescribeTopicSubscribeGroupRequest&, DescribeTopicSubscribeGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicSubscribeGroupAsyncHandler;
                 typedef Outcome<Error, Model::DescribeUserResponse> DescribeUserOutcome;
                 typedef std::future<DescribeUserOutcome> DescribeUserOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeUserRequest&, DescribeUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserAsyncHandler;
@@ -435,6 +440,15 @@ namespace TencentCloud
                 DescribeTopicDetailOutcome DescribeTopicDetail(const Model::DescribeTopicDetailRequest &request);
                 void DescribeTopicDetailAsync(const Model::DescribeTopicDetailRequest& request, const DescribeTopicDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTopicDetailOutcomeCallable DescribeTopicDetailCallable(const Model::DescribeTopicDetailRequest& request);
+
+                /**
+                 *查询订阅某主题消息分组信息
+                 * @param req DescribeTopicSubscribeGroupRequest
+                 * @return DescribeTopicSubscribeGroupOutcome
+                 */
+                DescribeTopicSubscribeGroupOutcome DescribeTopicSubscribeGroup(const Model::DescribeTopicSubscribeGroupRequest &request);
+                void DescribeTopicSubscribeGroupAsync(const Model::DescribeTopicSubscribeGroupRequest& request, const DescribeTopicSubscribeGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTopicSubscribeGroupOutcomeCallable DescribeTopicSubscribeGroupCallable(const Model::DescribeTopicSubscribeGroupRequest& request);
 
                 /**
                  *查询用户信息

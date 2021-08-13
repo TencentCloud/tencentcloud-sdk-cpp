@@ -24,7 +24,8 @@ using namespace std;
 
 RestartInstanceRequest::RestartInstanceRequest() :
     m_instanceIdHasBeenSet(false),
-    m_forceRestartHasBeenSet(false)
+    m_forceRestartHasBeenSet(false),
+    m_restartModeHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string RestartInstanceRequest::ToJsonString() const
         string key = "ForceRestart";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_forceRestart, allocator);
+    }
+
+    if (m_restartModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RestartMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_restartMode, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void RestartInstanceRequest::SetForceRestart(const bool& _forceRestart)
 bool RestartInstanceRequest::ForceRestartHasBeenSet() const
 {
     return m_forceRestartHasBeenSet;
+}
+
+int64_t RestartInstanceRequest::GetRestartMode() const
+{
+    return m_restartMode;
+}
+
+void RestartInstanceRequest::SetRestartMode(const int64_t& _restartMode)
+{
+    m_restartMode = _restartMode;
+    m_restartModeHasBeenSet = true;
+}
+
+bool RestartInstanceRequest::RestartModeHasBeenSet() const
+{
+    return m_restartModeHasBeenSet;
 }
 
 

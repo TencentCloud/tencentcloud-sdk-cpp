@@ -39,7 +39,8 @@ RunInstancesRequest::RunInstancesRequest() :
     m_securityGroupIdsHasBeenSet(false),
     m_systemDiskSizeHasBeenSet(false),
     m_internetMaxBandwidthInHasBeenSet(false),
-    m_instanceChargeTypeHasBeenSet(false)
+    m_instanceChargeTypeHasBeenSet(false),
+    m_keyIdsHasBeenSet(false)
 {
 }
 
@@ -204,6 +205,19 @@ string RunInstancesRequest::ToJsonString() const
         string key = "InstanceChargeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_instanceChargeType, allocator);
+    }
+
+    if (m_keyIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeyIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_keyIds.begin(); itr != m_keyIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -484,6 +498,22 @@ void RunInstancesRequest::SetInstanceChargeType(const int64_t& _instanceChargeTy
 bool RunInstancesRequest::InstanceChargeTypeHasBeenSet() const
 {
     return m_instanceChargeTypeHasBeenSet;
+}
+
+vector<string> RunInstancesRequest::GetKeyIds() const
+{
+    return m_keyIds;
+}
+
+void RunInstancesRequest::SetKeyIds(const vector<string>& _keyIds)
+{
+    m_keyIds = _keyIds;
+    m_keyIdsHasBeenSet = true;
+}
+
+bool RunInstancesRequest::KeyIdsHasBeenSet() const
+{
+    return m_keyIdsHasBeenSet;
 }
 
 

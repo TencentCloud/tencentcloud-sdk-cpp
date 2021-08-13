@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cfw/v20190904/model/SecurityGroupBothWayInfo.h>
 
 
 namespace TencentCloud
@@ -45,24 +46,6 @@ namespace TencentCloud
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
-
-                    /**
-                     * 获取规则ID
-                     * @return Id 规则ID
-                     */
-                    uint64_t GetId() const;
-
-                    /**
-                     * 设置规则ID
-                     * @param Id 规则ID
-                     */
-                    void SetId(const uint64_t& _id);
-
-                    /**
-                     * 判断参数 Id 是否已赋值
-                     * @return Id 是否已赋值
-                     */
-                    bool IdHasBeenSet() const;
 
                     /**
                      * 获取执行顺序
@@ -101,14 +84,14 @@ namespace TencentCloud
                     bool SourceIdHasBeenSet() const;
 
                     /**
-                     * 获取访问源类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB
-                     * @return SourceType 访问源类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB
+                     * 获取访问源类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 100:资源组
+                     * @return SourceType 访问源类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 100:资源组
                      */
                     uint64_t GetSourceType() const;
 
                     /**
-                     * 设置访问源类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB
-                     * @param SourceType 访问源类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB
+                     * 设置访问源类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 100:资源组
+                     * @param SourceType 访问源类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 100:资源组
                      */
                     void SetSourceType(const uint64_t& _sourceType);
 
@@ -137,14 +120,14 @@ namespace TencentCloud
                     bool TargetIdHasBeenSet() const;
 
                     /**
-                     * 获取访问目的类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB
-                     * @return TargetType 访问目的类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB
+                     * 获取访问目的类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 100:资源组
+                     * @return TargetType 访问目的类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 100:资源组
                      */
                     uint64_t GetTargetType() const;
 
                     /**
-                     * 设置访问目的类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB
-                     * @param TargetType 访问目的类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB
+                     * 设置访问目的类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 100:资源组
+                     * @param TargetType 访问目的类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 100:资源组
                      */
                     void SetTargetType(const uint64_t& _targetType);
 
@@ -227,6 +210,42 @@ namespace TencentCloud
                     bool DetailHasBeenSet() const;
 
                     /**
+                     * 获取单/双向下发，0:单向下发，1：双向下发
+                     * @return BothWay 单/双向下发，0:单向下发，1：双向下发
+                     */
+                    uint64_t GetBothWay() const;
+
+                    /**
+                     * 设置单/双向下发，0:单向下发，1：双向下发
+                     * @param BothWay 单/双向下发，0:单向下发，1：双向下发
+                     */
+                    void SetBothWay(const uint64_t& _bothWay);
+
+                    /**
+                     * 判断参数 BothWay 是否已赋值
+                     * @return BothWay 是否已赋值
+                     */
+                    bool BothWayHasBeenSet() const;
+
+                    /**
+                     * 获取规则ID
+                     * @return Id 规则ID
+                     */
+                    uint64_t GetId() const;
+
+                    /**
+                     * 设置规则ID
+                     * @param Id 规则ID
+                     */
+                    void SetId(const uint64_t& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     */
+                    bool IdHasBeenSet() const;
+
+                    /**
                      * 获取是否开关开启，0：未开启，1：开启
                      * @return Status 是否开关开启，0：未开启，1：开启
                      */
@@ -261,24 +280,6 @@ namespace TencentCloud
                      * @return IsNew 是否已赋值
                      */
                     bool IsNewHasBeenSet() const;
-
-                    /**
-                     * 获取单/双向下发，0:单向下发，1：双向下发
-                     * @return BothWay 单/双向下发，0:单向下发，1：双向下发
-                     */
-                    uint64_t GetBothWay() const;
-
-                    /**
-                     * 设置单/双向下发，0:单向下发，1：双向下发
-                     * @param BothWay 单/双向下发，0:单向下发，1：双向下发
-                     */
-                    void SetBothWay(const uint64_t& _bothWay);
-
-                    /**
-                     * 判断参数 BothWay 是否已赋值
-                     * @return BothWay 是否已赋值
-                     */
-                    bool BothWayHasBeenSet() const;
 
                     /**
                      * 获取私有网络ID
@@ -412,13 +413,69 @@ namespace TencentCloud
                      */
                     bool CidrHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取端口协议类型参数模板id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServiceTemplateId 端口协议类型参数模板id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetServiceTemplateId() const;
 
                     /**
-                     * 规则ID
+                     * 设置端口协议类型参数模板id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ServiceTemplateId 端口协议类型参数模板id
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    uint64_t m_id;
-                    bool m_idHasBeenSet;
+                    void SetServiceTemplateId(const std::string& _serviceTemplateId);
+
+                    /**
+                     * 判断参数 ServiceTemplateId 是否已赋值
+                     * @return ServiceTemplateId 是否已赋值
+                     */
+                    bool ServiceTemplateIdHasBeenSet() const;
+
+                    /**
+                     * 获取当BothWay为0的时候，填空，当BothWay为1的时候，为JSON字符串，数据来源于DescribeBothWayInstanceListByIp个接口，如果该接口返回数据为空，则不支持双向下发
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BothWayInfo 当BothWay为0的时候，填空，当BothWay为1的时候，为JSON字符串，数据来源于DescribeBothWayInstanceListByIp个接口，如果该接口返回数据为空，则不支持双向下发
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SecurityGroupBothWayInfo> GetBothWayInfo() const;
+
+                    /**
+                     * 设置当BothWay为0的时候，填空，当BothWay为1的时候，为JSON字符串，数据来源于DescribeBothWayInstanceListByIp个接口，如果该接口返回数据为空，则不支持双向下发
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BothWayInfo 当BothWay为0的时候，填空，当BothWay为1的时候，为JSON字符串，数据来源于DescribeBothWayInstanceListByIp个接口，如果该接口返回数据为空，则不支持双向下发
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBothWayInfo(const std::vector<SecurityGroupBothWayInfo>& _bothWayInfo);
+
+                    /**
+                     * 判断参数 BothWayInfo 是否已赋值
+                     * @return BothWayInfo 是否已赋值
+                     */
+                    bool BothWayInfoHasBeenSet() const;
+
+                    /**
+                     * 获取方向，0：出站，1：入站，默认1
+                     * @return Direction 方向，0：出站，1：入站，默认1
+                     */
+                    uint64_t GetDirection() const;
+
+                    /**
+                     * 设置方向，0：出站，1：入站，默认1
+                     * @param Direction 方向，0：出站，1：入站，默认1
+                     */
+                    void SetDirection(const uint64_t& _direction);
+
+                    /**
+                     * 判断参数 Direction 是否已赋值
+                     * @return Direction 是否已赋值
+                     */
+                    bool DirectionHasBeenSet() const;
+
+                private:
 
                     /**
                      * 执行顺序
@@ -433,7 +490,7 @@ namespace TencentCloud
                     bool m_sourceIdHasBeenSet;
 
                     /**
-                     * 访问源类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB
+                     * 访问源类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 100:资源组
                      */
                     uint64_t m_sourceType;
                     bool m_sourceTypeHasBeenSet;
@@ -445,7 +502,7 @@ namespace TencentCloud
                     bool m_targetIdHasBeenSet;
 
                     /**
-                     * 访问目的类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB
+                     * 访问目的类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 100:资源组
                      */
                     uint64_t m_targetType;
                     bool m_targetTypeHasBeenSet;
@@ -475,6 +532,18 @@ namespace TencentCloud
                     bool m_detailHasBeenSet;
 
                     /**
+                     * 单/双向下发，0:单向下发，1：双向下发
+                     */
+                    uint64_t m_bothWay;
+                    bool m_bothWayHasBeenSet;
+
+                    /**
+                     * 规则ID
+                     */
+                    uint64_t m_id;
+                    bool m_idHasBeenSet;
+
+                    /**
                      * 是否开关开启，0：未开启，1：开启
                      */
                     uint64_t m_status;
@@ -485,12 +554,6 @@ namespace TencentCloud
                      */
                     uint64_t m_isNew;
                     bool m_isNewHasBeenSet;
-
-                    /**
-                     * 单/双向下发，0:单向下发，1：双向下发
-                     */
-                    uint64_t m_bothWay;
-                    bool m_bothWayHasBeenSet;
 
                     /**
                      * 私有网络ID
@@ -533,6 +596,26 @@ namespace TencentCloud
                      */
                     std::string m_cidr;
                     bool m_cidrHasBeenSet;
+
+                    /**
+                     * 端口协议类型参数模板id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_serviceTemplateId;
+                    bool m_serviceTemplateIdHasBeenSet;
+
+                    /**
+                     * 当BothWay为0的时候，填空，当BothWay为1的时候，为JSON字符串，数据来源于DescribeBothWayInstanceListByIp个接口，如果该接口返回数据为空，则不支持双向下发
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SecurityGroupBothWayInfo> m_bothWayInfo;
+                    bool m_bothWayInfoHasBeenSet;
+
+                    /**
+                     * 方向，0：出站，1：入站，默认1
+                     */
+                    uint64_t m_direction;
+                    bool m_directionHasBeenSet;
 
                 };
             }

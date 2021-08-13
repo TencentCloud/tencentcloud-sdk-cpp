@@ -46,7 +46,8 @@ UpdateInstanceRequest::UpdateInstanceRequest() :
     m_scaleTypeHasBeenSet(false),
     m_multiZoneInfoHasBeenSet(false),
     m_sceneTypeHasBeenSet(false),
-    m_kibanaConfigHasBeenSet(false)
+    m_kibanaConfigHasBeenSet(false),
+    m_webNodeTypeInfoHasBeenSet(false)
 {
 }
 
@@ -264,6 +265,15 @@ string UpdateInstanceRequest::ToJsonString() const
         string key = "KibanaConfig";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_kibanaConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_webNodeTypeInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebNodeTypeInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_webNodeTypeInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -656,6 +666,22 @@ void UpdateInstanceRequest::SetKibanaConfig(const string& _kibanaConfig)
 bool UpdateInstanceRequest::KibanaConfigHasBeenSet() const
 {
     return m_kibanaConfigHasBeenSet;
+}
+
+WebNodeTypeInfo UpdateInstanceRequest::GetWebNodeTypeInfo() const
+{
+    return m_webNodeTypeInfo;
+}
+
+void UpdateInstanceRequest::SetWebNodeTypeInfo(const WebNodeTypeInfo& _webNodeTypeInfo)
+{
+    m_webNodeTypeInfo = _webNodeTypeInfo;
+    m_webNodeTypeInfoHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::WebNodeTypeInfoHasBeenSet() const
+{
+    return m_webNodeTypeInfoHasBeenSet;
 }
 
 

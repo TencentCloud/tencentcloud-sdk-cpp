@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取团队成员个数
-                     * @return MemberCount 团队成员个数
+                     * 获取团队成员个数。
+                     * @return MemberCount 团队成员个数。
                      */
                     uint64_t GetMemberCount() const;
 
                     /**
-                     * 设置团队成员个数
-                     * @param MemberCount 团队成员个数
+                     * 设置团队成员个数。
+                     * @param MemberCount 团队成员个数。
                      */
                     void SetMemberCount(const uint64_t& _memberCount);
 
@@ -145,7 +145,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 团队成员个数
+                     * 团队成员个数。
                      */
                     uint64_t m_memberCount;
                     bool m_memberCountHasBeenSet;

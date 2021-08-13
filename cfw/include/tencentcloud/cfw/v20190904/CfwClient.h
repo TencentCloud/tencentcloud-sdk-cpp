@@ -25,16 +25,28 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/cfw/v20190904/model/CreateAcRulesRequest.h>
 #include <tencentcloud/cfw/v20190904/model/CreateAcRulesResponse.h>
+#include <tencentcloud/cfw/v20190904/model/CreateChooseVpcsRequest.h>
+#include <tencentcloud/cfw/v20190904/model/CreateChooseVpcsResponse.h>
+#include <tencentcloud/cfw/v20190904/model/CreateNatFwInstanceRequest.h>
+#include <tencentcloud/cfw/v20190904/model/CreateNatFwInstanceResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateSecurityGroupApiRulesRequest.h>
 #include <tencentcloud/cfw/v20190904/model/CreateSecurityGroupApiRulesResponse.h>
+#include <tencentcloud/cfw/v20190904/model/CreateSecurityGroupRulesRequest.h>
+#include <tencentcloud/cfw/v20190904/model/CreateSecurityGroupRulesResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteAcRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteAcRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteAllAccessControlRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteAllAccessControlRuleResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DeleteNatFwInstanceRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DeleteNatFwInstanceResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DeleteResourceGroupRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DeleteResourceGroupResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteSecurityGroupAllRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteSecurityGroupAllRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteSecurityGroupRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteSecurityGroupRuleResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DeleteVpcInstanceRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DeleteVpcInstanceResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeAcListsRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeAcListsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeAssociatedInstanceListRequest.h>
@@ -47,12 +59,26 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeCfwEipsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeGuideScanInfoRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeGuideScanInfoResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeNatFwInfoCountRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeNatFwInfoCountResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeNatFwInstanceRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeNatFwInstanceResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeNatFwInstanceWithRegionRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeNatFwInstanceWithRegionResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeNatFwInstancesInfoRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeNatFwInstancesInfoResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeNatFwVpcDnsLstRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeNatFwVpcDnsLstResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatRuleOverviewRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatRuleOverviewResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeResourceGroupRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeResourceGroupResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeRuleOverviewRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeRuleOverviewResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeSecurityGroupListRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeSecurityGroupListResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeSourceAssetRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeSourceAssetResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeSwitchListsRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeSwitchListsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeSyncAssetStatusRequest.h>
@@ -71,26 +97,54 @@
 #include <tencentcloud/cfw/v20190904/model/ExpandCfwVerticalResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAcRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAcRuleResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyAllPublicIPSwitchStatusRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyAllPublicIPSwitchStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAllRuleStatusRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAllRuleStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAllSwitchStatusRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAllSwitchStatusResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyAllVPCSwitchStatusRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyAllVPCSwitchStatusResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyAssetScanRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyAssetScanResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyBlockIgnoreListRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyBlockIgnoreListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyBlockTopRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyBlockTopResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyItemSwitchStatusRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyItemSwitchStatusResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyNatFwReSelectRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyNatFwReSelectResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyNatFwSwitchRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyNatFwSwitchResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyNatFwVpcDnsSwitchRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyNatFwVpcDnsSwitchResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyPublicIPSwitchStatusRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyPublicIPSwitchStatusResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyResourceGroupRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyResourceGroupResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifySecurityGroupAllRuleStatusRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifySecurityGroupAllRuleStatusResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ModifySecurityGroupItemRuleStatusRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ModifySecurityGroupItemRuleStatusResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ModifySecurityGroupRuleRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ModifySecurityGroupRuleResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ModifySecurityGroupSequenceRulesRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ModifySecurityGroupSequenceRulesResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifySequenceRulesRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifySequenceRulesResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyTableStatusRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyTableStatusResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyVPCSwitchStatusRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyVPCSwitchStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/RunSyncAssetRequest.h>
 #include <tencentcloud/cfw/v20190904/model/RunSyncAssetResponse.h>
 #include <tencentcloud/cfw/v20190904/model/SetNatFwDnatRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/SetNatFwDnatRuleResponse.h>
+#include <tencentcloud/cfw/v20190904/model/SetNatFwEipRequest.h>
+#include <tencentcloud/cfw/v20190904/model/SetNatFwEipResponse.h>
+#include <tencentcloud/cfw/v20190904/model/StopSecurityGroupRuleDispatchRequest.h>
+#include <tencentcloud/cfw/v20190904/model/StopSecurityGroupRuleDispatchResponse.h>
 
 
 namespace TencentCloud
@@ -108,21 +162,39 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateAcRulesResponse> CreateAcRulesOutcome;
                 typedef std::future<CreateAcRulesOutcome> CreateAcRulesOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::CreateAcRulesRequest&, CreateAcRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAcRulesAsyncHandler;
+                typedef Outcome<Error, Model::CreateChooseVpcsResponse> CreateChooseVpcsOutcome;
+                typedef std::future<CreateChooseVpcsOutcome> CreateChooseVpcsOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::CreateChooseVpcsRequest&, CreateChooseVpcsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateChooseVpcsAsyncHandler;
+                typedef Outcome<Error, Model::CreateNatFwInstanceResponse> CreateNatFwInstanceOutcome;
+                typedef std::future<CreateNatFwInstanceOutcome> CreateNatFwInstanceOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::CreateNatFwInstanceRequest&, CreateNatFwInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNatFwInstanceAsyncHandler;
                 typedef Outcome<Error, Model::CreateSecurityGroupApiRulesResponse> CreateSecurityGroupApiRulesOutcome;
                 typedef std::future<CreateSecurityGroupApiRulesOutcome> CreateSecurityGroupApiRulesOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::CreateSecurityGroupApiRulesRequest&, CreateSecurityGroupApiRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityGroupApiRulesAsyncHandler;
+                typedef Outcome<Error, Model::CreateSecurityGroupRulesResponse> CreateSecurityGroupRulesOutcome;
+                typedef std::future<CreateSecurityGroupRulesOutcome> CreateSecurityGroupRulesOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::CreateSecurityGroupRulesRequest&, CreateSecurityGroupRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityGroupRulesAsyncHandler;
                 typedef Outcome<Error, Model::DeleteAcRuleResponse> DeleteAcRuleOutcome;
                 typedef std::future<DeleteAcRuleOutcome> DeleteAcRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DeleteAcRuleRequest&, DeleteAcRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAcRuleAsyncHandler;
                 typedef Outcome<Error, Model::DeleteAllAccessControlRuleResponse> DeleteAllAccessControlRuleOutcome;
                 typedef std::future<DeleteAllAccessControlRuleOutcome> DeleteAllAccessControlRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DeleteAllAccessControlRuleRequest&, DeleteAllAccessControlRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAllAccessControlRuleAsyncHandler;
+                typedef Outcome<Error, Model::DeleteNatFwInstanceResponse> DeleteNatFwInstanceOutcome;
+                typedef std::future<DeleteNatFwInstanceOutcome> DeleteNatFwInstanceOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DeleteNatFwInstanceRequest&, DeleteNatFwInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNatFwInstanceAsyncHandler;
+                typedef Outcome<Error, Model::DeleteResourceGroupResponse> DeleteResourceGroupOutcome;
+                typedef std::future<DeleteResourceGroupOutcome> DeleteResourceGroupOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DeleteResourceGroupRequest&, DeleteResourceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteResourceGroupAsyncHandler;
                 typedef Outcome<Error, Model::DeleteSecurityGroupAllRuleResponse> DeleteSecurityGroupAllRuleOutcome;
                 typedef std::future<DeleteSecurityGroupAllRuleOutcome> DeleteSecurityGroupAllRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DeleteSecurityGroupAllRuleRequest&, DeleteSecurityGroupAllRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityGroupAllRuleAsyncHandler;
                 typedef Outcome<Error, Model::DeleteSecurityGroupRuleResponse> DeleteSecurityGroupRuleOutcome;
                 typedef std::future<DeleteSecurityGroupRuleOutcome> DeleteSecurityGroupRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DeleteSecurityGroupRuleRequest&, DeleteSecurityGroupRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityGroupRuleAsyncHandler;
+                typedef Outcome<Error, Model::DeleteVpcInstanceResponse> DeleteVpcInstanceOutcome;
+                typedef std::future<DeleteVpcInstanceOutcome> DeleteVpcInstanceOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DeleteVpcInstanceRequest&, DeleteVpcInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVpcInstanceAsyncHandler;
                 typedef Outcome<Error, Model::DescribeAcListsResponse> DescribeAcListsOutcome;
                 typedef std::future<DescribeAcListsOutcome> DescribeAcListsOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeAcListsRequest&, DescribeAcListsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAcListsAsyncHandler;
@@ -141,15 +213,36 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeGuideScanInfoResponse> DescribeGuideScanInfoOutcome;
                 typedef std::future<DescribeGuideScanInfoOutcome> DescribeGuideScanInfoOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeGuideScanInfoRequest&, DescribeGuideScanInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGuideScanInfoAsyncHandler;
+                typedef Outcome<Error, Model::DescribeNatFwInfoCountResponse> DescribeNatFwInfoCountOutcome;
+                typedef std::future<DescribeNatFwInfoCountOutcome> DescribeNatFwInfoCountOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeNatFwInfoCountRequest&, DescribeNatFwInfoCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatFwInfoCountAsyncHandler;
+                typedef Outcome<Error, Model::DescribeNatFwInstanceResponse> DescribeNatFwInstanceOutcome;
+                typedef std::future<DescribeNatFwInstanceOutcome> DescribeNatFwInstanceOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeNatFwInstanceRequest&, DescribeNatFwInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatFwInstanceAsyncHandler;
+                typedef Outcome<Error, Model::DescribeNatFwInstanceWithRegionResponse> DescribeNatFwInstanceWithRegionOutcome;
+                typedef std::future<DescribeNatFwInstanceWithRegionOutcome> DescribeNatFwInstanceWithRegionOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeNatFwInstanceWithRegionRequest&, DescribeNatFwInstanceWithRegionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatFwInstanceWithRegionAsyncHandler;
+                typedef Outcome<Error, Model::DescribeNatFwInstancesInfoResponse> DescribeNatFwInstancesInfoOutcome;
+                typedef std::future<DescribeNatFwInstancesInfoOutcome> DescribeNatFwInstancesInfoOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeNatFwInstancesInfoRequest&, DescribeNatFwInstancesInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatFwInstancesInfoAsyncHandler;
+                typedef Outcome<Error, Model::DescribeNatFwVpcDnsLstResponse> DescribeNatFwVpcDnsLstOutcome;
+                typedef std::future<DescribeNatFwVpcDnsLstOutcome> DescribeNatFwVpcDnsLstOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeNatFwVpcDnsLstRequest&, DescribeNatFwVpcDnsLstOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatFwVpcDnsLstAsyncHandler;
                 typedef Outcome<Error, Model::DescribeNatRuleOverviewResponse> DescribeNatRuleOverviewOutcome;
                 typedef std::future<DescribeNatRuleOverviewOutcome> DescribeNatRuleOverviewOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeNatRuleOverviewRequest&, DescribeNatRuleOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatRuleOverviewAsyncHandler;
+                typedef Outcome<Error, Model::DescribeResourceGroupResponse> DescribeResourceGroupOutcome;
+                typedef std::future<DescribeResourceGroupOutcome> DescribeResourceGroupOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeResourceGroupRequest&, DescribeResourceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceGroupAsyncHandler;
                 typedef Outcome<Error, Model::DescribeRuleOverviewResponse> DescribeRuleOverviewOutcome;
                 typedef std::future<DescribeRuleOverviewOutcome> DescribeRuleOverviewOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeRuleOverviewRequest&, DescribeRuleOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleOverviewAsyncHandler;
                 typedef Outcome<Error, Model::DescribeSecurityGroupListResponse> DescribeSecurityGroupListOutcome;
                 typedef std::future<DescribeSecurityGroupListOutcome> DescribeSecurityGroupListOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeSecurityGroupListRequest&, DescribeSecurityGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityGroupListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSourceAssetResponse> DescribeSourceAssetOutcome;
+                typedef std::future<DescribeSourceAssetOutcome> DescribeSourceAssetOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeSourceAssetRequest&, DescribeSourceAssetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSourceAssetAsyncHandler;
                 typedef Outcome<Error, Model::DescribeSwitchListsResponse> DescribeSwitchListsOutcome;
                 typedef std::future<DescribeSwitchListsOutcome> DescribeSwitchListsOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeSwitchListsRequest&, DescribeSwitchListsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSwitchListsAsyncHandler;
@@ -177,12 +270,21 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyAcRuleResponse> ModifyAcRuleOutcome;
                 typedef std::future<ModifyAcRuleOutcome> ModifyAcRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyAcRuleRequest&, ModifyAcRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAcRuleAsyncHandler;
+                typedef Outcome<Error, Model::ModifyAllPublicIPSwitchStatusResponse> ModifyAllPublicIPSwitchStatusOutcome;
+                typedef std::future<ModifyAllPublicIPSwitchStatusOutcome> ModifyAllPublicIPSwitchStatusOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ModifyAllPublicIPSwitchStatusRequest&, ModifyAllPublicIPSwitchStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAllPublicIPSwitchStatusAsyncHandler;
                 typedef Outcome<Error, Model::ModifyAllRuleStatusResponse> ModifyAllRuleStatusOutcome;
                 typedef std::future<ModifyAllRuleStatusOutcome> ModifyAllRuleStatusOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyAllRuleStatusRequest&, ModifyAllRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAllRuleStatusAsyncHandler;
                 typedef Outcome<Error, Model::ModifyAllSwitchStatusResponse> ModifyAllSwitchStatusOutcome;
                 typedef std::future<ModifyAllSwitchStatusOutcome> ModifyAllSwitchStatusOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyAllSwitchStatusRequest&, ModifyAllSwitchStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAllSwitchStatusAsyncHandler;
+                typedef Outcome<Error, Model::ModifyAllVPCSwitchStatusResponse> ModifyAllVPCSwitchStatusOutcome;
+                typedef std::future<ModifyAllVPCSwitchStatusOutcome> ModifyAllVPCSwitchStatusOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ModifyAllVPCSwitchStatusRequest&, ModifyAllVPCSwitchStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAllVPCSwitchStatusAsyncHandler;
+                typedef Outcome<Error, Model::ModifyAssetScanResponse> ModifyAssetScanOutcome;
+                typedef std::future<ModifyAssetScanOutcome> ModifyAssetScanOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ModifyAssetScanRequest&, ModifyAssetScanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAssetScanAsyncHandler;
                 typedef Outcome<Error, Model::ModifyBlockIgnoreListResponse> ModifyBlockIgnoreListOutcome;
                 typedef std::future<ModifyBlockIgnoreListOutcome> ModifyBlockIgnoreListOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyBlockIgnoreListRequest&, ModifyBlockIgnoreListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBlockIgnoreListAsyncHandler;
@@ -192,21 +294,54 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyItemSwitchStatusResponse> ModifyItemSwitchStatusOutcome;
                 typedef std::future<ModifyItemSwitchStatusOutcome> ModifyItemSwitchStatusOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyItemSwitchStatusRequest&, ModifyItemSwitchStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyItemSwitchStatusAsyncHandler;
+                typedef Outcome<Error, Model::ModifyNatFwReSelectResponse> ModifyNatFwReSelectOutcome;
+                typedef std::future<ModifyNatFwReSelectOutcome> ModifyNatFwReSelectOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ModifyNatFwReSelectRequest&, ModifyNatFwReSelectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNatFwReSelectAsyncHandler;
+                typedef Outcome<Error, Model::ModifyNatFwSwitchResponse> ModifyNatFwSwitchOutcome;
+                typedef std::future<ModifyNatFwSwitchOutcome> ModifyNatFwSwitchOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ModifyNatFwSwitchRequest&, ModifyNatFwSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNatFwSwitchAsyncHandler;
+                typedef Outcome<Error, Model::ModifyNatFwVpcDnsSwitchResponse> ModifyNatFwVpcDnsSwitchOutcome;
+                typedef std::future<ModifyNatFwVpcDnsSwitchOutcome> ModifyNatFwVpcDnsSwitchOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ModifyNatFwVpcDnsSwitchRequest&, ModifyNatFwVpcDnsSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNatFwVpcDnsSwitchAsyncHandler;
+                typedef Outcome<Error, Model::ModifyPublicIPSwitchStatusResponse> ModifyPublicIPSwitchStatusOutcome;
+                typedef std::future<ModifyPublicIPSwitchStatusOutcome> ModifyPublicIPSwitchStatusOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ModifyPublicIPSwitchStatusRequest&, ModifyPublicIPSwitchStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPublicIPSwitchStatusAsyncHandler;
+                typedef Outcome<Error, Model::ModifyResourceGroupResponse> ModifyResourceGroupOutcome;
+                typedef std::future<ModifyResourceGroupOutcome> ModifyResourceGroupOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ModifyResourceGroupRequest&, ModifyResourceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourceGroupAsyncHandler;
                 typedef Outcome<Error, Model::ModifySecurityGroupAllRuleStatusResponse> ModifySecurityGroupAllRuleStatusOutcome;
                 typedef std::future<ModifySecurityGroupAllRuleStatusOutcome> ModifySecurityGroupAllRuleStatusOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifySecurityGroupAllRuleStatusRequest&, ModifySecurityGroupAllRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityGroupAllRuleStatusAsyncHandler;
+                typedef Outcome<Error, Model::ModifySecurityGroupItemRuleStatusResponse> ModifySecurityGroupItemRuleStatusOutcome;
+                typedef std::future<ModifySecurityGroupItemRuleStatusOutcome> ModifySecurityGroupItemRuleStatusOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ModifySecurityGroupItemRuleStatusRequest&, ModifySecurityGroupItemRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityGroupItemRuleStatusAsyncHandler;
+                typedef Outcome<Error, Model::ModifySecurityGroupRuleResponse> ModifySecurityGroupRuleOutcome;
+                typedef std::future<ModifySecurityGroupRuleOutcome> ModifySecurityGroupRuleOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ModifySecurityGroupRuleRequest&, ModifySecurityGroupRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityGroupRuleAsyncHandler;
+                typedef Outcome<Error, Model::ModifySecurityGroupSequenceRulesResponse> ModifySecurityGroupSequenceRulesOutcome;
+                typedef std::future<ModifySecurityGroupSequenceRulesOutcome> ModifySecurityGroupSequenceRulesOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ModifySecurityGroupSequenceRulesRequest&, ModifySecurityGroupSequenceRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityGroupSequenceRulesAsyncHandler;
                 typedef Outcome<Error, Model::ModifySequenceRulesResponse> ModifySequenceRulesOutcome;
                 typedef std::future<ModifySequenceRulesOutcome> ModifySequenceRulesOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifySequenceRulesRequest&, ModifySequenceRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySequenceRulesAsyncHandler;
                 typedef Outcome<Error, Model::ModifyTableStatusResponse> ModifyTableStatusOutcome;
                 typedef std::future<ModifyTableStatusOutcome> ModifyTableStatusOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyTableStatusRequest&, ModifyTableStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTableStatusAsyncHandler;
+                typedef Outcome<Error, Model::ModifyVPCSwitchStatusResponse> ModifyVPCSwitchStatusOutcome;
+                typedef std::future<ModifyVPCSwitchStatusOutcome> ModifyVPCSwitchStatusOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ModifyVPCSwitchStatusRequest&, ModifyVPCSwitchStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVPCSwitchStatusAsyncHandler;
                 typedef Outcome<Error, Model::RunSyncAssetResponse> RunSyncAssetOutcome;
                 typedef std::future<RunSyncAssetOutcome> RunSyncAssetOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::RunSyncAssetRequest&, RunSyncAssetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunSyncAssetAsyncHandler;
                 typedef Outcome<Error, Model::SetNatFwDnatRuleResponse> SetNatFwDnatRuleOutcome;
                 typedef std::future<SetNatFwDnatRuleOutcome> SetNatFwDnatRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::SetNatFwDnatRuleRequest&, SetNatFwDnatRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetNatFwDnatRuleAsyncHandler;
+                typedef Outcome<Error, Model::SetNatFwEipResponse> SetNatFwEipOutcome;
+                typedef std::future<SetNatFwEipOutcome> SetNatFwEipOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::SetNatFwEipRequest&, SetNatFwEipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetNatFwEipAsyncHandler;
+                typedef Outcome<Error, Model::StopSecurityGroupRuleDispatchResponse> StopSecurityGroupRuleDispatchOutcome;
+                typedef std::future<StopSecurityGroupRuleDispatchOutcome> StopSecurityGroupRuleDispatchOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::StopSecurityGroupRuleDispatchRequest&, StopSecurityGroupRuleDispatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopSecurityGroupRuleDispatchAsyncHandler;
 
 
 
@@ -220,6 +355,24 @@ namespace TencentCloud
                 CreateAcRulesOutcomeCallable CreateAcRulesCallable(const Model::CreateAcRulesRequest& request);
 
                 /**
+                 *创建、选择vpc
+                 * @param req CreateChooseVpcsRequest
+                 * @return CreateChooseVpcsOutcome
+                 */
+                CreateChooseVpcsOutcome CreateChooseVpcs(const Model::CreateChooseVpcsRequest &request);
+                void CreateChooseVpcsAsync(const Model::CreateChooseVpcsRequest& request, const CreateChooseVpcsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateChooseVpcsOutcomeCallable CreateChooseVpcsCallable(const Model::CreateChooseVpcsRequest& request);
+
+                /**
+                 *创建防火墙实例
+                 * @param req CreateNatFwInstanceRequest
+                 * @return CreateNatFwInstanceOutcome
+                 */
+                CreateNatFwInstanceOutcome CreateNatFwInstance(const Model::CreateNatFwInstanceRequest &request);
+                void CreateNatFwInstanceAsync(const Model::CreateNatFwInstanceRequest& request, const CreateNatFwInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateNatFwInstanceOutcomeCallable CreateNatFwInstanceCallable(const Model::CreateNatFwInstanceRequest& request);
+
+                /**
                  *创建安全组API规则
                  * @param req CreateSecurityGroupApiRulesRequest
                  * @return CreateSecurityGroupApiRulesOutcome
@@ -227,6 +380,15 @@ namespace TencentCloud
                 CreateSecurityGroupApiRulesOutcome CreateSecurityGroupApiRules(const Model::CreateSecurityGroupApiRulesRequest &request);
                 void CreateSecurityGroupApiRulesAsync(const Model::CreateSecurityGroupApiRulesRequest& request, const CreateSecurityGroupApiRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSecurityGroupApiRulesOutcomeCallable CreateSecurityGroupApiRulesCallable(const Model::CreateSecurityGroupApiRulesRequest& request);
+
+                /**
+                 *创建企业安全组规则
+                 * @param req CreateSecurityGroupRulesRequest
+                 * @return CreateSecurityGroupRulesOutcome
+                 */
+                CreateSecurityGroupRulesOutcome CreateSecurityGroupRules(const Model::CreateSecurityGroupRulesRequest &request);
+                void CreateSecurityGroupRulesAsync(const Model::CreateSecurityGroupRulesRequest& request, const CreateSecurityGroupRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSecurityGroupRulesOutcomeCallable CreateSecurityGroupRulesCallable(const Model::CreateSecurityGroupRulesRequest& request);
 
                 /**
                  *删除规则
@@ -247,6 +409,24 @@ namespace TencentCloud
                 DeleteAllAccessControlRuleOutcomeCallable DeleteAllAccessControlRuleCallable(const Model::DeleteAllAccessControlRuleRequest& request);
 
                 /**
+                 *销毁防火墙实例
+                 * @param req DeleteNatFwInstanceRequest
+                 * @return DeleteNatFwInstanceOutcome
+                 */
+                DeleteNatFwInstanceOutcome DeleteNatFwInstance(const Model::DeleteNatFwInstanceRequest &request);
+                void DeleteNatFwInstanceAsync(const Model::DeleteNatFwInstanceRequest& request, const DeleteNatFwInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteNatFwInstanceOutcomeCallable DeleteNatFwInstanceCallable(const Model::DeleteNatFwInstanceRequest& request);
+
+                /**
+                 *DeleteResourceGroup-资产中心资产组删除
+                 * @param req DeleteResourceGroupRequest
+                 * @return DeleteResourceGroupOutcome
+                 */
+                DeleteResourceGroupOutcome DeleteResourceGroup(const Model::DeleteResourceGroupRequest &request);
+                void DeleteResourceGroupAsync(const Model::DeleteResourceGroupRequest& request, const DeleteResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteResourceGroupOutcomeCallable DeleteResourceGroupCallable(const Model::DeleteResourceGroupRequest& request);
+
+                /**
                  *删除全部规则
                  * @param req DeleteSecurityGroupAllRuleRequest
                  * @return DeleteSecurityGroupAllRuleOutcome
@@ -263,6 +443,15 @@ namespace TencentCloud
                 DeleteSecurityGroupRuleOutcome DeleteSecurityGroupRule(const Model::DeleteSecurityGroupRuleRequest &request);
                 void DeleteSecurityGroupRuleAsync(const Model::DeleteSecurityGroupRuleRequest& request, const DeleteSecurityGroupRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteSecurityGroupRuleOutcomeCallable DeleteSecurityGroupRuleCallable(const Model::DeleteSecurityGroupRuleRequest& request);
+
+                /**
+                 *删除防火墙实例
+                 * @param req DeleteVpcInstanceRequest
+                 * @return DeleteVpcInstanceOutcome
+                 */
+                DeleteVpcInstanceOutcome DeleteVpcInstance(const Model::DeleteVpcInstanceRequest &request);
+                void DeleteVpcInstanceAsync(const Model::DeleteVpcInstanceRequest& request, const DeleteVpcInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteVpcInstanceOutcomeCallable DeleteVpcInstanceCallable(const Model::DeleteVpcInstanceRequest& request);
 
                 /**
                  *访问控制列表
@@ -321,6 +510,51 @@ namespace TencentCloud
                 DescribeGuideScanInfoOutcomeCallable DescribeGuideScanInfoCallable(const Model::DescribeGuideScanInfoRequest& request);
 
                 /**
+                 *获取当前用户接入nat防火墙的所有子网数及natfw实例个数
+                 * @param req DescribeNatFwInfoCountRequest
+                 * @return DescribeNatFwInfoCountOutcome
+                 */
+                DescribeNatFwInfoCountOutcome DescribeNatFwInfoCount(const Model::DescribeNatFwInfoCountRequest &request);
+                void DescribeNatFwInfoCountAsync(const Model::DescribeNatFwInfoCountRequest& request, const DescribeNatFwInfoCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNatFwInfoCountOutcomeCallable DescribeNatFwInfoCountCallable(const Model::DescribeNatFwInfoCountRequest& request);
+
+                /**
+                 *DescribeNatFwInstance 获取租户所有NAT实例
+                 * @param req DescribeNatFwInstanceRequest
+                 * @return DescribeNatFwInstanceOutcome
+                 */
+                DescribeNatFwInstanceOutcome DescribeNatFwInstance(const Model::DescribeNatFwInstanceRequest &request);
+                void DescribeNatFwInstanceAsync(const Model::DescribeNatFwInstanceRequest& request, const DescribeNatFwInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNatFwInstanceOutcomeCallable DescribeNatFwInstanceCallable(const Model::DescribeNatFwInstanceRequest& request);
+
+                /**
+                 *GetNatFwInstanceWithRegion 获取租户新增运维的NAT实例，带上地域
+                 * @param req DescribeNatFwInstanceWithRegionRequest
+                 * @return DescribeNatFwInstanceWithRegionOutcome
+                 */
+                DescribeNatFwInstanceWithRegionOutcome DescribeNatFwInstanceWithRegion(const Model::DescribeNatFwInstanceWithRegionRequest &request);
+                void DescribeNatFwInstanceWithRegionAsync(const Model::DescribeNatFwInstanceWithRegionRequest& request, const DescribeNatFwInstanceWithRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNatFwInstanceWithRegionOutcomeCallable DescribeNatFwInstanceWithRegionCallable(const Model::DescribeNatFwInstanceWithRegionRequest& request);
+
+                /**
+                 *GetNatInstance 获取租户所有NAT实例及实例卡片信息
+                 * @param req DescribeNatFwInstancesInfoRequest
+                 * @return DescribeNatFwInstancesInfoOutcome
+                 */
+                DescribeNatFwInstancesInfoOutcome DescribeNatFwInstancesInfo(const Model::DescribeNatFwInstancesInfoRequest &request);
+                void DescribeNatFwInstancesInfoAsync(const Model::DescribeNatFwInstancesInfoRequest& request, const DescribeNatFwInstancesInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNatFwInstancesInfoOutcomeCallable DescribeNatFwInstancesInfoCallable(const Model::DescribeNatFwInstancesInfoRequest& request);
+
+                /**
+                 *展示当前natfw 实例对应的vpc dns开关
+                 * @param req DescribeNatFwVpcDnsLstRequest
+                 * @return DescribeNatFwVpcDnsLstOutcome
+                 */
+                DescribeNatFwVpcDnsLstOutcome DescribeNatFwVpcDnsLst(const Model::DescribeNatFwVpcDnsLstRequest &request);
+                void DescribeNatFwVpcDnsLstAsync(const Model::DescribeNatFwVpcDnsLstRequest& request, const DescribeNatFwVpcDnsLstAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNatFwVpcDnsLstOutcomeCallable DescribeNatFwVpcDnsLstCallable(const Model::DescribeNatFwVpcDnsLstRequest& request);
+
+                /**
                  *nat规则列表概况
                  * @param req DescribeNatRuleOverviewRequest
                  * @return DescribeNatRuleOverviewOutcome
@@ -328,6 +562,15 @@ namespace TencentCloud
                 DescribeNatRuleOverviewOutcome DescribeNatRuleOverview(const Model::DescribeNatRuleOverviewRequest &request);
                 void DescribeNatRuleOverviewAsync(const Model::DescribeNatRuleOverviewRequest& request, const DescribeNatRuleOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNatRuleOverviewOutcomeCallable DescribeNatRuleOverviewCallable(const Model::DescribeNatRuleOverviewRequest& request);
+
+                /**
+                 *DescribeResourceGroup资产中心资产树信息
+                 * @param req DescribeResourceGroupRequest
+                 * @return DescribeResourceGroupOutcome
+                 */
+                DescribeResourceGroupOutcome DescribeResourceGroup(const Model::DescribeResourceGroupRequest &request);
+                void DescribeResourceGroupAsync(const Model::DescribeResourceGroupRequest& request, const DescribeResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourceGroupOutcomeCallable DescribeResourceGroupCallable(const Model::DescribeResourceGroupRequest& request);
 
                 /**
                  *查询规则列表概况
@@ -346,6 +589,16 @@ namespace TencentCloud
                 DescribeSecurityGroupListOutcome DescribeSecurityGroupList(const Model::DescribeSecurityGroupListRequest &request);
                 void DescribeSecurityGroupListAsync(const Model::DescribeSecurityGroupListRequest& request, const DescribeSecurityGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSecurityGroupListOutcomeCallable DescribeSecurityGroupListCallable(const Model::DescribeSecurityGroupListRequest& request);
+
+                /**
+                 *DescribeSourceAsset-查询资产组全部资产信息
+
+                 * @param req DescribeSourceAssetRequest
+                 * @return DescribeSourceAssetOutcome
+                 */
+                DescribeSourceAssetOutcome DescribeSourceAsset(const Model::DescribeSourceAssetRequest &request);
+                void DescribeSourceAssetAsync(const Model::DescribeSourceAssetRequest& request, const DescribeSourceAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSourceAssetOutcomeCallable DescribeSourceAssetCallable(const Model::DescribeSourceAssetRequest& request);
 
                 /**
                  *防火墙开关列表
@@ -432,6 +685,15 @@ namespace TencentCloud
                 ModifyAcRuleOutcomeCallable ModifyAcRuleCallable(const Model::ModifyAcRuleRequest& request);
 
                 /**
+                 *互联网边界防火墙一键开关
+                 * @param req ModifyAllPublicIPSwitchStatusRequest
+                 * @return ModifyAllPublicIPSwitchStatusOutcome
+                 */
+                ModifyAllPublicIPSwitchStatusOutcome ModifyAllPublicIPSwitchStatus(const Model::ModifyAllPublicIPSwitchStatusRequest &request);
+                void ModifyAllPublicIPSwitchStatusAsync(const Model::ModifyAllPublicIPSwitchStatusRequest& request, const ModifyAllPublicIPSwitchStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAllPublicIPSwitchStatusOutcomeCallable ModifyAllPublicIPSwitchStatusCallable(const Model::ModifyAllPublicIPSwitchStatusRequest& request);
+
+                /**
                  *启用停用全部规则
                  * @param req ModifyAllRuleStatusRequest
                  * @return ModifyAllRuleStatusOutcome
@@ -448,6 +710,24 @@ namespace TencentCloud
                 ModifyAllSwitchStatusOutcome ModifyAllSwitchStatus(const Model::ModifyAllSwitchStatusRequest &request);
                 void ModifyAllSwitchStatusAsync(const Model::ModifyAllSwitchStatusRequest& request, const ModifyAllSwitchStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAllSwitchStatusOutcomeCallable ModifyAllSwitchStatusCallable(const Model::ModifyAllSwitchStatusRequest& request);
+
+                /**
+                 *VPC防火墙一键开关
+                 * @param req ModifyAllVPCSwitchStatusRequest
+                 * @return ModifyAllVPCSwitchStatusOutcome
+                 */
+                ModifyAllVPCSwitchStatusOutcome ModifyAllVPCSwitchStatus(const Model::ModifyAllVPCSwitchStatusRequest &request);
+                void ModifyAllVPCSwitchStatusAsync(const Model::ModifyAllVPCSwitchStatusRequest& request, const ModifyAllVPCSwitchStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAllVPCSwitchStatusOutcomeCallable ModifyAllVPCSwitchStatusCallable(const Model::ModifyAllVPCSwitchStatusRequest& request);
+
+                /**
+                 *资产扫描
+                 * @param req ModifyAssetScanRequest
+                 * @return ModifyAssetScanOutcome
+                 */
+                ModifyAssetScanOutcome ModifyAssetScan(const Model::ModifyAssetScanRequest &request);
+                void ModifyAssetScanAsync(const Model::ModifyAssetScanRequest& request, const ModifyAssetScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAssetScanOutcomeCallable ModifyAssetScanCallable(const Model::ModifyAssetScanRequest& request);
 
                 /**
                  *支持对拦截列表、忽略列表如下操作：
@@ -480,6 +760,53 @@ namespace TencentCloud
                 ModifyItemSwitchStatusOutcomeCallable ModifyItemSwitchStatusCallable(const Model::ModifyItemSwitchStatusRequest& request);
 
                 /**
+                 *防火墙实例重新选择vpc或nat
+                 * @param req ModifyNatFwReSelectRequest
+                 * @return ModifyNatFwReSelectOutcome
+                 */
+                ModifyNatFwReSelectOutcome ModifyNatFwReSelect(const Model::ModifyNatFwReSelectRequest &request);
+                void ModifyNatFwReSelectAsync(const Model::ModifyNatFwReSelectRequest& request, const ModifyNatFwReSelectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNatFwReSelectOutcomeCallable ModifyNatFwReSelectCallable(const Model::ModifyNatFwReSelectRequest& request);
+
+                /**
+                 *修改NAT防火墙开关
+                 * @param req ModifyNatFwSwitchRequest
+                 * @return ModifyNatFwSwitchOutcome
+                 */
+                ModifyNatFwSwitchOutcome ModifyNatFwSwitch(const Model::ModifyNatFwSwitchRequest &request);
+                void ModifyNatFwSwitchAsync(const Model::ModifyNatFwSwitchRequest& request, const ModifyNatFwSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNatFwSwitchOutcomeCallable ModifyNatFwSwitchCallable(const Model::ModifyNatFwSwitchRequest& request);
+
+                /**
+                 *nat 防火墙VPC DNS 开关切换
+                 * @param req ModifyNatFwVpcDnsSwitchRequest
+                 * @return ModifyNatFwVpcDnsSwitchOutcome
+                 */
+                ModifyNatFwVpcDnsSwitchOutcome ModifyNatFwVpcDnsSwitch(const Model::ModifyNatFwVpcDnsSwitchRequest &request);
+                void ModifyNatFwVpcDnsSwitchAsync(const Model::ModifyNatFwVpcDnsSwitchRequest& request, const ModifyNatFwVpcDnsSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNatFwVpcDnsSwitchOutcomeCallable ModifyNatFwVpcDnsSwitchCallable(const Model::ModifyNatFwVpcDnsSwitchRequest& request);
+
+                /**
+                 *单个修改互联网边界防火墙开关
+                 * @param req ModifyPublicIPSwitchStatusRequest
+                 * @return ModifyPublicIPSwitchStatusOutcome
+                 */
+                ModifyPublicIPSwitchStatusOutcome ModifyPublicIPSwitchStatus(const Model::ModifyPublicIPSwitchStatusRequest &request);
+                void ModifyPublicIPSwitchStatusAsync(const Model::ModifyPublicIPSwitchStatusRequest& request, const ModifyPublicIPSwitchStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPublicIPSwitchStatusOutcomeCallable ModifyPublicIPSwitchStatusCallable(const Model::ModifyPublicIPSwitchStatusRequest& request);
+
+                /**
+                 *ModifyResourceGroup-资产中心资产组信息修改
+
+
+                 * @param req ModifyResourceGroupRequest
+                 * @return ModifyResourceGroupOutcome
+                 */
+                ModifyResourceGroupOutcome ModifyResourceGroup(const Model::ModifyResourceGroupRequest &request);
+                void ModifyResourceGroupAsync(const Model::ModifyResourceGroupRequest& request, const ModifyResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyResourceGroupOutcomeCallable ModifyResourceGroupCallable(const Model::ModifyResourceGroupRequest& request);
+
+                /**
                  *启用停用全部规则
                  * @param req ModifySecurityGroupAllRuleStatusRequest
                  * @return ModifySecurityGroupAllRuleStatusOutcome
@@ -487,6 +814,33 @@ namespace TencentCloud
                 ModifySecurityGroupAllRuleStatusOutcome ModifySecurityGroupAllRuleStatus(const Model::ModifySecurityGroupAllRuleStatusRequest &request);
                 void ModifySecurityGroupAllRuleStatusAsync(const Model::ModifySecurityGroupAllRuleStatusRequest& request, const ModifySecurityGroupAllRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifySecurityGroupAllRuleStatusOutcomeCallable ModifySecurityGroupAllRuleStatusCallable(const Model::ModifySecurityGroupAllRuleStatusRequest& request);
+
+                /**
+                 *启用停用单条企业安全组规则
+                 * @param req ModifySecurityGroupItemRuleStatusRequest
+                 * @return ModifySecurityGroupItemRuleStatusOutcome
+                 */
+                ModifySecurityGroupItemRuleStatusOutcome ModifySecurityGroupItemRuleStatus(const Model::ModifySecurityGroupItemRuleStatusRequest &request);
+                void ModifySecurityGroupItemRuleStatusAsync(const Model::ModifySecurityGroupItemRuleStatusRequest& request, const ModifySecurityGroupItemRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySecurityGroupItemRuleStatusOutcomeCallable ModifySecurityGroupItemRuleStatusCallable(const Model::ModifySecurityGroupItemRuleStatusRequest& request);
+
+                /**
+                 *编辑单条安全组规则
+                 * @param req ModifySecurityGroupRuleRequest
+                 * @return ModifySecurityGroupRuleOutcome
+                 */
+                ModifySecurityGroupRuleOutcome ModifySecurityGroupRule(const Model::ModifySecurityGroupRuleRequest &request);
+                void ModifySecurityGroupRuleAsync(const Model::ModifySecurityGroupRuleRequest& request, const ModifySecurityGroupRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySecurityGroupRuleOutcomeCallable ModifySecurityGroupRuleCallable(const Model::ModifySecurityGroupRuleRequest& request);
+
+                /**
+                 *企业安全组规则快速排序
+                 * @param req ModifySecurityGroupSequenceRulesRequest
+                 * @return ModifySecurityGroupSequenceRulesOutcome
+                 */
+                ModifySecurityGroupSequenceRulesOutcome ModifySecurityGroupSequenceRules(const Model::ModifySecurityGroupSequenceRulesRequest &request);
+                void ModifySecurityGroupSequenceRulesAsync(const Model::ModifySecurityGroupSequenceRulesRequest& request, const ModifySecurityGroupSequenceRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySecurityGroupSequenceRulesOutcomeCallable ModifySecurityGroupSequenceRulesCallable(const Model::ModifySecurityGroupSequenceRulesRequest& request);
 
                 /**
                  *修改规则执行顺序
@@ -507,6 +861,15 @@ namespace TencentCloud
                 ModifyTableStatusOutcomeCallable ModifyTableStatusCallable(const Model::ModifyTableStatusRequest& request);
 
                 /**
+                 *单个修改VPC火墙开关
+                 * @param req ModifyVPCSwitchStatusRequest
+                 * @return ModifyVPCSwitchStatusOutcome
+                 */
+                ModifyVPCSwitchStatusOutcome ModifyVPCSwitchStatus(const Model::ModifyVPCSwitchStatusRequest &request);
+                void ModifyVPCSwitchStatusAsync(const Model::ModifyVPCSwitchStatusRequest& request, const ModifyVPCSwitchStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyVPCSwitchStatusOutcomeCallable ModifyVPCSwitchStatusCallable(const Model::ModifyVPCSwitchStatusRequest& request);
+
+                /**
                  *同步资产-互联网&VPC
                  * @param req RunSyncAssetRequest
                  * @return RunSyncAssetOutcome
@@ -523,6 +886,24 @@ namespace TencentCloud
                 SetNatFwDnatRuleOutcome SetNatFwDnatRule(const Model::SetNatFwDnatRuleRequest &request);
                 void SetNatFwDnatRuleAsync(const Model::SetNatFwDnatRuleRequest& request, const SetNatFwDnatRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetNatFwDnatRuleOutcomeCallable SetNatFwDnatRuleCallable(const Model::SetNatFwDnatRuleRequest& request);
+
+                /**
+                 *设置防火墙实例弹性公网ip，目前仅支持新增模式的防火墙实例
+                 * @param req SetNatFwEipRequest
+                 * @return SetNatFwEipOutcome
+                 */
+                SetNatFwEipOutcome SetNatFwEip(const Model::SetNatFwEipRequest &request);
+                void SetNatFwEipAsync(const Model::SetNatFwEipRequest& request, const SetNatFwEipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetNatFwEipOutcomeCallable SetNatFwEipCallable(const Model::SetNatFwEipRequest& request);
+
+                /**
+                 *中止安全组规则下发
+                 * @param req StopSecurityGroupRuleDispatchRequest
+                 * @return StopSecurityGroupRuleDispatchOutcome
+                 */
+                StopSecurityGroupRuleDispatchOutcome StopSecurityGroupRuleDispatch(const Model::StopSecurityGroupRuleDispatchRequest &request);
+                void StopSecurityGroupRuleDispatchAsync(const Model::StopSecurityGroupRuleDispatchRequest& request, const StopSecurityGroupRuleDispatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopSecurityGroupRuleDispatchOutcomeCallable StopSecurityGroupRuleDispatchCallable(const Model::StopSecurityGroupRuleDispatchRequest& request);
 
             };
         }

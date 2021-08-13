@@ -99,6 +99,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/ExtractRuleInfo.h
   include/tencentcloud/cls/v20201016/model/AsyncContextTask.h
   include/tencentcloud/cls/v20201016/model/DeleteConfigRequest.h
+  include/tencentcloud/cls/v20201016/model/AnalysisDimensional.h
   include/tencentcloud/cls/v20201016/model/LogsetInfo.h
   include/tencentcloud/cls/v20201016/model/RuleTagInfo.h
   include/tencentcloud/cls/v20201016/model/CreateExportRequest.h
@@ -257,6 +258,7 @@ set(cls_src
   src/v20201016/model/ExtractRuleInfo.cpp
   src/v20201016/model/AsyncContextTask.cpp
   src/v20201016/model/DeleteConfigRequest.cpp
+  src/v20201016/model/AnalysisDimensional.cpp
   src/v20201016/model/LogsetInfo.cpp
   src/v20201016/model/RuleTagInfo.cpp
   src/v20201016/model/CreateExportRequest.cpp

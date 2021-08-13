@@ -216,14 +216,14 @@ namespace TencentCloud
                     bool SystemDiskHasBeenSet() const;
 
                     /**
-                     * 获取实例数据盘信息。只包含随实例购买的数据盘。
-                     * @return DataDisks 实例数据盘信息。只包含随实例购买的数据盘。
+                     * 获取实例数据盘信息。
+                     * @return DataDisks 实例数据盘信息。
                      */
                     std::vector<DataDisk> GetDataDisks() const;
 
                     /**
-                     * 设置实例数据盘信息。只包含随实例购买的数据盘。
-                     * @param DataDisks 实例数据盘信息。只包含随实例购买的数据盘。
+                     * 设置实例数据盘信息。
+                     * @param DataDisks 实例数据盘信息。
                      */
                     void SetDataDisks(const std::vector<DataDisk>& _dataDisks);
 
@@ -691,6 +691,28 @@ namespace TencentCloud
                      */
                     bool RdmaIpAddressesHasBeenSet() const;
 
+                    /**
+                     * 获取实例隔离类型。取值范围：<br><li>ARREAR：表示欠费隔离<br></li><li>EXPIRE：表示到期隔离<br></li><li>MANMADE：表示主动退还隔离<br></li><li>NOTISOLATED：表示未隔离<br></li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsolatedSource 实例隔离类型。取值范围：<br><li>ARREAR：表示欠费隔离<br></li><li>EXPIRE：表示到期隔离<br></li><li>MANMADE：表示主动退还隔离<br></li><li>NOTISOLATED：表示未隔离<br></li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIsolatedSource() const;
+
+                    /**
+                     * 设置实例隔离类型。取值范围：<br><li>ARREAR：表示欠费隔离<br></li><li>EXPIRE：表示到期隔离<br></li><li>MANMADE：表示主动退还隔离<br></li><li>NOTISOLATED：表示未隔离<br></li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsolatedSource 实例隔离类型。取值范围：<br><li>ARREAR：表示欠费隔离<br></li><li>EXPIRE：表示到期隔离<br></li><li>MANMADE：表示主动退还隔离<br></li><li>NOTISOLATED：表示未隔离<br></li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsolatedSource(const std::string& _isolatedSource);
+
+                    /**
+                     * 判断参数 IsolatedSource 是否已赋值
+                     * @return IsolatedSource 是否已赋值
+                     */
+                    bool IsolatedSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -748,7 +770,7 @@ namespace TencentCloud
                     bool m_systemDiskHasBeenSet;
 
                     /**
-                     * 实例数据盘信息。只包含随实例购买的数据盘。
+                     * 实例数据盘信息。
                      */
                     std::vector<DataDisk> m_dataDisks;
                     bool m_dataDisksHasBeenSet;
@@ -901,6 +923,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_rdmaIpAddresses;
                     bool m_rdmaIpAddressesHasBeenSet;
+
+                    /**
+                     * 实例隔离类型。取值范围：<br><li>ARREAR：表示欠费隔离<br></li><li>EXPIRE：表示到期隔离<br></li><li>MANMADE：表示主动退还隔离<br></li><li>NOTISOLATED：表示未隔离<br></li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_isolatedSource;
+                    bool m_isolatedSourceHasBeenSet;
 
                 };
             }

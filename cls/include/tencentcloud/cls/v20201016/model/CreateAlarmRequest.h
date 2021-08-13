@@ -23,6 +23,8 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cls/v20201016/model/AlarmTarget.h>
 #include <tencentcloud/cls/v20201016/model/MonitorTime.h>
+#include <tencentcloud/cls/v20201016/model/CallBackInfo.h>
+#include <tencentcloud/cls/v20201016/model/AnalysisDimensional.h>
 
 
 namespace TencentCloud
@@ -188,6 +190,60 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取用户自定义告警内容
+                     * @return MessageTemplate 用户自定义告警内容
+                     */
+                    std::string GetMessageTemplate() const;
+
+                    /**
+                     * 设置用户自定义告警内容
+                     * @param MessageTemplate 用户自定义告警内容
+                     */
+                    void SetMessageTemplate(const std::string& _messageTemplate);
+
+                    /**
+                     * 判断参数 MessageTemplate 是否已赋值
+                     * @return MessageTemplate 是否已赋值
+                     */
+                    bool MessageTemplateHasBeenSet() const;
+
+                    /**
+                     * 获取用户自定义回调
+                     * @return CallBack 用户自定义回调
+                     */
+                    CallBackInfo GetCallBack() const;
+
+                    /**
+                     * 设置用户自定义回调
+                     * @param CallBack 用户自定义回调
+                     */
+                    void SetCallBack(const CallBackInfo& _callBack);
+
+                    /**
+                     * 判断参数 CallBack 是否已赋值
+                     * @return CallBack 是否已赋值
+                     */
+                    bool CallBackHasBeenSet() const;
+
+                    /**
+                     * 获取多维分析
+                     * @return Analysis 多维分析
+                     */
+                    std::vector<AnalysisDimensional> GetAnalysis() const;
+
+                    /**
+                     * 设置多维分析
+                     * @param Analysis 多维分析
+                     */
+                    void SetAnalysis(const std::vector<AnalysisDimensional>& _analysis);
+
+                    /**
+                     * 判断参数 Analysis 是否已赋值
+                     * @return Analysis 是否已赋值
+                     */
+                    bool AnalysisHasBeenSet() const;
+
                 private:
 
                     /**
@@ -237,6 +293,24 @@ namespace TencentCloud
                      */
                     bool m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 用户自定义告警内容
+                     */
+                    std::string m_messageTemplate;
+                    bool m_messageTemplateHasBeenSet;
+
+                    /**
+                     * 用户自定义回调
+                     */
+                    CallBackInfo m_callBack;
+                    bool m_callBackHasBeenSet;
+
+                    /**
+                     * 多维分析
+                     */
+                    std::vector<AnalysisDimensional> m_analysis;
+                    bool m_analysisHasBeenSet;
 
                 };
             }

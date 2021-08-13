@@ -33,7 +33,8 @@ AlarmInfo::AlarmInfo() :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_messageTemplateHasBeenSet(false),
-    m_callBackHasBeenSet(false)
+    m_callBackHasBeenSet(false),
+    m_analysisHasBeenSet(false)
 {
 }
 
@@ -199,6 +200,26 @@ CoreInternalOutcome AlarmInfo::Deserialize(const rapidjson::Value &value)
         m_callBackHasBeenSet = true;
     }
 
+    if (value.HasMember("Analysis") && !value["Analysis"].IsNull())
+    {
+        if (!value["Analysis"].IsArray())
+            return CoreInternalOutcome(Error("response `AlarmInfo.Analysis` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Analysis"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AnalysisDimensional item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_analysis.push_back(item);
+        }
+        m_analysisHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -322,6 +343,21 @@ void AlarmInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_callBack.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_analysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Analysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_analysis.begin(); itr != m_analysis.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -533,5 +569,21 @@ void AlarmInfo::SetCallBack(const CallBackInfo& _callBack)
 bool AlarmInfo::CallBackHasBeenSet() const
 {
     return m_callBackHasBeenSet;
+}
+
+vector<AnalysisDimensional> AlarmInfo::GetAnalysis() const
+{
+    return m_analysis;
+}
+
+void AlarmInfo::SetAnalysis(const vector<AnalysisDimensional>& _analysis)
+{
+    m_analysis = _analysis;
+    m_analysisHasBeenSet = true;
+}
+
+bool AlarmInfo::AnalysisHasBeenSet() const
+{
+    return m_analysisHasBeenSet;
 }
 

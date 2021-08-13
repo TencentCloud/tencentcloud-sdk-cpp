@@ -32,6 +32,7 @@
 #include <tencentcloud/es/v20180416/model/NodeInfo.h>
 #include <tencentcloud/es/v20180416/model/ZoneDetail.h>
 #include <tencentcloud/es/v20180416/model/KibanaNodeInfo.h>
+#include <tencentcloud/es/v20180416/model/WebNodeTypeInfo.h>
 
 
 namespace TencentCloud
@@ -1120,6 +1121,50 @@ namespace TencentCloud
                      */
                     bool KibanaNodeInfoHasBeenSet() const;
 
+                    /**
+                     * 获取可视化节点配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WebNodeTypeInfo 可视化节点配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WebNodeTypeInfo GetWebNodeTypeInfo() const;
+
+                    /**
+                     * 设置可视化节点配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WebNodeTypeInfo 可视化节点配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWebNodeTypeInfo(const WebNodeTypeInfo& _webNodeTypeInfo);
+
+                    /**
+                     * 判断参数 WebNodeTypeInfo 是否已赋值
+                     * @return WebNodeTypeInfo 是否已赋值
+                     */
+                    bool WebNodeTypeInfoHasBeenSet() const;
+
+                    /**
+                     * 获取JDK类型，oracle或kona
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Jdk JDK类型，oracle或kona
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetJdk() const;
+
+                    /**
+                     * 设置JDK类型，oracle或kona
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Jdk JDK类型，oracle或kona
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetJdk(const std::string& _jdk);
+
+                    /**
+                     * 判断参数 Jdk 是否已赋值
+                     * @return Jdk 是否已赋值
+                     */
+                    bool JdkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1470,6 +1515,20 @@ namespace TencentCloud
                      */
                     KibanaNodeInfo m_kibanaNodeInfo;
                     bool m_kibanaNodeInfoHasBeenSet;
+
+                    /**
+                     * 可视化节点配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WebNodeTypeInfo m_webNodeTypeInfo;
+                    bool m_webNodeTypeInfoHasBeenSet;
+
+                    /**
+                     * JDK类型，oracle或kona
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_jdk;
+                    bool m_jdkHasBeenSet;
 
                 };
             }

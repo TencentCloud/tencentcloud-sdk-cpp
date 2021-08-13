@@ -27,6 +27,7 @@
 #include <tencentcloud/cls/v20201016/model/AlarmTargetInfo.h>
 #include <tencentcloud/cls/v20201016/model/MonitorTime.h>
 #include <tencentcloud/cls/v20201016/model/CallBackInfo.h>
+#include <tencentcloud/cls/v20201016/model/AnalysisDimensional.h>
 
 
 namespace TencentCloud
@@ -291,6 +292,28 @@ namespace TencentCloud
                      */
                     bool CallBackHasBeenSet() const;
 
+                    /**
+                     * 获取多维分析设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Analysis 多维分析设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AnalysisDimensional> GetAnalysis() const;
+
+                    /**
+                     * 设置多维分析设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Analysis 多维分析设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAnalysis(const std::vector<AnalysisDimensional>& _analysis);
+
+                    /**
+                     * 判断参数 Analysis 是否已赋值
+                     * @return Analysis 是否已赋值
+                     */
+                    bool AnalysisHasBeenSet() const;
+
                 private:
 
                     /**
@@ -372,6 +395,13 @@ namespace TencentCloud
                      */
                     CallBackInfo m_callBack;
                     bool m_callBackHasBeenSet;
+
+                    /**
+                     * 多维分析设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AnalysisDimensional> m_analysis;
+                    bool m_analysisHasBeenSet;
 
                 };
             }

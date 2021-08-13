@@ -427,6 +427,49 @@ EiamClient::DescribeOrgNodeOutcomeCallable EiamClient::DescribeOrgNodeCallable(c
     return task->get_future();
 }
 
+EiamClient::DescribeOrgResourcesAuthorizationOutcome EiamClient::DescribeOrgResourcesAuthorization(const DescribeOrgResourcesAuthorizationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOrgResourcesAuthorization");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOrgResourcesAuthorizationResponse rsp = DescribeOrgResourcesAuthorizationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOrgResourcesAuthorizationOutcome(rsp);
+        else
+            return DescribeOrgResourcesAuthorizationOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOrgResourcesAuthorizationOutcome(outcome.GetError());
+    }
+}
+
+void EiamClient::DescribeOrgResourcesAuthorizationAsync(const DescribeOrgResourcesAuthorizationRequest& request, const DescribeOrgResourcesAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOrgResourcesAuthorization(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EiamClient::DescribeOrgResourcesAuthorizationOutcomeCallable EiamClient::DescribeOrgResourcesAuthorizationCallable(const DescribeOrgResourcesAuthorizationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOrgResourcesAuthorizationOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOrgResourcesAuthorization(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EiamClient::DescribePublicKeyOutcome EiamClient::DescribePublicKey(const DescribePublicKeyRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePublicKey");
@@ -513,6 +556,49 @@ EiamClient::DescribeUserGroupOutcomeCallable EiamClient::DescribeUserGroupCallab
     return task->get_future();
 }
 
+EiamClient::DescribeUserGroupResourcesAuthorizationOutcome EiamClient::DescribeUserGroupResourcesAuthorization(const DescribeUserGroupResourcesAuthorizationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserGroupResourcesAuthorization");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserGroupResourcesAuthorizationResponse rsp = DescribeUserGroupResourcesAuthorizationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserGroupResourcesAuthorizationOutcome(rsp);
+        else
+            return DescribeUserGroupResourcesAuthorizationOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserGroupResourcesAuthorizationOutcome(outcome.GetError());
+    }
+}
+
+void EiamClient::DescribeUserGroupResourcesAuthorizationAsync(const DescribeUserGroupResourcesAuthorizationRequest& request, const DescribeUserGroupResourcesAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserGroupResourcesAuthorization(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EiamClient::DescribeUserGroupResourcesAuthorizationOutcomeCallable EiamClient::DescribeUserGroupResourcesAuthorizationCallable(const DescribeUserGroupResourcesAuthorizationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserGroupResourcesAuthorizationOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserGroupResourcesAuthorization(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EiamClient::DescribeUserInfoOutcome EiamClient::DescribeUserInfo(const DescribeUserInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserInfo");
@@ -549,6 +635,49 @@ EiamClient::DescribeUserInfoOutcomeCallable EiamClient::DescribeUserInfoCallable
         [this, request]()
         {
             return this->DescribeUserInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EiamClient::DescribeUserResourcesAuthorizationOutcome EiamClient::DescribeUserResourcesAuthorization(const DescribeUserResourcesAuthorizationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserResourcesAuthorization");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserResourcesAuthorizationResponse rsp = DescribeUserResourcesAuthorizationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserResourcesAuthorizationOutcome(rsp);
+        else
+            return DescribeUserResourcesAuthorizationOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserResourcesAuthorizationOutcome(outcome.GetError());
+    }
+}
+
+void EiamClient::DescribeUserResourcesAuthorizationAsync(const DescribeUserResourcesAuthorizationRequest& request, const DescribeUserResourcesAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserResourcesAuthorization(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EiamClient::DescribeUserResourcesAuthorizationOutcomeCallable EiamClient::DescribeUserResourcesAuthorizationCallable(const DescribeUserResourcesAuthorizationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserResourcesAuthorizationOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserResourcesAuthorization(request);
         }
     );
 

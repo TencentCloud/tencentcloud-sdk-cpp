@@ -1,0 +1,246 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_CFW_V20190904_MODEL_CREATENATFWINSTANCEREQUEST_H_
+#define TENCENTCLOUD_CFW_V20190904_MODEL_CREATENATFWINSTANCEREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cfw/v20190904/model/NewModeItems.h>
+
+
+namespace TencentCloud
+{
+    namespace Cfw
+    {
+        namespace V20190904
+        {
+            namespace Model
+            {
+                /**
+                * CreateNatFwInstance请求参数结构体
+                */
+                class CreateNatFwInstanceRequest : public AbstractModel
+                {
+                public:
+                    CreateNatFwInstanceRequest();
+                    ~CreateNatFwInstanceRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取防火墙实例名称
+                     * @return Name 防火墙实例名称
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置防火墙实例名称
+                     * @param Name 防火墙实例名称
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取带宽
+                     * @return Width 带宽
+                     */
+                    int64_t GetWidth() const;
+
+                    /**
+                     * 设置带宽
+                     * @param Width 带宽
+                     */
+                    void SetWidth(const int64_t& _width);
+
+                    /**
+                     * 判断参数 Width 是否已赋值
+                     * @return Width 是否已赋值
+                     */
+                    bool WidthHasBeenSet() const;
+
+                    /**
+                     * 获取模式 1：接入模式；0：新增模式
+                     * @return Mode 模式 1：接入模式；0：新增模式
+                     */
+                    int64_t GetMode() const;
+
+                    /**
+                     * 设置模式 1：接入模式；0：新增模式
+                     * @param Mode 模式 1：接入模式；0：新增模式
+                     */
+                    void SetMode(const int64_t& _mode);
+
+                    /**
+                     * 判断参数 Mode 是否已赋值
+                     * @return Mode 是否已赋值
+                     */
+                    bool ModeHasBeenSet() const;
+
+                    /**
+                     * 获取新增模式传递参数，其中NewModeItems和NatgwList至少传递一种。
+                     * @return NewModeItems 新增模式传递参数，其中NewModeItems和NatgwList至少传递一种。
+                     */
+                    NewModeItems GetNewModeItems() const;
+
+                    /**
+                     * 设置新增模式传递参数，其中NewModeItems和NatgwList至少传递一种。
+                     * @param NewModeItems 新增模式传递参数，其中NewModeItems和NatgwList至少传递一种。
+                     */
+                    void SetNewModeItems(const NewModeItems& _newModeItems);
+
+                    /**
+                     * 判断参数 NewModeItems 是否已赋值
+                     * @return NewModeItems 是否已赋值
+                     */
+                    bool NewModeItemsHasBeenSet() const;
+
+                    /**
+                     * 获取接入模式接入的nat网关列表，其中NewModeItems和NatgwList至少传递一种。
+                     * @return NatGwList 接入模式接入的nat网关列表，其中NewModeItems和NatgwList至少传递一种。
+                     */
+                    std::vector<std::string> GetNatGwList() const;
+
+                    /**
+                     * 设置接入模式接入的nat网关列表，其中NewModeItems和NatgwList至少传递一种。
+                     * @param NatGwList 接入模式接入的nat网关列表，其中NewModeItems和NatgwList至少传递一种。
+                     */
+                    void SetNatGwList(const std::vector<std::string>& _natGwList);
+
+                    /**
+                     * 判断参数 NatGwList 是否已赋值
+                     * @return NatGwList 是否已赋值
+                     */
+                    bool NatGwListHasBeenSet() const;
+
+                    /**
+                     * 获取主可用区，为空则选择默认可用区
+                     * @return Zone 主可用区，为空则选择默认可用区
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 设置主可用区，为空则选择默认可用区
+                     * @param Zone 主可用区，为空则选择默认可用区
+                     */
+                    void SetZone(const std::string& _zone);
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     */
+                    bool ZoneHasBeenSet() const;
+
+                    /**
+                     * 获取备可用区，为空则选择默认可用区
+                     * @return ZoneBak 备可用区，为空则选择默认可用区
+                     */
+                    std::string GetZoneBak() const;
+
+                    /**
+                     * 设置备可用区，为空则选择默认可用区
+                     * @param ZoneBak 备可用区，为空则选择默认可用区
+                     */
+                    void SetZoneBak(const std::string& _zoneBak);
+
+                    /**
+                     * 判断参数 ZoneBak 是否已赋值
+                     * @return ZoneBak 是否已赋值
+                     */
+                    bool ZoneBakHasBeenSet() const;
+
+                    /**
+                     * 获取异地灾备 1：使用异地灾备；0：不使用异地灾备
+                     * @return CrossAZone 异地灾备 1：使用异地灾备；0：不使用异地灾备
+                     */
+                    int64_t GetCrossAZone() const;
+
+                    /**
+                     * 设置异地灾备 1：使用异地灾备；0：不使用异地灾备
+                     * @param CrossAZone 异地灾备 1：使用异地灾备；0：不使用异地灾备
+                     */
+                    void SetCrossAZone(const int64_t& _crossAZone);
+
+                    /**
+                     * 判断参数 CrossAZone 是否已赋值
+                     * @return CrossAZone 是否已赋值
+                     */
+                    bool CrossAZoneHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 防火墙实例名称
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
+
+                    /**
+                     * 带宽
+                     */
+                    int64_t m_width;
+                    bool m_widthHasBeenSet;
+
+                    /**
+                     * 模式 1：接入模式；0：新增模式
+                     */
+                    int64_t m_mode;
+                    bool m_modeHasBeenSet;
+
+                    /**
+                     * 新增模式传递参数，其中NewModeItems和NatgwList至少传递一种。
+                     */
+                    NewModeItems m_newModeItems;
+                    bool m_newModeItemsHasBeenSet;
+
+                    /**
+                     * 接入模式接入的nat网关列表，其中NewModeItems和NatgwList至少传递一种。
+                     */
+                    std::vector<std::string> m_natGwList;
+                    bool m_natGwListHasBeenSet;
+
+                    /**
+                     * 主可用区，为空则选择默认可用区
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
+
+                    /**
+                     * 备可用区，为空则选择默认可用区
+                     */
+                    std::string m_zoneBak;
+                    bool m_zoneBakHasBeenSet;
+
+                    /**
+                     * 异地灾备 1：使用异地灾备；0：不使用异地灾备
+                     */
+                    int64_t m_crossAZone;
+                    bool m_crossAZoneHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_CFW_V20190904_MODEL_CREATENATFWINSTANCEREQUEST_H_

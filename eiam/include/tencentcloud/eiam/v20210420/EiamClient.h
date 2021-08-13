@@ -41,12 +41,18 @@
 #include <tencentcloud/eiam/v20210420/model/DescribeApplicationResponse.h>
 #include <tencentcloud/eiam/v20210420/model/DescribeOrgNodeRequest.h>
 #include <tencentcloud/eiam/v20210420/model/DescribeOrgNodeResponse.h>
+#include <tencentcloud/eiam/v20210420/model/DescribeOrgResourcesAuthorizationRequest.h>
+#include <tencentcloud/eiam/v20210420/model/DescribeOrgResourcesAuthorizationResponse.h>
 #include <tencentcloud/eiam/v20210420/model/DescribePublicKeyRequest.h>
 #include <tencentcloud/eiam/v20210420/model/DescribePublicKeyResponse.h>
 #include <tencentcloud/eiam/v20210420/model/DescribeUserGroupRequest.h>
 #include <tencentcloud/eiam/v20210420/model/DescribeUserGroupResponse.h>
+#include <tencentcloud/eiam/v20210420/model/DescribeUserGroupResourcesAuthorizationRequest.h>
+#include <tencentcloud/eiam/v20210420/model/DescribeUserGroupResourcesAuthorizationResponse.h>
 #include <tencentcloud/eiam/v20210420/model/DescribeUserInfoRequest.h>
 #include <tencentcloud/eiam/v20210420/model/DescribeUserInfoResponse.h>
+#include <tencentcloud/eiam/v20210420/model/DescribeUserResourcesAuthorizationRequest.h>
+#include <tencentcloud/eiam/v20210420/model/DescribeUserResourcesAuthorizationResponse.h>
 #include <tencentcloud/eiam/v20210420/model/ListApplicationAuthorizationsRequest.h>
 #include <tencentcloud/eiam/v20210420/model/ListApplicationAuthorizationsResponse.h>
 #include <tencentcloud/eiam/v20210420/model/ListApplicationsRequest.h>
@@ -116,15 +122,24 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeOrgNodeResponse> DescribeOrgNodeOutcome;
                 typedef std::future<DescribeOrgNodeOutcome> DescribeOrgNodeOutcomeCallable;
                 typedef std::function<void(const EiamClient*, const Model::DescribeOrgNodeRequest&, DescribeOrgNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrgNodeAsyncHandler;
+                typedef Outcome<Error, Model::DescribeOrgResourcesAuthorizationResponse> DescribeOrgResourcesAuthorizationOutcome;
+                typedef std::future<DescribeOrgResourcesAuthorizationOutcome> DescribeOrgResourcesAuthorizationOutcomeCallable;
+                typedef std::function<void(const EiamClient*, const Model::DescribeOrgResourcesAuthorizationRequest&, DescribeOrgResourcesAuthorizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrgResourcesAuthorizationAsyncHandler;
                 typedef Outcome<Error, Model::DescribePublicKeyResponse> DescribePublicKeyOutcome;
                 typedef std::future<DescribePublicKeyOutcome> DescribePublicKeyOutcomeCallable;
                 typedef std::function<void(const EiamClient*, const Model::DescribePublicKeyRequest&, DescribePublicKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePublicKeyAsyncHandler;
                 typedef Outcome<Error, Model::DescribeUserGroupResponse> DescribeUserGroupOutcome;
                 typedef std::future<DescribeUserGroupOutcome> DescribeUserGroupOutcomeCallable;
                 typedef std::function<void(const EiamClient*, const Model::DescribeUserGroupRequest&, DescribeUserGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserGroupAsyncHandler;
+                typedef Outcome<Error, Model::DescribeUserGroupResourcesAuthorizationResponse> DescribeUserGroupResourcesAuthorizationOutcome;
+                typedef std::future<DescribeUserGroupResourcesAuthorizationOutcome> DescribeUserGroupResourcesAuthorizationOutcomeCallable;
+                typedef std::function<void(const EiamClient*, const Model::DescribeUserGroupResourcesAuthorizationRequest&, DescribeUserGroupResourcesAuthorizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserGroupResourcesAuthorizationAsyncHandler;
                 typedef Outcome<Error, Model::DescribeUserInfoResponse> DescribeUserInfoOutcome;
                 typedef std::future<DescribeUserInfoOutcome> DescribeUserInfoOutcomeCallable;
                 typedef std::function<void(const EiamClient*, const Model::DescribeUserInfoRequest&, DescribeUserInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserInfoAsyncHandler;
+                typedef Outcome<Error, Model::DescribeUserResourcesAuthorizationResponse> DescribeUserResourcesAuthorizationOutcome;
+                typedef std::future<DescribeUserResourcesAuthorizationOutcome> DescribeUserResourcesAuthorizationOutcomeCallable;
+                typedef std::function<void(const EiamClient*, const Model::DescribeUserResourcesAuthorizationRequest&, DescribeUserResourcesAuthorizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserResourcesAuthorizationAsyncHandler;
                 typedef Outcome<Error, Model::ListApplicationAuthorizationsResponse> ListApplicationAuthorizationsOutcome;
                 typedef std::future<ListApplicationAuthorizationsOutcome> ListApplicationAuthorizationsOutcomeCallable;
                 typedef std::function<void(const EiamClient*, const Model::ListApplicationAuthorizationsRequest&, ListApplicationAuthorizationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListApplicationAuthorizationsAsyncHandler;
@@ -252,6 +267,15 @@ namespace TencentCloud
                 DescribeOrgNodeOutcomeCallable DescribeOrgNodeCallable(const Model::DescribeOrgNodeRequest& request);
 
                 /**
+                 *查询指定机构下的资源授权列表
+                 * @param req DescribeOrgResourcesAuthorizationRequest
+                 * @return DescribeOrgResourcesAuthorizationOutcome
+                 */
+                DescribeOrgResourcesAuthorizationOutcome DescribeOrgResourcesAuthorization(const Model::DescribeOrgResourcesAuthorizationRequest &request);
+                void DescribeOrgResourcesAuthorizationAsync(const Model::DescribeOrgResourcesAuthorizationRequest& request, const DescribeOrgResourcesAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOrgResourcesAuthorizationOutcomeCallable DescribeOrgResourcesAuthorizationCallable(const Model::DescribeOrgResourcesAuthorizationRequest& request);
+
+                /**
                  *获取JWT公钥信息。
                  * @param req DescribePublicKeyRequest
                  * @return DescribePublicKeyOutcome
@@ -270,6 +294,15 @@ namespace TencentCloud
                 DescribeUserGroupOutcomeCallable DescribeUserGroupCallable(const Model::DescribeUserGroupRequest& request);
 
                 /**
+                 *查询指定用户组下的资源授权列表
+                 * @param req DescribeUserGroupResourcesAuthorizationRequest
+                 * @return DescribeUserGroupResourcesAuthorizationOutcome
+                 */
+                DescribeUserGroupResourcesAuthorizationOutcome DescribeUserGroupResourcesAuthorization(const Model::DescribeUserGroupResourcesAuthorizationRequest &request);
+                void DescribeUserGroupResourcesAuthorizationAsync(const Model::DescribeUserGroupResourcesAuthorizationRequest& request, const DescribeUserGroupResourcesAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserGroupResourcesAuthorizationOutcomeCallable DescribeUserGroupResourcesAuthorizationCallable(const Model::DescribeUserGroupResourcesAuthorizationRequest& request);
+
+                /**
                  *通过用户名或用户 id 搜索用户
                  * @param req DescribeUserInfoRequest
                  * @return DescribeUserInfoOutcome
@@ -277,6 +310,15 @@ namespace TencentCloud
                 DescribeUserInfoOutcome DescribeUserInfo(const Model::DescribeUserInfoRequest &request);
                 void DescribeUserInfoAsync(const Model::DescribeUserInfoRequest& request, const DescribeUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserInfoOutcomeCallable DescribeUserInfoCallable(const Model::DescribeUserInfoRequest& request);
+
+                /**
+                 *查询指定用户下的资源授权列表
+                 * @param req DescribeUserResourcesAuthorizationRequest
+                 * @return DescribeUserResourcesAuthorizationOutcome
+                 */
+                DescribeUserResourcesAuthorizationOutcome DescribeUserResourcesAuthorization(const Model::DescribeUserResourcesAuthorizationRequest &request);
+                void DescribeUserResourcesAuthorizationAsync(const Model::DescribeUserResourcesAuthorizationRequest& request, const DescribeUserResourcesAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserResourcesAuthorizationOutcomeCallable DescribeUserResourcesAuthorizationCallable(const Model::DescribeUserResourcesAuthorizationRequest& request);
 
                 /**
                  *应用授权关系列表（含搜索条件匹配）。

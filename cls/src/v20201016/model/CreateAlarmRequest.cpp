@@ -30,7 +30,10 @@ CreateAlarmRequest::CreateAlarmRequest() :
     m_triggerCountHasBeenSet(false),
     m_alarmPeriodHasBeenSet(false),
     m_alarmNoticeIdsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_messageTemplateHasBeenSet(false),
+    m_callBackHasBeenSet(false),
+    m_analysisHasBeenSet(false)
 {
 }
 
@@ -116,6 +119,38 @@ string CreateAlarmRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_messageTemplateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MessageTemplate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_messageTemplate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_callBackHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CallBack";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_callBack.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_analysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Analysis";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_analysis.begin(); itr != m_analysis.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -252,6 +287,54 @@ void CreateAlarmRequest::SetStatus(const bool& _status)
 bool CreateAlarmRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string CreateAlarmRequest::GetMessageTemplate() const
+{
+    return m_messageTemplate;
+}
+
+void CreateAlarmRequest::SetMessageTemplate(const string& _messageTemplate)
+{
+    m_messageTemplate = _messageTemplate;
+    m_messageTemplateHasBeenSet = true;
+}
+
+bool CreateAlarmRequest::MessageTemplateHasBeenSet() const
+{
+    return m_messageTemplateHasBeenSet;
+}
+
+CallBackInfo CreateAlarmRequest::GetCallBack() const
+{
+    return m_callBack;
+}
+
+void CreateAlarmRequest::SetCallBack(const CallBackInfo& _callBack)
+{
+    m_callBack = _callBack;
+    m_callBackHasBeenSet = true;
+}
+
+bool CreateAlarmRequest::CallBackHasBeenSet() const
+{
+    return m_callBackHasBeenSet;
+}
+
+vector<AnalysisDimensional> CreateAlarmRequest::GetAnalysis() const
+{
+    return m_analysis;
+}
+
+void CreateAlarmRequest::SetAnalysis(const vector<AnalysisDimensional>& _analysis)
+{
+    m_analysis = _analysis;
+    m_analysisHasBeenSet = true;
+}
+
+bool CreateAlarmRequest::AnalysisHasBeenSet() const
+{
+    return m_analysisHasBeenSet;
 }
 
 

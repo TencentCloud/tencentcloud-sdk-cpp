@@ -75,7 +75,9 @@ InstanceInfo::InstanceInfo() :
     m_securityTypeHasBeenSet(false),
     m_sceneTypeHasBeenSet(false),
     m_kibanaConfigHasBeenSet(false),
-    m_kibanaNodeInfoHasBeenSet(false)
+    m_kibanaNodeInfoHasBeenSet(false),
+    m_webNodeTypeInfoHasBeenSet(false),
+    m_jdkHasBeenSet(false)
 {
 }
 
@@ -706,6 +708,33 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_kibanaNodeInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("WebNodeTypeInfo") && !value["WebNodeTypeInfo"].IsNull())
+    {
+        if (!value["WebNodeTypeInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `InstanceInfo.WebNodeTypeInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_webNodeTypeInfo.Deserialize(value["WebNodeTypeInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_webNodeTypeInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("Jdk") && !value["Jdk"].IsNull())
+    {
+        if (!value["Jdk"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceInfo.Jdk` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jdk = string(value["Jdk"].GetString());
+        m_jdkHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1178,6 +1207,23 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_kibanaNodeInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_webNodeTypeInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebNodeTypeInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_webNodeTypeInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_jdkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Jdk";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jdk.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2061,5 +2107,37 @@ void InstanceInfo::SetKibanaNodeInfo(const KibanaNodeInfo& _kibanaNodeInfo)
 bool InstanceInfo::KibanaNodeInfoHasBeenSet() const
 {
     return m_kibanaNodeInfoHasBeenSet;
+}
+
+WebNodeTypeInfo InstanceInfo::GetWebNodeTypeInfo() const
+{
+    return m_webNodeTypeInfo;
+}
+
+void InstanceInfo::SetWebNodeTypeInfo(const WebNodeTypeInfo& _webNodeTypeInfo)
+{
+    m_webNodeTypeInfo = _webNodeTypeInfo;
+    m_webNodeTypeInfoHasBeenSet = true;
+}
+
+bool InstanceInfo::WebNodeTypeInfoHasBeenSet() const
+{
+    return m_webNodeTypeInfoHasBeenSet;
+}
+
+string InstanceInfo::GetJdk() const
+{
+    return m_jdk;
+}
+
+void InstanceInfo::SetJdk(const string& _jdk)
+{
+    m_jdk = _jdk;
+    m_jdkHasBeenSet = true;
+}
+
+bool InstanceInfo::JdkHasBeenSet() const
+{
+    return m_jdkHasBeenSet;
 }
 

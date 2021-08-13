@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool OperationTypeHasBeenSet() const;
 
                     /**
-                     * 获取防火墙实例id。
-                     * @return CfwInstance 防火墙实例id。
+                     * 获取防火墙实例id，该字段必须传递。
+                     * @return CfwInstance 防火墙实例id，该字段必须传递。
                      */
                     std::string GetCfwInstance() const;
 
                     /**
-                     * 设置防火墙实例id。
-                     * @param CfwInstance 防火墙实例id。
+                     * 设置防火墙实例id，该字段必须传递。
+                     * @param CfwInstance 防火墙实例id，该字段必须传递。
                      */
                     void SetCfwInstance(const std::string& _cfwInstance);
 
@@ -166,7 +166,7 @@ namespace TencentCloud
                     bool m_operationTypeHasBeenSet;
 
                     /**
-                     * 防火墙实例id。
+                     * 防火墙实例id，该字段必须传递。
                      */
                     std::string m_cfwInstance;
                     bool m_cfwInstanceHasBeenSet;

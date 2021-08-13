@@ -53,7 +53,8 @@ Instance::Instance() :
     m_iPv6AddressesHasBeenSet(false),
     m_camRoleNameHasBeenSet(false),
     m_hpcClusterIdHasBeenSet(false),
-    m_rdmaIpAddressesHasBeenSet(false)
+    m_rdmaIpAddressesHasBeenSet(false),
+    m_isolatedSourceHasBeenSet(false)
 {
 }
 
@@ -462,6 +463,16 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
         m_rdmaIpAddressesHasBeenSet = true;
     }
 
+    if (value.HasMember("IsolatedSource") && !value["IsolatedSource"].IsNull())
+    {
+        if (!value["IsolatedSource"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Instance.IsolatedSource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isolatedSource = string(value["IsolatedSource"].GetString());
+        m_isolatedSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -775,6 +786,14 @@ void Instance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_isolatedSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolatedSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isolatedSource.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1306,5 +1325,21 @@ void Instance::SetRdmaIpAddresses(const vector<string>& _rdmaIpAddresses)
 bool Instance::RdmaIpAddressesHasBeenSet() const
 {
     return m_rdmaIpAddressesHasBeenSet;
+}
+
+string Instance::GetIsolatedSource() const
+{
+    return m_isolatedSource;
+}
+
+void Instance::SetIsolatedSource(const string& _isolatedSource)
+{
+    m_isolatedSource = _isolatedSource;
+    m_isolatedSourceHasBeenSet = true;
+}
+
+bool Instance::IsolatedSourceHasBeenSet() const
+{
+    return m_isolatedSourceHasBeenSet;
 }
 

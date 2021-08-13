@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool ForceRestartHasBeenSet() const;
 
+                    /**
+                     * 获取重启模式：0 滚动重启； 1 全量重启
+                     * @return RestartMode 重启模式：0 滚动重启； 1 全量重启
+                     */
+                    int64_t GetRestartMode() const;
+
+                    /**
+                     * 设置重启模式：0 滚动重启； 1 全量重启
+                     * @param RestartMode 重启模式：0 滚动重启； 1 全量重启
+                     */
+                    void SetRestartMode(const int64_t& _restartMode);
+
+                    /**
+                     * 判断参数 RestartMode 是否已赋值
+                     * @return RestartMode 是否已赋值
+                     */
+                    bool RestartModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     bool m_forceRestart;
                     bool m_forceRestartHasBeenSet;
+
+                    /**
+                     * 重启模式：0 滚动重启； 1 全量重启
+                     */
+                    int64_t m_restartMode;
+                    bool m_restartModeHasBeenSet;
 
                 };
             }

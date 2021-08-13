@@ -1158,6 +1158,49 @@ CkafkaClient::DescribeTopicDetailOutcomeCallable CkafkaClient::DescribeTopicDeta
     return task->get_future();
 }
 
+CkafkaClient::DescribeTopicSubscribeGroupOutcome CkafkaClient::DescribeTopicSubscribeGroup(const DescribeTopicSubscribeGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTopicSubscribeGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTopicSubscribeGroupResponse rsp = DescribeTopicSubscribeGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTopicSubscribeGroupOutcome(rsp);
+        else
+            return DescribeTopicSubscribeGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTopicSubscribeGroupOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::DescribeTopicSubscribeGroupAsync(const DescribeTopicSubscribeGroupRequest& request, const DescribeTopicSubscribeGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTopicSubscribeGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::DescribeTopicSubscribeGroupOutcomeCallable CkafkaClient::DescribeTopicSubscribeGroupCallable(const DescribeTopicSubscribeGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTopicSubscribeGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTopicSubscribeGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::DescribeUserOutcome CkafkaClient::DescribeUser(const DescribeUserRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUser");

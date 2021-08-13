@@ -423,6 +423,24 @@ Windows 实例：名字符长度为[2, 15]，允许字母（不限制大小写�
                      */
                     bool InstanceChargeTypeHasBeenSet() const;
 
+                    /**
+                     * 获取密钥对。
+                     * @return KeyIds 密钥对。
+                     */
+                    std::vector<std::string> GetKeyIds() const;
+
+                    /**
+                     * 设置密钥对。
+                     * @param KeyIds 密钥对。
+                     */
+                    void SetKeyIds(const std::vector<std::string>& _keyIds);
+
+                    /**
+                     * 判断参数 KeyIds 是否已赋值
+                     * @return KeyIds 是否已赋值
+                     */
+                    bool KeyIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -544,6 +562,12 @@ Windows 实例：名字符长度为[2, 15]，允许字母（不限制大小写�
                      */
                     int64_t m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
+
+                    /**
+                     * 密钥对。
+                     */
+                    std::vector<std::string> m_keyIds;
+                    bool m_keyIdsHasBeenSet;
 
                 };
             }

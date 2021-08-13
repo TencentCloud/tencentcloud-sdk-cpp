@@ -21,7 +21,6 @@ using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
 SecurityGroupListData::SecurityGroupListData() :
-    m_idHasBeenSet(false),
     m_orderIndexHasBeenSet(false),
     m_sourceIdHasBeenSet(false),
     m_sourceTypeHasBeenSet(false),
@@ -31,15 +30,19 @@ SecurityGroupListData::SecurityGroupListData() :
     m_portHasBeenSet(false),
     m_strategyHasBeenSet(false),
     m_detailHasBeenSet(false),
+    m_bothWayHasBeenSet(false),
+    m_idHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_isNewHasBeenSet(false),
-    m_bothWayHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
     m_publicIpHasBeenSet(false),
     m_privateIpHasBeenSet(false),
-    m_cidrHasBeenSet(false)
+    m_cidrHasBeenSet(false),
+    m_serviceTemplateIdHasBeenSet(false),
+    m_bothWayInfoHasBeenSet(false),
+    m_directionHasBeenSet(false)
 {
 }
 
@@ -47,16 +50,6 @@ CoreInternalOutcome SecurityGroupListData::Deserialize(const rapidjson::Value &v
 {
     string requestId = "";
 
-
-    if (value.HasMember("Id") && !value["Id"].IsNull())
-    {
-        if (!value["Id"].IsUint64())
-        {
-            return CoreInternalOutcome(Error("response `SecurityGroupListData.Id` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_id = value["Id"].GetUint64();
-        m_idHasBeenSet = true;
-    }
 
     if (value.HasMember("OrderIndex") && !value["OrderIndex"].IsNull())
     {
@@ -148,6 +141,26 @@ CoreInternalOutcome SecurityGroupListData::Deserialize(const rapidjson::Value &v
         m_detailHasBeenSet = true;
     }
 
+    if (value.HasMember("BothWay") && !value["BothWay"].IsNull())
+    {
+        if (!value["BothWay"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `SecurityGroupListData.BothWay` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_bothWay = value["BothWay"].GetUint64();
+        m_bothWayHasBeenSet = true;
+    }
+
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `SecurityGroupListData.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = value["Id"].GetUint64();
+        m_idHasBeenSet = true;
+    }
+
     if (value.HasMember("Status") && !value["Status"].IsNull())
     {
         if (!value["Status"].IsUint64())
@@ -166,16 +179,6 @@ CoreInternalOutcome SecurityGroupListData::Deserialize(const rapidjson::Value &v
         }
         m_isNew = value["IsNew"].GetUint64();
         m_isNewHasBeenSet = true;
-    }
-
-    if (value.HasMember("BothWay") && !value["BothWay"].IsNull())
-    {
-        if (!value["BothWay"].IsUint64())
-        {
-            return CoreInternalOutcome(Error("response `SecurityGroupListData.BothWay` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_bothWay = value["BothWay"].GetUint64();
-        m_bothWayHasBeenSet = true;
     }
 
     if (value.HasMember("VpcId") && !value["VpcId"].IsNull())
@@ -238,20 +241,52 @@ CoreInternalOutcome SecurityGroupListData::Deserialize(const rapidjson::Value &v
         m_cidrHasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceTemplateId") && !value["ServiceTemplateId"].IsNull())
+    {
+        if (!value["ServiceTemplateId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SecurityGroupListData.ServiceTemplateId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceTemplateId = string(value["ServiceTemplateId"].GetString());
+        m_serviceTemplateIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("BothWayInfo") && !value["BothWayInfo"].IsNull())
+    {
+        if (!value["BothWayInfo"].IsArray())
+            return CoreInternalOutcome(Error("response `SecurityGroupListData.BothWayInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["BothWayInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SecurityGroupBothWayInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_bothWayInfo.push_back(item);
+        }
+        m_bothWayInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("Direction") && !value["Direction"].IsNull())
+    {
+        if (!value["Direction"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `SecurityGroupListData.Direction` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_direction = value["Direction"].GetUint64();
+        m_directionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void SecurityGroupListData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_idHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Id";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_id, allocator);
-    }
 
     if (m_orderIndexHasBeenSet)
     {
@@ -325,6 +360,22 @@ void SecurityGroupListData::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         value.AddMember(iKey, rapidjson::Value(m_detail.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_bothWayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BothWay";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bothWay, allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_id, allocator);
+    }
+
     if (m_statusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -339,14 +390,6 @@ void SecurityGroupListData::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "IsNew";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isNew, allocator);
-    }
-
-    if (m_bothWayHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BothWay";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_bothWay, allocator);
     }
 
     if (m_vpcIdHasBeenSet)
@@ -397,24 +440,39 @@ void SecurityGroupListData::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         value.AddMember(iKey, rapidjson::Value(m_cidr.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_serviceTemplateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceTemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serviceTemplateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bothWayInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BothWayInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_bothWayInfo.begin(); itr != m_bothWayInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_directionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Direction";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_direction, allocator);
+    }
+
 }
 
-
-uint64_t SecurityGroupListData::GetId() const
-{
-    return m_id;
-}
-
-void SecurityGroupListData::SetId(const uint64_t& _id)
-{
-    m_id = _id;
-    m_idHasBeenSet = true;
-}
-
-bool SecurityGroupListData::IdHasBeenSet() const
-{
-    return m_idHasBeenSet;
-}
 
 uint64_t SecurityGroupListData::GetOrderIndex() const
 {
@@ -560,6 +618,38 @@ bool SecurityGroupListData::DetailHasBeenSet() const
     return m_detailHasBeenSet;
 }
 
+uint64_t SecurityGroupListData::GetBothWay() const
+{
+    return m_bothWay;
+}
+
+void SecurityGroupListData::SetBothWay(const uint64_t& _bothWay)
+{
+    m_bothWay = _bothWay;
+    m_bothWayHasBeenSet = true;
+}
+
+bool SecurityGroupListData::BothWayHasBeenSet() const
+{
+    return m_bothWayHasBeenSet;
+}
+
+uint64_t SecurityGroupListData::GetId() const
+{
+    return m_id;
+}
+
+void SecurityGroupListData::SetId(const uint64_t& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool SecurityGroupListData::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
+}
+
 uint64_t SecurityGroupListData::GetStatus() const
 {
     return m_status;
@@ -590,22 +680,6 @@ void SecurityGroupListData::SetIsNew(const uint64_t& _isNew)
 bool SecurityGroupListData::IsNewHasBeenSet() const
 {
     return m_isNewHasBeenSet;
-}
-
-uint64_t SecurityGroupListData::GetBothWay() const
-{
-    return m_bothWay;
-}
-
-void SecurityGroupListData::SetBothWay(const uint64_t& _bothWay)
-{
-    m_bothWay = _bothWay;
-    m_bothWayHasBeenSet = true;
-}
-
-bool SecurityGroupListData::BothWayHasBeenSet() const
-{
-    return m_bothWayHasBeenSet;
 }
 
 string SecurityGroupListData::GetVpcId() const
@@ -702,5 +776,53 @@ void SecurityGroupListData::SetCidr(const string& _cidr)
 bool SecurityGroupListData::CidrHasBeenSet() const
 {
     return m_cidrHasBeenSet;
+}
+
+string SecurityGroupListData::GetServiceTemplateId() const
+{
+    return m_serviceTemplateId;
+}
+
+void SecurityGroupListData::SetServiceTemplateId(const string& _serviceTemplateId)
+{
+    m_serviceTemplateId = _serviceTemplateId;
+    m_serviceTemplateIdHasBeenSet = true;
+}
+
+bool SecurityGroupListData::ServiceTemplateIdHasBeenSet() const
+{
+    return m_serviceTemplateIdHasBeenSet;
+}
+
+vector<SecurityGroupBothWayInfo> SecurityGroupListData::GetBothWayInfo() const
+{
+    return m_bothWayInfo;
+}
+
+void SecurityGroupListData::SetBothWayInfo(const vector<SecurityGroupBothWayInfo>& _bothWayInfo)
+{
+    m_bothWayInfo = _bothWayInfo;
+    m_bothWayInfoHasBeenSet = true;
+}
+
+bool SecurityGroupListData::BothWayInfoHasBeenSet() const
+{
+    return m_bothWayInfoHasBeenSet;
+}
+
+uint64_t SecurityGroupListData::GetDirection() const
+{
+    return m_direction;
+}
+
+void SecurityGroupListData::SetDirection(const uint64_t& _direction)
+{
+    m_direction = _direction;
+    m_directionHasBeenSet = true;
+}
+
+bool SecurityGroupListData::DirectionHasBeenSet() const
+{
+    return m_directionHasBeenSet;
 }
 

@@ -26,6 +26,7 @@
 #include <tencentcloud/es/v20180416/model/NodeInfo.h>
 #include <tencentcloud/es/v20180416/model/EsPublicAcl.h>
 #include <tencentcloud/es/v20180416/model/ZoneDetail.h>
+#include <tencentcloud/es/v20180416/model/WebNodeTypeInfo.h>
 
 
 namespace TencentCloud
@@ -503,6 +504,24 @@ namespace TencentCloud
                      */
                     bool KibanaConfigHasBeenSet() const;
 
+                    /**
+                     * 获取可视化节点配置
+                     * @return WebNodeTypeInfo 可视化节点配置
+                     */
+                    WebNodeTypeInfo GetWebNodeTypeInfo() const;
+
+                    /**
+                     * 设置可视化节点配置
+                     * @param WebNodeTypeInfo 可视化节点配置
+                     */
+                    void SetWebNodeTypeInfo(const WebNodeTypeInfo& _webNodeTypeInfo);
+
+                    /**
+                     * 判断参数 WebNodeTypeInfo 是否已赋值
+                     * @return WebNodeTypeInfo 是否已赋值
+                     */
+                    bool WebNodeTypeInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -654,6 +673,12 @@ namespace TencentCloud
                      */
                     std::string m_kibanaConfig;
                     bool m_kibanaConfigHasBeenSet;
+
+                    /**
+                     * 可视化节点配置
+                     */
+                    WebNodeTypeInfo m_webNodeTypeInfo;
+                    bool m_webNodeTypeInfoHasBeenSet;
 
                 };
             }

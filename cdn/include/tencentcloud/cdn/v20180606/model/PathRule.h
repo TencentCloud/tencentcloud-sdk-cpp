@@ -221,6 +221,36 @@ OV：中国境外
                      */
                     bool RequestHeadersHasBeenSet() const;
 
+                    /**
+                     * 获取当Regex为false时，Path是否开启完全匹配。
+false：关闭
+true：开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FullMatch 当Regex为false时，Path是否开启完全匹配。
+false：关闭
+true：开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetFullMatch() const;
+
+                    /**
+                     * 设置当Regex为false时，Path是否开启完全匹配。
+false：关闭
+true：开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FullMatch 当Regex为false时，Path是否开启完全匹配。
+false：关闭
+true：开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFullMatch(const bool& _fullMatch);
+
+                    /**
+                     * 判断参数 FullMatch 是否已赋值
+                     * @return FullMatch 是否已赋值
+                     */
+                    bool FullMatchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -276,6 +306,15 @@ OV：中国境外
                      */
                     std::vector<HttpHeaderRule> m_requestHeaders;
                     bool m_requestHeadersHasBeenSet;
+
+                    /**
+                     * 当Regex为false时，Path是否开启完全匹配。
+false：关闭
+true：开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_fullMatch;
+                    bool m_fullMatchHasBeenSet;
 
                 };
             }

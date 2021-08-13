@@ -41,6 +41,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DescribeACLResponse.h
   include/tencentcloud/ckafka/v20190819/model/JgwOperateResponse.h
   include/tencentcloud/ckafka/v20190819/model/ZoneInfo.h
+  include/tencentcloud/ckafka/v20190819/model/DescribeTopicSubscribeGroupResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeCkafkaZoneRequest.h
   include/tencentcloud/ckafka/v20190819/model/Topic.h
   include/tencentcloud/ckafka/v20190819/model/Tag.h
@@ -69,6 +70,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/CreateTopicRequest.h
   include/tencentcloud/ckafka/v20190819/model/DeleteAclResponse.h
   include/tencentcloud/ckafka/v20190819/model/DynamicRetentionTime.h
+  include/tencentcloud/ckafka/v20190819/model/DescribeTopicSubscribeGroupRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeRouteRequest.h
   include/tencentcloud/ckafka/v20190819/model/FetchMessageByOffsetRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeRegionRequest.h
@@ -89,6 +91,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/Instance.h
   include/tencentcloud/ckafka/v20190819/model/DescribeInstanceAttributesResponse.h
   include/tencentcloud/ckafka/v20190819/model/TopicDetailResponse.h
+  include/tencentcloud/ckafka/v20190819/model/TopicSubscribeGroup.h
   include/tencentcloud/ckafka/v20190819/model/Config.h
   include/tencentcloud/ckafka/v20190819/model/ModifyPasswordRequest.h
   include/tencentcloud/ckafka/v20190819/model/CreateInstancePreRequest.h
@@ -161,6 +164,7 @@ set(ckafka_src
   src/v20190819/model/DescribeACLResponse.cpp
   src/v20190819/model/JgwOperateResponse.cpp
   src/v20190819/model/ZoneInfo.cpp
+  src/v20190819/model/DescribeTopicSubscribeGroupResponse.cpp
   src/v20190819/model/DescribeCkafkaZoneRequest.cpp
   src/v20190819/model/Topic.cpp
   src/v20190819/model/Tag.cpp
@@ -189,6 +193,7 @@ set(ckafka_src
   src/v20190819/model/CreateTopicRequest.cpp
   src/v20190819/model/DeleteAclResponse.cpp
   src/v20190819/model/DynamicRetentionTime.cpp
+  src/v20190819/model/DescribeTopicSubscribeGroupRequest.cpp
   src/v20190819/model/DescribeRouteRequest.cpp
   src/v20190819/model/FetchMessageByOffsetRequest.cpp
   src/v20190819/model/DescribeRegionRequest.cpp
@@ -209,6 +214,7 @@ set(ckafka_src
   src/v20190819/model/Instance.cpp
   src/v20190819/model/DescribeInstanceAttributesResponse.cpp
   src/v20190819/model/TopicDetailResponse.cpp
+  src/v20190819/model/TopicSubscribeGroup.cpp
   src/v20190819/model/Config.cpp
   src/v20190819/model/ModifyPasswordRequest.cpp
   src/v20190819/model/CreateInstancePreRequest.cpp

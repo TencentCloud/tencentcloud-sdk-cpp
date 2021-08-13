@@ -27,7 +27,8 @@ PathRule::PathRule() :
     m_serverNameHasBeenSet(false),
     m_originAreaHasBeenSet(false),
     m_forwardUriHasBeenSet(false),
-    m_requestHeadersHasBeenSet(false)
+    m_requestHeadersHasBeenSet(false),
+    m_fullMatchHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,16 @@ CoreInternalOutcome PathRule::Deserialize(const rapidjson::Value &value)
         m_requestHeadersHasBeenSet = true;
     }
 
+    if (value.HasMember("FullMatch") && !value["FullMatch"].IsNull())
+    {
+        if (!value["FullMatch"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `PathRule.FullMatch` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_fullMatch = value["FullMatch"].GetBool();
+        m_fullMatchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +195,14 @@ void PathRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_fullMatchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FullMatch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fullMatch, allocator);
     }
 
 }
@@ -299,5 +318,21 @@ void PathRule::SetRequestHeaders(const vector<HttpHeaderRule>& _requestHeaders)
 bool PathRule::RequestHeadersHasBeenSet() const
 {
     return m_requestHeadersHasBeenSet;
+}
+
+bool PathRule::GetFullMatch() const
+{
+    return m_fullMatch;
+}
+
+void PathRule::SetFullMatch(const bool& _fullMatch)
+{
+    m_fullMatch = _fullMatch;
+    m_fullMatchHasBeenSet = true;
+}
+
+bool PathRule::FullMatchHasBeenSet() const
+{
+    return m_fullMatchHasBeenSet;
 }
 
