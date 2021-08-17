@@ -41,7 +41,8 @@ Machine::Machine() :
     m_instanceStateHasBeenSet(false),
     m_licenseStatusHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_hasAssetScanHasBeenSet(false)
+    m_hasAssetScanHasBeenSet(false),
+    m_machineTypeHasBeenSet(false)
 {
 }
 
@@ -277,6 +278,16 @@ CoreInternalOutcome Machine::Deserialize(const rapidjson::Value &value)
         m_hasAssetScanHasBeenSet = true;
     }
 
+    if (value.HasMember("MachineType") && !value["MachineType"].IsNull())
+    {
+        if (!value["MachineType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Machine.MachineType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineType = string(value["MachineType"].GetString());
+        m_machineTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -458,6 +469,14 @@ void Machine::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "HasAssetScan";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hasAssetScan, allocator);
+    }
+
+    if (m_machineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -797,5 +816,21 @@ void Machine::SetHasAssetScan(const uint64_t& _hasAssetScan)
 bool Machine::HasAssetScanHasBeenSet() const
 {
     return m_hasAssetScanHasBeenSet;
+}
+
+string Machine::GetMachineType() const
+{
+    return m_machineType;
+}
+
+void Machine::SetMachineType(const string& _machineType)
+{
+    m_machineType = _machineType;
+    m_machineTypeHasBeenSet = true;
+}
+
+bool Machine::MachineTypeHasBeenSet() const
+{
+    return m_machineTypeHasBeenSet;
 }
 

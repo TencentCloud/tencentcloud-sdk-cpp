@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取歌词详情
+                     * 获取歌词或者波形图详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Lyric 歌词详情
+                     * @return Lyric 歌词或者波形图详情
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Lyric GetLyric() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 歌词详情
+                     * 歌词或者波形图详情
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Lyric m_lyric;

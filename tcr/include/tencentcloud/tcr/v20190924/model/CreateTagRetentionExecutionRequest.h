@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool RetentionIdHasBeenSet() const;
 
                     /**
-                     * 获取是否模拟执行
-                     * @return DryRun 是否模拟执行
+                     * 获取是否模拟执行，默认值为false，即非模拟执行
+                     * @return DryRun 是否模拟执行，默认值为false，即非模拟执行
                      */
                     bool GetDryRun() const;
 
                     /**
-                     * 设置是否模拟执行
-                     * @param DryRun 是否模拟执行
+                     * 设置是否模拟执行，默认值为false，即非模拟执行
+                     * @param DryRun 是否模拟执行，默认值为false，即非模拟执行
                      */
                     void SetDryRun(const bool& _dryRun);
 
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_retentionIdHasBeenSet;
 
                     /**
-                     * 是否模拟执行
+                     * 是否模拟执行，默认值为false，即非模拟执行
                      */
                     bool m_dryRun;
                     bool m_dryRunHasBeenSet;

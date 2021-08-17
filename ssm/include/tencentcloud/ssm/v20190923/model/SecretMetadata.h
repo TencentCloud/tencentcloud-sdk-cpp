@@ -278,6 +278,72 @@ namespace TencentCloud
                      */
                     bool ProductNameHasBeenSet() const;
 
+                    /**
+                     * 获取当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceName 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetResourceName() const;
+
+                    /**
+                     * 设置当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ResourceName 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetResourceName(const std::string& _resourceName);
+
+                    /**
+                     * 判断参数 ResourceName 是否已赋值
+                     * @return ResourceName 是否已赋值
+                     */
+                    bool ResourceNameHasBeenSet() const;
+
+                    /**
+                     * 获取当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProjectID 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetProjectID() const;
+
+                    /**
+                     * 设置当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProjectID 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProjectID(const int64_t& _projectID);
+
+                    /**
+                     * 判断参数 ProjectID 是否已赋值
+                     * @return ProjectID 是否已赋值
+                     */
+                    bool ProjectIDHasBeenSet() const;
+
+                    /**
+                     * 获取当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AssociatedInstanceIDs 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetAssociatedInstanceIDs() const;
+
+                    /**
+                     * 设置当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AssociatedInstanceIDs 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAssociatedInstanceIDs(const std::vector<std::string>& _associatedInstanceIDs);
+
+                    /**
+                     * 判断参数 AssociatedInstanceIDs 是否已赋值
+                     * @return AssociatedInstanceIDs 是否已赋值
+                     */
+                    bool AssociatedInstanceIDsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -355,6 +421,27 @@ namespace TencentCloud
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
+
+                    /**
+                     * 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resourceName;
+                    bool m_resourceNameHasBeenSet;
+
+                    /**
+                     * 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_projectID;
+                    bool m_projectIDHasBeenSet;
+
+                    /**
+                     * 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_associatedInstanceIDs;
+                    bool m_associatedInstanceIDsHasBeenSet;
 
                 };
             }

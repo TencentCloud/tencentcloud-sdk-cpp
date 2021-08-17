@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool CronSettingHasBeenSet() const;
 
                     /**
-                     * 获取是否禁用规则
-                     * @return Disabled 是否禁用规则
+                     * 获取是否禁用规则，默认值为false
+                     * @return Disabled 是否禁用规则，默认值为false
                      */
                     bool GetDisabled() const;
 
                     /**
-                     * 设置是否禁用规则
-                     * @param Disabled 是否禁用规则
+                     * 设置是否禁用规则，默认值为false
+                     * @param Disabled 是否禁用规则，默认值为false
                      */
                     void SetDisabled(const bool& _disabled);
 
@@ -160,7 +160,7 @@ namespace TencentCloud
                     bool m_cronSettingHasBeenSet;
 
                     /**
-                     * 是否禁用规则
+                     * 是否禁用规则，默认值为false
                      */
                     bool m_disabled;
                     bool m_disabledHasBeenSet;

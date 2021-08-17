@@ -764,6 +764,50 @@ namespace TencentCloud
                      */
                     bool SsaEventIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否新接入的云防事件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsNewCfwEvent 是否新接入的云防事件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsNewCfwEvent() const;
+
+                    /**
+                     * 设置是否新接入的云防事件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsNewCfwEvent 是否新接入的云防事件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsNewCfwEvent(const bool& _isNewCfwEvent);
+
+                    /**
+                     * 判断参数 IsNewCfwEvent 是否已赋值
+                     * @return IsNewCfwEvent 是否已赋值
+                     */
+                    bool IsNewCfwEventHasBeenSet() const;
+
+                    /**
+                     * 获取出入站方向
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Direction 出入站方向
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDirection() const;
+
+                    /**
+                     * 设置出入站方向
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Direction 出入站方向
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDirection(const std::string& _direction);
+
+                    /**
+                     * 判断参数 Direction 是否已赋值
+                     * @return Direction 是否已赋值
+                     */
+                    bool DirectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -994,6 +1038,20 @@ namespace TencentCloud
                      */
                     std::string m_ssaEventId;
                     bool m_ssaEventIdHasBeenSet;
+
+                    /**
+                     * 是否新接入的云防事件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isNewCfwEvent;
+                    bool m_isNewCfwEventHasBeenSet;
+
+                    /**
+                     * 出入站方向
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_direction;
+                    bool m_directionHasBeenSet;
 
                 };
             }

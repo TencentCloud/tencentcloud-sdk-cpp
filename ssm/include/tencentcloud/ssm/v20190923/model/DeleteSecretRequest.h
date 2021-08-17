@@ -62,13 +62,17 @@ namespace TencentCloud
 
                     /**
                      * 获取指定计划删除日期，单位（天），0（默认）表示立即删除， 1-30 表示预留的天数，超出该日期之后彻底删除。
+当凭据类型为SSH密钥对凭据时，此字段只能取值只能为0。
                      * @return RecoveryWindowInDays 指定计划删除日期，单位（天），0（默认）表示立即删除， 1-30 表示预留的天数，超出该日期之后彻底删除。
+当凭据类型为SSH密钥对凭据时，此字段只能取值只能为0。
                      */
                     uint64_t GetRecoveryWindowInDays() const;
 
                     /**
                      * 设置指定计划删除日期，单位（天），0（默认）表示立即删除， 1-30 表示预留的天数，超出该日期之后彻底删除。
+当凭据类型为SSH密钥对凭据时，此字段只能取值只能为0。
                      * @param RecoveryWindowInDays 指定计划删除日期，单位（天），0（默认）表示立即删除， 1-30 表示预留的天数，超出该日期之后彻底删除。
+当凭据类型为SSH密钥对凭据时，此字段只能取值只能为0。
                      */
                     void SetRecoveryWindowInDays(const uint64_t& _recoveryWindowInDays);
 
@@ -77,6 +81,32 @@ namespace TencentCloud
                      * @return RecoveryWindowInDays 是否已赋值
                      */
                     bool RecoveryWindowInDaysHasBeenSet() const;
+
+                    /**
+                     * 获取当凭据类型为SSH密钥对凭据时，此字段有效，取值：
+True -- 表示不仅仅清理此凭据中存储的SSH密钥信息，还会将SSH密钥对从CVM侧进行清理。注意，如果SSH密钥此时绑定了CVM实例，那么会清理失败。
+False --  表示仅仅清理此凭据中存储的SSH密钥信息，不在CVM进侧进行清理。
+                     * @return CleanSSHKey 当凭据类型为SSH密钥对凭据时，此字段有效，取值：
+True -- 表示不仅仅清理此凭据中存储的SSH密钥信息，还会将SSH密钥对从CVM侧进行清理。注意，如果SSH密钥此时绑定了CVM实例，那么会清理失败。
+False --  表示仅仅清理此凭据中存储的SSH密钥信息，不在CVM进侧进行清理。
+                     */
+                    bool GetCleanSSHKey() const;
+
+                    /**
+                     * 设置当凭据类型为SSH密钥对凭据时，此字段有效，取值：
+True -- 表示不仅仅清理此凭据中存储的SSH密钥信息，还会将SSH密钥对从CVM侧进行清理。注意，如果SSH密钥此时绑定了CVM实例，那么会清理失败。
+False --  表示仅仅清理此凭据中存储的SSH密钥信息，不在CVM进侧进行清理。
+                     * @param CleanSSHKey 当凭据类型为SSH密钥对凭据时，此字段有效，取值：
+True -- 表示不仅仅清理此凭据中存储的SSH密钥信息，还会将SSH密钥对从CVM侧进行清理。注意，如果SSH密钥此时绑定了CVM实例，那么会清理失败。
+False --  表示仅仅清理此凭据中存储的SSH密钥信息，不在CVM进侧进行清理。
+                     */
+                    void SetCleanSSHKey(const bool& _cleanSSHKey);
+
+                    /**
+                     * 判断参数 CleanSSHKey 是否已赋值
+                     * @return CleanSSHKey 是否已赋值
+                     */
+                    bool CleanSSHKeyHasBeenSet() const;
 
                 private:
 
@@ -88,9 +118,18 @@ namespace TencentCloud
 
                     /**
                      * 指定计划删除日期，单位（天），0（默认）表示立即删除， 1-30 表示预留的天数，超出该日期之后彻底删除。
+当凭据类型为SSH密钥对凭据时，此字段只能取值只能为0。
                      */
                     uint64_t m_recoveryWindowInDays;
                     bool m_recoveryWindowInDaysHasBeenSet;
+
+                    /**
+                     * 当凭据类型为SSH密钥对凭据时，此字段有效，取值：
+True -- 表示不仅仅清理此凭据中存储的SSH密钥信息，还会将SSH密钥对从CVM侧进行清理。注意，如果SSH密钥此时绑定了CVM实例，那么会清理失败。
+False --  表示仅仅清理此凭据中存储的SSH密钥信息，不在CVM进侧进行清理。
+                     */
+                    bool m_cleanSSHKey;
+                    bool m_cleanSSHKeyHasBeenSet;
 
                 };
             }

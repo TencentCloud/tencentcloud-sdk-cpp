@@ -32,7 +32,10 @@ SecretMetadata::SecretMetadata() :
     m_rotationStatusHasBeenSet(false),
     m_nextRotationTimeHasBeenSet(false),
     m_secretTypeHasBeenSet(false),
-    m_productNameHasBeenSet(false)
+    m_productNameHasBeenSet(false),
+    m_resourceNameHasBeenSet(false),
+    m_projectIDHasBeenSet(false),
+    m_associatedInstanceIDsHasBeenSet(false)
 {
 }
 
@@ -161,6 +164,39 @@ CoreInternalOutcome SecretMetadata::Deserialize(const rapidjson::Value &value)
         m_productNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceName") && !value["ResourceName"].IsNull())
+    {
+        if (!value["ResourceName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SecretMetadata.ResourceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceName = string(value["ResourceName"].GetString());
+        m_resourceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProjectID") && !value["ProjectID"].IsNull())
+    {
+        if (!value["ProjectID"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `SecretMetadata.ProjectID` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_projectID = value["ProjectID"].GetInt64();
+        m_projectIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("AssociatedInstanceIDs") && !value["AssociatedInstanceIDs"].IsNull())
+    {
+        if (!value["AssociatedInstanceIDs"].IsArray())
+            return CoreInternalOutcome(Error("response `SecretMetadata.AssociatedInstanceIDs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AssociatedInstanceIDs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_associatedInstanceIDs.push_back((*itr).GetString());
+        }
+        m_associatedInstanceIDsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +298,35 @@ void SecretMetadata::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ProductName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_productName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_projectID, allocator);
+    }
+
+    if (m_associatedInstanceIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssociatedInstanceIDs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_associatedInstanceIDs.begin(); itr != m_associatedInstanceIDs.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -457,5 +522,53 @@ void SecretMetadata::SetProductName(const string& _productName)
 bool SecretMetadata::ProductNameHasBeenSet() const
 {
     return m_productNameHasBeenSet;
+}
+
+string SecretMetadata::GetResourceName() const
+{
+    return m_resourceName;
+}
+
+void SecretMetadata::SetResourceName(const string& _resourceName)
+{
+    m_resourceName = _resourceName;
+    m_resourceNameHasBeenSet = true;
+}
+
+bool SecretMetadata::ResourceNameHasBeenSet() const
+{
+    return m_resourceNameHasBeenSet;
+}
+
+int64_t SecretMetadata::GetProjectID() const
+{
+    return m_projectID;
+}
+
+void SecretMetadata::SetProjectID(const int64_t& _projectID)
+{
+    m_projectID = _projectID;
+    m_projectIDHasBeenSet = true;
+}
+
+bool SecretMetadata::ProjectIDHasBeenSet() const
+{
+    return m_projectIDHasBeenSet;
+}
+
+vector<string> SecretMetadata::GetAssociatedInstanceIDs() const
+{
+    return m_associatedInstanceIDs;
+}
+
+void SecretMetadata::SetAssociatedInstanceIDs(const vector<string>& _associatedInstanceIDs)
+{
+    m_associatedInstanceIDs = _associatedInstanceIDs;
+    m_associatedInstanceIDsHasBeenSet = true;
+}
+
+bool SecretMetadata::AssociatedInstanceIDsHasBeenSet() const
+{
+    return m_associatedInstanceIDsHasBeenSet;
 }
 

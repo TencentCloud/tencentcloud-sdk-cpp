@@ -175,17 +175,17 @@ namespace TencentCloud
                     bool SrcIpHasBeenSet() const;
 
                     /**
-                     * 获取失败：FAILED；成功：SUCCESS
+                     * 获取SUCCESS：破解成功；FAILED：破解失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 失败：FAILED；成功：SUCCESS
+                     * @return Status SUCCESS：破解成功；FAILED：破解失败
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置失败：FAILED；成功：SUCCESS
+                     * 设置SUCCESS：破解成功；FAILED：破解失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 失败：FAILED；成功：SUCCESS
+                     * @param Status SUCCESS：破解成功；FAILED：破解失败
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStatus(const std::string& _status);
@@ -285,17 +285,17 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取阻断状态：0-未阻断；1-已阻断；2-阻断失败；3-内网攻击暂不支持阻断；4-安平暂不支持阻断
+                     * 获取阻断状态：1-阻断成功；非1-阻断失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BanStatus 阻断状态：0-未阻断；1-已阻断；2-阻断失败；3-内网攻击暂不支持阻断；4-安平暂不支持阻断
+                     * @return BanStatus 阻断状态：1-阻断成功；非1-阻断失败
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetBanStatus() const;
 
                     /**
-                     * 设置阻断状态：0-未阻断；1-已阻断；2-阻断失败；3-内网攻击暂不支持阻断；4-安平暂不支持阻断
+                     * 设置阻断状态：1-阻断成功；非1-阻断失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BanStatus 阻断状态：0-未阻断；1-已阻断；2-阻断失败；3-内网攻击暂不支持阻断；4-安平暂不支持阻断
+                     * @param BanStatus 阻断状态：1-阻断成功；非1-阻断失败
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBanStatus(const uint64_t& _banStatus);
@@ -460,6 +460,28 @@ namespace TencentCloud
                      */
                     bool ModifyTimeHasBeenSet() const;
 
+                    /**
+                     * 获取实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceId 实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceId 实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -504,7 +526,7 @@ namespace TencentCloud
                     bool m_srcIpHasBeenSet;
 
                     /**
-                     * 失败：FAILED；成功：SUCCESS
+                     * SUCCESS：破解成功；FAILED：破解失败
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
@@ -539,7 +561,7 @@ namespace TencentCloud
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 阻断状态：0-未阻断；1-已阻断；2-阻断失败；3-内网攻击暂不支持阻断；4-安平暂不支持阻断
+                     * 阻断状态：1-阻断成功；非1-阻断失败
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_banStatus;
@@ -593,6 +615,13 @@ namespace TencentCloud
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
+
+                    /**
+                     * 实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                 };
             }

@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/ssm/v20190923/model/CreateProductSecretRequest.h>
 #include <tencentcloud/ssm/v20190923/model/CreateProductSecretResponse.h>
+#include <tencentcloud/ssm/v20190923/model/CreateSSHKeyPairSecretRequest.h>
+#include <tencentcloud/ssm/v20190923/model/CreateSSHKeyPairSecretResponse.h>
 #include <tencentcloud/ssm/v20190923/model/CreateSecretRequest.h>
 #include <tencentcloud/ssm/v20190923/model/CreateSecretResponse.h>
 #include <tencentcloud/ssm/v20190923/model/DeleteSecretRequest.h>
@@ -47,6 +49,8 @@
 #include <tencentcloud/ssm/v20190923/model/EnableSecretResponse.h>
 #include <tencentcloud/ssm/v20190923/model/GetRegionsRequest.h>
 #include <tencentcloud/ssm/v20190923/model/GetRegionsResponse.h>
+#include <tencentcloud/ssm/v20190923/model/GetSSHKeyPairValueRequest.h>
+#include <tencentcloud/ssm/v20190923/model/GetSSHKeyPairValueResponse.h>
 #include <tencentcloud/ssm/v20190923/model/GetSecretValueRequest.h>
 #include <tencentcloud/ssm/v20190923/model/GetSecretValueResponse.h>
 #include <tencentcloud/ssm/v20190923/model/GetServiceStatusRequest.h>
@@ -84,6 +88,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateProductSecretResponse> CreateProductSecretOutcome;
                 typedef std::future<CreateProductSecretOutcome> CreateProductSecretOutcomeCallable;
                 typedef std::function<void(const SsmClient*, const Model::CreateProductSecretRequest&, CreateProductSecretOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProductSecretAsyncHandler;
+                typedef Outcome<Error, Model::CreateSSHKeyPairSecretResponse> CreateSSHKeyPairSecretOutcome;
+                typedef std::future<CreateSSHKeyPairSecretOutcome> CreateSSHKeyPairSecretOutcomeCallable;
+                typedef std::function<void(const SsmClient*, const Model::CreateSSHKeyPairSecretRequest&, CreateSSHKeyPairSecretOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSSHKeyPairSecretAsyncHandler;
                 typedef Outcome<Error, Model::CreateSecretResponse> CreateSecretOutcome;
                 typedef std::future<CreateSecretOutcome> CreateSecretOutcomeCallable;
                 typedef std::function<void(const SsmClient*, const Model::CreateSecretRequest&, CreateSecretOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecretAsyncHandler;
@@ -117,6 +124,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GetRegionsResponse> GetRegionsOutcome;
                 typedef std::future<GetRegionsOutcome> GetRegionsOutcomeCallable;
                 typedef std::function<void(const SsmClient*, const Model::GetRegionsRequest&, GetRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRegionsAsyncHandler;
+                typedef Outcome<Error, Model::GetSSHKeyPairValueResponse> GetSSHKeyPairValueOutcome;
+                typedef std::future<GetSSHKeyPairValueOutcome> GetSSHKeyPairValueOutcomeCallable;
+                typedef std::function<void(const SsmClient*, const Model::GetSSHKeyPairValueRequest&, GetSSHKeyPairValueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetSSHKeyPairValueAsyncHandler;
                 typedef Outcome<Error, Model::GetSecretValueResponse> GetSecretValueOutcome;
                 typedef std::future<GetSecretValueOutcome> GetSecretValueOutcomeCallable;
                 typedef std::function<void(const SsmClient*, const Model::GetSecretValueRequest&, GetSecretValueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetSecretValueAsyncHandler;
@@ -158,6 +168,15 @@ namespace TencentCloud
                 CreateProductSecretOutcome CreateProductSecret(const Model::CreateProductSecretRequest &request);
                 void CreateProductSecretAsync(const Model::CreateProductSecretRequest& request, const CreateProductSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateProductSecretOutcomeCallable CreateProductSecretCallable(const Model::CreateProductSecretRequest& request);
+
+                /**
+                 *创建用于托管SSH密钥对的凭据
+                 * @param req CreateSSHKeyPairSecretRequest
+                 * @return CreateSSHKeyPairSecretOutcome
+                 */
+                CreateSSHKeyPairSecretOutcome CreateSSHKeyPairSecret(const Model::CreateSSHKeyPairSecretRequest &request);
+                void CreateSSHKeyPairSecretAsync(const Model::CreateSSHKeyPairSecretRequest& request, const CreateSSHKeyPairSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSSHKeyPairSecretOutcomeCallable CreateSSHKeyPairSecretCallable(const Model::CreateSSHKeyPairSecretRequest& request);
 
                 /**
                  *创建新的凭据信息，通过KMS进行加密保护。每个Region最多可创建存储1000个凭据信息。
@@ -260,6 +279,15 @@ namespace TencentCloud
                 GetRegionsOutcome GetRegions(const Model::GetRegionsRequest &request);
                 void GetRegionsAsync(const Model::GetRegionsRequest& request, const GetRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetRegionsOutcomeCallable GetRegionsCallable(const Model::GetRegionsRequest& request);
+
+                /**
+                 *获取SSH密钥对凭据明文信息。
+                 * @param req GetSSHKeyPairValueRequest
+                 * @return GetSSHKeyPairValueOutcome
+                 */
+                GetSSHKeyPairValueOutcome GetSSHKeyPairValue(const Model::GetSSHKeyPairValueRequest &request);
+                void GetSSHKeyPairValueAsync(const Model::GetSSHKeyPairValueRequest& request, const GetSSHKeyPairValueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetSSHKeyPairValueOutcomeCallable GetSSHKeyPairValueCallable(const Model::GetSSHKeyPairValueRequest& request);
 
                 /**
                  *对于用户自定义凭据，通过指定凭据名称和版本来获取凭据的明文信息；

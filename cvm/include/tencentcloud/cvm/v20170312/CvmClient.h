@@ -67,6 +67,8 @@
 #include <tencentcloud/cvm/v20170312/model/DescribeInstanceVncUrlResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeInstancesRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeInstancesResponse.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeInstancesModificationRequest.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeInstancesModificationResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeInstancesOperationLimitRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeInstancesOperationLimitResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeInstancesStatusRequest.h>
@@ -241,6 +243,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
                 typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeInstancesModificationResponse> DescribeInstancesModificationOutcome;
+                typedef std::future<DescribeInstancesModificationOutcome> DescribeInstancesModificationOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::DescribeInstancesModificationRequest&, DescribeInstancesModificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesModificationAsyncHandler;
                 typedef Outcome<Error, Model::DescribeInstancesOperationLimitResponse> DescribeInstancesOperationLimitOutcome;
                 typedef std::future<DescribeInstancesOperationLimitOutcome> DescribeInstancesOperationLimitOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DescribeInstancesOperationLimitRequest&, DescribeInstancesOperationLimitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesOperationLimitAsyncHandler;
@@ -629,6 +634,15 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 DescribeInstancesOutcome DescribeInstances(const Model::DescribeInstancesRequest &request);
                 void DescribeInstancesAsync(const Model::DescribeInstancesRequest& request, const DescribeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request);
+
+                /**
+                 *本接口 (DescribeInstancesModification) 用于查询指定实例支持调整的机型配置。
+                 * @param req DescribeInstancesModificationRequest
+                 * @return DescribeInstancesModificationOutcome
+                 */
+                DescribeInstancesModificationOutcome DescribeInstancesModification(const Model::DescribeInstancesModificationRequest &request);
+                void DescribeInstancesModificationAsync(const Model::DescribeInstancesModificationRequest& request, const DescribeInstancesModificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstancesModificationOutcomeCallable DescribeInstancesModificationCallable(const Model::DescribeInstancesModificationRequest& request);
 
                 /**
                  *本接口（DescribeInstancesOperationLimit）用于查询实例操作限制。

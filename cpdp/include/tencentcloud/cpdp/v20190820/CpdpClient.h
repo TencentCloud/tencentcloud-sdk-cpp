@@ -35,6 +35,8 @@
 #include <tencentcloud/cpdp/v20190820/model/ApplyTradeResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyWithdrawalRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyWithdrawalResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/BindAccountRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/BindAccountResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/BindAcctRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/BindAcctResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/BindRelateAccReUnionPayRequest.h>
@@ -59,6 +61,8 @@
 #include <tencentcloud/cpdp/v20190820/model/CreateAgentTaxPaymentInfosResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateCustAcctIdRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateCustAcctIdResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateExternalAnchorRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateExternalAnchorResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateInvoiceRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateInvoiceResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateInvoiceV2Request.h>
@@ -95,6 +99,8 @@
 #include <tencentcloud/cpdp/v20190820/model/MigrateOrderRefundQueryResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ModifyAgentTaxPaymentInfoRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/ModifyAgentTaxPaymentInfoResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/ModifyBindedAccountRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/ModifyBindedAccountResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ModifyMerchantRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/ModifyMerchantResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ModifyMntMbrBindRelateAcctBankCodeRequest.h>
@@ -209,6 +215,8 @@
 #include <tencentcloud/cpdp/v20190820/model/UnbindRelateAcctResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/UnifiedOrderRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/UnifiedOrderResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/UploadExternalAnchorInfoRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/UploadExternalAnchorInfoResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/UploadTaxListRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/UploadTaxListResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/UploadTaxPaymentRequest.h>
@@ -247,6 +255,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ApplyWithdrawalResponse> ApplyWithdrawalOutcome;
                 typedef std::future<ApplyWithdrawalOutcome> ApplyWithdrawalOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::ApplyWithdrawalRequest&, ApplyWithdrawalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyWithdrawalAsyncHandler;
+                typedef Outcome<Error, Model::BindAccountResponse> BindAccountOutcome;
+                typedef std::future<BindAccountOutcome> BindAccountOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::BindAccountRequest&, BindAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindAccountAsyncHandler;
                 typedef Outcome<Error, Model::BindAcctResponse> BindAcctOutcome;
                 typedef std::future<BindAcctOutcome> BindAcctOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::BindAcctRequest&, BindAcctOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindAcctAsyncHandler;
@@ -283,6 +294,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateCustAcctIdResponse> CreateCustAcctIdOutcome;
                 typedef std::future<CreateCustAcctIdOutcome> CreateCustAcctIdOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateCustAcctIdRequest&, CreateCustAcctIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustAcctIdAsyncHandler;
+                typedef Outcome<Error, Model::CreateExternalAnchorResponse> CreateExternalAnchorOutcome;
+                typedef std::future<CreateExternalAnchorOutcome> CreateExternalAnchorOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::CreateExternalAnchorRequest&, CreateExternalAnchorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExternalAnchorAsyncHandler;
                 typedef Outcome<Error, Model::CreateInvoiceResponse> CreateInvoiceOutcome;
                 typedef std::future<CreateInvoiceOutcome> CreateInvoiceOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateInvoiceRequest&, CreateInvoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInvoiceAsyncHandler;
@@ -337,6 +351,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyAgentTaxPaymentInfoResponse> ModifyAgentTaxPaymentInfoOutcome;
                 typedef std::future<ModifyAgentTaxPaymentInfoOutcome> ModifyAgentTaxPaymentInfoOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::ModifyAgentTaxPaymentInfoRequest&, ModifyAgentTaxPaymentInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAgentTaxPaymentInfoAsyncHandler;
+                typedef Outcome<Error, Model::ModifyBindedAccountResponse> ModifyBindedAccountOutcome;
+                typedef std::future<ModifyBindedAccountOutcome> ModifyBindedAccountOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::ModifyBindedAccountRequest&, ModifyBindedAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBindedAccountAsyncHandler;
                 typedef Outcome<Error, Model::ModifyMerchantResponse> ModifyMerchantOutcome;
                 typedef std::future<ModifyMerchantOutcome> ModifyMerchantOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::ModifyMerchantRequest&, ModifyMerchantOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMerchantAsyncHandler;
@@ -508,6 +525,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::UnifiedOrderResponse> UnifiedOrderOutcome;
                 typedef std::future<UnifiedOrderOutcome> UnifiedOrderOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::UnifiedOrderRequest&, UnifiedOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnifiedOrderAsyncHandler;
+                typedef Outcome<Error, Model::UploadExternalAnchorInfoResponse> UploadExternalAnchorInfoOutcome;
+                typedef std::future<UploadExternalAnchorInfoOutcome> UploadExternalAnchorInfoOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::UploadExternalAnchorInfoRequest&, UploadExternalAnchorInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadExternalAnchorInfoAsyncHandler;
                 typedef Outcome<Error, Model::UploadTaxListResponse> UploadTaxListOutcome;
                 typedef std::future<UploadTaxListOutcome> UploadTaxListOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::UploadTaxListRequest&, UploadTaxListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadTaxListAsyncHandler;
@@ -573,6 +593,15 @@ namespace TencentCloud
                 ApplyWithdrawalOutcome ApplyWithdrawal(const Model::ApplyWithdrawalRequest &request);
                 void ApplyWithdrawalAsync(const Model::ApplyWithdrawalRequest& request, const ApplyWithdrawalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ApplyWithdrawalOutcomeCallable ApplyWithdrawalCallable(const Model::ApplyWithdrawalRequest& request);
+
+                /**
+                 *灵云-绑定账号
+                 * @param req BindAccountRequest
+                 * @return BindAccountOutcome
+                 */
+                BindAccountOutcome BindAccount(const Model::BindAccountRequest &request);
+                void BindAccountAsync(const Model::BindAccountRequest& request, const BindAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindAccountOutcomeCallable BindAccountCallable(const Model::BindAccountRequest& request);
 
                 /**
                  *商户绑定提现银行卡，每个商户只能绑定一张提现银行卡
@@ -689,6 +718,15 @@ namespace TencentCloud
                 CreateCustAcctIdOutcome CreateCustAcctId(const Model::CreateCustAcctIdRequest &request);
                 void CreateCustAcctIdAsync(const Model::CreateCustAcctIdRequest& request, const CreateCustAcctIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateCustAcctIdOutcomeCallable CreateCustAcctIdCallable(const Model::CreateCustAcctIdRequest& request);
+
+                /**
+                 *灵云-主播入驻
+                 * @param req CreateExternalAnchorRequest
+                 * @return CreateExternalAnchorOutcome
+                 */
+                CreateExternalAnchorOutcome CreateExternalAnchor(const Model::CreateExternalAnchorRequest &request);
+                void CreateExternalAnchorAsync(const Model::CreateExternalAnchorRequest& request, const CreateExternalAnchorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateExternalAnchorOutcomeCallable CreateExternalAnchorCallable(const Model::CreateExternalAnchorRequest& request);
 
                 /**
                  *智慧零售-发票开具
@@ -851,6 +889,15 @@ namespace TencentCloud
                 ModifyAgentTaxPaymentInfoOutcome ModifyAgentTaxPaymentInfo(const Model::ModifyAgentTaxPaymentInfoRequest &request);
                 void ModifyAgentTaxPaymentInfoAsync(const Model::ModifyAgentTaxPaymentInfoRequest& request, const ModifyAgentTaxPaymentInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAgentTaxPaymentInfoOutcomeCallable ModifyAgentTaxPaymentInfoCallable(const Model::ModifyAgentTaxPaymentInfoRequest& request);
+
+                /**
+                 *灵云-重新绑定账号
+                 * @param req ModifyBindedAccountRequest
+                 * @return ModifyBindedAccountOutcome
+                 */
+                ModifyBindedAccountOutcome ModifyBindedAccount(const Model::ModifyBindedAccountRequest &request);
+                void ModifyBindedAccountAsync(const Model::ModifyBindedAccountRequest& request, const ModifyBindedAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBindedAccountOutcomeCallable ModifyBindedAccountCallable(const Model::ModifyBindedAccountRequest& request);
 
                 /**
                  *云鉴-商户信息修改的接口
@@ -1365,6 +1412,15 @@ namespace TencentCloud
                 UnifiedOrderOutcome UnifiedOrder(const Model::UnifiedOrderRequest &request);
                 void UnifiedOrderAsync(const Model::UnifiedOrderRequest& request, const UnifiedOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UnifiedOrderOutcomeCallable UnifiedOrderCallable(const Model::UnifiedOrderRequest& request);
+
+                /**
+                 *灵云-上传主播信息
+                 * @param req UploadExternalAnchorInfoRequest
+                 * @return UploadExternalAnchorInfoOutcome
+                 */
+                UploadExternalAnchorInfoOutcome UploadExternalAnchorInfo(const Model::UploadExternalAnchorInfoRequest &request);
+                void UploadExternalAnchorInfoAsync(const Model::UploadExternalAnchorInfoRequest& request, const UploadExternalAnchorInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UploadExternalAnchorInfoOutcomeCallable UploadExternalAnchorInfoCallable(const Model::UploadExternalAnchorInfoRequest& request);
 
                 /**
                  *直播平台-上传代理商完税列表

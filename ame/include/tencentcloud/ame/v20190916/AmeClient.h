@@ -35,6 +35,10 @@
 #include <tencentcloud/ame/v20190916/model/DescribeItemsResponse.h>
 #include <tencentcloud/ame/v20190916/model/DescribeKTVMusicDetailRequest.h>
 #include <tencentcloud/ame/v20190916/model/DescribeKTVMusicDetailResponse.h>
+#include <tencentcloud/ame/v20190916/model/DescribeKTVPlaylistDetailRequest.h>
+#include <tencentcloud/ame/v20190916/model/DescribeKTVPlaylistDetailResponse.h>
+#include <tencentcloud/ame/v20190916/model/DescribeKTVPlaylistsRequest.h>
+#include <tencentcloud/ame/v20190916/model/DescribeKTVPlaylistsResponse.h>
 #include <tencentcloud/ame/v20190916/model/DescribeLyricRequest.h>
 #include <tencentcloud/ame/v20190916/model/DescribeLyricResponse.h>
 #include <tencentcloud/ame/v20190916/model/DescribeMusicRequest.h>
@@ -87,6 +91,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeKTVMusicDetailResponse> DescribeKTVMusicDetailOutcome;
                 typedef std::future<DescribeKTVMusicDetailOutcome> DescribeKTVMusicDetailOutcomeCallable;
                 typedef std::function<void(const AmeClient*, const Model::DescribeKTVMusicDetailRequest&, DescribeKTVMusicDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKTVMusicDetailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeKTVPlaylistDetailResponse> DescribeKTVPlaylistDetailOutcome;
+                typedef std::future<DescribeKTVPlaylistDetailOutcome> DescribeKTVPlaylistDetailOutcomeCallable;
+                typedef std::function<void(const AmeClient*, const Model::DescribeKTVPlaylistDetailRequest&, DescribeKTVPlaylistDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKTVPlaylistDetailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeKTVPlaylistsResponse> DescribeKTVPlaylistsOutcome;
+                typedef std::future<DescribeKTVPlaylistsOutcome> DescribeKTVPlaylistsOutcomeCallable;
+                typedef std::function<void(const AmeClient*, const Model::DescribeKTVPlaylistsRequest&, DescribeKTVPlaylistsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKTVPlaylistsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeLyricResponse> DescribeLyricOutcome;
                 typedef std::future<DescribeLyricOutcome> DescribeLyricOutcomeCallable;
                 typedef std::function<void(const AmeClient*, const Model::DescribeLyricRequest&, DescribeLyricOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLyricAsyncHandler;
@@ -175,7 +185,25 @@ namespace TencentCloud
                 DescribeKTVMusicDetailOutcomeCallable DescribeKTVMusicDetailCallable(const Model::DescribeKTVMusicDetailRequest& request);
 
                 /**
-                 *根据接口的模式及歌曲ID来取得歌词信息。
+                 *根据歌单 Id 获取歌单详情，包括歌单的基础信息以及歌曲列表。
+                 * @param req DescribeKTVPlaylistDetailRequest
+                 * @return DescribeKTVPlaylistDetailOutcome
+                 */
+                DescribeKTVPlaylistDetailOutcome DescribeKTVPlaylistDetail(const Model::DescribeKTVPlaylistDetailRequest &request);
+                void DescribeKTVPlaylistDetailAsync(const Model::DescribeKTVPlaylistDetailRequest& request, const DescribeKTVPlaylistDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKTVPlaylistDetailOutcomeCallable DescribeKTVPlaylistDetailCallable(const Model::DescribeKTVPlaylistDetailRequest& request);
+
+                /**
+                 *获取即时广播曲库推荐歌单列表。
+                 * @param req DescribeKTVPlaylistsRequest
+                 * @return DescribeKTVPlaylistsOutcome
+                 */
+                DescribeKTVPlaylistsOutcome DescribeKTVPlaylists(const Model::DescribeKTVPlaylistsRequest &request);
+                void DescribeKTVPlaylistsAsync(const Model::DescribeKTVPlaylistsRequest& request, const DescribeKTVPlaylistsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKTVPlaylistsOutcomeCallable DescribeKTVPlaylistsCallable(const Model::DescribeKTVPlaylistsRequest& request);
+
+                /**
+                 *根据接口的模式及歌曲ID来取得歌词信息或者波形图信息。
                  * @param req DescribeLyricRequest
                  * @return DescribeLyricOutcome
                  */

@@ -24,7 +24,8 @@ using namespace std;
 
 DeleteSecretRequest::DeleteSecretRequest() :
     m_secretNameHasBeenSet(false),
-    m_recoveryWindowInDaysHasBeenSet(false)
+    m_recoveryWindowInDaysHasBeenSet(false),
+    m_cleanSSHKeyHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DeleteSecretRequest::ToJsonString() const
         string key = "RecoveryWindowInDays";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_recoveryWindowInDays, allocator);
+    }
+
+    if (m_cleanSSHKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CleanSSHKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cleanSSHKey, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DeleteSecretRequest::SetRecoveryWindowInDays(const uint64_t& _recoveryWindo
 bool DeleteSecretRequest::RecoveryWindowInDaysHasBeenSet() const
 {
     return m_recoveryWindowInDaysHasBeenSet;
+}
+
+bool DeleteSecretRequest::GetCleanSSHKey() const
+{
+    return m_cleanSSHKey;
+}
+
+void DeleteSecretRequest::SetCleanSSHKey(const bool& _cleanSSHKey)
+{
+    m_cleanSSHKey = _cleanSSHKey;
+    m_cleanSSHKeyHasBeenSet = true;
+}
+
+bool DeleteSecretRequest::CleanSSHKeyHasBeenSet() const
+{
+    return m_cleanSSHKeyHasBeenSet;
 }
 
 

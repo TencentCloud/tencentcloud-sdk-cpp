@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取查询开始时间，14天内。本地unix时间戳（1588031999s）
-                     * @return StartTime 查询开始时间，14天内。本地unix时间戳（1588031999s）
+                     * 获取查询开始时间，14天内。本地unix时间戳（1588031999）
+                     * @return StartTime 查询开始时间，14天内。本地unix时间戳（1588031999）
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置查询开始时间，14天内。本地unix时间戳（1588031999s）
-                     * @param StartTime 查询开始时间，14天内。本地unix时间戳（1588031999s）
+                     * 设置查询开始时间，14天内。本地unix时间戳（1588031999）
+                     * @param StartTime 查询开始时间，14天内。本地unix时间戳（1588031999）
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询结束时间，本地unix时间戳（1588031999s）
-                     * @return EndTime 查询结束时间，本地unix时间戳（1588031999s）
+                     * 获取查询结束时间，本地unix时间戳（1588034999）
+                     * @return EndTime 查询结束时间，本地unix时间戳（1588034999）
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置查询结束时间，本地unix时间戳（1588031999s）
-                     * @param EndTime 查询结束时间，本地unix时间戳（1588031999s）
+                     * 设置查询结束时间，本地unix时间戳（1588034999）
+                     * @param EndTime 查询结束时间，本地unix时间戳（1588034999）
                      */
                     void SetEndTime(const uint64_t& _endTime);
 
@@ -159,13 +159,13 @@ namespace TencentCloud
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 查询开始时间，14天内。本地unix时间戳（1588031999s）
+                     * 查询开始时间，14天内。本地unix时间戳（1588031999）
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询结束时间，本地unix时间戳（1588031999s）
+                     * 查询结束时间，本地unix时间戳（1588034999）
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;

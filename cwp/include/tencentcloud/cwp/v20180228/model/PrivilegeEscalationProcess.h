@@ -317,14 +317,14 @@ namespace TencentCloud
                     bool ProcTreeHasBeenSet() const;
 
                     /**
-                     * 获取处理状态
-                     * @return Status 处理状态
+                     * 获取处理状态：0-待处理 2-白名单
+                     * @return Status 处理状态：0-待处理 2-白名单
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置处理状态
-                     * @param Status 处理状态
+                     * 设置处理状态：0-待处理 2-白名单
+                     * @param Status 处理状态：0-待处理 2-白名单
                      */
                     void SetStatus(const uint64_t& _status);
 
@@ -463,7 +463,7 @@ namespace TencentCloud
                     bool m_procTreeHasBeenSet;
 
                     /**
-                     * 处理状态
+                     * 处理状态：0-待处理 2-白名单
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

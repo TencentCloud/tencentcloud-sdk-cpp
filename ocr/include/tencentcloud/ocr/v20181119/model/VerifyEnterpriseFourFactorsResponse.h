@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取核验一致性（1:一致，2:不一致）
-                     * @return State 核验一致性（1:一致，2:不一致）
+                     * 获取核验一致性（1:一致，2:不一致，3:查询无记录）
+                     * @return State 核验一致性（1:一致，2:不一致，3:查询无记录）
                      */
                     int64_t GetState() const;
 
@@ -73,7 +73,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 核验一致性（1:一致，2:不一致）
+                     * 核验一致性（1:一致，2:不一致，3:查询无记录）
                      */
                     int64_t m_state;
                     bool m_stateHasBeenSet;

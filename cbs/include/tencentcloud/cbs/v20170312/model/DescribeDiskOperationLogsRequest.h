@@ -66,24 +66,6 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取要查询的操作日志的起始时间，例如：“2019-11-22 00:00:00"
-                     * @return BeginTime 要查询的操作日志的起始时间，例如：“2019-11-22 00:00:00"
-                     */
-                    std::string GetBeginTime() const;
-
-                    /**
-                     * 设置要查询的操作日志的起始时间，例如：“2019-11-22 00:00:00"
-                     * @param BeginTime 要查询的操作日志的起始时间，例如：“2019-11-22 00:00:00"
-                     */
-                    void SetBeginTime(const std::string& _beginTime);
-
-                    /**
-                     * 判断参数 BeginTime 是否已赋值
-                     * @return BeginTime 是否已赋值
-                     */
-                    bool BeginTimeHasBeenSet() const;
-
-                    /**
                      * 获取要查询的操作日志的截止时间，例如：“2019-11-22 23:59:59"
                      * @return EndTime 要查询的操作日志的截止时间，例如：“2019-11-22 23:59:59"
                      */
@@ -101,6 +83,24 @@ namespace TencentCloud
                      */
                     bool EndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取要查询的操作日志的起始时间，例如：“2019-11-22 00:00:00"
+                     * @return BeginTime 要查询的操作日志的起始时间，例如：“2019-11-22 00:00:00"
+                     */
+                    std::string GetBeginTime() const;
+
+                    /**
+                     * 设置要查询的操作日志的起始时间，例如：“2019-11-22 00:00:00"
+                     * @param BeginTime 要查询的操作日志的起始时间，例如：“2019-11-22 00:00:00"
+                     */
+                    void SetBeginTime(const std::string& _beginTime);
+
+                    /**
+                     * 判断参数 BeginTime 是否已赋值
+                     * @return BeginTime 是否已赋值
+                     */
+                    bool BeginTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -111,16 +111,16 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 要查询的操作日志的起始时间，例如：“2019-11-22 00:00:00"
-                     */
-                    std::string m_beginTime;
-                    bool m_beginTimeHasBeenSet;
-
-                    /**
                      * 要查询的操作日志的截止时间，例如：“2019-11-22 23:59:59"
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 要查询的操作日志的起始时间，例如：“2019-11-22 00:00:00"
+                     */
+                    std::string m_beginTime;
+                    bool m_beginTimeHasBeenSet;
 
                 };
             }

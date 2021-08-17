@@ -413,14 +413,14 @@ namespace TencentCloud
                     bool InstanceStateHasBeenSet() const;
 
                     /**
-                     * 获取授权状态 1 授权 0 未授权
-                     * @return LicenseStatus 授权状态 1 授权 0 未授权
+                     * 获取防篡改 授权状态 1 授权 0 未授权
+                     * @return LicenseStatus 防篡改 授权状态 1 授权 0 未授权
                      */
                     uint64_t GetLicenseStatus() const;
 
                     /**
-                     * 设置授权状态 1 授权 0 未授权
-                     * @param LicenseStatus 授权状态 1 授权 0 未授权
+                     * 设置防篡改 授权状态 1 授权 0 未授权
+                     * @param LicenseStatus 防篡改 授权状态 1 授权 0 未授权
                      */
                     void SetLicenseStatus(const uint64_t& _licenseStatus);
 
@@ -465,6 +465,24 @@ namespace TencentCloud
                      * @return HasAssetScan 是否已赋值
                      */
                     bool HasAssetScanHasBeenSet() const;
+
+                    /**
+                     * 获取机器所属专区类型 CVM 云服务器, BM 黑石, ECM 边缘计算, LH 轻量应用服务器 ,Other 混合云专区
+                     * @return MachineType 机器所属专区类型 CVM 云服务器, BM 黑石, ECM 边缘计算, LH 轻量应用服务器 ,Other 混合云专区
+                     */
+                    std::string GetMachineType() const;
+
+                    /**
+                     * 设置机器所属专区类型 CVM 云服务器, BM 黑石, ECM 边缘计算, LH 轻量应用服务器 ,Other 混合云专区
+                     * @param MachineType 机器所属专区类型 CVM 云服务器, BM 黑石, ECM 边缘计算, LH 轻量应用服务器 ,Other 混合云专区
+                     */
+                    void SetMachineType(const std::string& _machineType);
+
+                    /**
+                     * 判断参数 MachineType 是否已赋值
+                     * @return MachineType 是否已赋值
+                     */
+                    bool MachineTypeHasBeenSet() const;
 
                 private:
 
@@ -587,7 +605,7 @@ namespace TencentCloud
                     bool m_instanceStateHasBeenSet;
 
                     /**
-                     * 授权状态 1 授权 0 未授权
+                     * 防篡改 授权状态 1 授权 0 未授权
                      */
                     uint64_t m_licenseStatus;
                     bool m_licenseStatusHasBeenSet;
@@ -603,6 +621,12 @@ namespace TencentCloud
                      */
                     uint64_t m_hasAssetScan;
                     bool m_hasAssetScanHasBeenSet;
+
+                    /**
+                     * 机器所属专区类型 CVM 云服务器, BM 黑石, ECM 边缘计算, LH 轻量应用服务器 ,Other 混合云专区
+                     */
+                    std::string m_machineType;
+                    bool m_machineTypeHasBeenSet;
 
                 };
             }

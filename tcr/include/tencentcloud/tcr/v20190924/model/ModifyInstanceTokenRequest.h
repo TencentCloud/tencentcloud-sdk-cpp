@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool DescHasBeenSet() const;
 
                     /**
-                     * 获取1为修改描述 2为启动禁用，不填写默认为修改启动禁用
-                     * @return ModifyFlag 1为修改描述 2为启动禁用，不填写默认为修改启动禁用
+                     * 获取1为修改描述 2为操作启动禁用，默认值为2
+                     * @return ModifyFlag 1为修改描述 2为操作启动禁用，默认值为2
                      */
                     int64_t GetModifyFlag() const;
 
                     /**
-                     * 设置1为修改描述 2为启动禁用，不填写默认为修改启动禁用
-                     * @param ModifyFlag 1为修改描述 2为启动禁用，不填写默认为修改启动禁用
+                     * 设置1为修改描述 2为操作启动禁用，默认值为2
+                     * @param ModifyFlag 1为修改描述 2为操作启动禁用，默认值为2
                      */
                     void SetModifyFlag(const int64_t& _modifyFlag);
 
@@ -159,7 +159,7 @@ namespace TencentCloud
                     bool m_descHasBeenSet;
 
                     /**
-                     * 1为修改描述 2为启动禁用，不填写默认为修改启动禁用
+                     * 1为修改描述 2为操作启动禁用，默认值为2
                      */
                     int64_t m_modifyFlag;
                     bool m_modifyFlagHasBeenSet;

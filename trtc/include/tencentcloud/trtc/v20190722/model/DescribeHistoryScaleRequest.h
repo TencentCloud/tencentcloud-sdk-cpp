@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户sdkappid
-                     * @return SdkAppId 用户sdkappid
+                     * 获取用户sdkappid(1400188366)
+                     * @return SdkAppId 用户sdkappid(1400188366)
                      */
                     std::string GetSdkAppId() const;
 
                     /**
-                     * 设置用户sdkappid
-                     * @param SdkAppId 用户sdkappid
+                     * 设置用户sdkappid(1400188366)
+                     * @param SdkAppId 用户sdkappid(1400188366)
                      */
                     void SetSdkAppId(const std::string& _sdkAppId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取查询开始时间，5天内。本地unix时间戳（1588031999s）
-                     * @return StartTime 查询开始时间，5天内。本地unix时间戳（1588031999s）
+                     * 获取查询开始时间，5天内。本地unix时间戳（1587571000s）
+                     * @return StartTime 查询开始时间，5天内。本地unix时间戳（1587571000s）
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置查询开始时间，5天内。本地unix时间戳（1588031999s）
-                     * @param StartTime 查询开始时间，5天内。本地unix时间戳（1588031999s）
+                     * 设置查询开始时间，5天内。本地unix时间戳（1587571000s）
+                     * @param StartTime 查询开始时间，5天内。本地unix时间戳（1587571000s）
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询结束时间，本地unix时间戳（1588031999s）
-                     * @return EndTime 查询结束时间，本地unix时间戳（1588031999s）
+                     * 获取查询结束时间，本地unix时间戳（1588034999s）
+                     * @return EndTime 查询结束时间，本地unix时间戳（1588034999s）
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置查询结束时间，本地unix时间戳（1588031999s）
-                     * @param EndTime 查询结束时间，本地unix时间戳（1588031999s）
+                     * 设置查询结束时间，本地unix时间戳（1588034999s）
+                     * @param EndTime 查询结束时间，本地unix时间戳（1588034999s）
                      */
                     void SetEndTime(const uint64_t& _endTime);
 
@@ -99,19 +99,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户sdkappid
+                     * 用户sdkappid(1400188366)
                      */
                     std::string m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 查询开始时间，5天内。本地unix时间戳（1588031999s）
+                     * 查询开始时间，5天内。本地unix时间戳（1587571000s）
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询结束时间，本地unix时间戳（1588031999s）
+                     * 查询结束时间，本地unix时间戳（1588034999s）
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;

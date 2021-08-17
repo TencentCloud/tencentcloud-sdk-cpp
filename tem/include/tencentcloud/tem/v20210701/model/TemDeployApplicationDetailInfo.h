@@ -269,6 +269,94 @@ namespace TencentCloud
                      */
                     bool CurrentBatchStatusHasBeenSet() const;
 
+                    /**
+                     * 获取新版本version
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NewDeployVersion 新版本version
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetNewDeployVersion() const;
+
+                    /**
+                     * 设置新版本version
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NewDeployVersion 新版本version
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNewDeployVersion(const std::string& _newDeployVersion);
+
+                    /**
+                     * 判断参数 NewDeployVersion 是否已赋值
+                     * @return NewDeployVersion 是否已赋值
+                     */
+                    bool NewDeployVersionHasBeenSet() const;
+
+                    /**
+                     * 获取旧版本version
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OldDeployVersion 旧版本version
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOldDeployVersion() const;
+
+                    /**
+                     * 设置旧版本version
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OldDeployVersion 旧版本version
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOldDeployVersion(const std::string& _oldDeployVersion);
+
+                    /**
+                     * 判断参数 OldDeployVersion 是否已赋值
+                     * @return OldDeployVersion 是否已赋值
+                     */
+                    bool OldDeployVersionHasBeenSet() const;
+
+                    /**
+                     * 获取包名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NewVersionPackageInfo 包名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetNewVersionPackageInfo() const;
+
+                    /**
+                     * 设置包名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NewVersionPackageInfo 包名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNewVersionPackageInfo(const std::string& _newVersionPackageInfo);
+
+                    /**
+                     * 判断参数 NewVersionPackageInfo 是否已赋值
+                     * @return NewVersionPackageInfo 是否已赋值
+                     */
+                    bool NewVersionPackageInfoHasBeenSet() const;
+
+                    /**
+                     * 获取下一批次开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NextBatchStartTime 下一批次开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetNextBatchStartTime() const;
+
+                    /**
+                     * 设置下一批次开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NextBatchStartTime 下一批次开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNextBatchStartTime(const int64_t& _nextBatchStartTime);
+
+                    /**
+                     * 判断参数 NextBatchStartTime 是否已赋值
+                     * @return NextBatchStartTime 是否已赋值
+                     */
+                    bool NextBatchStartTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -340,6 +428,34 @@ namespace TencentCloud
                      */
                     std::string m_currentBatchStatus;
                     bool m_currentBatchStatusHasBeenSet;
+
+                    /**
+                     * 新版本version
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_newDeployVersion;
+                    bool m_newDeployVersionHasBeenSet;
+
+                    /**
+                     * 旧版本version
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_oldDeployVersion;
+                    bool m_oldDeployVersionHasBeenSet;
+
+                    /**
+                     * 包名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_newVersionPackageInfo;
+                    bool m_newVersionPackageInfoHasBeenSet;
+
+                    /**
+                     * 下一批次开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_nextBatchStartTime;
+                    bool m_nextBatchStartTimeHasBeenSet;
 
                 };
             }

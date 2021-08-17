@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool CommIdHasBeenSet() const;
 
                     /**
-                     * 获取查询开始时间，14天内。本地unix时间戳（1588031999s）
-                     * @return StartTime 查询开始时间，14天内。本地unix时间戳（1588031999s）
+                     * 获取查询开始时间，14天内。本地unix时间戳（1590065777）
+                     * @return StartTime 查询开始时间，14天内。本地unix时间戳（1590065777）
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置查询开始时间，14天内。本地unix时间戳（1588031999s）
-                     * @param StartTime 查询开始时间，14天内。本地unix时间戳（1588031999s）
+                     * 设置查询开始时间，14天内。本地unix时间戳（1590065777）
+                     * @param StartTime 查询开始时间，14天内。本地unix时间戳（1590065777）
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询结束时间，本地unix时间戳（1588031999s）
-                     * @return EndTime 查询结束时间，本地unix时间戳（1588031999s）
+                     * 获取查询结束时间，本地unix时间戳（1590065877）
+                     * @return EndTime 查询结束时间，本地unix时间戳（1590065877）
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置查询结束时间，本地unix时间戳（1588031999s）
-                     * @param EndTime 查询结束时间，本地unix时间戳（1588031999s）
+                     * 设置查询结束时间，本地unix时间戳（1590065877）
+                     * @param EndTime 查询结束时间，本地unix时间戳（1590065877）
                      */
                     void SetEndTime(const uint64_t& _endTime);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取用户SDKAppID（1400188366）
-                     * @return SdkAppId 用户SDKAppID（1400188366）
+                     * 获取用户SDKAppID（1400353843）
+                     * @return SdkAppId 用户SDKAppID（1400353843）
                      */
                     std::string GetSdkAppId() const;
 
                     /**
-                     * 设置用户SDKAppID（1400188366）
-                     * @param SdkAppId 用户SDKAppID（1400188366）
+                     * 设置用户SDKAppID（1400353843）
+                     * @param SdkAppId 用户SDKAppID（1400353843）
                      */
                     void SetSdkAppId(const std::string& _sdkAppId);
 
@@ -177,19 +177,19 @@ namespace TencentCloud
                     bool m_commIdHasBeenSet;
 
                     /**
-                     * 查询开始时间，14天内。本地unix时间戳（1588031999s）
+                     * 查询开始时间，14天内。本地unix时间戳（1590065777）
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询结束时间，本地unix时间戳（1588031999s）
+                     * 查询结束时间，本地unix时间戳（1590065877）
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 用户SDKAppID（1400188366）
+                     * 用户SDKAppID（1400353843）
                      */
                     std::string m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取同步实例Id
-                     * @return ReplicationRegistryId 同步实例Id
+                     * 获取同步实例Id，见实例返回列表中的同步实例ID
+                     * @return ReplicationRegistryId 同步实例Id，见实例返回列表中的同步实例ID
                      */
                     std::string GetReplicationRegistryId() const;
 
                     /**
-                     * 设置同步实例Id
-                     * @param ReplicationRegistryId 同步实例Id
+                     * 设置同步实例Id，见实例返回列表中的同步实例ID
+                     * @param ReplicationRegistryId 同步实例Id，见实例返回列表中的同步实例ID
                      */
                     void SetReplicationRegistryId(const std::string& _replicationRegistryId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ReplicationRegistryIdHasBeenSet() const;
 
                     /**
-                     * 获取同步实例的地域ID
-                     * @return ReplicationRegionId 同步实例的地域ID
+                     * 获取同步实例的地域ID，见实例返回列表中地域ID
+                     * @return ReplicationRegionId 同步实例的地域ID，见实例返回列表中地域ID
                      */
                     uint64_t GetReplicationRegionId() const;
 
                     /**
-                     * 设置同步实例的地域ID
-                     * @param ReplicationRegionId 同步实例的地域ID
+                     * 设置同步实例的地域ID，见实例返回列表中地域ID
+                     * @param ReplicationRegionId 同步实例的地域ID，见实例返回列表中地域ID
                      */
                     void SetReplicationRegionId(const uint64_t& _replicationRegionId);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 同步实例Id
+                     * 同步实例Id，见实例返回列表中的同步实例ID
                      */
                     std::string m_replicationRegistryId;
                     bool m_replicationRegistryIdHasBeenSet;
 
                     /**
-                     * 同步实例的地域ID
+                     * 同步实例的地域ID，见实例返回列表中地域ID
                      */
                     uint64_t m_replicationRegionId;
                     bool m_replicationRegionIdHasBeenSet;

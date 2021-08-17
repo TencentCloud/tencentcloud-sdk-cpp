@@ -39,7 +39,8 @@ ReverseShell::ReverseShell() :
     m_statusHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_machineNameHasBeenSet(false),
-    m_procTreeHasBeenSet(false)
+    m_procTreeHasBeenSet(false),
+    m_detectByHasBeenSet(false)
 {
 }
 
@@ -238,6 +239,16 @@ CoreInternalOutcome ReverseShell::Deserialize(const rapidjson::Value &value)
         m_procTreeHasBeenSet = true;
     }
 
+    if (value.HasMember("DetectBy") && !value["DetectBy"].IsNull())
+    {
+        if (!value["DetectBy"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `ReverseShell.DetectBy` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_detectBy = value["DetectBy"].GetUint64();
+        m_detectByHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -395,6 +406,14 @@ void ReverseShell::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ProcTree";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_procTree.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_detectByHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DetectBy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_detectBy, allocator);
     }
 
 }
@@ -702,5 +721,21 @@ void ReverseShell::SetProcTree(const string& _procTree)
 bool ReverseShell::ProcTreeHasBeenSet() const
 {
     return m_procTreeHasBeenSet;
+}
+
+uint64_t ReverseShell::GetDetectBy() const
+{
+    return m_detectBy;
+}
+
+void ReverseShell::SetDetectBy(const uint64_t& _detectBy)
+{
+    m_detectBy = _detectBy;
+    m_detectByHasBeenSet = true;
+}
+
+bool ReverseShell::DetectByHasBeenSet() const
+{
+    return m_detectByHasBeenSet;
 }
 

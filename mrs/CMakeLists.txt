@@ -19,178 +19,118 @@ set(mrs_public_header
   )
 
 set(mrs_public_header_model
-  include/tencentcloud/mrs/v20200910/model/PatientInfo.h
   include/tencentcloud/mrs/v20200910/model/Indicator.h
-  include/tencentcloud/mrs/v20200910/model/ReportTextStructuredResponse.h
   include/tencentcloud/mrs/v20200910/model/Template.h
   include/tencentcloud/mrs/v20200910/model/Elastic.h
-  include/tencentcloud/mrs/v20200910/model/Metastasis.h
-  include/tencentcloud/mrs/v20200910/model/DiseaseHistory.h
+  include/tencentcloud/mrs/v20200910/model/ReportInfo.h
   include/tencentcloud/mrs/v20200910/model/IHCInfo.h
   include/tencentcloud/mrs/v20200910/model/SurgeryHistory.h
-  include/tencentcloud/mrs/v20200910/model/ImageToObjectRequest.h
-  include/tencentcloud/mrs/v20200910/model/Summary.h
-  include/tencentcloud/mrs/v20200910/model/Treatment.h
   include/tencentcloud/mrs/v20200910/model/HandleParam.h
-  include/tencentcloud/mrs/v20200910/model/ReportImageStructuredRequest.h
-  include/tencentcloud/mrs/v20200910/model/Finding.h
-  include/tencentcloud/mrs/v20200910/model/TextReport.h
+  include/tencentcloud/mrs/v20200910/model/ImageToObjectRequest.h
+  include/tencentcloud/mrs/v20200910/model/TextToObjectRequest.h
   include/tencentcloud/mrs/v20200910/model/AspectRatio.h
   include/tencentcloud/mrs/v20200910/model/SymptomInfo.h
-  include/tencentcloud/mrs/v20200910/model/Conclusion.h
+  include/tencentcloud/mrs/v20200910/model/TuberInfo.h
   include/tencentcloud/mrs/v20200910/model/ObstericalMedicalHistory.h
   include/tencentcloud/mrs/v20200910/model/Multiple.h
   include/tencentcloud/mrs/v20200910/model/Hospitalization.h
   include/tencentcloud/mrs/v20200910/model/FamilyMedicalHistory.h
   include/tencentcloud/mrs/v20200910/model/Advice.h
-  include/tencentcloud/mrs/v20200910/model/ImageText.h
-  include/tencentcloud/mrs/v20200910/model/Symptom.h
   include/tencentcloud/mrs/v20200910/model/SurgeryAttr.h
-  include/tencentcloud/mrs/v20200910/model/Tuber.h
-  include/tencentcloud/mrs/v20200910/model/MedicalRecordInfo.h
   include/tencentcloud/mrs/v20200910/model/Part.h
-  include/tencentcloud/mrs/v20200910/model/TuberInfo.h
   include/tencentcloud/mrs/v20200910/model/ImageToClassResponse.h
   include/tencentcloud/mrs/v20200910/model/Lymph.h
   include/tencentcloud/mrs/v20200910/model/Invas.h
-  include/tencentcloud/mrs/v20200910/model/ReportInfo.h
-  include/tencentcloud/mrs/v20200910/model/BasicInfo.h
+  include/tencentcloud/mrs/v20200910/model/MedicalRecordInfo.h
   include/tencentcloud/mrs/v20200910/model/NormPart.h
   include/tencentcloud/mrs/v20200910/model/MedDoc.h
   include/tencentcloud/mrs/v20200910/model/Desc.h
-  include/tencentcloud/mrs/v20200910/model/Case.h
-  include/tencentcloud/mrs/v20200910/model/TestItem.h
-  include/tencentcloud/mrs/v20200910/model/ImageToObjectResponse.h
+  include/tencentcloud/mrs/v20200910/model/PatientInfo.h
   include/tencentcloud/mrs/v20200910/model/PersonalMedicalHistory.h
   include/tencentcloud/mrs/v20200910/model/Organ.h
   include/tencentcloud/mrs/v20200910/model/DiagCert.h
-  include/tencentcloud/mrs/v20200910/model/PersonalInfo.h
   include/tencentcloud/mrs/v20200910/model/TreatmentRecord.h
-  include/tencentcloud/mrs/v20200910/model/TextToClassRequest.h
-  include/tencentcloud/mrs/v20200910/model/Check.h
-  include/tencentcloud/mrs/v20200910/model/ReportTextStructuredRequest.h
-  include/tencentcloud/mrs/v20200910/model/Invasive.h
+  include/tencentcloud/mrs/v20200910/model/Value.h
+  include/tencentcloud/mrs/v20200910/model/DischargeDiagnosis.h
   include/tencentcloud/mrs/v20200910/model/DiseaseMedicalHistory.h
   include/tencentcloud/mrs/v20200910/model/PathologyReport.h
-  include/tencentcloud/mrs/v20200910/model/Size.h
   include/tencentcloud/mrs/v20200910/model/TextToClassResponse.h
-  include/tencentcloud/mrs/v20200910/model/Value.h
-  include/tencentcloud/mrs/v20200910/model/PersonalHistory.h
-  include/tencentcloud/mrs/v20200910/model/TextToObjectRequest.h
   include/tencentcloud/mrs/v20200910/model/HistologyType.h
   include/tencentcloud/mrs/v20200910/model/BlockInfo.h
-  include/tencentcloud/mrs/v20200910/model/MenstrualMedicalHistory.h
-  include/tencentcloud/mrs/v20200910/model/Inspection.h
-  include/tencentcloud/mrs/v20200910/model/Surgery.h
+  include/tencentcloud/mrs/v20200910/model/Summary.h
   include/tencentcloud/mrs/v20200910/model/TextType.h
   include/tencentcloud/mrs/v20200910/model/HistologyLevel.h
   include/tencentcloud/mrs/v20200910/model/IndicatorItem.h
   include/tencentcloud/mrs/v20200910/model/ImageInfo.h
   include/tencentcloud/mrs/v20200910/model/DiagCertItem.h
-  include/tencentcloud/mrs/v20200910/model/MarryHistory.h
-  include/tencentcloud/mrs/v20200910/model/ReportImageStructuredResponse.h
-  include/tencentcloud/mrs/v20200910/model/Attribute.h
-  include/tencentcloud/mrs/v20200910/model/MenstrualHistory.h
+  include/tencentcloud/mrs/v20200910/model/MenstrualMedicalHistory.h
   include/tencentcloud/mrs/v20200910/model/ImageToClassRequest.h
   include/tencentcloud/mrs/v20200910/model/NormSize.h
   include/tencentcloud/mrs/v20200910/model/FirstPage.h
-  include/tencentcloud/mrs/v20200910/model/CaseHistory.h
+  include/tencentcloud/mrs/v20200910/model/Check.h
   include/tencentcloud/mrs/v20200910/model/TextToObjectResponse.h
-  include/tencentcloud/mrs/v20200910/model/FamilyHistory.h
-  include/tencentcloud/mrs/v20200910/model/HealthHistory.h
-  include/tencentcloud/mrs/v20200910/model/IHC.h
-  include/tencentcloud/mrs/v20200910/model/Pathology.h
-  include/tencentcloud/mrs/v20200910/model/KindItem.h
-  include/tencentcloud/mrs/v20200910/model/DischargeDiagnosis.h
-  include/tencentcloud/mrs/v20200910/model/ImageReport.h
+  include/tencentcloud/mrs/v20200910/model/TextToClassRequest.h
+  include/tencentcloud/mrs/v20200910/model/Surgery.h
+  include/tencentcloud/mrs/v20200910/model/ImageToObjectResponse.h
+  include/tencentcloud/mrs/v20200910/model/Size.h
   )
 
 set(mrs_src
   src/v20200910/MrsClient.cpp
-  src/v20200910/model/PatientInfo.cpp
   src/v20200910/model/Indicator.cpp
-  src/v20200910/model/ReportTextStructuredResponse.cpp
   src/v20200910/model/Template.cpp
   src/v20200910/model/Elastic.cpp
-  src/v20200910/model/Metastasis.cpp
-  src/v20200910/model/DiseaseHistory.cpp
+  src/v20200910/model/ReportInfo.cpp
   src/v20200910/model/IHCInfo.cpp
   src/v20200910/model/SurgeryHistory.cpp
-  src/v20200910/model/ImageToObjectRequest.cpp
-  src/v20200910/model/Summary.cpp
-  src/v20200910/model/Treatment.cpp
   src/v20200910/model/HandleParam.cpp
-  src/v20200910/model/ReportImageStructuredRequest.cpp
-  src/v20200910/model/Finding.cpp
-  src/v20200910/model/TextReport.cpp
+  src/v20200910/model/ImageToObjectRequest.cpp
+  src/v20200910/model/TextToObjectRequest.cpp
   src/v20200910/model/AspectRatio.cpp
   src/v20200910/model/SymptomInfo.cpp
-  src/v20200910/model/Conclusion.cpp
+  src/v20200910/model/TuberInfo.cpp
   src/v20200910/model/ObstericalMedicalHistory.cpp
   src/v20200910/model/Multiple.cpp
   src/v20200910/model/Hospitalization.cpp
   src/v20200910/model/FamilyMedicalHistory.cpp
   src/v20200910/model/Advice.cpp
-  src/v20200910/model/ImageText.cpp
-  src/v20200910/model/Symptom.cpp
   src/v20200910/model/SurgeryAttr.cpp
-  src/v20200910/model/Tuber.cpp
-  src/v20200910/model/MedicalRecordInfo.cpp
   src/v20200910/model/Part.cpp
-  src/v20200910/model/TuberInfo.cpp
   src/v20200910/model/ImageToClassResponse.cpp
   src/v20200910/model/Lymph.cpp
   src/v20200910/model/Invas.cpp
-  src/v20200910/model/ReportInfo.cpp
-  src/v20200910/model/BasicInfo.cpp
+  src/v20200910/model/MedicalRecordInfo.cpp
   src/v20200910/model/NormPart.cpp
   src/v20200910/model/MedDoc.cpp
   src/v20200910/model/Desc.cpp
-  src/v20200910/model/Case.cpp
-  src/v20200910/model/TestItem.cpp
-  src/v20200910/model/ImageToObjectResponse.cpp
+  src/v20200910/model/PatientInfo.cpp
   src/v20200910/model/PersonalMedicalHistory.cpp
   src/v20200910/model/Organ.cpp
   src/v20200910/model/DiagCert.cpp
-  src/v20200910/model/PersonalInfo.cpp
   src/v20200910/model/TreatmentRecord.cpp
-  src/v20200910/model/TextToClassRequest.cpp
-  src/v20200910/model/Check.cpp
-  src/v20200910/model/ReportTextStructuredRequest.cpp
-  src/v20200910/model/Invasive.cpp
+  src/v20200910/model/Value.cpp
+  src/v20200910/model/DischargeDiagnosis.cpp
   src/v20200910/model/DiseaseMedicalHistory.cpp
   src/v20200910/model/PathologyReport.cpp
-  src/v20200910/model/Size.cpp
   src/v20200910/model/TextToClassResponse.cpp
-  src/v20200910/model/Value.cpp
-  src/v20200910/model/PersonalHistory.cpp
-  src/v20200910/model/TextToObjectRequest.cpp
   src/v20200910/model/HistologyType.cpp
   src/v20200910/model/BlockInfo.cpp
-  src/v20200910/model/MenstrualMedicalHistory.cpp
-  src/v20200910/model/Inspection.cpp
-  src/v20200910/model/Surgery.cpp
+  src/v20200910/model/Summary.cpp
   src/v20200910/model/TextType.cpp
   src/v20200910/model/HistologyLevel.cpp
   src/v20200910/model/IndicatorItem.cpp
   src/v20200910/model/ImageInfo.cpp
   src/v20200910/model/DiagCertItem.cpp
-  src/v20200910/model/MarryHistory.cpp
-  src/v20200910/model/ReportImageStructuredResponse.cpp
-  src/v20200910/model/Attribute.cpp
-  src/v20200910/model/MenstrualHistory.cpp
+  src/v20200910/model/MenstrualMedicalHistory.cpp
   src/v20200910/model/ImageToClassRequest.cpp
   src/v20200910/model/NormSize.cpp
   src/v20200910/model/FirstPage.cpp
-  src/v20200910/model/CaseHistory.cpp
+  src/v20200910/model/Check.cpp
   src/v20200910/model/TextToObjectResponse.cpp
-  src/v20200910/model/FamilyHistory.cpp
-  src/v20200910/model/HealthHistory.cpp
-  src/v20200910/model/IHC.cpp
-  src/v20200910/model/Pathology.cpp
-  src/v20200910/model/KindItem.cpp
-  src/v20200910/model/DischargeDiagnosis.cpp
-  src/v20200910/model/ImageReport.cpp
+  src/v20200910/model/TextToClassRequest.cpp
+  src/v20200910/model/Surgery.cpp
+  src/v20200910/model/ImageToObjectResponse.cpp
+  src/v20200910/model/Size.cpp
   )
 
 set(mrs_include

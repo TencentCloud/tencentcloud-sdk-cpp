@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool RepoNameHasBeenSet() const;
 
                     /**
-                     * 获取默认值为0
-                     * @return Public 默认值为0
+                     * 获取默认值为0, 1公共，0私有
+                     * @return Public 默认值为0, 1公共，0私有
                      */
                     int64_t GetPublic() const;
 
                     /**
-                     * 设置默认值为0
-                     * @param Public 默认值为0
+                     * 设置默认值为0, 1公共，0私有
+                     * @param Public 默认值为0, 1公共，0私有
                      */
                     void SetPublic(const int64_t& _public);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_repoNameHasBeenSet;
 
                     /**
-                     * 默认值为0
+                     * 默认值为0, 1公共，0私有
                      */
                     int64_t m_public;
                     bool m_publicHasBeenSet;

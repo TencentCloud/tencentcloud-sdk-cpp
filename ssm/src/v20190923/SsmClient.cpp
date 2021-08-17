@@ -83,6 +83,49 @@ SsmClient::CreateProductSecretOutcomeCallable SsmClient::CreateProductSecretCall
     return task->get_future();
 }
 
+SsmClient::CreateSSHKeyPairSecretOutcome SsmClient::CreateSSHKeyPairSecret(const CreateSSHKeyPairSecretRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSSHKeyPairSecret");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSSHKeyPairSecretResponse rsp = CreateSSHKeyPairSecretResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSSHKeyPairSecretOutcome(rsp);
+        else
+            return CreateSSHKeyPairSecretOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSSHKeyPairSecretOutcome(outcome.GetError());
+    }
+}
+
+void SsmClient::CreateSSHKeyPairSecretAsync(const CreateSSHKeyPairSecretRequest& request, const CreateSSHKeyPairSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSSHKeyPairSecret(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SsmClient::CreateSSHKeyPairSecretOutcomeCallable SsmClient::CreateSSHKeyPairSecretCallable(const CreateSSHKeyPairSecretRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSSHKeyPairSecretOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSSHKeyPairSecret(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SsmClient::CreateSecretOutcome SsmClient::CreateSecret(const CreateSecretRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSecret");
@@ -549,6 +592,49 @@ SsmClient::GetRegionsOutcomeCallable SsmClient::GetRegionsCallable(const GetRegi
         [this, request]()
         {
             return this->GetRegions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SsmClient::GetSSHKeyPairValueOutcome SsmClient::GetSSHKeyPairValue(const GetSSHKeyPairValueRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetSSHKeyPairValue");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetSSHKeyPairValueResponse rsp = GetSSHKeyPairValueResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetSSHKeyPairValueOutcome(rsp);
+        else
+            return GetSSHKeyPairValueOutcome(o.GetError());
+    }
+    else
+    {
+        return GetSSHKeyPairValueOutcome(outcome.GetError());
+    }
+}
+
+void SsmClient::GetSSHKeyPairValueAsync(const GetSSHKeyPairValueRequest& request, const GetSSHKeyPairValueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetSSHKeyPairValue(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SsmClient::GetSSHKeyPairValueOutcomeCallable SsmClient::GetSSHKeyPairValueCallable(const GetSSHKeyPairValueRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetSSHKeyPairValueOutcome()>>(
+        [this, request]()
+        {
+            return this->GetSSHKeyPairValue(request);
         }
     );
 

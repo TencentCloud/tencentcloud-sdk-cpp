@@ -298,6 +298,49 @@ CpdpClient::ApplyWithdrawalOutcomeCallable CpdpClient::ApplyWithdrawalCallable(c
     return task->get_future();
 }
 
+CpdpClient::BindAccountOutcome CpdpClient::BindAccount(const BindAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindAccountResponse rsp = BindAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindAccountOutcome(rsp);
+        else
+            return BindAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return BindAccountOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::BindAccountAsync(const BindAccountRequest& request, const BindAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BindAccount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::BindAccountOutcomeCallable CpdpClient::BindAccountCallable(const BindAccountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BindAccountOutcome()>>(
+        [this, request]()
+        {
+            return this->BindAccount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::BindAcctOutcome CpdpClient::BindAcct(const BindAcctRequest &request)
 {
     auto outcome = MakeRequest(request, "BindAcct");
@@ -807,6 +850,49 @@ CpdpClient::CreateCustAcctIdOutcomeCallable CpdpClient::CreateCustAcctIdCallable
         [this, request]()
         {
             return this->CreateCustAcctId(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::CreateExternalAnchorOutcome CpdpClient::CreateExternalAnchor(const CreateExternalAnchorRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateExternalAnchor");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateExternalAnchorResponse rsp = CreateExternalAnchorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateExternalAnchorOutcome(rsp);
+        else
+            return CreateExternalAnchorOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateExternalAnchorOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::CreateExternalAnchorAsync(const CreateExternalAnchorRequest& request, const CreateExternalAnchorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateExternalAnchor(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::CreateExternalAnchorOutcomeCallable CpdpClient::CreateExternalAnchorCallable(const CreateExternalAnchorRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateExternalAnchorOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateExternalAnchor(request);
         }
     );
 
@@ -1581,6 +1667,49 @@ CpdpClient::ModifyAgentTaxPaymentInfoOutcomeCallable CpdpClient::ModifyAgentTaxP
         [this, request]()
         {
             return this->ModifyAgentTaxPaymentInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::ModifyBindedAccountOutcome CpdpClient::ModifyBindedAccount(const ModifyBindedAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBindedAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBindedAccountResponse rsp = ModifyBindedAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBindedAccountOutcome(rsp);
+        else
+            return ModifyBindedAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBindedAccountOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::ModifyBindedAccountAsync(const ModifyBindedAccountRequest& request, const ModifyBindedAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBindedAccount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::ModifyBindedAccountOutcomeCallable CpdpClient::ModifyBindedAccountCallable(const ModifyBindedAccountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBindedAccountOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBindedAccount(request);
         }
     );
 
@@ -4032,6 +4161,49 @@ CpdpClient::UnifiedOrderOutcomeCallable CpdpClient::UnifiedOrderCallable(const U
         [this, request]()
         {
             return this->UnifiedOrder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::UploadExternalAnchorInfoOutcome CpdpClient::UploadExternalAnchorInfo(const UploadExternalAnchorInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "UploadExternalAnchorInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UploadExternalAnchorInfoResponse rsp = UploadExternalAnchorInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UploadExternalAnchorInfoOutcome(rsp);
+        else
+            return UploadExternalAnchorInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return UploadExternalAnchorInfoOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::UploadExternalAnchorInfoAsync(const UploadExternalAnchorInfoRequest& request, const UploadExternalAnchorInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UploadExternalAnchorInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::UploadExternalAnchorInfoOutcomeCallable CpdpClient::UploadExternalAnchorInfoCallable(const UploadExternalAnchorInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UploadExternalAnchorInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->UploadExternalAnchorInfo(request);
         }
     );
 

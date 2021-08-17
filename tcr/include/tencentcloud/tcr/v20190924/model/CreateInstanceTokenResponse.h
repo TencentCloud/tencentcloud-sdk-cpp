@@ -70,8 +70,8 @@ namespace TencentCloud
                     bool TokenHasBeenSet() const;
 
                     /**
-                     * 获取访问凭证过期时间戳
-                     * @return ExpTime 访问凭证过期时间戳
+                     * 获取访问凭证过期时间戳，是一个时间戳数字，无单位
+                     * @return ExpTime 访问凭证过期时间戳，是一个时间戳数字，无单位
                      */
                     int64_t GetExpTime() const;
 
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_tokenHasBeenSet;
 
                     /**
-                     * 访问凭证过期时间戳
+                     * 访问凭证过期时间戳，是一个时间戳数字，无单位
                      */
                     int64_t m_expTime;
                     bool m_expTimeHasBeenSet;

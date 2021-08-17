@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool RegistryIdHasBeenSet() const;
 
                     /**
-                     * 获取预付费自动续费标识和购买时长
-                     * @return RegistryChargePrepaid 预付费自动续费标识和购买时长
+                     * 获取预付费自动续费标识和购买时长,0：手动续费，1：自动续费，2：不续费并且不通知;单位为月
+                     * @return RegistryChargePrepaid 预付费自动续费标识和购买时长,0：手动续费，1：自动续费，2：不续费并且不通知;单位为月
                      */
                     RegistryChargePrepaid GetRegistryChargePrepaid() const;
 
                     /**
-                     * 设置预付费自动续费标识和购买时长
-                     * @param RegistryChargePrepaid 预付费自动续费标识和购买时长
+                     * 设置预付费自动续费标识和购买时长,0：手动续费，1：自动续费，2：不续费并且不通知;单位为月
+                     * @param RegistryChargePrepaid 预付费自动续费标识和购买时长,0：手动续费，1：自动续费，2：不续费并且不通知;单位为月
                      */
                     void SetRegistryChargePrepaid(const RegistryChargePrepaid& _registryChargePrepaid);
 
@@ -106,7 +106,7 @@ namespace TencentCloud
                     bool m_registryIdHasBeenSet;
 
                     /**
-                     * 预付费自动续费标识和购买时长
+                     * 预付费自动续费标识和购买时长,0：手动续费，1：自动续费，2：不续费并且不通知;单位为月
                      */
                     RegistryChargePrepaid m_registryChargePrepaid;
                     bool m_registryChargePrepaidHasBeenSet;

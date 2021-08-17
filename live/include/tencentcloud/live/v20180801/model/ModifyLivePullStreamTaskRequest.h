@@ -328,29 +328,17 @@ ResetTaskConfig：任务更新回调。
 
                     /**
                      * 获取指定播放文件索引。
-注意：
-1. 从1开始，不大于SourceUrls中文件个数。
-2. 只有VodRefreshType为ContinueBeginPoint时指定才有效。
-3. 只有当前任务处于暂停时，指定后启动任务才会生效。
+注意： 从1开始，不大于SourceUrls中文件个数。
                      * @return FileIndex 指定播放文件索引。
-注意：
-1. 从1开始，不大于SourceUrls中文件个数。
-2. 只有VodRefreshType为ContinueBeginPoint时指定才有效。
-3. 只有当前任务处于暂停时，指定后启动任务才会生效。
+注意： 从1开始，不大于SourceUrls中文件个数。
                      */
                     int64_t GetFileIndex() const;
 
                     /**
                      * 设置指定播放文件索引。
-注意：
-1. 从1开始，不大于SourceUrls中文件个数。
-2. 只有VodRefreshType为ContinueBeginPoint时指定才有效。
-3. 只有当前任务处于暂停时，指定后启动任务才会生效。
+注意： 从1开始，不大于SourceUrls中文件个数。
                      * @param FileIndex 指定播放文件索引。
-注意：
-1. 从1开始，不大于SourceUrls中文件个数。
-2. 只有VodRefreshType为ContinueBeginPoint时指定才有效。
-3. 只有当前任务处于暂停时，指定后启动任务才会生效。
+注意： 从1开始，不大于SourceUrls中文件个数。
                      */
                     void SetFileIndex(const int64_t& _fileIndex);
 
@@ -364,13 +352,9 @@ ResetTaskConfig：任务更新回调。
                      * 获取指定播放文件偏移。
 注意：
 1. 单位：秒，配合FileIndex使用。
-2. 只有VodRefreshType为ContinueBeginPoint时指定才有效。
-3. 只有当前任务处于暂停时，指定后启动任务才会生效。
                      * @return OffsetTime 指定播放文件偏移。
 注意：
 1. 单位：秒，配合FileIndex使用。
-2. 只有VodRefreshType为ContinueBeginPoint时指定才有效。
-3. 只有当前任务处于暂停时，指定后启动任务才会生效。
                      */
                     int64_t GetOffsetTime() const;
 
@@ -378,13 +362,9 @@ ResetTaskConfig：任务更新回调。
                      * 设置指定播放文件偏移。
 注意：
 1. 单位：秒，配合FileIndex使用。
-2. 只有VodRefreshType为ContinueBeginPoint时指定才有效。
-3. 只有当前任务处于暂停时，指定后启动任务才会生效。
                      * @param OffsetTime 指定播放文件偏移。
 注意：
 1. 单位：秒，配合FileIndex使用。
-2. 只有VodRefreshType为ContinueBeginPoint时指定才有效。
-3. 只有当前任务处于暂停时，指定后启动任务才会生效。
                      */
                     void SetOffsetTime(const int64_t& _offsetTime);
 
@@ -502,10 +482,7 @@ ResetTaskConfig：任务更新回调。
 
                     /**
                      * 指定播放文件索引。
-注意：
-1. 从1开始，不大于SourceUrls中文件个数。
-2. 只有VodRefreshType为ContinueBeginPoint时指定才有效。
-3. 只有当前任务处于暂停时，指定后启动任务才会生效。
+注意： 从1开始，不大于SourceUrls中文件个数。
                      */
                     int64_t m_fileIndex;
                     bool m_fileIndexHasBeenSet;
@@ -514,8 +491,6 @@ ResetTaskConfig：任务更新回调。
                      * 指定播放文件偏移。
 注意：
 1. 单位：秒，配合FileIndex使用。
-2. 只有VodRefreshType为ContinueBeginPoint时指定才有效。
-3. 只有当前任务处于暂停时，指定后启动任务才会生效。
                      */
                     int64_t m_offsetTime;
                     bool m_offsetTimeHasBeenSet;

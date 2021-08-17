@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取仓库是否存在
-                     * @return Data 仓库是否存在
+                     * 获取验证个人版仓库是否存在返回信息
+                     * @return Data 验证个人版仓库是否存在返回信息
                      */
                     RepoIsExistResp GetData() const;
 
@@ -59,7 +59,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 仓库是否存在
+                     * 验证个人版仓库是否存在返回信息
                      */
                     RepoIsExistResp m_data;
                     bool m_dataHasBeenSet;

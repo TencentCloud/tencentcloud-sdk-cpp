@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取否允许轮转，True表示开启轮转，False表示禁止轮转。
-                     * @return EnableRotation 否允许轮转，True表示开启轮转，False表示禁止轮转。
+                     * 获取否允许轮转，true表示开启轮转，false表示禁止轮转。
+                     * @return EnableRotation 否允许轮转，true表示开启轮转，false表示禁止轮转。
                      */
                     bool GetEnableRotation() const;
 
@@ -100,7 +100,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 否允许轮转，True表示开启轮转，False表示禁止轮转。
+                     * 否允许轮转，true表示开启轮转，false表示禁止轮转。
                      */
                     bool m_enableRotation;
                     bool m_enableRotationHasBeenSet;

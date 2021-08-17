@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool NamespaceNameHasBeenSet() const;
 
                     /**
-                     * 获取仓库名称的名称
-                     * @return RepositoryName 仓库名称的名称
+                     * 获取镜像仓库的名称
+                     * @return RepositoryName 镜像仓库的名称
                      */
                     std::string GetRepositoryName() const;
 
                     /**
-                     * 设置仓库名称的名称
-                     * @param RepositoryName 仓库名称的名称
+                     * 设置镜像仓库的名称
+                     * @param RepositoryName 镜像仓库的名称
                      */
                     void SetRepositoryName(const std::string& _repositoryName);
 
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_namespaceNameHasBeenSet;
 
                     /**
-                     * 仓库名称的名称
+                     * 镜像仓库的名称
                      */
                     std::string m_repositoryName;
                     bool m_repositoryNameHasBeenSet;

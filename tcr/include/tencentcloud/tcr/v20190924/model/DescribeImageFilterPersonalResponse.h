@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取payload
-                     * @return Data payload
+                     * 获取返回tag镜像内容相同的tag列表
+                     * @return Data 返回tag镜像内容相同的tag列表
                      */
                     SameImagesResp GetData() const;
 
@@ -59,7 +59,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * payload
+                     * 返回tag镜像内容相同的tag列表
                      */
                     SameImagesResp m_data;
                     bool m_dataHasBeenSet;

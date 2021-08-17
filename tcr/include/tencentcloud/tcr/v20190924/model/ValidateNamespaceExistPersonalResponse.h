@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取命名空间是否存在
-                     * @return Data 命名空间是否存在
+                     * 获取验证命名空间是否存在返回信息
+                     * @return Data 验证命名空间是否存在返回信息
                      */
                     NamespaceIsExistsResp GetData() const;
 
@@ -59,7 +59,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 命名空间是否存在
+                     * 验证命名空间是否存在返回信息
                      */
                     NamespaceIsExistsResp m_data;
                     bool m_dataHasBeenSet;

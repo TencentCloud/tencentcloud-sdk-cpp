@@ -53,7 +53,9 @@ DataEvent::DataEvent() :
     m_soarSuggestStatusHasBeenSet(false),
     m_soarPlaybookTypeHasBeenSet(false),
     m_soarRunIdHasBeenSet(false),
-    m_ssaEventIdHasBeenSet(false)
+    m_ssaEventIdHasBeenSet(false),
+    m_isNewCfwEventHasBeenSet(false),
+    m_directionHasBeenSet(false)
 {
 }
 
@@ -401,6 +403,26 @@ CoreInternalOutcome DataEvent::Deserialize(const rapidjson::Value &value)
         m_ssaEventIdHasBeenSet = true;
     }
 
+    if (value.HasMember("IsNewCfwEvent") && !value["IsNewCfwEvent"].IsNull())
+    {
+        if (!value["IsNewCfwEvent"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `DataEvent.IsNewCfwEvent` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isNewCfwEvent = value["IsNewCfwEvent"].GetBool();
+        m_isNewCfwEventHasBeenSet = true;
+    }
+
+    if (value.HasMember("Direction") && !value["Direction"].IsNull())
+    {
+        if (!value["Direction"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DataEvent.Direction` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_direction = string(value["Direction"].GetString());
+        m_directionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -685,6 +707,22 @@ void DataEvent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "SsaEventId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ssaEventId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isNewCfwEventHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsNewCfwEvent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isNewCfwEvent, allocator);
+    }
+
+    if (m_directionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Direction";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_direction.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1216,5 +1254,37 @@ void DataEvent::SetSsaEventId(const string& _ssaEventId)
 bool DataEvent::SsaEventIdHasBeenSet() const
 {
     return m_ssaEventIdHasBeenSet;
+}
+
+bool DataEvent::GetIsNewCfwEvent() const
+{
+    return m_isNewCfwEvent;
+}
+
+void DataEvent::SetIsNewCfwEvent(const bool& _isNewCfwEvent)
+{
+    m_isNewCfwEvent = _isNewCfwEvent;
+    m_isNewCfwEventHasBeenSet = true;
+}
+
+bool DataEvent::IsNewCfwEventHasBeenSet() const
+{
+    return m_isNewCfwEventHasBeenSet;
+}
+
+string DataEvent::GetDirection() const
+{
+    return m_direction;
+}
+
+void DataEvent::SetDirection(const string& _direction)
+{
+    m_direction = _direction;
+    m_directionHasBeenSet = true;
+}
+
+bool DataEvent::DirectionHasBeenSet() const
+{
+    return m_directionHasBeenSet;
 }
 

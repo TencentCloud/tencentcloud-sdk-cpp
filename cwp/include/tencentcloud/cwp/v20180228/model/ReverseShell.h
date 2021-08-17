@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ID
-                     * @return Id ID
+                     * 获取ID 主键
+                     * @return Id ID 主键
                      */
                     uint64_t GetId() const;
 
                     /**
-                     * 设置ID
-                     * @param Id ID
+                     * 设置ID 主键
+                     * @param Id ID 主键
                      */
                     void SetId(const uint64_t& _id);
 
@@ -317,14 +317,14 @@ namespace TencentCloud
                     bool ParentProcPathHasBeenSet() const;
 
                     /**
-                     * 获取处理状态
-                     * @return Status 处理状态
+                     * 获取处理状态：0-待处理 2-白名单
+                     * @return Status 处理状态：0-待处理 2-白名单
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置处理状态
-                     * @param Status 处理状态
+                     * 设置处理状态：0-待处理 2-白名单
+                     * @param Status 处理状态：0-待处理 2-白名单
                      */
                     void SetStatus(const uint64_t& _status);
 
@@ -388,10 +388,28 @@ namespace TencentCloud
                      */
                     bool ProcTreeHasBeenSet() const;
 
+                    /**
+                     * 获取检测方法
+                     * @return DetectBy 检测方法
+                     */
+                    uint64_t GetDetectBy() const;
+
+                    /**
+                     * 设置检测方法
+                     * @param DetectBy 检测方法
+                     */
+                    void SetDetectBy(const uint64_t& _detectBy);
+
+                    /**
+                     * 判断参数 DetectBy 是否已赋值
+                     * @return DetectBy 是否已赋值
+                     */
+                    bool DetectByHasBeenSet() const;
+
                 private:
 
                     /**
-                     * ID
+                     * ID 主键
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
@@ -481,7 +499,7 @@ namespace TencentCloud
                     bool m_parentProcPathHasBeenSet;
 
                     /**
-                     * 处理状态
+                     * 处理状态：0-待处理 2-白名单
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
@@ -503,6 +521,12 @@ namespace TencentCloud
                      */
                     std::string m_procTree;
                     bool m_procTreeHasBeenSet;
+
+                    /**
+                     * 检测方法
+                     */
+                    uint64_t m_detectBy;
+                    bool m_detectByHasBeenSet;
 
                 };
             }

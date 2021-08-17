@@ -986,6 +986,49 @@ CvmClient::DescribeInstancesOutcomeCallable CvmClient::DescribeInstancesCallable
     return task->get_future();
 }
 
+CvmClient::DescribeInstancesModificationOutcome CvmClient::DescribeInstancesModification(const DescribeInstancesModificationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstancesModification");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstancesModificationResponse rsp = DescribeInstancesModificationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstancesModificationOutcome(rsp);
+        else
+            return DescribeInstancesModificationOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstancesModificationOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::DescribeInstancesModificationAsync(const DescribeInstancesModificationRequest& request, const DescribeInstancesModificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstancesModification(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::DescribeInstancesModificationOutcomeCallable CvmClient::DescribeInstancesModificationCallable(const DescribeInstancesModificationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstancesModificationOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstancesModification(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CvmClient::DescribeInstancesOperationLimitOutcome CvmClient::DescribeInstancesOperationLimit(const DescribeInstancesOperationLimitRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstancesOperationLimit");

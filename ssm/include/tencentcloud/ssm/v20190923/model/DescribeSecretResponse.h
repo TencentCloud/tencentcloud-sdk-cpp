@@ -128,9 +128,9 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取0 --  用户自定义凭据类型；1 -- 云产品凭据类型。
+                     * 获取0 --  用户自定义凭据类型；1 -- 数据库凭据类型；2 -- SSH密钥对凭据类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SecretType 0 --  用户自定义凭据类型；1 -- 云产品凭据类型。
+                     * @return SecretType 0 --  用户自定义凭据类型；1 -- 数据库凭据类型；2 -- SSH密钥对凭据类型。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetSecretType() const;
@@ -197,6 +197,48 @@ namespace TencentCloud
                      */
                     bool RotationFrequencyHasBeenSet() const;
 
+                    /**
+                     * 获取当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceName 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetResourceName() const;
+
+                    /**
+                     * 判断参数 ResourceName 是否已赋值
+                     * @return ResourceName 是否已赋值
+                     */
+                    bool ResourceNameHasBeenSet() const;
+
+                    /**
+                     * 获取当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProjectID 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetProjectID() const;
+
+                    /**
+                     * 判断参数 ProjectID 是否已赋值
+                     * @return ProjectID 是否已赋值
+                     */
+                    bool ProjectIDHasBeenSet() const;
+
+                    /**
+                     * 获取当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AssociatedInstanceIDs 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetAssociatedInstanceIDs() const;
+
+                    /**
+                     * 判断参数 AssociatedInstanceIDs 是否已赋值
+                     * @return AssociatedInstanceIDs 是否已赋值
+                     */
+                    bool AssociatedInstanceIDsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -242,7 +284,7 @@ namespace TencentCloud
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 0 --  用户自定义凭据类型；1 -- 云产品凭据类型。
+                     * 0 --  用户自定义凭据类型；1 -- 数据库凭据类型；2 -- SSH密钥对凭据类型。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_secretType;
@@ -275,6 +317,27 @@ namespace TencentCloud
                      */
                     int64_t m_rotationFrequency;
                     bool m_rotationFrequencyHasBeenSet;
+
+                    /**
+                     * 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resourceName;
+                    bool m_resourceNameHasBeenSet;
+
+                    /**
+                     * 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_projectID;
+                    bool m_projectIDHasBeenSet;
+
+                    /**
+                     * 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_associatedInstanceIDs;
+                    bool m_associatedInstanceIDsHasBeenSet;
 
                 };
             }

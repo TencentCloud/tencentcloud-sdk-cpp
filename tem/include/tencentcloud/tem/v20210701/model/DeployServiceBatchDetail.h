@@ -201,6 +201,28 @@ namespace TencentCloud
                      */
                     bool NewPodsHasBeenSet() const;
 
+                    /**
+                     * 获取=0：手动确认批次；>0：下一批次开始时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NextBatchStartTime =0：手动确认批次；>0：下一批次开始时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetNextBatchStartTime() const;
+
+                    /**
+                     * 设置=0：手动确认批次；>0：下一批次开始时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NextBatchStartTime =0：手动确认批次；>0：下一批次开始时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNextBatchStartTime(const int64_t& _nextBatchStartTime);
+
+                    /**
+                     * 判断参数 NextBatchStartTime 是否已赋值
+                     * @return NextBatchStartTime 是否已赋值
+                     */
+                    bool NextBatchStartTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -251,6 +273,13 @@ namespace TencentCloud
                      */
                     std::vector<DeployServicePodDetail> m_newPods;
                     bool m_newPodsHasBeenSet;
+
+                    /**
+                     * =0：手动确认批次；>0：下一批次开始时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_nextBatchStartTime;
+                    bool m_nextBatchStartTimeHasBeenSet;
 
                 };
             }

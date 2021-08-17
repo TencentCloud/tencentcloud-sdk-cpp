@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool RepoNameHasBeenSet() const;
 
                     /**
-                     * 获取触发器名称
-                     * @return TriggerName 触发器名称
+                     * 获取触发器名称，必填参数
+                     * @return TriggerName 触发器名称，必填参数
                      */
                     std::string GetTriggerName() const;
 
                     /**
-                     * 设置触发器名称
-                     * @param TriggerName 触发器名称
+                     * 设置触发器名称，必填参数
+                     * @param TriggerName 触发器名称，必填参数
                      */
                     void SetTriggerName(const std::string& _triggerName);
 
@@ -249,7 +249,7 @@ namespace TencentCloud
                     bool m_repoNameHasBeenSet;
 
                     /**
-                     * 触发器名称
+                     * 触发器名称，必填参数
                      */
                     std::string m_triggerName;
                     bool m_triggerNameHasBeenSet;

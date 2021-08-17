@@ -35,7 +35,10 @@ DescribeSecretResponse::DescribeSecretResponse() :
     m_productNameHasBeenSet(false),
     m_resourceIDHasBeenSet(false),
     m_rotationStatusHasBeenSet(false),
-    m_rotationFrequencyHasBeenSet(false)
+    m_rotationFrequencyHasBeenSet(false),
+    m_resourceNameHasBeenSet(false),
+    m_projectIDHasBeenSet(false),
+    m_associatedInstanceIDsHasBeenSet(false)
 {
 }
 
@@ -193,6 +196,39 @@ CoreInternalOutcome DescribeSecretResponse::Deserialize(const string &payload)
         m_rotationFrequencyHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ResourceName") && !rsp["ResourceName"].IsNull())
+    {
+        if (!rsp["ResourceName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ResourceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceName = string(rsp["ResourceName"].GetString());
+        m_resourceNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ProjectID") && !rsp["ProjectID"].IsNull())
+    {
+        if (!rsp["ProjectID"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ProjectID` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_projectID = rsp["ProjectID"].GetInt64();
+        m_projectIDHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AssociatedInstanceIDs") && !rsp["AssociatedInstanceIDs"].IsNull())
+    {
+        if (!rsp["AssociatedInstanceIDs"].IsArray())
+            return CoreInternalOutcome(Error("response `AssociatedInstanceIDs` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["AssociatedInstanceIDs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_associatedInstanceIDs.push_back((*itr).GetString());
+        }
+        m_associatedInstanceIDsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -297,6 +333,35 @@ string DescribeSecretResponse::ToJsonString() const
         string key = "RotationFrequency";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rotationFrequency, allocator);
+    }
+
+    if (m_resourceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_projectID, allocator);
+    }
+
+    if (m_associatedInstanceIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssociatedInstanceIDs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_associatedInstanceIDs.begin(); itr != m_associatedInstanceIDs.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -429,6 +494,36 @@ int64_t DescribeSecretResponse::GetRotationFrequency() const
 bool DescribeSecretResponse::RotationFrequencyHasBeenSet() const
 {
     return m_rotationFrequencyHasBeenSet;
+}
+
+string DescribeSecretResponse::GetResourceName() const
+{
+    return m_resourceName;
+}
+
+bool DescribeSecretResponse::ResourceNameHasBeenSet() const
+{
+    return m_resourceNameHasBeenSet;
+}
+
+int64_t DescribeSecretResponse::GetProjectID() const
+{
+    return m_projectID;
+}
+
+bool DescribeSecretResponse::ProjectIDHasBeenSet() const
+{
+    return m_projectIDHasBeenSet;
+}
+
+vector<string> DescribeSecretResponse::GetAssociatedInstanceIDs() const
+{
+    return m_associatedInstanceIDs;
+}
+
+bool DescribeSecretResponse::AssociatedInstanceIDsHasBeenSet() const
+{
+    return m_associatedInstanceIDsHasBeenSet;
 }
 
 

@@ -24,6 +24,7 @@ set(ssm_public_header_model
   include/tencentcloud/ssm/v20190923/model/UpdateDescriptionResponse.h
   include/tencentcloud/ssm/v20190923/model/DescribeSecretResponse.h
   include/tencentcloud/ssm/v20190923/model/DescribeSupportedProductsRequest.h
+  include/tencentcloud/ssm/v20190923/model/GetSecretValueRequest.h
   include/tencentcloud/ssm/v20190923/model/DeleteSecretRequest.h
   include/tencentcloud/ssm/v20190923/model/CreateSecretRequest.h
   include/tencentcloud/ssm/v20190923/model/RotateProductSecretRequest.h
@@ -35,7 +36,7 @@ set(ssm_public_header_model
   include/tencentcloud/ssm/v20190923/model/SecretMetadata.h
   include/tencentcloud/ssm/v20190923/model/ListSecretVersionIdsRequest.h
   include/tencentcloud/ssm/v20190923/model/DescribeRotationDetailRequest.h
-  include/tencentcloud/ssm/v20190923/model/DescribeAsyncRequestInfoRequest.h
+  include/tencentcloud/ssm/v20190923/model/CreateSSHKeyPairSecretResponse.h
   include/tencentcloud/ssm/v20190923/model/UpdateRotationStatusResponse.h
   include/tencentcloud/ssm/v20190923/model/CreateSecretResponse.h
   include/tencentcloud/ssm/v20190923/model/GetRegionsRequest.h
@@ -45,6 +46,7 @@ set(ssm_public_header_model
   include/tencentcloud/ssm/v20190923/model/ListSecretsRequest.h
   include/tencentcloud/ssm/v20190923/model/UpdateDescriptionRequest.h
   include/tencentcloud/ssm/v20190923/model/EnableSecretResponse.h
+  include/tencentcloud/ssm/v20190923/model/CreateSSHKeyPairSecretRequest.h
   include/tencentcloud/ssm/v20190923/model/UpdateRotationStatusRequest.h
   include/tencentcloud/ssm/v20190923/model/UpdateSecretRequest.h
   include/tencentcloud/ssm/v20190923/model/DescribeAsyncRequestInfoResponse.h
@@ -53,19 +55,21 @@ set(ssm_public_header_model
   include/tencentcloud/ssm/v20190923/model/VersionInfo.h
   include/tencentcloud/ssm/v20190923/model/TagFilter.h
   include/tencentcloud/ssm/v20190923/model/PutSecretValueRequest.h
+  include/tencentcloud/ssm/v20190923/model/PutSecretValueResponse.h
   include/tencentcloud/ssm/v20190923/model/DescribeRotationHistoryResponse.h
-  include/tencentcloud/ssm/v20190923/model/GetSecretValueRequest.h
+  include/tencentcloud/ssm/v20190923/model/GetSSHKeyPairValueRequest.h
+  include/tencentcloud/ssm/v20190923/model/DescribeAsyncRequestInfoRequest.h
   include/tencentcloud/ssm/v20190923/model/GetServiceStatusResponse.h
   include/tencentcloud/ssm/v20190923/model/DescribeRotationDetailResponse.h
-  include/tencentcloud/ssm/v20190923/model/DescribeSecretRequest.h
+  include/tencentcloud/ssm/v20190923/model/EnableSecretRequest.h
   include/tencentcloud/ssm/v20190923/model/ProductPrivilegeUnit.h
   include/tencentcloud/ssm/v20190923/model/DescribeRotationHistoryRequest.h
-  include/tencentcloud/ssm/v20190923/model/PutSecretValueResponse.h
+  include/tencentcloud/ssm/v20190923/model/GetSSHKeyPairValueResponse.h
   include/tencentcloud/ssm/v20190923/model/DeleteSecretResponse.h
   include/tencentcloud/ssm/v20190923/model/DisableSecretRequest.h
   include/tencentcloud/ssm/v20190923/model/CreateProductSecretResponse.h
   include/tencentcloud/ssm/v20190923/model/ListSecretsResponse.h
-  include/tencentcloud/ssm/v20190923/model/EnableSecretRequest.h
+  include/tencentcloud/ssm/v20190923/model/DescribeSecretRequest.h
   include/tencentcloud/ssm/v20190923/model/GetServiceStatusRequest.h
   include/tencentcloud/ssm/v20190923/model/ListSecretVersionIdsResponse.h
   )
@@ -77,6 +81,7 @@ set(ssm_src
   src/v20190923/model/UpdateDescriptionResponse.cpp
   src/v20190923/model/DescribeSecretResponse.cpp
   src/v20190923/model/DescribeSupportedProductsRequest.cpp
+  src/v20190923/model/GetSecretValueRequest.cpp
   src/v20190923/model/DeleteSecretRequest.cpp
   src/v20190923/model/CreateSecretRequest.cpp
   src/v20190923/model/RotateProductSecretRequest.cpp
@@ -88,7 +93,7 @@ set(ssm_src
   src/v20190923/model/SecretMetadata.cpp
   src/v20190923/model/ListSecretVersionIdsRequest.cpp
   src/v20190923/model/DescribeRotationDetailRequest.cpp
-  src/v20190923/model/DescribeAsyncRequestInfoRequest.cpp
+  src/v20190923/model/CreateSSHKeyPairSecretResponse.cpp
   src/v20190923/model/UpdateRotationStatusResponse.cpp
   src/v20190923/model/CreateSecretResponse.cpp
   src/v20190923/model/GetRegionsRequest.cpp
@@ -98,6 +103,7 @@ set(ssm_src
   src/v20190923/model/ListSecretsRequest.cpp
   src/v20190923/model/UpdateDescriptionRequest.cpp
   src/v20190923/model/EnableSecretResponse.cpp
+  src/v20190923/model/CreateSSHKeyPairSecretRequest.cpp
   src/v20190923/model/UpdateRotationStatusRequest.cpp
   src/v20190923/model/UpdateSecretRequest.cpp
   src/v20190923/model/DescribeAsyncRequestInfoResponse.cpp
@@ -106,19 +112,21 @@ set(ssm_src
   src/v20190923/model/VersionInfo.cpp
   src/v20190923/model/TagFilter.cpp
   src/v20190923/model/PutSecretValueRequest.cpp
+  src/v20190923/model/PutSecretValueResponse.cpp
   src/v20190923/model/DescribeRotationHistoryResponse.cpp
-  src/v20190923/model/GetSecretValueRequest.cpp
+  src/v20190923/model/GetSSHKeyPairValueRequest.cpp
+  src/v20190923/model/DescribeAsyncRequestInfoRequest.cpp
   src/v20190923/model/GetServiceStatusResponse.cpp
   src/v20190923/model/DescribeRotationDetailResponse.cpp
-  src/v20190923/model/DescribeSecretRequest.cpp
+  src/v20190923/model/EnableSecretRequest.cpp
   src/v20190923/model/ProductPrivilegeUnit.cpp
   src/v20190923/model/DescribeRotationHistoryRequest.cpp
-  src/v20190923/model/PutSecretValueResponse.cpp
+  src/v20190923/model/GetSSHKeyPairValueResponse.cpp
   src/v20190923/model/DeleteSecretResponse.cpp
   src/v20190923/model/DisableSecretRequest.cpp
   src/v20190923/model/CreateProductSecretResponse.cpp
   src/v20190923/model/ListSecretsResponse.cpp
-  src/v20190923/model/EnableSecretRequest.cpp
+  src/v20190923/model/DescribeSecretRequest.cpp
   src/v20190923/model/GetServiceStatusRequest.cpp
   src/v20190923/model/ListSecretVersionIdsResponse.cpp
   )

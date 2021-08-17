@@ -243,6 +243,28 @@ namespace TencentCloud
                      */
                     bool AreaHasBeenSet() const;
 
+                    /**
+                     * 获取接入点类型。VXLAN/QCPL/QCAR
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AccessPointType 接入点类型。VXLAN/QCPL/QCAR
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAccessPointType() const;
+
+                    /**
+                     * 设置接入点类型。VXLAN/QCPL/QCAR
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AccessPointType 接入点类型。VXLAN/QCPL/QCAR
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAccessPointType(const std::string& _accessPointType);
+
+                    /**
+                     * 判断参数 AccessPointType 是否已赋值
+                     * @return AccessPointType 是否已赋值
+                     */
+                    bool AccessPointTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -308,6 +330,13 @@ namespace TencentCloud
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
+
+                    /**
+                     * 接入点类型。VXLAN/QCPL/QCAR
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_accessPointType;
+                    bool m_accessPointTypeHasBeenSet;
 
                 };
             }

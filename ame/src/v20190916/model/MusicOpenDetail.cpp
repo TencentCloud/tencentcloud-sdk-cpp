@@ -29,7 +29,8 @@ MusicOpenDetail::MusicOpenDetail() :
     m_singersHasBeenSet(false),
     m_durationHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_lyricUrlHasBeenSet(false)
+    m_lyricUrlHasBeenSet(false),
+    m_waveformUrlHasBeenSet(false)
 {
 }
 
@@ -134,6 +135,16 @@ CoreInternalOutcome MusicOpenDetail::Deserialize(const rapidjson::Value &value)
         m_lyricUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("WaveformUrl") && !value["WaveformUrl"].IsNull())
+    {
+        if (!value["WaveformUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `MusicOpenDetail.WaveformUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_waveformUrl = string(value["WaveformUrl"].GetString());
+        m_waveformUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -221,6 +232,14 @@ void MusicOpenDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "LyricUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_lyricUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_waveformUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WaveformUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_waveformUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -368,5 +387,21 @@ void MusicOpenDetail::SetLyricUrl(const string& _lyricUrl)
 bool MusicOpenDetail::LyricUrlHasBeenSet() const
 {
     return m_lyricUrlHasBeenSet;
+}
+
+string MusicOpenDetail::GetWaveformUrl() const
+{
+    return m_waveformUrl;
+}
+
+void MusicOpenDetail::SetWaveformUrl(const string& _waveformUrl)
+{
+    m_waveformUrl = _waveformUrl;
+    m_waveformUrlHasBeenSet = true;
+}
+
+bool MusicOpenDetail::WaveformUrlHasBeenSet() const
+{
+    return m_waveformUrlHasBeenSet;
 }
 

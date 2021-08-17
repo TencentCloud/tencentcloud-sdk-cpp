@@ -244,6 +244,28 @@ namespace TencentCloud
                      */
                     bool LyricUrlHasBeenSet() const;
 
+                    /**
+                     * 获取波形图url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WaveformUrl 波形图url
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetWaveformUrl() const;
+
+                    /**
+                     * 设置波形图url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WaveformUrl 波形图url
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWaveformUrl(const std::string& _waveformUrl);
+
+                    /**
+                     * 判断参数 WaveformUrl 是否已赋值
+                     * @return WaveformUrl 是否已赋值
+                     */
+                    bool WaveformUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -308,6 +330,13 @@ namespace TencentCloud
                      */
                     std::string m_lyricUrl;
                     bool m_lyricUrlHasBeenSet;
+
+                    /**
+                     * 波形图url
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_waveformUrl;
+                    bool m_waveformUrlHasBeenSet;
 
                 };
             }

@@ -27,7 +27,8 @@ DeployServiceBatchDetail::DeployServiceBatchDetail() :
     m_podNumHasBeenSet(false),
     m_batchIndexHasBeenSet(false),
     m_oldPodsHasBeenSet(false),
-    m_newPodsHasBeenSet(false)
+    m_newPodsHasBeenSet(false),
+    m_nextBatchStartTimeHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,16 @@ CoreInternalOutcome DeployServiceBatchDetail::Deserialize(const rapidjson::Value
         m_newPodsHasBeenSet = true;
     }
 
+    if (value.HasMember("NextBatchStartTime") && !value["NextBatchStartTime"].IsNull())
+    {
+        if (!value["NextBatchStartTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DeployServiceBatchDetail.NextBatchStartTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_nextBatchStartTime = value["NextBatchStartTime"].GetInt64();
+        m_nextBatchStartTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -217,6 +228,14 @@ void DeployServiceBatchDetail::ToJsonObject(rapidjson::Value &value, rapidjson::
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_nextBatchStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NextBatchStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nextBatchStartTime, allocator);
     }
 
 }
@@ -332,5 +351,21 @@ void DeployServiceBatchDetail::SetNewPods(const vector<DeployServicePodDetail>& 
 bool DeployServiceBatchDetail::NewPodsHasBeenSet() const
 {
     return m_newPodsHasBeenSet;
+}
+
+int64_t DeployServiceBatchDetail::GetNextBatchStartTime() const
+{
+    return m_nextBatchStartTime;
+}
+
+void DeployServiceBatchDetail::SetNextBatchStartTime(const int64_t& _nextBatchStartTime)
+{
+    m_nextBatchStartTime = _nextBatchStartTime;
+    m_nextBatchStartTimeHasBeenSet = true;
+}
+
+bool DeployServiceBatchDetail::NextBatchStartTimeHasBeenSet() const
+{
+    return m_nextBatchStartTimeHasBeenSet;
 }
 

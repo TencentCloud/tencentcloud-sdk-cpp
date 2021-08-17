@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool RegistryIdHasBeenSet() const;
 
                     /**
-                     * 获取命名空间的名称
-                     * @return NamespaceName 命名空间的名称
+                     * 获取命名空间的名称（长度2-30个字符，只能包含小写字母、数字及分隔符("."、"_"、"-")，且不能以分隔符开头、结尾或连续）
+                     * @return NamespaceName 命名空间的名称（长度2-30个字符，只能包含小写字母、数字及分隔符("."、"_"、"-")，且不能以分隔符开头、结尾或连续）
                      */
                     std::string GetNamespaceName() const;
 
                     /**
-                     * 设置命名空间的名称
-                     * @param NamespaceName 命名空间的名称
+                     * 设置命名空间的名称（长度2-30个字符，只能包含小写字母、数字及分隔符("."、"_"、"-")，且不能以分隔符开头、结尾或连续）
+                     * @param NamespaceName 命名空间的名称（长度2-30个字符，只能包含小写字母、数字及分隔符("."、"_"、"-")，且不能以分隔符开头、结尾或连续）
                      */
                     void SetNamespaceName(const std::string& _namespaceName);
 
@@ -105,7 +105,7 @@ namespace TencentCloud
                     bool m_registryIdHasBeenSet;
 
                     /**
-                     * 命名空间的名称
+                     * 命名空间的名称（长度2-30个字符，只能包含小写字母、数字及分隔符("."、"_"、"-")，且不能以分隔符开头、结尾或连续）
                      */
                     std::string m_namespaceName;
                     bool m_namespaceNameHasBeenSet;

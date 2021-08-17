@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool SrcTextHasBeenSet() const;
 
                     /**
-                     * 获取目标句子
-                     * @return TargetText 目标句子
+                     * 获取目标句子（以句子数量为单位消耗资源包）
+                     * @return TargetText 目标句子（以句子数量为单位消耗资源包）
                      */
                     std::vector<std::string> GetTargetText() const;
 
                     /**
-                     * 设置目标句子
-                     * @param TargetText 目标句子
+                     * 设置目标句子（以句子数量为单位消耗资源包）
+                     * @param TargetText 目标句子（以句子数量为单位消耗资源包）
                      */
                     void SetTargetText(const std::vector<std::string>& _targetText);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_srcTextHasBeenSet;
 
                     /**
-                     * 目标句子
+                     * 目标句子（以句子数量为单位消耗资源包）
                      */
                     std::vector<std::string> m_targetText;
                     bool m_targetTextHasBeenSet;

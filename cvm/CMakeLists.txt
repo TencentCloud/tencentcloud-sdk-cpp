@@ -34,6 +34,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/ModifyInstancesChargeTypeResponse.h
   include/tencentcloud/cvm/v20170312/model/AccountQuota.h
   include/tencentcloud/cvm/v20170312/model/InquiryPriceResetInstancesInternetMaxBandwidthResponse.h
+  include/tencentcloud/cvm/v20170312/model/InternetBandwidthConfig.h
   include/tencentcloud/cvm/v20170312/model/ModifyKeyPairAttributeRequest.h
   include/tencentcloud/cvm/v20170312/model/AssociateSecurityGroupsRequest.h
   include/tencentcloud/cvm/v20170312/model/PostPaidQuota.h
@@ -66,6 +67,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/DescribeInstancesOperationLimitRequest.h
   include/tencentcloud/cvm/v20170312/model/ModifyInstancesChargeTypeRequest.h
   include/tencentcloud/cvm/v20170312/model/DescribeInstanceVncUrlRequest.h
+  include/tencentcloud/cvm/v20170312/model/StopInstancesResponse.h
   include/tencentcloud/cvm/v20170312/model/ModifyImageSharePermissionRequest.h
   include/tencentcloud/cvm/v20170312/model/DisassociateInstancesKeyPairsResponse.h
   include/tencentcloud/cvm/v20170312/model/InquiryPriceResizeInstanceDisksRequest.h
@@ -94,7 +96,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/ResetInstancesInternetMaxBandwidthResponse.h
   include/tencentcloud/cvm/v20170312/model/DescribeInstanceFamilyConfigsResponse.h
   include/tencentcloud/cvm/v20170312/model/CreateImageResponse.h
-  include/tencentcloud/cvm/v20170312/model/StopInstancesResponse.h
+  include/tencentcloud/cvm/v20170312/model/DescribeInstancesModificationRequest.h
   include/tencentcloud/cvm/v20170312/model/InstanceMarketOptionsRequest.h
   include/tencentcloud/cvm/v20170312/model/DescribeImageSharePermissionResponse.h
   include/tencentcloud/cvm/v20170312/model/ResetInstancesPasswordResponse.h
@@ -108,7 +110,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/DescribeImportImageOsResponse.h
   include/tencentcloud/cvm/v20170312/model/InquirePricePurchaseReservedInstancesOfferingRequest.h
   include/tencentcloud/cvm/v20170312/model/PrePaidQuota.h
-  include/tencentcloud/cvm/v20170312/model/DataDisk.h
+  include/tencentcloud/cvm/v20170312/model/DescribeInstancesModificationResponse.h
   include/tencentcloud/cvm/v20170312/model/DescribeKeyPairsRequest.h
   include/tencentcloud/cvm/v20170312/model/OperationCountLimit.h
   include/tencentcloud/cvm/v20170312/model/ReservedInstanceConfigInfoItem.h
@@ -159,6 +161,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/InquiryPriceTerminateInstancesRequest.h
   include/tencentcloud/cvm/v20170312/model/ImageOsList.h
   include/tencentcloud/cvm/v20170312/model/ReservedInstanceTypeItem.h
+  include/tencentcloud/cvm/v20170312/model/InstanceTypeConfigStatus.h
   include/tencentcloud/cvm/v20170312/model/InquiryPriceRunInstancesResponse.h
   include/tencentcloud/cvm/v20170312/model/DescribeHostsRequest.h
   include/tencentcloud/cvm/v20170312/model/DescribeAccountQuotaRequest.h
@@ -197,7 +200,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/RunMonitorServiceEnabled.h
   include/tencentcloud/cvm/v20170312/model/ResetInstanceResponse.h
   include/tencentcloud/cvm/v20170312/model/VirtualPrivateCloud.h
-  include/tencentcloud/cvm/v20170312/model/InternetBandwidthConfig.h
+  include/tencentcloud/cvm/v20170312/model/InstanceChargePrepaid.h
   include/tencentcloud/cvm/v20170312/model/ModifyDisasterRecoverGroupAttributeResponse.h
   include/tencentcloud/cvm/v20170312/model/DescribeInstanceTypeConfigsResponse.h
   include/tencentcloud/cvm/v20170312/model/ResizeInstanceDisksRequest.h
@@ -210,7 +213,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/DisassociateSecurityGroupsResponse.h
   include/tencentcloud/cvm/v20170312/model/Snapshot.h
   include/tencentcloud/cvm/v20170312/model/ModifyInstancesProjectResponse.h
-  include/tencentcloud/cvm/v20170312/model/InstanceChargePrepaid.h
+  include/tencentcloud/cvm/v20170312/model/DataDisk.h
   include/tencentcloud/cvm/v20170312/model/Price.h
   )
 
@@ -231,6 +234,7 @@ set(cvm_src
   src/v20170312/model/ModifyInstancesChargeTypeResponse.cpp
   src/v20170312/model/AccountQuota.cpp
   src/v20170312/model/InquiryPriceResetInstancesInternetMaxBandwidthResponse.cpp
+  src/v20170312/model/InternetBandwidthConfig.cpp
   src/v20170312/model/ModifyKeyPairAttributeRequest.cpp
   src/v20170312/model/AssociateSecurityGroupsRequest.cpp
   src/v20170312/model/PostPaidQuota.cpp
@@ -263,6 +267,7 @@ set(cvm_src
   src/v20170312/model/DescribeInstancesOperationLimitRequest.cpp
   src/v20170312/model/ModifyInstancesChargeTypeRequest.cpp
   src/v20170312/model/DescribeInstanceVncUrlRequest.cpp
+  src/v20170312/model/StopInstancesResponse.cpp
   src/v20170312/model/ModifyImageSharePermissionRequest.cpp
   src/v20170312/model/DisassociateInstancesKeyPairsResponse.cpp
   src/v20170312/model/InquiryPriceResizeInstanceDisksRequest.cpp
@@ -291,7 +296,7 @@ set(cvm_src
   src/v20170312/model/ResetInstancesInternetMaxBandwidthResponse.cpp
   src/v20170312/model/DescribeInstanceFamilyConfigsResponse.cpp
   src/v20170312/model/CreateImageResponse.cpp
-  src/v20170312/model/StopInstancesResponse.cpp
+  src/v20170312/model/DescribeInstancesModificationRequest.cpp
   src/v20170312/model/InstanceMarketOptionsRequest.cpp
   src/v20170312/model/DescribeImageSharePermissionResponse.cpp
   src/v20170312/model/ResetInstancesPasswordResponse.cpp
@@ -305,7 +310,7 @@ set(cvm_src
   src/v20170312/model/DescribeImportImageOsResponse.cpp
   src/v20170312/model/InquirePricePurchaseReservedInstancesOfferingRequest.cpp
   src/v20170312/model/PrePaidQuota.cpp
-  src/v20170312/model/DataDisk.cpp
+  src/v20170312/model/DescribeInstancesModificationResponse.cpp
   src/v20170312/model/DescribeKeyPairsRequest.cpp
   src/v20170312/model/OperationCountLimit.cpp
   src/v20170312/model/ReservedInstanceConfigInfoItem.cpp
@@ -356,6 +361,7 @@ set(cvm_src
   src/v20170312/model/InquiryPriceTerminateInstancesRequest.cpp
   src/v20170312/model/ImageOsList.cpp
   src/v20170312/model/ReservedInstanceTypeItem.cpp
+  src/v20170312/model/InstanceTypeConfigStatus.cpp
   src/v20170312/model/InquiryPriceRunInstancesResponse.cpp
   src/v20170312/model/DescribeHostsRequest.cpp
   src/v20170312/model/DescribeAccountQuotaRequest.cpp
@@ -394,7 +400,7 @@ set(cvm_src
   src/v20170312/model/RunMonitorServiceEnabled.cpp
   src/v20170312/model/ResetInstanceResponse.cpp
   src/v20170312/model/VirtualPrivateCloud.cpp
-  src/v20170312/model/InternetBandwidthConfig.cpp
+  src/v20170312/model/InstanceChargePrepaid.cpp
   src/v20170312/model/ModifyDisasterRecoverGroupAttributeResponse.cpp
   src/v20170312/model/DescribeInstanceTypeConfigsResponse.cpp
   src/v20170312/model/ResizeInstanceDisksRequest.cpp
@@ -407,7 +413,7 @@ set(cvm_src
   src/v20170312/model/DisassociateSecurityGroupsResponse.cpp
   src/v20170312/model/Snapshot.cpp
   src/v20170312/model/ModifyInstancesProjectResponse.cpp
-  src/v20170312/model/InstanceChargePrepaid.cpp
+  src/v20170312/model/DataDisk.cpp
   src/v20170312/model/Price.cpp
   )
 

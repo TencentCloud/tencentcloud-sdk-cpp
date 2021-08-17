@@ -30,7 +30,11 @@ TemDeployApplicationDetailInfo::TemDeployApplicationDetailInfo() :
     m_oldVersionPodListHasBeenSet(false),
     m_currentBatchIndexHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
-    m_currentBatchStatusHasBeenSet(false)
+    m_currentBatchStatusHasBeenSet(false),
+    m_newDeployVersionHasBeenSet(false),
+    m_oldDeployVersionHasBeenSet(false),
+    m_newVersionPackageInfoHasBeenSet(false),
+    m_nextBatchStartTimeHasBeenSet(false)
 {
 }
 
@@ -170,6 +174,46 @@ CoreInternalOutcome TemDeployApplicationDetailInfo::Deserialize(const rapidjson:
         m_currentBatchStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("NewDeployVersion") && !value["NewDeployVersion"].IsNull())
+    {
+        if (!value["NewDeployVersion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TemDeployApplicationDetailInfo.NewDeployVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_newDeployVersion = string(value["NewDeployVersion"].GetString());
+        m_newDeployVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("OldDeployVersion") && !value["OldDeployVersion"].IsNull())
+    {
+        if (!value["OldDeployVersion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TemDeployApplicationDetailInfo.OldDeployVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_oldDeployVersion = string(value["OldDeployVersion"].GetString());
+        m_oldDeployVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("NewVersionPackageInfo") && !value["NewVersionPackageInfo"].IsNull())
+    {
+        if (!value["NewVersionPackageInfo"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TemDeployApplicationDetailInfo.NewVersionPackageInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_newVersionPackageInfo = string(value["NewVersionPackageInfo"].GetString());
+        m_newVersionPackageInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("NextBatchStartTime") && !value["NextBatchStartTime"].IsNull())
+    {
+        if (!value["NextBatchStartTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `TemDeployApplicationDetailInfo.NextBatchStartTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_nextBatchStartTime = value["NextBatchStartTime"].GetInt64();
+        m_nextBatchStartTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -265,6 +309,38 @@ void TemDeployApplicationDetailInfo::ToJsonObject(rapidjson::Value &value, rapid
         string key = "CurrentBatchStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_currentBatchStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_newDeployVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewDeployVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_newDeployVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_oldDeployVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OldDeployVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_oldDeployVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_newVersionPackageInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewVersionPackageInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_newVersionPackageInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nextBatchStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NextBatchStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nextBatchStartTime, allocator);
     }
 
 }
@@ -428,5 +504,69 @@ void TemDeployApplicationDetailInfo::SetCurrentBatchStatus(const string& _curren
 bool TemDeployApplicationDetailInfo::CurrentBatchStatusHasBeenSet() const
 {
     return m_currentBatchStatusHasBeenSet;
+}
+
+string TemDeployApplicationDetailInfo::GetNewDeployVersion() const
+{
+    return m_newDeployVersion;
+}
+
+void TemDeployApplicationDetailInfo::SetNewDeployVersion(const string& _newDeployVersion)
+{
+    m_newDeployVersion = _newDeployVersion;
+    m_newDeployVersionHasBeenSet = true;
+}
+
+bool TemDeployApplicationDetailInfo::NewDeployVersionHasBeenSet() const
+{
+    return m_newDeployVersionHasBeenSet;
+}
+
+string TemDeployApplicationDetailInfo::GetOldDeployVersion() const
+{
+    return m_oldDeployVersion;
+}
+
+void TemDeployApplicationDetailInfo::SetOldDeployVersion(const string& _oldDeployVersion)
+{
+    m_oldDeployVersion = _oldDeployVersion;
+    m_oldDeployVersionHasBeenSet = true;
+}
+
+bool TemDeployApplicationDetailInfo::OldDeployVersionHasBeenSet() const
+{
+    return m_oldDeployVersionHasBeenSet;
+}
+
+string TemDeployApplicationDetailInfo::GetNewVersionPackageInfo() const
+{
+    return m_newVersionPackageInfo;
+}
+
+void TemDeployApplicationDetailInfo::SetNewVersionPackageInfo(const string& _newVersionPackageInfo)
+{
+    m_newVersionPackageInfo = _newVersionPackageInfo;
+    m_newVersionPackageInfoHasBeenSet = true;
+}
+
+bool TemDeployApplicationDetailInfo::NewVersionPackageInfoHasBeenSet() const
+{
+    return m_newVersionPackageInfoHasBeenSet;
+}
+
+int64_t TemDeployApplicationDetailInfo::GetNextBatchStartTime() const
+{
+    return m_nextBatchStartTime;
+}
+
+void TemDeployApplicationDetailInfo::SetNextBatchStartTime(const int64_t& _nextBatchStartTime)
+{
+    m_nextBatchStartTime = _nextBatchStartTime;
+    m_nextBatchStartTimeHasBeenSet = true;
+}
+
+bool TemDeployApplicationDetailInfo::NextBatchStartTimeHasBeenSet() const
+{
+    return m_nextBatchStartTimeHasBeenSet;
 }
 
