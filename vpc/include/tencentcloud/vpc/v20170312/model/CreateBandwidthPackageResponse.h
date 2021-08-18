@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取带宽包唯一ID
-                     * @return BandwidthPackageId 带宽包唯一ID
+                     * 获取带宽包唯一ID。
+                     * @return BandwidthPackageId 带宽包唯一ID。
                      */
                     std::string GetBandwidthPackageId() const;
 
@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool BandwidthPackageIdHasBeenSet() const;
 
                     /**
-                     * 获取带宽包唯一ID列表(申请数量大于1时有效)
-                     * @return BandwidthPackageIds 带宽包唯一ID列表(申请数量大于1时有效)
+                     * 获取带宽包唯一ID列表(申请数量大于1时有效)。
+                     * @return BandwidthPackageIds 带宽包唯一ID列表(申请数量大于1时有效)。
                      */
                     std::vector<std::string> GetBandwidthPackageIds() const;
 
@@ -70,13 +70,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 带宽包唯一ID
+                     * 带宽包唯一ID。
                      */
                     std::string m_bandwidthPackageId;
                     bool m_bandwidthPackageIdHasBeenSet;
 
                     /**
-                     * 带宽包唯一ID列表(申请数量大于1时有效)
+                     * 带宽包唯一ID列表(申请数量大于1时有效)。
                      */
                     std::vector<std::string> m_bandwidthPackageIds;
                     bool m_bandwidthPackageIdsHasBeenSet;

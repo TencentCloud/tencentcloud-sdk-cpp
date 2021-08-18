@@ -44,14 +44,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取带宽包类型，包括'HIGH_QUALITY_BGP', 'BGP'，'SINGLEISP'，'ANYCAST'
-                     * @return NetworkType 带宽包类型，包括'HIGH_QUALITY_BGP', 'BGP'，'SINGLEISP'，'ANYCAST'
+                     * 获取带宽包类型, 默认值: BGP, 可选值:
+<li>BGP: 普通BGP共享带宽包</li>
+<li>HIGH_QUALITY_BGP: 精品BGP共享带宽包</li>
+                     * @return NetworkType 带宽包类型, 默认值: BGP, 可选值:
+<li>BGP: 普通BGP共享带宽包</li>
+<li>HIGH_QUALITY_BGP: 精品BGP共享带宽包</li>
                      */
                     std::string GetNetworkType() const;
 
                     /**
-                     * 设置带宽包类型，包括'HIGH_QUALITY_BGP', 'BGP'，'SINGLEISP'，'ANYCAST'
-                     * @param NetworkType 带宽包类型，包括'HIGH_QUALITY_BGP', 'BGP'，'SINGLEISP'，'ANYCAST'
+                     * 设置带宽包类型, 默认值: BGP, 可选值:
+<li>BGP: 普通BGP共享带宽包</li>
+<li>HIGH_QUALITY_BGP: 精品BGP共享带宽包</li>
+                     * @param NetworkType 带宽包类型, 默认值: BGP, 可选值:
+<li>BGP: 普通BGP共享带宽包</li>
+<li>HIGH_QUALITY_BGP: 精品BGP共享带宽包</li>
                      */
                     void SetNetworkType(const std::string& _networkType);
 
@@ -62,14 +70,26 @@ namespace TencentCloud
                     bool NetworkTypeHasBeenSet() const;
 
                     /**
-                     * 获取带宽包计费类型，包括‘TOP5_POSTPAID_BY_MONTH’，‘PERCENT95_POSTPAID_BY_MONTH’
-                     * @return ChargeType 带宽包计费类型，包括‘TOP5_POSTPAID_BY_MONTH’，‘PERCENT95_POSTPAID_BY_MONTH’
+                     * 获取带宽包计费类型, 默认为: TOP5_POSTPAID_BY_MONTH, 可选值:
+<li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>
+<li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>
+<li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>
+                     * @return ChargeType 带宽包计费类型, 默认为: TOP5_POSTPAID_BY_MONTH, 可选值:
+<li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>
+<li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>
+<li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>
                      */
                     std::string GetChargeType() const;
 
                     /**
-                     * 设置带宽包计费类型，包括‘TOP5_POSTPAID_BY_MONTH’，‘PERCENT95_POSTPAID_BY_MONTH’
-                     * @param ChargeType 带宽包计费类型，包括‘TOP5_POSTPAID_BY_MONTH’，‘PERCENT95_POSTPAID_BY_MONTH’
+                     * 设置带宽包计费类型, 默认为: TOP5_POSTPAID_BY_MONTH, 可选值:
+<li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>
+<li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>
+<li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>
+                     * @param ChargeType 带宽包计费类型, 默认为: TOP5_POSTPAID_BY_MONTH, 可选值:
+<li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>
+<li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>
+<li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>
                      */
                     void SetChargeType(const std::string& _chargeType);
 
@@ -80,14 +100,14 @@ namespace TencentCloud
                     bool ChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取带宽包名字
-                     * @return BandwidthPackageName 带宽包名字
+                     * 获取带宽包名称。
+                     * @return BandwidthPackageName 带宽包名称。
                      */
                     std::string GetBandwidthPackageName() const;
 
                     /**
-                     * 设置带宽包名字
-                     * @param BandwidthPackageName 带宽包名字
+                     * 设置带宽包名称。
+                     * @param BandwidthPackageName 带宽包名称。
                      */
                     void SetBandwidthPackageName(const std::string& _bandwidthPackageName);
 
@@ -98,14 +118,14 @@ namespace TencentCloud
                     bool BandwidthPackageNameHasBeenSet() const;
 
                     /**
-                     * 获取带宽包数量(传统账户类型只能填1)
-                     * @return BandwidthPackageCount 带宽包数量(传统账户类型只能填1)
+                     * 获取带宽包数量(传统账户类型只能填1), 标准账户类型取值范围为1~20。
+                     * @return BandwidthPackageCount 带宽包数量(传统账户类型只能填1), 标准账户类型取值范围为1~20。
                      */
                     uint64_t GetBandwidthPackageCount() const;
 
                     /**
-                     * 设置带宽包数量(传统账户类型只能填1)
-                     * @param BandwidthPackageCount 带宽包数量(传统账户类型只能填1)
+                     * 设置带宽包数量(传统账户类型只能填1), 标准账户类型取值范围为1~20。
+                     * @param BandwidthPackageCount 带宽包数量(传统账户类型只能填1), 标准账户类型取值范围为1~20。
                      */
                     void SetBandwidthPackageCount(const uint64_t& _bandwidthPackageCount);
 
@@ -172,25 +192,30 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 带宽包类型，包括'HIGH_QUALITY_BGP', 'BGP'，'SINGLEISP'，'ANYCAST'
+                     * 带宽包类型, 默认值: BGP, 可选值:
+<li>BGP: 普通BGP共享带宽包</li>
+<li>HIGH_QUALITY_BGP: 精品BGP共享带宽包</li>
                      */
                     std::string m_networkType;
                     bool m_networkTypeHasBeenSet;
 
                     /**
-                     * 带宽包计费类型，包括‘TOP5_POSTPAID_BY_MONTH’，‘PERCENT95_POSTPAID_BY_MONTH’
+                     * 带宽包计费类型, 默认为: TOP5_POSTPAID_BY_MONTH, 可选值:
+<li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>
+<li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>
+<li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>
                      */
                     std::string m_chargeType;
                     bool m_chargeTypeHasBeenSet;
 
                     /**
-                     * 带宽包名字
+                     * 带宽包名称。
                      */
                     std::string m_bandwidthPackageName;
                     bool m_bandwidthPackageNameHasBeenSet;
 
                     /**
-                     * 带宽包数量(传统账户类型只能填1)
+                     * 带宽包数量(传统账户类型只能填1), 标准账户类型取值范围为1~20。
                      */
                     uint64_t m_bandwidthPackageCount;
                     bool m_bandwidthPackageCountHasBeenSet;

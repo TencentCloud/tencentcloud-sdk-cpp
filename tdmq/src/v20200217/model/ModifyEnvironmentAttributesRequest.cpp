@@ -26,7 +26,8 @@ ModifyEnvironmentAttributesRequest::ModifyEnvironmentAttributesRequest() :
     m_environmentIdHasBeenSet(false),
     m_msgTTLHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_retentionPolicyHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,15 @@ string ModifyEnvironmentAttributesRequest::ToJsonString() const
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_retentionPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetentionPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_retentionPolicy.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -139,6 +149,22 @@ void ModifyEnvironmentAttributesRequest::SetClusterId(const string& _clusterId)
 bool ModifyEnvironmentAttributesRequest::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+RetentionPolicy ModifyEnvironmentAttributesRequest::GetRetentionPolicy() const
+{
+    return m_retentionPolicy;
+}
+
+void ModifyEnvironmentAttributesRequest::SetRetentionPolicy(const RetentionPolicy& _retentionPolicy)
+{
+    m_retentionPolicy = _retentionPolicy;
+    m_retentionPolicyHasBeenSet = true;
+}
+
+bool ModifyEnvironmentAttributesRequest::RetentionPolicyHasBeenSet() const
+{
+    return m_retentionPolicyHasBeenSet;
 }
 
 

@@ -196,6 +196,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/KeyPair.h
   include/tencentcloud/cvm/v20170312/model/DescribeReservedInstancesOfferingsResponse.h
   include/tencentcloud/cvm/v20170312/model/RenewInstancesResponse.h
+  include/tencentcloud/cvm/v20170312/model/RunAutomationServiceEnabled.h
   include/tencentcloud/cvm/v20170312/model/DescribeAccountQuotaResponse.h
   include/tencentcloud/cvm/v20170312/model/RunMonitorServiceEnabled.h
   include/tencentcloud/cvm/v20170312/model/ResetInstanceResponse.h
@@ -396,6 +397,7 @@ set(cvm_src
   src/v20170312/model/KeyPair.cpp
   src/v20170312/model/DescribeReservedInstancesOfferingsResponse.cpp
   src/v20170312/model/RenewInstancesResponse.cpp
+  src/v20170312/model/RunAutomationServiceEnabled.cpp
   src/v20170312/model/DescribeAccountQuotaResponse.cpp
   src/v20170312/model/RunMonitorServiceEnabled.cpp
   src/v20170312/model/ResetInstanceResponse.cpp

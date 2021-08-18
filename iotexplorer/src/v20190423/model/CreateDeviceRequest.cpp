@@ -29,7 +29,8 @@ CreateDeviceRequest::CreateDeviceRequest() :
     m_appKeyHasBeenSet(false),
     m_devEUIHasBeenSet(false),
     m_appSKeyHasBeenSet(false),
-    m_nwkSKeyHasBeenSet(false)
+    m_nwkSKeyHasBeenSet(false),
+    m_definedPskHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string CreateDeviceRequest::ToJsonString() const
         string key = "NwkSKey";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_nwkSKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_definedPskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefinedPsk";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_definedPsk.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +223,22 @@ void CreateDeviceRequest::SetNwkSKey(const string& _nwkSKey)
 bool CreateDeviceRequest::NwkSKeyHasBeenSet() const
 {
     return m_nwkSKeyHasBeenSet;
+}
+
+string CreateDeviceRequest::GetDefinedPsk() const
+{
+    return m_definedPsk;
+}
+
+void CreateDeviceRequest::SetDefinedPsk(const string& _definedPsk)
+{
+    m_definedPsk = _definedPsk;
+    m_definedPskHasBeenSet = true;
+}
+
+bool CreateDeviceRequest::DefinedPskHasBeenSet() const
+{
+    return m_definedPskHasBeenSet;
 }
 
 

@@ -814,6 +814,49 @@ CpdpClient::CreateAgentTaxPaymentInfosOutcomeCallable CpdpClient::CreateAgentTax
     return task->get_future();
 }
 
+CpdpClient::CreateBatchPaymentOutcome CpdpClient::CreateBatchPayment(const CreateBatchPaymentRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBatchPayment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBatchPaymentResponse rsp = CreateBatchPaymentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBatchPaymentOutcome(rsp);
+        else
+            return CreateBatchPaymentOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBatchPaymentOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::CreateBatchPaymentAsync(const CreateBatchPaymentRequest& request, const CreateBatchPaymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBatchPayment(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::CreateBatchPaymentOutcomeCallable CpdpClient::CreateBatchPaymentCallable(const CreateBatchPaymentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBatchPaymentOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBatchPayment(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::CreateCustAcctIdOutcome CpdpClient::CreateCustAcctId(const CreateCustAcctIdRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCustAcctId");
@@ -1237,6 +1280,49 @@ CpdpClient::CreateSinglePayOutcomeCallable CpdpClient::CreateSinglePayCallable(c
         [this, request]()
         {
             return this->CreateSinglePay(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::CreateSinglePaymentOutcome CpdpClient::CreateSinglePayment(const CreateSinglePaymentRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSinglePayment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSinglePaymentResponse rsp = CreateSinglePaymentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSinglePaymentOutcome(rsp);
+        else
+            return CreateSinglePaymentOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSinglePaymentOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::CreateSinglePaymentAsync(const CreateSinglePaymentRequest& request, const CreateSinglePaymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSinglePayment(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::CreateSinglePaymentOutcomeCallable CpdpClient::CreateSinglePaymentCallable(const CreateSinglePaymentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSinglePaymentOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSinglePayment(request);
         }
     );
 
@@ -2276,6 +2362,49 @@ CpdpClient::QueryBankWithdrawCashDetailsOutcomeCallable CpdpClient::QueryBankWit
     return task->get_future();
 }
 
+CpdpClient::QueryBatchPaymentResultOutcome CpdpClient::QueryBatchPaymentResult(const QueryBatchPaymentResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryBatchPaymentResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryBatchPaymentResultResponse rsp = QueryBatchPaymentResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryBatchPaymentResultOutcome(rsp);
+        else
+            return QueryBatchPaymentResultOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryBatchPaymentResultOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryBatchPaymentResultAsync(const QueryBatchPaymentResultRequest& request, const QueryBatchPaymentResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryBatchPaymentResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryBatchPaymentResultOutcomeCallable CpdpClient::QueryBatchPaymentResultCallable(const QueryBatchPaymentResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryBatchPaymentResultOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryBatchPaymentResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::QueryBillDownloadURLOutcome CpdpClient::QueryBillDownloadURL(const QueryBillDownloadURLRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryBillDownloadURL");
@@ -3129,6 +3258,49 @@ CpdpClient::QuerySinglePayOutcomeCallable CpdpClient::QuerySinglePayCallable(con
         [this, request]()
         {
             return this->QuerySinglePay(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::QuerySinglePaymentResultOutcome CpdpClient::QuerySinglePaymentResult(const QuerySinglePaymentResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "QuerySinglePaymentResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QuerySinglePaymentResultResponse rsp = QuerySinglePaymentResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QuerySinglePaymentResultOutcome(rsp);
+        else
+            return QuerySinglePaymentResultOutcome(o.GetError());
+    }
+    else
+    {
+        return QuerySinglePaymentResultOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QuerySinglePaymentResultAsync(const QuerySinglePaymentResultRequest& request, const QuerySinglePaymentResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QuerySinglePaymentResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QuerySinglePaymentResultOutcomeCallable CpdpClient::QuerySinglePaymentResultCallable(const QuerySinglePaymentResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QuerySinglePaymentResultOutcome()>>(
+        [this, request]()
+        {
+            return this->QuerySinglePaymentResult(request);
         }
     );
 

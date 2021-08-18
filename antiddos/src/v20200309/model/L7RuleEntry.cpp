@@ -40,7 +40,8 @@ L7RuleEntry::L7RuleEntry() :
     m_ruleNameHasBeenSet(false),
     m_cCStatusHasBeenSet(false),
     m_virtualPortHasBeenSet(false),
-    m_sSLIdHasBeenSet(false)
+    m_sSLIdHasBeenSet(false),
+    m_idHasBeenSet(false)
 {
 }
 
@@ -259,6 +260,16 @@ CoreInternalOutcome L7RuleEntry::Deserialize(const rapidjson::Value &value)
         m_sSLIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `L7RuleEntry.Id` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = string(value["Id"].GetString());
+        m_idHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -431,6 +442,14 @@ void L7RuleEntry::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "SSLId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sSLId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -754,5 +773,21 @@ void L7RuleEntry::SetSSLId(const string& _sSLId)
 bool L7RuleEntry::SSLIdHasBeenSet() const
 {
     return m_sSLIdHasBeenSet;
+}
+
+string L7RuleEntry::GetId() const
+{
+    return m_id;
+}
+
+void L7RuleEntry::SetId(const string& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool L7RuleEntry::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
 }
 

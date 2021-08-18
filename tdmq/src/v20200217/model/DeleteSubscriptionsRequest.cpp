@@ -25,7 +25,8 @@ using namespace std;
 DeleteSubscriptionsRequest::DeleteSubscriptionsRequest() :
     m_subscriptionTopicSetsHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
-    m_environmentIdHasBeenSet(false)
+    m_environmentIdHasBeenSet(false),
+    m_forceHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,14 @@ string DeleteSubscriptionsRequest::ToJsonString() const
         string key = "EnvironmentId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_environmentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Force";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_force, allocator);
     }
 
 
@@ -121,6 +130,22 @@ void DeleteSubscriptionsRequest::SetEnvironmentId(const string& _environmentId)
 bool DeleteSubscriptionsRequest::EnvironmentIdHasBeenSet() const
 {
     return m_environmentIdHasBeenSet;
+}
+
+bool DeleteSubscriptionsRequest::GetForce() const
+{
+    return m_force;
+}
+
+void DeleteSubscriptionsRequest::SetForce(const bool& _force)
+{
+    m_force = _force;
+    m_forceHasBeenSet = true;
+}
+
+bool DeleteSubscriptionsRequest::ForceHasBeenSet() const
+{
+    return m_forceHasBeenSet;
 }
 
 

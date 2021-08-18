@@ -207,6 +207,8 @@
 #include <tencentcloud/cwp/v20180228/model/ModifyMalwareTimingScanSettingsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyProVersionRenewFlagRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyProVersionRenewFlagResponse.h>
+#include <tencentcloud/cwp/v20180228/model/ModifyWarningSettingRequest.h>
+#include <tencentcloud/cwp/v20180228/model/ModifyWarningSettingResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyWebPageProtectSettingRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyWebPageProtectSettingResponse.h>
 #include <tencentcloud/cwp/v20180228/model/OpenProVersionRequest.h>
@@ -531,6 +533,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyProVersionRenewFlagResponse> ModifyProVersionRenewFlagOutcome;
                 typedef std::future<ModifyProVersionRenewFlagOutcome> ModifyProVersionRenewFlagOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ModifyProVersionRenewFlagRequest&, ModifyProVersionRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProVersionRenewFlagAsyncHandler;
+                typedef Outcome<Error, Model::ModifyWarningSettingResponse> ModifyWarningSettingOutcome;
+                typedef std::future<ModifyWarningSettingOutcome> ModifyWarningSettingOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::ModifyWarningSettingRequest&, ModifyWarningSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWarningSettingAsyncHandler;
                 typedef Outcome<Error, Model::ModifyWebPageProtectSettingResponse> ModifyWebPageProtectSettingOutcome;
                 typedef std::future<ModifyWebPageProtectSettingOutcome> ModifyWebPageProtectSettingOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ModifyWebPageProtectSettingRequest&, ModifyWebPageProtectSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWebPageProtectSettingAsyncHandler;
@@ -1414,6 +1419,15 @@ namespace TencentCloud
                 ModifyProVersionRenewFlagOutcome ModifyProVersionRenewFlag(const Model::ModifyProVersionRenewFlagRequest &request);
                 void ModifyProVersionRenewFlagAsync(const Model::ModifyProVersionRenewFlagRequest& request, const ModifyProVersionRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyProVersionRenewFlagOutcomeCallable ModifyProVersionRenewFlagCallable(const Model::ModifyProVersionRenewFlagRequest& request);
+
+                /**
+                 *修改告警设置
+                 * @param req ModifyWarningSettingRequest
+                 * @return ModifyWarningSettingOutcome
+                 */
+                ModifyWarningSettingOutcome ModifyWarningSetting(const Model::ModifyWarningSettingRequest &request);
+                void ModifyWarningSettingAsync(const Model::ModifyWarningSettingRequest& request, const ModifyWarningSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyWarningSettingOutcomeCallable ModifyWarningSettingCallable(const Model::ModifyWarningSettingRequest& request);
 
                 /**
                  *网站防篡改-修改网站防护设置

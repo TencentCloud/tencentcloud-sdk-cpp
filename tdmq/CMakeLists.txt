@@ -121,6 +121,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/DeleteSubscriptionsResponse.h
   include/tencentcloud/tdmq/v20200217/model/ConsumersSchedule.h
   include/tencentcloud/tdmq/v20200217/model/Cluster.h
+  include/tencentcloud/tdmq/v20200217/model/RetentionPolicy.h
   include/tencentcloud/tdmq/v20200217/model/SendMsgRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeCmqQueueDetailRequest.h
   include/tencentcloud/tdmq/v20200217/model/ClearCmqQueueResponse.h
@@ -249,6 +250,7 @@ set(tdmq_src
   src/v20200217/model/DeleteSubscriptionsResponse.cpp
   src/v20200217/model/ConsumersSchedule.cpp
   src/v20200217/model/Cluster.cpp
+  src/v20200217/model/RetentionPolicy.cpp
   src/v20200217/model/SendMsgRequest.cpp
   src/v20200217/model/DescribeCmqQueueDetailRequest.cpp
   src/v20200217/model/ClearCmqQueueResponse.cpp

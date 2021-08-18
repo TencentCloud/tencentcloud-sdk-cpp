@@ -222,6 +222,28 @@ namespace TencentCloud
                      */
                     bool BranchHasBeenSet() const;
 
+                    /**
+                     * 获取coding项目ID，type为coding时需要填写
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProjectId coding项目ID，type为coding时需要填写
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetProjectId() const;
+
+                    /**
+                     * 设置coding项目ID，type为coding时需要填写
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProjectId coding项目ID，type为coding时需要填写
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProjectId(const int64_t& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     */
+                    bool ProjectIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -279,6 +301,13 @@ namespace TencentCloud
                      */
                     std::string m_branch;
                     bool m_branchHasBeenSet;
+
+                    /**
+                     * coding项目ID，type为coding时需要填写
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_projectId;
+                    bool m_projectIdHasBeenSet;
 
                 };
             }

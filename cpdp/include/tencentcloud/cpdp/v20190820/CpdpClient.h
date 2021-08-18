@@ -59,6 +59,8 @@
 #include <tencentcloud/cpdp/v20190820/model/CreateAcctResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateAgentTaxPaymentInfosRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateAgentTaxPaymentInfosResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateBatchPaymentRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateBatchPaymentResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateCustAcctIdRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateCustAcctIdResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateExternalAnchorRequest.h>
@@ -79,6 +81,8 @@
 #include <tencentcloud/cpdp/v20190820/model/CreateRedInvoiceV2Response.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateSinglePayRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateSinglePayResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateSinglePaymentRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateSinglePaymentResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateTransferBatchRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateTransferBatchResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/DeleteAgentTaxPaymentInfoRequest.h>
@@ -127,6 +131,8 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryBankTransactionDetailsResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryBankWithdrawCashDetailsRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryBankWithdrawCashDetailsResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryBatchPaymentResultRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryBatchPaymentResultResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryBillDownloadURLRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryBillDownloadURLResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryCommonTransferRechargeRequest.h>
@@ -167,6 +173,8 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryRefundResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QuerySinglePayRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QuerySinglePayResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QuerySinglePaymentResultRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QuerySinglePaymentResultResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QuerySingleTransactionStatusRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QuerySingleTransactionStatusResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QuerySmallAmountTransferRequest.h>
@@ -291,6 +299,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateAgentTaxPaymentInfosResponse> CreateAgentTaxPaymentInfosOutcome;
                 typedef std::future<CreateAgentTaxPaymentInfosOutcome> CreateAgentTaxPaymentInfosOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateAgentTaxPaymentInfosRequest&, CreateAgentTaxPaymentInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAgentTaxPaymentInfosAsyncHandler;
+                typedef Outcome<Error, Model::CreateBatchPaymentResponse> CreateBatchPaymentOutcome;
+                typedef std::future<CreateBatchPaymentOutcome> CreateBatchPaymentOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::CreateBatchPaymentRequest&, CreateBatchPaymentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchPaymentAsyncHandler;
                 typedef Outcome<Error, Model::CreateCustAcctIdResponse> CreateCustAcctIdOutcome;
                 typedef std::future<CreateCustAcctIdOutcome> CreateCustAcctIdOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateCustAcctIdRequest&, CreateCustAcctIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustAcctIdAsyncHandler;
@@ -321,6 +332,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateSinglePayResponse> CreateSinglePayOutcome;
                 typedef std::future<CreateSinglePayOutcome> CreateSinglePayOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateSinglePayRequest&, CreateSinglePayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSinglePayAsyncHandler;
+                typedef Outcome<Error, Model::CreateSinglePaymentResponse> CreateSinglePaymentOutcome;
+                typedef std::future<CreateSinglePaymentOutcome> CreateSinglePaymentOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::CreateSinglePaymentRequest&, CreateSinglePaymentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSinglePaymentAsyncHandler;
                 typedef Outcome<Error, Model::CreateTransferBatchResponse> CreateTransferBatchOutcome;
                 typedef std::future<CreateTransferBatchOutcome> CreateTransferBatchOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateTransferBatchRequest&, CreateTransferBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTransferBatchAsyncHandler;
@@ -393,6 +407,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::QueryBankWithdrawCashDetailsResponse> QueryBankWithdrawCashDetailsOutcome;
                 typedef std::future<QueryBankWithdrawCashDetailsOutcome> QueryBankWithdrawCashDetailsOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryBankWithdrawCashDetailsRequest&, QueryBankWithdrawCashDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryBankWithdrawCashDetailsAsyncHandler;
+                typedef Outcome<Error, Model::QueryBatchPaymentResultResponse> QueryBatchPaymentResultOutcome;
+                typedef std::future<QueryBatchPaymentResultOutcome> QueryBatchPaymentResultOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryBatchPaymentResultRequest&, QueryBatchPaymentResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryBatchPaymentResultAsyncHandler;
                 typedef Outcome<Error, Model::QueryBillDownloadURLResponse> QueryBillDownloadURLOutcome;
                 typedef std::future<QueryBillDownloadURLOutcome> QueryBillDownloadURLOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryBillDownloadURLRequest&, QueryBillDownloadURLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryBillDownloadURLAsyncHandler;
@@ -453,6 +470,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::QuerySinglePayResponse> QuerySinglePayOutcome;
                 typedef std::future<QuerySinglePayOutcome> QuerySinglePayOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QuerySinglePayRequest&, QuerySinglePayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QuerySinglePayAsyncHandler;
+                typedef Outcome<Error, Model::QuerySinglePaymentResultResponse> QuerySinglePaymentResultOutcome;
+                typedef std::future<QuerySinglePaymentResultOutcome> QuerySinglePaymentResultOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QuerySinglePaymentResultRequest&, QuerySinglePaymentResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QuerySinglePaymentResultAsyncHandler;
                 typedef Outcome<Error, Model::QuerySingleTransactionStatusResponse> QuerySingleTransactionStatusOutcome;
                 typedef std::future<QuerySingleTransactionStatusOutcome> QuerySingleTransactionStatusOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QuerySingleTransactionStatusRequest&, QuerySingleTransactionStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QuerySingleTransactionStatusAsyncHandler;
@@ -710,6 +730,15 @@ namespace TencentCloud
                 CreateAgentTaxPaymentInfosOutcomeCallable CreateAgentTaxPaymentInfosCallable(const Model::CreateAgentTaxPaymentInfosRequest& request);
 
                 /**
+                 *灵云-批量主播转账接口
+                 * @param req CreateBatchPaymentRequest
+                 * @return CreateBatchPaymentOutcome
+                 */
+                CreateBatchPaymentOutcome CreateBatchPayment(const Model::CreateBatchPaymentRequest &request);
+                void CreateBatchPaymentAsync(const Model::CreateBatchPaymentRequest& request, const CreateBatchPaymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBatchPaymentOutcomeCallable CreateBatchPaymentCallable(const Model::CreateBatchPaymentRequest& request);
+
+                /**
                  *会员子账户开立。会员在银行注册，并开立会员子账户，交易网会员代码即会员在平台端系统的会员编号。
 平台需保存银行返回的子账户账号，后续交易接口都会用到。会员属性字段为预留扩展字段，当前必须送默认值。
                  * @param req CreateCustAcctIdRequest
@@ -799,6 +828,15 @@ namespace TencentCloud
                 CreateSinglePayOutcome CreateSinglePay(const Model::CreateSinglePayRequest &request);
                 void CreateSinglePayAsync(const Model::CreateSinglePayRequest& request, const CreateSinglePayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSinglePayOutcomeCallable CreateSinglePayCallable(const Model::CreateSinglePayRequest& request);
+
+                /**
+                 *灵云-单笔主播转账接口
+                 * @param req CreateSinglePaymentRequest
+                 * @return CreateSinglePaymentOutcome
+                 */
+                CreateSinglePaymentOutcome CreateSinglePayment(const Model::CreateSinglePaymentRequest &request);
+                void CreateSinglePaymentAsync(const Model::CreateSinglePaymentRequest& request, const CreateSinglePaymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSinglePaymentOutcomeCallable CreateSinglePaymentCallable(const Model::CreateSinglePaymentRequest& request);
 
                 /**
                  *微信商户发起批量转账
@@ -1017,6 +1055,15 @@ namespace TencentCloud
                 QueryBankWithdrawCashDetailsOutcomeCallable QueryBankWithdrawCashDetailsCallable(const Model::QueryBankWithdrawCashDetailsRequest& request);
 
                 /**
+                 *灵云-批量转账结果查询
+                 * @param req QueryBatchPaymentResultRequest
+                 * @return QueryBatchPaymentResultOutcome
+                 */
+                QueryBatchPaymentResultOutcome QueryBatchPaymentResult(const Model::QueryBatchPaymentResultRequest &request);
+                void QueryBatchPaymentResultAsync(const Model::QueryBatchPaymentResultRequest& request, const QueryBatchPaymentResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryBatchPaymentResultOutcomeCallable QueryBatchPaymentResultCallable(const Model::QueryBatchPaymentResultRequest& request);
+
+                /**
                  *获取单笔代发转账对账单下载URL
                  * @param req QueryBillDownloadURLRequest
                  * @return QueryBillDownloadURLOutcome
@@ -1196,6 +1243,15 @@ namespace TencentCloud
                 QuerySinglePayOutcome QuerySinglePay(const Model::QuerySinglePayRequest &request);
                 void QuerySinglePayAsync(const Model::QuerySinglePayRequest& request, const QuerySinglePayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QuerySinglePayOutcomeCallable QuerySinglePayCallable(const Model::QuerySinglePayRequest& request);
+
+                /**
+                 *灵云-单笔转账结果查询
+                 * @param req QuerySinglePaymentResultRequest
+                 * @return QuerySinglePaymentResultOutcome
+                 */
+                QuerySinglePaymentResultOutcome QuerySinglePaymentResult(const Model::QuerySinglePaymentResultRequest &request);
+                void QuerySinglePaymentResultAsync(const Model::QuerySinglePaymentResultRequest& request, const QuerySinglePaymentResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QuerySinglePaymentResultOutcomeCallable QuerySinglePaymentResultCallable(const Model::QuerySinglePaymentResultRequest& request);
 
                 /**
                  *查询银行单笔交易状态。查询单笔交易的状态。

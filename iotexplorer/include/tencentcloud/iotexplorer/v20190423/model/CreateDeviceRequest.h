@@ -168,6 +168,24 @@ namespace TencentCloud
                      */
                     bool NwkSKeyHasBeenSet() const;
 
+                    /**
+                     * 获取手动指定设备的PSK密钥
+                     * @return DefinedPsk 手动指定设备的PSK密钥
+                     */
+                    std::string GetDefinedPsk() const;
+
+                    /**
+                     * 设置手动指定设备的PSK密钥
+                     * @param DefinedPsk 手动指定设备的PSK密钥
+                     */
+                    void SetDefinedPsk(const std::string& _definedPsk);
+
+                    /**
+                     * 判断参数 DefinedPsk 是否已赋值
+                     * @return DefinedPsk 是否已赋值
+                     */
+                    bool DefinedPskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +229,12 @@ namespace TencentCloud
                      */
                     std::string m_nwkSKey;
                     bool m_nwkSKeyHasBeenSet;
+
+                    /**
+                     * 手动指定设备的PSK密钥
+                     */
+                    std::string m_definedPsk;
+                    bool m_definedPskHasBeenSet;
 
                 };
             }

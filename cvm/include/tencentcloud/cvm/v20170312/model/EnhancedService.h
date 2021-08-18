@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cvm/v20170312/model/RunSecurityServiceEnabled.h>
 #include <tencentcloud/cvm/v20170312/model/RunMonitorServiceEnabled.h>
+#include <tencentcloud/cvm/v20170312/model/RunAutomationServiceEnabled.h>
 
 
 namespace TencentCloud
@@ -84,6 +85,24 @@ namespace TencentCloud
                      */
                     bool MonitorServiceHasBeenSet() const;
 
+                    /**
+                     * 获取开启云自动化助手服务。若不指定该参数，则默认不开启云自动化助手服务。
+                     * @return AutomationService 开启云自动化助手服务。若不指定该参数，则默认不开启云自动化助手服务。
+                     */
+                    RunAutomationServiceEnabled GetAutomationService() const;
+
+                    /**
+                     * 设置开启云自动化助手服务。若不指定该参数，则默认不开启云自动化助手服务。
+                     * @param AutomationService 开启云自动化助手服务。若不指定该参数，则默认不开启云自动化助手服务。
+                     */
+                    void SetAutomationService(const RunAutomationServiceEnabled& _automationService);
+
+                    /**
+                     * 判断参数 AutomationService 是否已赋值
+                     * @return AutomationService 是否已赋值
+                     */
+                    bool AutomationServiceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +116,12 @@ namespace TencentCloud
                      */
                     RunMonitorServiceEnabled m_monitorService;
                     bool m_monitorServiceHasBeenSet;
+
+                    /**
+                     * 开启云自动化助手服务。若不指定该参数，则默认不开启云自动化助手服务。
+                     */
+                    RunAutomationServiceEnabled m_automationService;
+                    bool m_automationServiceHasBeenSet;
 
                 };
             }

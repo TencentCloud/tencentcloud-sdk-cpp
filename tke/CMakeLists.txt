@@ -191,6 +191,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/CheckInstancesUpgradeAbleResponse.h
   include/tencentcloud/tke/v20180525/model/Cluster.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterEndpointStatusResponse.h
+  include/tencentcloud/tke/v20180525/model/RunAutomationServiceEnabled.h
   include/tencentcloud/tke/v20180525/model/UpgradeClusterInstancesResponse.h
   include/tencentcloud/tke/v20180525/model/CreatePrometheusDashboardRequest.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusAgentsResponse.h
@@ -429,6 +430,7 @@ set(tke_src
   src/v20180525/model/CheckInstancesUpgradeAbleResponse.cpp
   src/v20180525/model/Cluster.cpp
   src/v20180525/model/DescribeClusterEndpointStatusResponse.cpp
+  src/v20180525/model/RunAutomationServiceEnabled.cpp
   src/v20180525/model/UpgradeClusterInstancesResponse.cpp
   src/v20180525/model/CreatePrometheusDashboardRequest.cpp
   src/v20180525/model/DescribePrometheusAgentsResponse.cpp

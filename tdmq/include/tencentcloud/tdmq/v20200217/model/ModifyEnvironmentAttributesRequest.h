@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tdmq/v20200217/model/RetentionPolicy.h>
 
 
 namespace TencentCloud
@@ -114,6 +115,24 @@ namespace TencentCloud
                      */
                     bool ClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取消息保留策略
+                     * @return RetentionPolicy 消息保留策略
+                     */
+                    RetentionPolicy GetRetentionPolicy() const;
+
+                    /**
+                     * 设置消息保留策略
+                     * @param RetentionPolicy 消息保留策略
+                     */
+                    void SetRetentionPolicy(const RetentionPolicy& _retentionPolicy);
+
+                    /**
+                     * 判断参数 RetentionPolicy 是否已赋值
+                     * @return RetentionPolicy 是否已赋值
+                     */
+                    bool RetentionPolicyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +158,12 @@ namespace TencentCloud
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 消息保留策略
+                     */
+                    RetentionPolicy m_retentionPolicy;
+                    bool m_retentionPolicyHasBeenSet;
 
                 };
             }

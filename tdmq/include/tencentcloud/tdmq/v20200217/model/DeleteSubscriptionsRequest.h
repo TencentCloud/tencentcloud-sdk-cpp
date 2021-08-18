@@ -97,6 +97,24 @@ namespace TencentCloud
                      */
                     bool EnvironmentIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否强制删除，默认为false
+                     * @return Force 是否强制删除，默认为false
+                     */
+                    bool GetForce() const;
+
+                    /**
+                     * 设置是否强制删除，默认为false
+                     * @param Force 是否强制删除，默认为false
+                     */
+                    void SetForce(const bool& _force);
+
+                    /**
+                     * 判断参数 Force 是否已赋值
+                     * @return Force 是否已赋值
+                     */
+                    bool ForceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +134,12 @@ namespace TencentCloud
                      */
                     std::string m_environmentId;
                     bool m_environmentIdHasBeenSet;
+
+                    /**
+                     * 是否强制删除，默认为false
+                     */
+                    bool m_force;
+                    bool m_forceHasBeenSet;
 
                 };
             }

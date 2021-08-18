@@ -415,6 +415,24 @@ namespace TencentCloud
                      */
                     bool SSLIdHasBeenSet() const;
 
+                    /**
+                     * 获取同ruleId
+                     * @return Id 同ruleId
+                     */
+                    std::string GetId() const;
+
+                    /**
+                     * 设置同ruleId
+                     * @param Id 同ruleId
+                     */
+                    void SetId(const std::string& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     */
+                    bool IdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -538,6 +556,12 @@ namespace TencentCloud
                      */
                     std::string m_sSLId;
                     bool m_sSLIdHasBeenSet;
+
+                    /**
+                     * 同ruleId
+                     */
+                    std::string m_id;
+                    bool m_idHasBeenSet;
 
                 };
             }

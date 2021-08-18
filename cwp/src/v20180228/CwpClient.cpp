@@ -3996,6 +3996,49 @@ CwpClient::ModifyProVersionRenewFlagOutcomeCallable CwpClient::ModifyProVersionR
     return task->get_future();
 }
 
+CwpClient::ModifyWarningSettingOutcome CwpClient::ModifyWarningSetting(const ModifyWarningSettingRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyWarningSetting");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyWarningSettingResponse rsp = ModifyWarningSettingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyWarningSettingOutcome(rsp);
+        else
+            return ModifyWarningSettingOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyWarningSettingOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::ModifyWarningSettingAsync(const ModifyWarningSettingRequest& request, const ModifyWarningSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyWarningSetting(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::ModifyWarningSettingOutcomeCallable CwpClient::ModifyWarningSettingCallable(const ModifyWarningSettingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyWarningSettingOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyWarningSetting(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::ModifyWebPageProtectSettingOutcome CwpClient::ModifyWebPageProtectSetting(const ModifyWebPageProtectSettingRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyWebPageProtectSetting");

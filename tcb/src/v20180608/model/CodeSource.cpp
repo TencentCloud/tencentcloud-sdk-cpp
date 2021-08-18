@@ -28,7 +28,8 @@ CodeSource::CodeSource() :
     m_codingPackageNameHasBeenSet(false),
     m_codingPackageVersionHasBeenSet(false),
     m_rawCodeHasBeenSet(false),
-    m_branchHasBeenSet(false)
+    m_branchHasBeenSet(false),
+    m_projectIdHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome CodeSource::Deserialize(const rapidjson::Value &value)
         m_branchHasBeenSet = true;
     }
 
+    if (value.HasMember("ProjectId") && !value["ProjectId"].IsNull())
+    {
+        if (!value["ProjectId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `CodeSource.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_projectId = value["ProjectId"].GetInt64();
+        m_projectIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void CodeSource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Branch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_branch.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_projectId, allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void CodeSource::SetBranch(const string& _branch)
 bool CodeSource::BranchHasBeenSet() const
 {
     return m_branchHasBeenSet;
+}
+
+int64_t CodeSource::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void CodeSource::SetProjectId(const int64_t& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool CodeSource::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
 }
 
