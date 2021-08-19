@@ -27,6 +27,8 @@
 #include <tencentcloud/rum/v20210622/model/CreateProjectResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataPerformancePageRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataPerformancePageResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeErrorRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeErrorResponse.h>
 
 
 namespace TencentCloud
@@ -47,6 +49,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDataPerformancePageResponse> DescribeDataPerformancePageOutcome;
                 typedef std::future<DescribeDataPerformancePageOutcome> DescribeDataPerformancePageOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeDataPerformancePageRequest&, DescribeDataPerformancePageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataPerformancePageAsyncHandler;
+                typedef Outcome<Error, Model::DescribeErrorResponse> DescribeErrorOutcome;
+                typedef std::future<DescribeErrorOutcome> DescribeErrorOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeErrorRequest&, DescribeErrorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeErrorAsyncHandler;
 
 
 
@@ -67,6 +72,15 @@ namespace TencentCloud
                 DescribeDataPerformancePageOutcome DescribeDataPerformancePage(const Model::DescribeDataPerformancePageRequest &request);
                 void DescribeDataPerformancePageAsync(const Model::DescribeDataPerformancePageRequest& request, const DescribeDataPerformancePageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDataPerformancePageOutcomeCallable DescribeDataPerformancePageCallable(const Model::DescribeDataPerformancePageRequest& request);
+
+                /**
+                 *获取首页错误信息
+                 * @param req DescribeErrorRequest
+                 * @return DescribeErrorOutcome
+                 */
+                DescribeErrorOutcome DescribeError(const Model::DescribeErrorRequest &request);
+                void DescribeErrorAsync(const Model::DescribeErrorRequest& request, const DescribeErrorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeErrorOutcomeCallable DescribeErrorCallable(const Model::DescribeErrorRequest& request);
 
             };
         }

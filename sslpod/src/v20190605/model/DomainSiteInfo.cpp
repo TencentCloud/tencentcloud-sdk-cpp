@@ -25,9 +25,9 @@ DomainSiteInfo::DomainSiteInfo() :
     m_domainHasBeenSet(false),
     m_ipHasBeenSet(false),
     m_autoIPHasBeenSet(false),
-    m_serverTypeHasBeenSet(false),
-    m_brandHasBeenSet(false),
     m_gradeHasBeenSet(false),
+    m_brandHasBeenSet(false),
+    m_serverTypeHasBeenSet(false),
     m_gradeCodeHasBeenSet(false),
     m_noticeHasBeenSet(false),
     m_accountDomainIdHasBeenSet(false),
@@ -82,14 +82,14 @@ CoreInternalOutcome DomainSiteInfo::Deserialize(const rapidjson::Value &value)
         m_autoIPHasBeenSet = true;
     }
 
-    if (value.HasMember("ServerType") && !value["ServerType"].IsNull())
+    if (value.HasMember("Grade") && !value["Grade"].IsNull())
     {
-        if (!value["ServerType"].IsInt64())
+        if (!value["Grade"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DomainSiteInfo.ServerType` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `DomainSiteInfo.Grade` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_serverType = value["ServerType"].GetInt64();
-        m_serverTypeHasBeenSet = true;
+        m_grade = string(value["Grade"].GetString());
+        m_gradeHasBeenSet = true;
     }
 
     if (value.HasMember("Brand") && !value["Brand"].IsNull())
@@ -102,14 +102,14 @@ CoreInternalOutcome DomainSiteInfo::Deserialize(const rapidjson::Value &value)
         m_brandHasBeenSet = true;
     }
 
-    if (value.HasMember("Grade") && !value["Grade"].IsNull())
+    if (value.HasMember("ServerType") && !value["ServerType"].IsNull())
     {
-        if (!value["Grade"].IsString())
+        if (!value["ServerType"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `DomainSiteInfo.Grade` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `DomainSiteInfo.ServerType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_grade = string(value["Grade"].GetString());
-        m_gradeHasBeenSet = true;
+        m_serverType = value["ServerType"].GetInt64();
+        m_serverTypeHasBeenSet = true;
     }
 
     if (value.HasMember("GradeCode") && !value["GradeCode"].IsNull())
@@ -214,12 +214,12 @@ void DomainSiteInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, m_autoIP, allocator);
     }
 
-    if (m_serverTypeHasBeenSet)
+    if (m_gradeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ServerType";
+        string key = "Grade";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_serverType, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_grade.c_str(), allocator).Move(), allocator);
     }
 
     if (m_brandHasBeenSet)
@@ -230,12 +230,12 @@ void DomainSiteInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, rapidjson::Value(m_brand.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_gradeHasBeenSet)
+    if (m_serverTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Grade";
+        string key = "ServerType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_grade.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_serverType, allocator);
     }
 
     if (m_gradeCodeHasBeenSet)
@@ -358,20 +358,20 @@ bool DomainSiteInfo::AutoIPHasBeenSet() const
     return m_autoIPHasBeenSet;
 }
 
-int64_t DomainSiteInfo::GetServerType() const
+string DomainSiteInfo::GetGrade() const
 {
-    return m_serverType;
+    return m_grade;
 }
 
-void DomainSiteInfo::SetServerType(const int64_t& _serverType)
+void DomainSiteInfo::SetGrade(const string& _grade)
 {
-    m_serverType = _serverType;
-    m_serverTypeHasBeenSet = true;
+    m_grade = _grade;
+    m_gradeHasBeenSet = true;
 }
 
-bool DomainSiteInfo::ServerTypeHasBeenSet() const
+bool DomainSiteInfo::GradeHasBeenSet() const
 {
-    return m_serverTypeHasBeenSet;
+    return m_gradeHasBeenSet;
 }
 
 string DomainSiteInfo::GetBrand() const
@@ -390,20 +390,20 @@ bool DomainSiteInfo::BrandHasBeenSet() const
     return m_brandHasBeenSet;
 }
 
-string DomainSiteInfo::GetGrade() const
+int64_t DomainSiteInfo::GetServerType() const
 {
-    return m_grade;
+    return m_serverType;
 }
 
-void DomainSiteInfo::SetGrade(const string& _grade)
+void DomainSiteInfo::SetServerType(const int64_t& _serverType)
 {
-    m_grade = _grade;
-    m_gradeHasBeenSet = true;
+    m_serverType = _serverType;
+    m_serverTypeHasBeenSet = true;
 }
 
-bool DomainSiteInfo::GradeHasBeenSet() const
+bool DomainSiteInfo::ServerTypeHasBeenSet() const
 {
-    return m_gradeHasBeenSet;
+    return m_serverTypeHasBeenSet;
 }
 
 int64_t DomainSiteInfo::GetGradeCode() const

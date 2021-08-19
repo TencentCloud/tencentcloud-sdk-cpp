@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tsf/v20180326/model/TcrRepoInfo.h>
 
 
 namespace TencentCloud
@@ -284,6 +285,28 @@ namespace TencentCloud
                      */
                     bool SizeByteHasBeenSet() const;
 
+                    /**
+                     * 获取TcrRepoInfo值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TcrRepoInfo TcrRepoInfo值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TcrRepoInfo GetTcrRepoInfo() const;
+
+                    /**
+                     * 设置TcrRepoInfo值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TcrRepoInfo TcrRepoInfo值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTcrRepoInfo(const TcrRepoInfo& _tcrRepoInfo);
+
+                    /**
+                     * 判断参数 TcrRepoInfo 是否已赋值
+                     * @return TcrRepoInfo 是否已赋值
+                     */
+                    bool TcrRepoInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -364,6 +387,13 @@ namespace TencentCloud
                      */
                     int64_t m_sizeByte;
                     bool m_sizeByteHasBeenSet;
+
+                    /**
+                     * TcrRepoInfo值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TcrRepoInfo m_tcrRepoInfo;
+                    bool m_tcrRepoInfoHasBeenSet;
 
                 };
             }

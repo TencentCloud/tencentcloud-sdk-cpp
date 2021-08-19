@@ -126,3 +126,46 @@ RumClient::DescribeDataPerformancePageOutcomeCallable RumClient::DescribeDataPer
     return task->get_future();
 }
 
+RumClient::DescribeErrorOutcome RumClient::DescribeError(const DescribeErrorRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeError");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeErrorResponse rsp = DescribeErrorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeErrorOutcome(rsp);
+        else
+            return DescribeErrorOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeErrorOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeErrorAsync(const DescribeErrorRequest& request, const DescribeErrorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeError(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RumClient::DescribeErrorOutcomeCallable RumClient::DescribeErrorCallable(const DescribeErrorRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeErrorOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeError(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

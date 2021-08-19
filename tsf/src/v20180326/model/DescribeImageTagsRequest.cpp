@@ -27,7 +27,9 @@ DescribeImageTagsRequest::DescribeImageTagsRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_queryImageIdFlagHasBeenSet(false),
-    m_searchWordHasBeenSet(false)
+    m_searchWordHasBeenSet(false),
+    m_repoTypeHasBeenSet(false),
+    m_tcrRepoInfoHasBeenSet(false)
 {
 }
 
@@ -76,6 +78,23 @@ string DescribeImageTagsRequest::ToJsonString() const
         string key = "SearchWord";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_searchWord.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_repoTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepoType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_repoType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tcrRepoInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TcrRepoInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tcrRepoInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -164,6 +183,38 @@ void DescribeImageTagsRequest::SetSearchWord(const string& _searchWord)
 bool DescribeImageTagsRequest::SearchWordHasBeenSet() const
 {
     return m_searchWordHasBeenSet;
+}
+
+string DescribeImageTagsRequest::GetRepoType() const
+{
+    return m_repoType;
+}
+
+void DescribeImageTagsRequest::SetRepoType(const string& _repoType)
+{
+    m_repoType = _repoType;
+    m_repoTypeHasBeenSet = true;
+}
+
+bool DescribeImageTagsRequest::RepoTypeHasBeenSet() const
+{
+    return m_repoTypeHasBeenSet;
+}
+
+TcrRepoInfo DescribeImageTagsRequest::GetTcrRepoInfo() const
+{
+    return m_tcrRepoInfo;
+}
+
+void DescribeImageTagsRequest::SetTcrRepoInfo(const TcrRepoInfo& _tcrRepoInfo)
+{
+    m_tcrRepoInfo = _tcrRepoInfo;
+    m_tcrRepoInfoHasBeenSet = true;
+}
+
+bool DescribeImageTagsRequest::TcrRepoInfoHasBeenSet() const
+{
+    return m_tcrRepoInfoHasBeenSet;
 }
 
 

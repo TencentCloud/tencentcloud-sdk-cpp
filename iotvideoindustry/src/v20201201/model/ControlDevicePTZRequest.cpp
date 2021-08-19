@@ -24,7 +24,8 @@ using namespace std;
 
 ControlDevicePTZRequest::ControlDevicePTZRequest() :
     m_deviceIdHasBeenSet(false),
-    m_commandHasBeenSet(false)
+    m_commandHasBeenSet(false),
+    m_channelIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string ControlDevicePTZRequest::ToJsonString() const
         string key = "Command";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_command.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_channelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_channelId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void ControlDevicePTZRequest::SetCommand(const string& _command)
 bool ControlDevicePTZRequest::CommandHasBeenSet() const
 {
     return m_commandHasBeenSet;
+}
+
+string ControlDevicePTZRequest::GetChannelId() const
+{
+    return m_channelId;
+}
+
+void ControlDevicePTZRequest::SetChannelId(const string& _channelId)
+{
+    m_channelId = _channelId;
+    m_channelIdHasBeenSet = true;
+}
+
+bool ControlDevicePTZRequest::ChannelIdHasBeenSet() const
+{
+    return m_channelIdHasBeenSet;
 }
 
 

@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取参数模板名称。
-                     * @return Name 参数模板名称。
+                     * 获取参数模板修改后的新名称。
+                     * @return Name 参数模板修改后的新名称。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置参数模板名称。
-                     * @param Name 参数模板名称。
+                     * 设置参数模板修改后的新名称。
+                     * @param Name 参数模板修改后的新名称。
                      */
                     void SetName(const std::string& _name);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取参数模板描述。
-                     * @return Description 参数模板描述。
+                     * 获取参数模板修改后的新描述。
+                     * @return Description 参数模板修改后的新描述。
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置参数模板描述。
-                     * @param Description 参数模板描述。
+                     * 设置参数模板修改后的新描述。
+                     * @param Description 参数模板修改后的新描述。
                      */
                     void SetDescription(const std::string& _description);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取参数列表。
-                     * @return ParamList 参数列表。
+                     * 获取修改后的新参数列表。
+                     * @return ParamList 修改后的新参数列表。
                      */
                     std::vector<InstanceParam> GetParamList() const;
 
                     /**
-                     * 设置参数列表。
-                     * @param ParamList 参数列表。
+                     * 设置修改后的新参数列表。
+                     * @param ParamList 修改后的新参数列表。
                      */
                     void SetParamList(const std::vector<InstanceParam>& _paramList);
 
@@ -124,19 +124,19 @@ namespace TencentCloud
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 参数模板名称。
+                     * 参数模板修改后的新名称。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 参数模板描述。
+                     * 参数模板修改后的新描述。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 参数列表。
+                     * 修改后的新参数列表。
                      */
                     std::vector<InstanceParam> m_paramList;
                     bool m_paramListHasBeenSet;

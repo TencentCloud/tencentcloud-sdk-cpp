@@ -99,6 +99,34 @@ namespace TencentCloud
                      */
                     bool StorageUsageHasBeenSet() const;
 
+                    /**
+                     * 获取X-P2P分享流量。单位 Byte
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return P2PFluxTotal X-P2P分享流量。单位 Byte
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetP2PFluxTotal() const;
+
+                    /**
+                     * 判断参数 P2PFluxTotal 是否已赋值
+                     * @return P2PFluxTotal 是否已赋值
+                     */
+                    bool P2PFluxTotalHasBeenSet() const;
+
+                    /**
+                     * 获取X-P2P峰值带宽。 单位bps
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return P2PPeakValue X-P2P峰值带宽。 单位bps
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetP2PPeakValue() const;
+
+                    /**
+                     * 判断参数 P2PPeakValue 是否已赋值
+                     * @return P2PPeakValue 是否已赋值
+                     */
+                    bool P2PPeakValueHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +156,20 @@ namespace TencentCloud
                      */
                     double m_storageUsage;
                     bool m_storageUsageHasBeenSet;
+
+                    /**
+                     * X-P2P分享流量。单位 Byte
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_p2PFluxTotal;
+                    bool m_p2PFluxTotalHasBeenSet;
+
+                    /**
+                     * X-P2P峰值带宽。 单位bps
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_p2PPeakValue;
+                    bool m_p2PPeakValueHasBeenSet;
 
                 };
             }

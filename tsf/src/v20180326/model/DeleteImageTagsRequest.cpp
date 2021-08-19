@@ -23,7 +23,8 @@ using namespace TencentCloud::Tsf::V20180326::Model;
 using namespace std;
 
 DeleteImageTagsRequest::DeleteImageTagsRequest() :
-    m_imageTagsHasBeenSet(false)
+    m_imageTagsHasBeenSet(false),
+    m_repoTypeHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DeleteImageTagsRequest::ToJsonString() const
         }
     }
 
+    if (m_repoTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepoType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_repoType.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -71,6 +80,22 @@ void DeleteImageTagsRequest::SetImageTags(const vector<DeleteImageTag>& _imageTa
 bool DeleteImageTagsRequest::ImageTagsHasBeenSet() const
 {
     return m_imageTagsHasBeenSet;
+}
+
+string DeleteImageTagsRequest::GetRepoType() const
+{
+    return m_repoType;
+}
+
+void DeleteImageTagsRequest::SetRepoType(const string& _repoType)
+{
+    m_repoType = _repoType;
+    m_repoTypeHasBeenSet = true;
+}
+
+bool DeleteImageTagsRequest::RepoTypeHasBeenSet() const
+{
+    return m_repoTypeHasBeenSet;
 }
 
 

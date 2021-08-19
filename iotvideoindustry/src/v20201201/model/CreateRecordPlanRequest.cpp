@@ -26,7 +26,8 @@ CreateRecordPlanRequest::CreateRecordPlanRequest() :
     m_nameHasBeenSet(false),
     m_timeTemplateIdHasBeenSet(false),
     m_eventIdHasBeenSet(false),
-    m_devicesHasBeenSet(false)
+    m_devicesHasBeenSet(false),
+    m_recordStorageTimeHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,14 @@ string CreateRecordPlanRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_recordStorageTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordStorageTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_recordStorageTime, allocator);
     }
 
 
@@ -146,6 +155,22 @@ void CreateRecordPlanRequest::SetDevices(const vector<DeviceItem>& _devices)
 bool CreateRecordPlanRequest::DevicesHasBeenSet() const
 {
     return m_devicesHasBeenSet;
+}
+
+int64_t CreateRecordPlanRequest::GetRecordStorageTime() const
+{
+    return m_recordStorageTime;
+}
+
+void CreateRecordPlanRequest::SetRecordStorageTime(const int64_t& _recordStorageTime)
+{
+    m_recordStorageTime = _recordStorageTime;
+    m_recordStorageTimeHasBeenSet = true;
+}
+
+bool CreateRecordPlanRequest::RecordStorageTimeHasBeenSet() const
+{
+    return m_recordStorageTimeHasBeenSet;
 }
 
 

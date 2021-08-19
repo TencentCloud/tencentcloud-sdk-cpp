@@ -23,7 +23,9 @@ using namespace TencentCloud::Tse::V20201207::Model;
 using namespace std;
 
 DescribeSREInstanceAccessAddressRequest::DescribeSREInstanceAccessAddressRequest() :
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
+    m_subnetIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,22 @@ string DescribeSREInstanceAccessAddressRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subnetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +82,38 @@ void DescribeSREInstanceAccessAddressRequest::SetInstanceId(const string& _insta
 bool DescribeSREInstanceAccessAddressRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string DescribeSREInstanceAccessAddressRequest::GetVpcId() const
+{
+    return m_vpcId;
+}
+
+void DescribeSREInstanceAccessAddressRequest::SetVpcId(const string& _vpcId)
+{
+    m_vpcId = _vpcId;
+    m_vpcIdHasBeenSet = true;
+}
+
+bool DescribeSREInstanceAccessAddressRequest::VpcIdHasBeenSet() const
+{
+    return m_vpcIdHasBeenSet;
+}
+
+string DescribeSREInstanceAccessAddressRequest::GetSubnetId() const
+{
+    return m_subnetId;
+}
+
+void DescribeSREInstanceAccessAddressRequest::SetSubnetId(const string& _subnetId)
+{
+    m_subnetId = _subnetId;
+    m_subnetIdHasBeenSet = true;
+}
+
+bool DescribeSREInstanceAccessAddressRequest::SubnetIdHasBeenSet() const
+{
+    return m_subnetIdHasBeenSet;
 }
 
 

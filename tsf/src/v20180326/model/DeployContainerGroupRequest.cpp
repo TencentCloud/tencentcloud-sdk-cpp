@@ -51,7 +51,9 @@ DeployContainerGroupRequest::DeployContainerGroupRequest() :
     m_envsHasBeenSet(false),
     m_serviceSettingHasBeenSet(false),
     m_deployAgentHasBeenSet(false),
-    m_schedulingStrategyHasBeenSet(false)
+    m_schedulingStrategyHasBeenSet(false),
+    m_incrementalDeploymentHasBeenSet(false),
+    m_repoTypeHasBeenSet(false)
 {
 }
 
@@ -302,6 +304,22 @@ string DeployContainerGroupRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_schedulingStrategy.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_incrementalDeploymentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IncrementalDeployment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_incrementalDeployment, allocator);
+    }
+
+    if (m_repoTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepoType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_repoType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -774,6 +792,38 @@ void DeployContainerGroupRequest::SetSchedulingStrategy(const SchedulingStrategy
 bool DeployContainerGroupRequest::SchedulingStrategyHasBeenSet() const
 {
     return m_schedulingStrategyHasBeenSet;
+}
+
+bool DeployContainerGroupRequest::GetIncrementalDeployment() const
+{
+    return m_incrementalDeployment;
+}
+
+void DeployContainerGroupRequest::SetIncrementalDeployment(const bool& _incrementalDeployment)
+{
+    m_incrementalDeployment = _incrementalDeployment;
+    m_incrementalDeploymentHasBeenSet = true;
+}
+
+bool DeployContainerGroupRequest::IncrementalDeploymentHasBeenSet() const
+{
+    return m_incrementalDeploymentHasBeenSet;
+}
+
+string DeployContainerGroupRequest::GetRepoType() const
+{
+    return m_repoType;
+}
+
+void DeployContainerGroupRequest::SetRepoType(const string& _repoType)
+{
+    m_repoType = _repoType;
+    m_repoTypeHasBeenSet = true;
+}
+
+bool DeployContainerGroupRequest::RepoTypeHasBeenSet() const
+{
+    return m_repoTypeHasBeenSet;
 }
 
 

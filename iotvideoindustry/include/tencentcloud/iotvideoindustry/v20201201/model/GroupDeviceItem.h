@@ -244,6 +244,28 @@ namespace TencentCloud
                      */
                     bool RecordableHasBeenSet() const;
 
+                    /**
+                     * 获取设备接入协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Protocol 设备接入协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProtocol() const;
+
+                    /**
+                     * 设置设备接入协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Protocol 设备接入协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProtocol(const std::string& _protocol);
+
+                    /**
+                     * 判断参数 Protocol 是否已赋值
+                     * @return Protocol 是否已赋值
+                     */
+                    bool ProtocolHasBeenSet() const;
+
                 private:
 
                     /**
@@ -308,6 +330,13 @@ namespace TencentCloud
                      */
                     int64_t m_recordable;
                     bool m_recordableHasBeenSet;
+
+                    /**
+                     * 设备接入协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_protocol;
+                    bool m_protocolHasBeenSet;
 
                 };
             }

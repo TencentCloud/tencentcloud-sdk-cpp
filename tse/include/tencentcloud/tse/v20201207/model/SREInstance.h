@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tse/v20201207/model/EnvInfo.h>
+#include <tencentcloud/tse/v20201207/model/VpcInfo.h>
 
 
 namespace TencentCloud
@@ -411,6 +412,28 @@ namespace TencentCloud
                      */
                     bool EnableInternetHasBeenSet() const;
 
+                    /**
+                     * 获取私有网络列表信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VpcInfos 私有网络列表信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<VpcInfo> GetVpcInfos() const;
+
+                    /**
+                     * 设置私有网络列表信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VpcInfos 私有网络列表信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVpcInfos(const std::vector<VpcInfo>& _vpcInfos);
+
+                    /**
+                     * 判断参数 VpcInfos 是否已赋值
+                     * @return VpcInfos 是否已赋值
+                     */
+                    bool VpcInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -530,6 +553,13 @@ namespace TencentCloud
                      */
                     bool m_enableInternet;
                     bool m_enableInternetHasBeenSet;
+
+                    /**
+                     * 私有网络列表信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<VpcInfo> m_vpcInfos;
+                    bool m_vpcInfosHasBeenSet;
 
                 };
             }

@@ -27,6 +27,8 @@
 #include <tencentcloud/iotvideoindustry/v20201201/model/BindGroupDevicesResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/ControlDevicePTZRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/ControlDevicePTZResponse.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ControlRecordStreamRequest.h>
+#include <tencentcloud/iotvideoindustry/v20201201/model/ControlRecordStreamResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/CreateDeviceRequest.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/CreateDeviceResponse.h>
 #include <tencentcloud/iotvideoindustry/v20201201/model/CreateDeviceGroupRequest.h>
@@ -115,6 +117,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ControlDevicePTZResponse> ControlDevicePTZOutcome;
                 typedef std::future<ControlDevicePTZOutcome> ControlDevicePTZOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::ControlDevicePTZRequest&, ControlDevicePTZOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ControlDevicePTZAsyncHandler;
+                typedef Outcome<Error, Model::ControlRecordStreamResponse> ControlRecordStreamOutcome;
+                typedef std::future<ControlRecordStreamOutcome> ControlRecordStreamOutcomeCallable;
+                typedef std::function<void(const IotvideoindustryClient*, const Model::ControlRecordStreamRequest&, ControlRecordStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ControlRecordStreamAsyncHandler;
                 typedef Outcome<Error, Model::CreateDeviceResponse> CreateDeviceOutcome;
                 typedef std::future<CreateDeviceOutcome> CreateDeviceOutcomeCallable;
                 typedef std::function<void(const IotvideoindustryClient*, const Model::CreateDeviceRequest&, CreateDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceAsyncHandler;
@@ -237,6 +242,15 @@ namespace TencentCloud
                 ControlDevicePTZOutcome ControlDevicePTZ(const Model::ControlDevicePTZRequest &request);
                 void ControlDevicePTZAsync(const Model::ControlDevicePTZRequest& request, const ControlDevicePTZAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ControlDevicePTZOutcomeCallable ControlDevicePTZCallable(const Model::ControlDevicePTZRequest& request);
+
+                /**
+                 *对回放流进行控制，包括暂停、播放、拉动、结束等
+                 * @param req ControlRecordStreamRequest
+                 * @return ControlRecordStreamOutcome
+                 */
+                ControlRecordStreamOutcome ControlRecordStream(const Model::ControlRecordStreamRequest &request);
+                void ControlRecordStreamAsync(const Model::ControlRecordStreamRequest& request, const ControlRecordStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ControlRecordStreamOutcomeCallable ControlRecordStreamCallable(const Model::ControlRecordStreamRequest& request);
 
                 /**
                  *本接口(CreateDevice) 用于创建设备。

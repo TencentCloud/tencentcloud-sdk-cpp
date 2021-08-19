@@ -376,6 +376,24 @@ namespace TencentCloud
                      */
                     bool NotBindingNoticeRuleHasBeenSet() const;
 
+                    /**
+                     * 获取实例分组id
+                     * @return InstanceGroupId 实例分组id
+                     */
+                    int64_t GetInstanceGroupId() const;
+
+                    /**
+                     * 设置实例分组id
+                     * @param InstanceGroupId 实例分组id
+                     */
+                    void SetInstanceGroupId(const int64_t& _instanceGroupId);
+
+                    /**
+                     * 判断参数 InstanceGroupId 是否已赋值
+                     * @return InstanceGroupId 是否已赋值
+                     */
+                    bool InstanceGroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -486,6 +504,12 @@ namespace TencentCloud
                      */
                     int64_t m_notBindingNoticeRule;
                     bool m_notBindingNoticeRuleHasBeenSet;
+
+                    /**
+                     * 实例分组id
+                     */
+                    int64_t m_instanceGroupId;
+                    bool m_instanceGroupIdHasBeenSet;
 
                 };
             }

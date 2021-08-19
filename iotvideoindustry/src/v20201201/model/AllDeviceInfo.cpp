@@ -30,7 +30,10 @@ AllDeviceInfo::AllDeviceInfo() :
     m_groupPathHasBeenSet(false),
     m_deviceCodeHasBeenSet(false),
     m_isRecordHasBeenSet(false),
-    m_recordableHasBeenSet(false)
+    m_recordableHasBeenSet(false),
+    m_protocolHasBeenSet(false),
+    m_groupIdHasBeenSet(false),
+    m_groupNameHasBeenSet(false)
 {
 }
 
@@ -139,6 +142,36 @@ CoreInternalOutcome AllDeviceInfo::Deserialize(const rapidjson::Value &value)
         m_recordableHasBeenSet = true;
     }
 
+    if (value.HasMember("Protocol") && !value["Protocol"].IsNull())
+    {
+        if (!value["Protocol"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AllDeviceInfo.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_protocol = string(value["Protocol"].GetString());
+        m_protocolHasBeenSet = true;
+    }
+
+    if (value.HasMember("GroupId") && !value["GroupId"].IsNull())
+    {
+        if (!value["GroupId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AllDeviceInfo.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupId = string(value["GroupId"].GetString());
+        m_groupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("GroupName") && !value["GroupName"].IsNull())
+    {
+        if (!value["GroupName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AllDeviceInfo.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupName = string(value["GroupName"].GetString());
+        m_groupNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +257,30 @@ void AllDeviceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Recordable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_recordable, allocator);
+    }
+
+    if (m_protocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Protocol";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +444,53 @@ void AllDeviceInfo::SetRecordable(const int64_t& _recordable)
 bool AllDeviceInfo::RecordableHasBeenSet() const
 {
     return m_recordableHasBeenSet;
+}
+
+string AllDeviceInfo::GetProtocol() const
+{
+    return m_protocol;
+}
+
+void AllDeviceInfo::SetProtocol(const string& _protocol)
+{
+    m_protocol = _protocol;
+    m_protocolHasBeenSet = true;
+}
+
+bool AllDeviceInfo::ProtocolHasBeenSet() const
+{
+    return m_protocolHasBeenSet;
+}
+
+string AllDeviceInfo::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void AllDeviceInfo::SetGroupId(const string& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool AllDeviceInfo::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
+}
+
+string AllDeviceInfo::GetGroupName() const
+{
+    return m_groupName;
+}
+
+void AllDeviceInfo::SetGroupName(const string& _groupName)
+{
+    m_groupName = _groupName;
+    m_groupNameHasBeenSet = true;
+}
+
+bool AllDeviceInfo::GroupNameHasBeenSet() const
+{
+    return m_groupNameHasBeenSet;
 }
 

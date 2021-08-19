@@ -39,7 +39,8 @@ DescribeAlarmPoliciesRequest::DescribeAlarmPoliciesRequest() :
     m_noticeIdsHasBeenSet(false),
     m_ruleTypesHasBeenSet(false),
     m_enableHasBeenSet(false),
-    m_notBindingNoticeRuleHasBeenSet(false)
+    m_notBindingNoticeRuleHasBeenSet(false),
+    m_instanceGroupIdHasBeenSet(false)
 {
 }
 
@@ -229,6 +230,14 @@ string DescribeAlarmPoliciesRequest::ToJsonString() const
         string key = "NotBindingNoticeRule";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_notBindingNoticeRule, allocator);
+    }
+
+    if (m_instanceGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_instanceGroupId, allocator);
     }
 
 
@@ -509,6 +518,22 @@ void DescribeAlarmPoliciesRequest::SetNotBindingNoticeRule(const int64_t& _notBi
 bool DescribeAlarmPoliciesRequest::NotBindingNoticeRuleHasBeenSet() const
 {
     return m_notBindingNoticeRuleHasBeenSet;
+}
+
+int64_t DescribeAlarmPoliciesRequest::GetInstanceGroupId() const
+{
+    return m_instanceGroupId;
+}
+
+void DescribeAlarmPoliciesRequest::SetInstanceGroupId(const int64_t& _instanceGroupId)
+{
+    m_instanceGroupId = _instanceGroupId;
+    m_instanceGroupIdHasBeenSet = true;
+}
+
+bool DescribeAlarmPoliciesRequest::InstanceGroupIdHasBeenSet() const
+{
+    return m_instanceGroupIdHasBeenSet;
 }
 
 

@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取日期 Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday
-                     * @return WeekDays 日期 Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday
+                     * 获取日期 Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday，该参数暂不支持修改。
+                     * @return WeekDays 日期 Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday，该参数暂不支持修改。
                      */
                     std::vector<std::string> GetWeekDays() const;
 
                     /**
-                     * 设置日期 Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday
-                     * @param WeekDays 日期 Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday
+                     * 设置日期 Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday，该参数暂不支持修改。
+                     * @param WeekDays 日期 Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday，该参数暂不支持修改。
                      */
                     void SetWeekDays(const std::vector<std::string>& _weekDays);
 
@@ -123,7 +123,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 日期 Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday
+                     * 日期 Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday，该参数暂不支持修改。
                      */
                     std::vector<std::string> m_weekDays;
                     bool m_weekDaysHasBeenSet;

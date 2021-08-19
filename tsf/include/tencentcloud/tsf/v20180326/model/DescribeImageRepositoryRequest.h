@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tsf/v20180326/model/TcrRepoInfo.h>
 
 
 namespace TencentCloud
@@ -96,6 +97,60 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取企业: tcr ；个人: personal或者不填
+                     * @return RepoType 企业: tcr ；个人: personal或者不填
+                     */
+                    std::string GetRepoType() const;
+
+                    /**
+                     * 设置企业: tcr ；个人: personal或者不填
+                     * @param RepoType 企业: tcr ；个人: personal或者不填
+                     */
+                    void SetRepoType(const std::string& _repoType);
+
+                    /**
+                     * 判断参数 RepoType 是否已赋值
+                     * @return RepoType 是否已赋值
+                     */
+                    bool RepoTypeHasBeenSet() const;
+
+                    /**
+                     * 获取应用id
+                     * @return ApplicationId 应用id
+                     */
+                    std::string GetApplicationId() const;
+
+                    /**
+                     * 设置应用id
+                     * @param ApplicationId 应用id
+                     */
+                    void SetApplicationId(const std::string& _applicationId);
+
+                    /**
+                     * 判断参数 ApplicationId 是否已赋值
+                     * @return ApplicationId 是否已赋值
+                     */
+                    bool ApplicationIdHasBeenSet() const;
+
+                    /**
+                     * 获取TcrRepoInfo值
+                     * @return TcrRepoInfo TcrRepoInfo值
+                     */
+                    TcrRepoInfo GetTcrRepoInfo() const;
+
+                    /**
+                     * 设置TcrRepoInfo值
+                     * @param TcrRepoInfo TcrRepoInfo值
+                     */
+                    void SetTcrRepoInfo(const TcrRepoInfo& _tcrRepoInfo);
+
+                    /**
+                     * 判断参数 TcrRepoInfo 是否已赋值
+                     * @return TcrRepoInfo 是否已赋值
+                     */
+                    bool TcrRepoInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +170,24 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 企业: tcr ；个人: personal或者不填
+                     */
+                    std::string m_repoType;
+                    bool m_repoTypeHasBeenSet;
+
+                    /**
+                     * 应用id
+                     */
+                    std::string m_applicationId;
+                    bool m_applicationIdHasBeenSet;
+
+                    /**
+                     * TcrRepoInfo值
+                     */
+                    TcrRepoInfo m_tcrRepoInfo;
+                    bool m_tcrRepoInfoHasBeenSet;
 
                 };
             }

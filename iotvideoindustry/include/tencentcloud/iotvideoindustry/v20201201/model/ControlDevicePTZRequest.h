@@ -138,6 +138,24 @@ focusOut - 焦距变远
                      */
                     bool CommandHasBeenSet() const;
 
+                    /**
+                     * 获取通道唯一标识
+                     * @return ChannelId 通道唯一标识
+                     */
+                    std::string GetChannelId() const;
+
+                    /**
+                     * 设置通道唯一标识
+                     * @param ChannelId 通道唯一标识
+                     */
+                    void SetChannelId(const std::string& _channelId);
+
+                    /**
+                     * 判断参数 ChannelId 是否已赋值
+                     * @return ChannelId 是否已赋值
+                     */
+                    bool ChannelIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -166,6 +184,12 @@ focusOut - 焦距变远
                      */
                     std::string m_command;
                     bool m_commandHasBeenSet;
+
+                    /**
+                     * 通道唯一标识
+                     */
+                    std::string m_channelId;
+                    bool m_channelIdHasBeenSet;
 
                 };
             }

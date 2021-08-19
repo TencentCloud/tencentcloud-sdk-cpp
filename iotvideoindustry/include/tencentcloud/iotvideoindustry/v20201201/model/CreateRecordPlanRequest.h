@@ -115,6 +115,24 @@ namespace TencentCloud
                      */
                     bool DevicesHasBeenSet() const;
 
+                    /**
+                     * 获取存储周期
+                     * @return RecordStorageTime 存储周期
+                     */
+                    int64_t GetRecordStorageTime() const;
+
+                    /**
+                     * 设置存储周期
+                     * @param RecordStorageTime 存储周期
+                     */
+                    void SetRecordStorageTime(const int64_t& _recordStorageTime);
+
+                    /**
+                     * 判断参数 RecordStorageTime 是否已赋值
+                     * @return RecordStorageTime 是否已赋值
+                     */
+                    bool RecordStorageTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -140,6 +158,12 @@ namespace TencentCloud
                      */
                     std::vector<DeviceItem> m_devices;
                     bool m_devicesHasBeenSet;
+
+                    /**
+                     * 存储周期
+                     */
+                    int64_t m_recordStorageTime;
+                    bool m_recordStorageTimeHasBeenSet;
 
                 };
             }

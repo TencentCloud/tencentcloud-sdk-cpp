@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取通知开关信息
-                     * @return NoticeType 通知开关信息
+                     * 获取通知开关信息；0：关闭；15开启
+                     * @return NoticeType 通知开关信息；0：关闭；15开启
                      */
                     int64_t GetNoticeType() const;
 
                     /**
-                     * 设置通知开关信息
-                     * @param NoticeType 通知开关信息
+                     * 设置通知开关信息；0：关闭；15开启
+                     * @param NoticeType 通知开关信息；0：关闭；15开启
                      */
                     void SetNoticeType(const int64_t& _noticeType);
 
@@ -110,7 +110,7 @@ namespace TencentCloud
                     bool m_idHasBeenSet;
 
                     /**
-                     * 通知开关信息
+                     * 通知开关信息；0：关闭；15开启
                      */
                     int64_t m_noticeType;
                     bool m_noticeTypeHasBeenSet;

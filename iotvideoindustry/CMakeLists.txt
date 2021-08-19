@@ -19,6 +19,7 @@ set(iotvideoindustry_public_header
   )
 
 set(iotvideoindustry_public_header_model
+  include/tencentcloud/iotvideoindustry/v20201201/model/ControlRecordStreamRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteTimeTemplateResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/GetTimeTemplatesRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ServerConfiguration.h
@@ -99,6 +100,7 @@ set(iotvideoindustry_public_header_model
   include/tencentcloud/iotvideoindustry/v20201201/model/GroupItem.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteTimeTemplateRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeVideoListResponse.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/ControlRecordStreamResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/BindGroupDevicesResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeVideoListRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ModifyDeviceDataResponse.h
@@ -109,6 +111,7 @@ set(iotvideoindustry_public_header_model
 
 set(iotvideoindustry_src
   src/v20201201/IotvideoindustryClient.cpp
+  src/v20201201/model/ControlRecordStreamRequest.cpp
   src/v20201201/model/DeleteTimeTemplateResponse.cpp
   src/v20201201/model/GetTimeTemplatesRequest.cpp
   src/v20201201/model/ServerConfiguration.cpp
@@ -189,6 +192,7 @@ set(iotvideoindustry_src
   src/v20201201/model/GroupItem.cpp
   src/v20201201/model/DeleteTimeTemplateRequest.cpp
   src/v20201201/model/DescribeVideoListResponse.cpp
+  src/v20201201/model/ControlRecordStreamResponse.cpp
   src/v20201201/model/BindGroupDevicesResponse.cpp
   src/v20201201/model/DescribeVideoListRequest.cpp
   src/v20201201/model/ModifyDeviceDataResponse.cpp

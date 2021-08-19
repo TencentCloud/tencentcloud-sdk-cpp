@@ -38,7 +38,8 @@ SREInstance::SREInstance() :
     m_createTimeHasBeenSet(false),
     m_envInfosHasBeenSet(false),
     m_engineRegionHasBeenSet(false),
-    m_enableInternetHasBeenSet(false)
+    m_enableInternetHasBeenSet(false),
+    m_vpcInfosHasBeenSet(false)
 {
 }
 
@@ -240,6 +241,26 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
         m_enableInternetHasBeenSet = true;
     }
 
+    if (value.HasMember("VpcInfos") && !value["VpcInfos"].IsNull())
+    {
+        if (!value["VpcInfos"].IsArray())
+            return CoreInternalOutcome(Error("response `SREInstance.VpcInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["VpcInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VpcInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_vpcInfos.push_back(item);
+        }
+        m_vpcInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -401,6 +422,21 @@ void SREInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "EnableInternet";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableInternet, allocator);
+    }
+
+    if (m_vpcInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_vpcInfos.begin(); itr != m_vpcInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -692,5 +728,21 @@ void SREInstance::SetEnableInternet(const bool& _enableInternet)
 bool SREInstance::EnableInternetHasBeenSet() const
 {
     return m_enableInternetHasBeenSet;
+}
+
+vector<VpcInfo> SREInstance::GetVpcInfos() const
+{
+    return m_vpcInfos;
+}
+
+void SREInstance::SetVpcInfos(const vector<VpcInfo>& _vpcInfos)
+{
+    m_vpcInfos = _vpcInfos;
+    m_vpcInfosHasBeenSet = true;
+}
+
+bool SREInstance::VpcInfosHasBeenSet() const
+{
+    return m_vpcInfosHasBeenSet;
 }
 

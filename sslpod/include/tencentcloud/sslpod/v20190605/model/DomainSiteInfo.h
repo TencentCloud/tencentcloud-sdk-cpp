@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ID
-                     * @return Id ID
+                     * 获取ID标识
+                     * @return Id ID标识
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置ID
-                     * @param Id ID
+                     * 设置ID标识
+                     * @param Id ID标识
                      */
                     void SetId(const int64_t& _id);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取是否自动获取IP
-                     * @return AutoIP 是否自动获取IP
+                     * 获取是否自动获取IP：true：是，false:否
+                     * @return AutoIP 是否自动获取IP：true：是，false:否
                      */
                     bool GetAutoIP() const;
 
                     /**
-                     * 设置是否自动获取IP
-                     * @param AutoIP 是否自动获取IP
+                     * 设置是否自动获取IP：true：是，false:否
+                     * @param AutoIP 是否自动获取IP：true：是，false:否
                      */
                     void SetAutoIP(const bool& _autoIP);
 
@@ -119,22 +119,58 @@ namespace TencentCloud
                     bool AutoIPHasBeenSet() const;
 
                     /**
-                     * 获取监控服务类型
-                     * @return ServerType 监控服务类型
+                     * 获取评级
+"A+"，
+ "A"，
+"A-"，
+"B"，
+"C"，
+"D"，
+ "E"，
+ "F"，
+"T"，
+                     * @return Grade 评级
+"A+"，
+ "A"，
+"A-"，
+"B"，
+"C"，
+"D"，
+ "E"，
+ "F"，
+"T"，
                      */
-                    int64_t GetServerType() const;
+                    std::string GetGrade() const;
 
                     /**
-                     * 设置监控服务类型
-                     * @param ServerType 监控服务类型
+                     * 设置评级
+"A+"，
+ "A"，
+"A-"，
+"B"，
+"C"，
+"D"，
+ "E"，
+ "F"，
+"T"，
+                     * @param Grade 评级
+"A+"，
+ "A"，
+"A-"，
+"B"，
+"C"，
+"D"，
+ "E"，
+ "F"，
+"T"，
                      */
-                    void SetServerType(const int64_t& _serverType);
+                    void SetGrade(const std::string& _grade);
 
                     /**
-                     * 判断参数 ServerType 是否已赋值
-                     * @return ServerType 是否已赋值
+                     * 判断参数 Grade 是否已赋值
+                     * @return Grade 是否已赋值
                      */
-                    bool ServerTypeHasBeenSet() const;
+                    bool GradeHasBeenSet() const;
 
                     /**
                      * 获取证书品牌
@@ -155,32 +191,88 @@ namespace TencentCloud
                     bool BrandHasBeenSet() const;
 
                     /**
-                     * 获取评级
-                     * @return Grade 评级
+                     * 获取监控服务类型
+0 :Web
+1: SMTP
+2: IMAP
+3: POP3
+                     * @return ServerType 监控服务类型
+0 :Web
+1: SMTP
+2: IMAP
+3: POP3
                      */
-                    std::string GetGrade() const;
+                    int64_t GetServerType() const;
 
                     /**
-                     * 设置评级
-                     * @param Grade 评级
+                     * 设置监控服务类型
+0 :Web
+1: SMTP
+2: IMAP
+3: POP3
+                     * @param ServerType 监控服务类型
+0 :Web
+1: SMTP
+2: IMAP
+3: POP3
                      */
-                    void SetGrade(const std::string& _grade);
+                    void SetServerType(const int64_t& _serverType);
 
                     /**
-                     * 判断参数 Grade 是否已赋值
-                     * @return Grade 是否已赋值
+                     * 判断参数 ServerType 是否已赋值
+                     * @return ServerType 是否已赋值
                      */
-                    bool GradeHasBeenSet() const;
+                    bool ServerTypeHasBeenSet() const;
 
                     /**
                      * 获取评级Code
+0："unknown"，
+1："A+"，
+2： "A"，
+3："A-"，
+4："B"，
+5："C"，
+6："D"，
+7： "E"，
+8： "F"，
+9："T"，
                      * @return GradeCode 评级Code
+0："unknown"，
+1："A+"，
+2： "A"，
+3："A-"，
+4："B"，
+5："C"，
+6："D"，
+7： "E"，
+8： "F"，
+9："T"，
                      */
                     int64_t GetGradeCode() const;
 
                     /**
                      * 设置评级Code
+0："unknown"，
+1："A+"，
+2： "A"，
+3："A-"，
+4："B"，
+5："C"，
+6："D"，
+7： "E"，
+8： "F"，
+9："T"，
                      * @param GradeCode 评级Code
+0："unknown"，
+1："A+"，
+2： "A"，
+3："A-"，
+4："B"，
+5："C"，
+6："D"，
+7： "E"，
+8： "F"，
+9："T"，
                      */
                     void SetGradeCode(const int64_t& _gradeCode);
 
@@ -191,14 +283,14 @@ namespace TencentCloud
                     bool GradeCodeHasBeenSet() const;
 
                     /**
-                     * 获取是否监控告警
-                     * @return Notice 是否监控告警
+                     * 获取是否监控告警；true：是，false:否
+                     * @return Notice 是否监控告警；true：是，false:否
                      */
                     bool GetNotice() const;
 
                     /**
-                     * 设置是否监控告警
-                     * @param Notice 是否监控告警
+                     * 设置是否监控告警；true：是，false:否
+                     * @param Notice 是否监控告警；true：是，false:否
                      */
                     void SetNotice(const bool& _notice);
 
@@ -249,14 +341,58 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取域名状态
-                     * @return Status 域名状态
+                     * 获取域名状态:
+连接异常，
+证书已过期，
+证书已吊销，
+证书黑名单，
+证书域名不匹配，
+证书不可信，
+证书密钥弱，
+证书即将过期，少于7天，
+证书即将过期，少于30天，
+正常，
+部分异常
+                     * @return Status 域名状态:
+连接异常，
+证书已过期，
+证书已吊销，
+证书黑名单，
+证书域名不匹配，
+证书不可信，
+证书密钥弱，
+证书即将过期，少于7天，
+证书即将过期，少于30天，
+正常，
+部分异常
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置域名状态
-                     * @param Status 域名状态
+                     * 设置域名状态:
+连接异常，
+证书已过期，
+证书已吊销，
+证书黑名单，
+证书域名不匹配，
+证书不可信，
+证书密钥弱，
+证书即将过期，少于7天，
+证书即将过期，少于30天，
+正常，
+部分异常
+                     * @param Status 域名状态:
+连接异常，
+证书已过期，
+证书已吊销，
+证书黑名单，
+证书域名不匹配，
+证书不可信，
+证书密钥弱，
+证书即将过期，少于7天，
+证书即将过期，少于30天，
+正常，
+部分异常
                      */
                     void SetStatus(const std::string& _status);
 
@@ -287,7 +423,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ID
+                     * ID标识
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
@@ -305,16 +441,25 @@ namespace TencentCloud
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 是否自动获取IP
+                     * 是否自动获取IP：true：是，false:否
                      */
                     bool m_autoIP;
                     bool m_autoIPHasBeenSet;
 
                     /**
-                     * 监控服务类型
+                     * 评级
+"A+"，
+ "A"，
+"A-"，
+"B"，
+"C"，
+"D"，
+ "E"，
+ "F"，
+"T"，
                      */
-                    int64_t m_serverType;
-                    bool m_serverTypeHasBeenSet;
+                    std::string m_grade;
+                    bool m_gradeHasBeenSet;
 
                     /**
                      * 证书品牌
@@ -323,19 +468,33 @@ namespace TencentCloud
                     bool m_brandHasBeenSet;
 
                     /**
-                     * 评级
+                     * 监控服务类型
+0 :Web
+1: SMTP
+2: IMAP
+3: POP3
                      */
-                    std::string m_grade;
-                    bool m_gradeHasBeenSet;
+                    int64_t m_serverType;
+                    bool m_serverTypeHasBeenSet;
 
                     /**
                      * 评级Code
+0："unknown"，
+1："A+"，
+2： "A"，
+3："A-"，
+4："B"，
+5："C"，
+6："D"，
+7： "E"，
+8： "F"，
+9："T"，
                      */
                     int64_t m_gradeCode;
                     bool m_gradeCodeHasBeenSet;
 
                     /**
-                     * 是否监控告警
+                     * 是否监控告警；true：是，false:否
                      */
                     bool m_notice;
                     bool m_noticeHasBeenSet;
@@ -354,7 +513,18 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 域名状态
+                     * 域名状态:
+连接异常，
+证书已过期，
+证书已吊销，
+证书黑名单，
+证书域名不匹配，
+证书不可信，
+证书密钥弱，
+证书即将过期，少于7天，
+证书即将过期，少于30天，
+正常，
+部分异常
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

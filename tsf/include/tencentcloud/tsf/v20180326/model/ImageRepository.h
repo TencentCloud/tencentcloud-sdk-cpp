@@ -24,6 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tsf/v20180326/model/TcrRepoInfo.h>
+#include <tencentcloud/tsf/v20180326/model/ScalableRule.h>
 
 
 namespace TencentCloud
@@ -288,6 +290,94 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取TcrRepoInfo值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TcrRepoInfo TcrRepoInfo值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TcrRepoInfo GetTcrRepoInfo() const;
+
+                    /**
+                     * 设置TcrRepoInfo值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TcrRepoInfo TcrRepoInfo值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTcrRepoInfo(const TcrRepoInfo& _tcrRepoInfo);
+
+                    /**
+                     * 判断参数 TcrRepoInfo 是否已赋值
+                     * @return TcrRepoInfo 是否已赋值
+                     */
+                    bool TcrRepoInfoHasBeenSet() const;
+
+                    /**
+                     * 获取TcrBindingId值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TcrBindingId TcrBindingId值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetTcrBindingId() const;
+
+                    /**
+                     * 设置TcrBindingId值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TcrBindingId TcrBindingId值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTcrBindingId(const int64_t& _tcrBindingId);
+
+                    /**
+                     * 判断参数 TcrBindingId 是否已赋值
+                     * @return TcrBindingId 是否已赋值
+                     */
+                    bool TcrBindingIdHasBeenSet() const;
+
+                    /**
+                     * 获取applicationid值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationId applicationid值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetApplicationId() const;
+
+                    /**
+                     * 设置applicationid值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ApplicationId applicationid值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetApplicationId(const std::string& _applicationId);
+
+                    /**
+                     * 判断参数 ApplicationId 是否已赋值
+                     * @return ApplicationId 是否已赋值
+                     */
+                    bool ApplicationIdHasBeenSet() const;
+
+                    /**
+                     * 获取ApplicationName值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationName ApplicationName值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ScalableRule GetApplicationName() const;
+
+                    /**
+                     * 设置ApplicationName值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ApplicationName ApplicationName值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetApplicationName(const ScalableRule& _applicationName);
+
+                    /**
+                     * 判断参数 ApplicationName 是否已赋值
+                     * @return ApplicationName 是否已赋值
+                     */
+                    bool ApplicationNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -366,6 +456,34 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * TcrRepoInfo值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TcrRepoInfo m_tcrRepoInfo;
+                    bool m_tcrRepoInfoHasBeenSet;
+
+                    /**
+                     * TcrBindingId值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_tcrBindingId;
+                    bool m_tcrBindingIdHasBeenSet;
+
+                    /**
+                     * applicationid值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicationId;
+                    bool m_applicationIdHasBeenSet;
+
+                    /**
+                     * ApplicationName值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ScalableRule m_applicationName;
+                    bool m_applicationNameHasBeenSet;
 
                 };
             }

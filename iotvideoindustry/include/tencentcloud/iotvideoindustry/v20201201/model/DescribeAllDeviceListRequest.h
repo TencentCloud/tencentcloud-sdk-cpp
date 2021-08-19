@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool DeviceIdsHasBeenSet() const;
 
+                    /**
+                     * 获取设备类型过滤
+                     * @return DeviceTypes 设备类型过滤
+                     */
+                    std::vector<int64_t> GetDeviceTypes() const;
+
+                    /**
+                     * 设置设备类型过滤
+                     * @param DeviceTypes 设备类型过滤
+                     */
+                    void SetDeviceTypes(const std::vector<int64_t>& _deviceTypes);
+
+                    /**
+                     * 判断参数 DeviceTypes 是否已赋值
+                     * @return DeviceTypes 是否已赋值
+                     */
+                    bool DeviceTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_deviceIds;
                     bool m_deviceIdsHasBeenSet;
+
+                    /**
+                     * 设备类型过滤
+                     */
+                    std::vector<int64_t> m_deviceTypes;
+                    bool m_deviceTypesHasBeenSet;
 
                 };
             }

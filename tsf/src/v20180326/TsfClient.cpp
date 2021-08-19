@@ -3351,6 +3351,49 @@ TsfClient::DescribeGroupInstancesOutcomeCallable TsfClient::DescribeGroupInstanc
     return task->get_future();
 }
 
+TsfClient::DescribeGroupReleaseOutcome TsfClient::DescribeGroupRelease(const DescribeGroupReleaseRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGroupRelease");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGroupReleaseResponse rsp = DescribeGroupReleaseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGroupReleaseOutcome(rsp);
+        else
+            return DescribeGroupReleaseOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGroupReleaseOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeGroupReleaseAsync(const DescribeGroupReleaseRequest& request, const DescribeGroupReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGroupRelease(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeGroupReleaseOutcomeCallable TsfClient::DescribeGroupReleaseCallable(const DescribeGroupReleaseRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGroupReleaseOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGroupRelease(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DescribeGroupUseDetailOutcome TsfClient::DescribeGroupUseDetail(const DescribeGroupUseDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeGroupUseDetail");
@@ -5838,6 +5881,49 @@ TsfClient::ModifyUploadInfoOutcomeCallable TsfClient::ModifyUploadInfoCallable(c
         [this, request]()
         {
             return this->ModifyUploadInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::OperateApplicationTcrBindingOutcome TsfClient::OperateApplicationTcrBinding(const OperateApplicationTcrBindingRequest &request)
+{
+    auto outcome = MakeRequest(request, "OperateApplicationTcrBinding");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OperateApplicationTcrBindingResponse rsp = OperateApplicationTcrBindingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OperateApplicationTcrBindingOutcome(rsp);
+        else
+            return OperateApplicationTcrBindingOutcome(o.GetError());
+    }
+    else
+    {
+        return OperateApplicationTcrBindingOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::OperateApplicationTcrBindingAsync(const OperateApplicationTcrBindingRequest& request, const OperateApplicationTcrBindingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OperateApplicationTcrBinding(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::OperateApplicationTcrBindingOutcomeCallable TsfClient::OperateApplicationTcrBindingCallable(const OperateApplicationTcrBindingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OperateApplicationTcrBindingOutcome()>>(
+        [this, request]()
+        {
+            return this->OperateApplicationTcrBinding(request);
         }
     );
 

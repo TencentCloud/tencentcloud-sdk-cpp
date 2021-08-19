@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取外网下载地址（6小时）
-                     * @return DownloadUrl 外网下载地址（6小时）
+                     * 获取外网下载地址（6小时内链接有效），该字段正在逐步废弃中。
+                     * @return DownloadUrl 外网下载地址（6小时内链接有效），该字段正在逐步废弃中。
                      */
                     std::vector<std::string> GetDownloadUrl() const;
 
@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool DownloadUrlHasBeenSet() const;
 
                     /**
-                     * 获取内网下载地址（6小时）
-                     * @return InnerDownloadUrl 内网下载地址（6小时）
+                     * 获取内网下载地址（6小时内链接有效），该字段正在逐步废弃中。
+                     * @return InnerDownloadUrl 内网下载地址（6小时内链接有效），该字段正在逐步废弃中。
                      */
                     std::vector<std::string> GetInnerDownloadUrl() const;
 
@@ -69,9 +69,9 @@ namespace TencentCloud
                     bool InnerDownloadUrlHasBeenSet() const;
 
                     /**
-                     * 获取文件名称（仅tendis实例有值）
+                     * 获取文件名称，该字段正在逐步废弃中。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Filenames 文件名称（仅tendis实例有值）
+                     * @return Filenames 文件名称，该字段正在逐步废弃中。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetFilenames() const;
@@ -99,19 +99,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 外网下载地址（6小时）
+                     * 外网下载地址（6小时内链接有效），该字段正在逐步废弃中。
                      */
                     std::vector<std::string> m_downloadUrl;
                     bool m_downloadUrlHasBeenSet;
 
                     /**
-                     * 内网下载地址（6小时）
+                     * 内网下载地址（6小时内链接有效），该字段正在逐步废弃中。
                      */
                     std::vector<std::string> m_innerDownloadUrl;
                     bool m_innerDownloadUrlHasBeenSet;
 
                     /**
-                     * 文件名称（仅tendis实例有值）
+                     * 文件名称，该字段正在逐步废弃中。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_filenames;

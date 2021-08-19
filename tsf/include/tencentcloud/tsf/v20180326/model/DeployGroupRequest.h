@@ -295,6 +295,24 @@ namespace TencentCloud
                      */
                     bool StopScriptHasBeenSet() const;
 
+                    /**
+                     * 获取是否进行增量部署，默认为false，全量更新
+                     * @return IncrementalDeployment 是否进行增量部署，默认为false，全量更新
+                     */
+                    bool GetIncrementalDeployment() const;
+
+                    /**
+                     * 设置是否进行增量部署，默认为false，全量更新
+                     * @param IncrementalDeployment 是否进行增量部署，默认为false，全量更新
+                     */
+                    void SetIncrementalDeployment(const bool& _incrementalDeployment);
+
+                    /**
+                     * 判断参数 IncrementalDeployment 是否已赋值
+                     * @return IncrementalDeployment 是否已赋值
+                     */
+                    bool IncrementalDeploymentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -380,6 +398,12 @@ namespace TencentCloud
                      */
                     std::string m_stopScript;
                     bool m_stopScriptHasBeenSet;
+
+                    /**
+                     * 是否进行增量部署，默认为false，全量更新
+                     */
+                    bool m_incrementalDeployment;
+                    bool m_incrementalDeploymentHasBeenSet;
 
                 };
             }

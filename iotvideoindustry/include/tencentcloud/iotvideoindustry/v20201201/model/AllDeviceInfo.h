@@ -266,6 +266,72 @@ namespace TencentCloud
                      */
                     bool RecordableHasBeenSet() const;
 
+                    /**
+                     * 获取设备接入协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Protocol 设备接入协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProtocol() const;
+
+                    /**
+                     * 设置设备接入协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Protocol 设备接入协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProtocol(const std::string& _protocol);
+
+                    /**
+                     * 判断参数 Protocol 是否已赋值
+                     * @return Protocol 是否已赋值
+                     */
+                    bool ProtocolHasBeenSet() const;
+
+                    /**
+                     * 获取组Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GroupId 组Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGroupId() const;
+
+                    /**
+                     * 设置组Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GroupId 组Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGroupId(const std::string& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     */
+                    bool GroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取组名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GroupName 组名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGroupName() const;
+
+                    /**
+                     * 设置组名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GroupName 组名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGroupName(const std::string& _groupName);
+
+                    /**
+                     * 判断参数 GroupName 是否已赋值
+                     * @return GroupName 是否已赋值
+                     */
+                    bool GroupNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -337,6 +403,27 @@ namespace TencentCloud
                      */
                     int64_t m_recordable;
                     bool m_recordableHasBeenSet;
+
+                    /**
+                     * 设备接入协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_protocol;
+                    bool m_protocolHasBeenSet;
+
+                    /**
+                     * 组Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
+
+                    /**
+                     * 组名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_groupName;
+                    bool m_groupNameHasBeenSet;
 
                 };
             }

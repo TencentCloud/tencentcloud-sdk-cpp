@@ -61,6 +61,24 @@ namespace TencentCloud
                      */
                     bool ImageTagsHasBeenSet() const;
 
+                    /**
+                     * 获取企业: tcr ；个人: personal或者不填
+                     * @return RepoType 企业: tcr ；个人: personal或者不填
+                     */
+                    std::string GetRepoType() const;
+
+                    /**
+                     * 设置企业: tcr ；个人: personal或者不填
+                     * @param RepoType 企业: tcr ；个人: personal或者不填
+                     */
+                    void SetRepoType(const std::string& _repoType);
+
+                    /**
+                     * 判断参数 RepoType 是否已赋值
+                     * @return RepoType 是否已赋值
+                     */
+                    bool RepoTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -68,6 +86,12 @@ namespace TencentCloud
                      */
                     std::vector<DeleteImageTag> m_imageTags;
                     bool m_imageTagsHasBeenSet;
+
+                    /**
+                     * 企业: tcr ；个人: personal或者不填
+                     */
+                    std::string m_repoType;
+                    bool m_repoTypeHasBeenSet;
 
                 };
             }

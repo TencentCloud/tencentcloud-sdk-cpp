@@ -27,7 +27,8 @@ DescribeRecordStreamRequest::DescribeRecordStreamRequest() :
     m_expireTimeHasBeenSet(false),
     m_recordIdHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_channelIdHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string DescribeRecordStreamRequest::ToJsonString() const
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_endTime, allocator);
+    }
+
+    if (m_channelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_channelId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void DescribeRecordStreamRequest::SetEndTime(const int64_t& _endTime)
 bool DescribeRecordStreamRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+string DescribeRecordStreamRequest::GetChannelId() const
+{
+    return m_channelId;
+}
+
+void DescribeRecordStreamRequest::SetChannelId(const string& _channelId)
+{
+    m_channelId = _channelId;
+    m_channelIdHasBeenSet = true;
+}
+
+bool DescribeRecordStreamRequest::ChannelIdHasBeenSet() const
+{
+    return m_channelIdHasBeenSet;
 }
 
 

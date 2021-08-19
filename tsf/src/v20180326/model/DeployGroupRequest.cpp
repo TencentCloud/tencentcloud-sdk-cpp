@@ -36,7 +36,8 @@ DeployGroupRequest::DeployGroupRequest() :
     m_deployExeModeHasBeenSet(false),
     m_deployWaitTimeHasBeenSet(false),
     m_startScriptHasBeenSet(false),
-    m_stopScriptHasBeenSet(false)
+    m_stopScriptHasBeenSet(false),
+    m_incrementalDeploymentHasBeenSet(false)
 {
 }
 
@@ -163,6 +164,14 @@ string DeployGroupRequest::ToJsonString() const
         string key = "StopScript";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_stopScript.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_incrementalDeploymentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IncrementalDeployment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_incrementalDeployment, allocator);
     }
 
 
@@ -395,6 +404,22 @@ void DeployGroupRequest::SetStopScript(const string& _stopScript)
 bool DeployGroupRequest::StopScriptHasBeenSet() const
 {
     return m_stopScriptHasBeenSet;
+}
+
+bool DeployGroupRequest::GetIncrementalDeployment() const
+{
+    return m_incrementalDeployment;
+}
+
+void DeployGroupRequest::SetIncrementalDeployment(const bool& _incrementalDeployment)
+{
+    m_incrementalDeployment = _incrementalDeployment;
+    m_incrementalDeploymentHasBeenSet = true;
+}
+
+bool DeployGroupRequest::IncrementalDeploymentHasBeenSet() const
+{
+    return m_incrementalDeploymentHasBeenSet;
 }
 
 

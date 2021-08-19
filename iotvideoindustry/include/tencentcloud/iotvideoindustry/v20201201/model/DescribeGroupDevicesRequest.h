@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool RecordableHasBeenSet() const;
 
+                    /**
+                     * 获取当Group是普通组的时候，支持根据deviceTypes筛选类型
+                     * @return DeviceTypes 当Group是普通组的时候，支持根据deviceTypes筛选类型
+                     */
+                    std::vector<int64_t> GetDeviceTypes() const;
+
+                    /**
+                     * 设置当Group是普通组的时候，支持根据deviceTypes筛选类型
+                     * @param DeviceTypes 当Group是普通组的时候，支持根据deviceTypes筛选类型
+                     */
+                    void SetDeviceTypes(const std::vector<int64_t>& _deviceTypes);
+
+                    /**
+                     * 判断参数 DeviceTypes 是否已赋值
+                     * @return DeviceTypes 是否已赋值
+                     */
+                    bool DeviceTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     int64_t m_recordable;
                     bool m_recordableHasBeenSet;
+
+                    /**
+                     * 当Group是普通组的时候，支持根据deviceTypes筛选类型
+                     */
+                    std::vector<int64_t> m_deviceTypes;
+                    bool m_deviceTypesHasBeenSet;
 
                 };
             }

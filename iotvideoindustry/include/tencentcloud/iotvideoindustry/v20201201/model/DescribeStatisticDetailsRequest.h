@@ -84,11 +84,15 @@ namespace TencentCloud
 2.非录制设备数：NonRecordingDevice
 3.观看流量总数：WatchFlux
 4.已用存储容量总数：StorageUsage
+5. X-P2P分享流量: P2PFluxTotal
+6. X-P2P峰值带宽: P2PPeakValue
                      * @return StatisticField 统计项。取值范围：
 1.录制设备数：RecordingDevice
 2.非录制设备数：NonRecordingDevice
 3.观看流量总数：WatchFlux
 4.已用存储容量总数：StorageUsage
+5. X-P2P分享流量: P2PFluxTotal
+6. X-P2P峰值带宽: P2PPeakValue
                      */
                     std::string GetStatisticField() const;
 
@@ -98,11 +102,15 @@ namespace TencentCloud
 2.非录制设备数：NonRecordingDevice
 3.观看流量总数：WatchFlux
 4.已用存储容量总数：StorageUsage
+5. X-P2P分享流量: P2PFluxTotal
+6. X-P2P峰值带宽: P2PPeakValue
                      * @param StatisticField 统计项。取值范围：
 1.录制设备数：RecordingDevice
 2.非录制设备数：NonRecordingDevice
 3.观看流量总数：WatchFlux
 4.已用存储容量总数：StorageUsage
+5. X-P2P分享流量: P2PFluxTotal
+6. X-P2P峰值带宽: P2PPeakValue
                      */
                     void SetStatisticField(const std::string& _statisticField);
 
@@ -132,6 +140,8 @@ namespace TencentCloud
 2.非录制设备数：NonRecordingDevice
 3.观看流量总数：WatchFlux
 4.已用存储容量总数：StorageUsage
+5. X-P2P分享流量: P2PFluxTotal
+6. X-P2P峰值带宽: P2PPeakValue
                      */
                     std::string m_statisticField;
                     bool m_statisticFieldHasBeenSet;

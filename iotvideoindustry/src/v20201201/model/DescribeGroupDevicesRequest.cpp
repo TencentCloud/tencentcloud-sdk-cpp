@@ -27,7 +27,8 @@ DescribeGroupDevicesRequest::DescribeGroupDevicesRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_nickNameHasBeenSet(false),
-    m_recordableHasBeenSet(false)
+    m_recordableHasBeenSet(false),
+    m_deviceTypesHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,19 @@ string DescribeGroupDevicesRequest::ToJsonString() const
         string key = "Recordable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_recordable, allocator);
+    }
+
+    if (m_deviceTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_deviceTypes.begin(); itr != m_deviceTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -164,6 +178,22 @@ void DescribeGroupDevicesRequest::SetRecordable(const int64_t& _recordable)
 bool DescribeGroupDevicesRequest::RecordableHasBeenSet() const
 {
     return m_recordableHasBeenSet;
+}
+
+vector<int64_t> DescribeGroupDevicesRequest::GetDeviceTypes() const
+{
+    return m_deviceTypes;
+}
+
+void DescribeGroupDevicesRequest::SetDeviceTypes(const vector<int64_t>& _deviceTypes)
+{
+    m_deviceTypes = _deviceTypes;
+    m_deviceTypesHasBeenSet = true;
+}
+
+bool DescribeGroupDevicesRequest::DeviceTypesHasBeenSet() const
+{
+    return m_deviceTypesHasBeenSet;
 }
 
 

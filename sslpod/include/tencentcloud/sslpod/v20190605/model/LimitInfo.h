@@ -47,14 +47,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取通知类型
-                     * @return Type 通知类型
+                     * 获取通知类型：
+limit_emai：邮件
+limit_wechat：微信
+limit_phone：手机
+                     * @return Type 通知类型：
+limit_emai：邮件
+limit_wechat：微信
+limit_phone：手机
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置通知类型
-                     * @param Type 通知类型
+                     * 设置通知类型：
+limit_emai：邮件
+limit_wechat：微信
+limit_phone：手机
+                     * @param Type 通知类型：
+limit_emai：邮件
+limit_wechat：微信
+limit_phone：手机
                      */
                     void SetType(const std::string& _type);
 
@@ -103,7 +115,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 通知类型
+                     * 通知类型：
+limit_emai：邮件
+limit_wechat：微信
+limit_phone：手机
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool MinQueryTimeHasBeenSet() const;
 
                     /**
-                     * 获取页面大小：20
-                     * @return Limit 页面大小：20
+                     * 获取页面大小：默认20
+                     * @return Limit 页面大小：默认20
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置页面大小：20
-                     * @param Limit 页面大小：20
+                     * 设置页面大小：默认20
+                     * @param Limit 页面大小：默认20
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_minQueryTimeHasBeenSet;
 
                     /**
-                     * 页面大小：20
+                     * 页面大小：默认20
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

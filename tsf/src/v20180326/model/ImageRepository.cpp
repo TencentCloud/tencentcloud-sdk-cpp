@@ -31,7 +31,11 @@ ImageRepository::ImageRepository() :
     m_pullCountHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_tcrRepoInfoHasBeenSet(false),
+    m_tcrBindingIdHasBeenSet(false),
+    m_applicationIdHasBeenSet(false),
+    m_applicationNameHasBeenSet(false)
 {
 }
 
@@ -150,6 +154,60 @@ CoreInternalOutcome ImageRepository::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("TcrRepoInfo") && !value["TcrRepoInfo"].IsNull())
+    {
+        if (!value["TcrRepoInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `ImageRepository.TcrRepoInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_tcrRepoInfo.Deserialize(value["TcrRepoInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_tcrRepoInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("TcrBindingId") && !value["TcrBindingId"].IsNull())
+    {
+        if (!value["TcrBindingId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ImageRepository.TcrBindingId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tcrBindingId = value["TcrBindingId"].GetInt64();
+        m_tcrBindingIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApplicationId") && !value["ApplicationId"].IsNull())
+    {
+        if (!value["ApplicationId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ImageRepository.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationId = string(value["ApplicationId"].GetString());
+        m_applicationIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApplicationName") && !value["ApplicationName"].IsNull())
+    {
+        if (!value["ApplicationName"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `ImageRepository.ApplicationName` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_applicationName.Deserialize(value["ApplicationName"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_applicationNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +301,40 @@ void ImageRepository::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tcrRepoInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TcrRepoInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tcrRepoInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_tcrBindingIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TcrBindingId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tcrBindingId, allocator);
+    }
+
+    if (m_applicationIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_applicationId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_applicationName.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -422,5 +514,69 @@ void ImageRepository::SetUpdateTime(const string& _updateTime)
 bool ImageRepository::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+TcrRepoInfo ImageRepository::GetTcrRepoInfo() const
+{
+    return m_tcrRepoInfo;
+}
+
+void ImageRepository::SetTcrRepoInfo(const TcrRepoInfo& _tcrRepoInfo)
+{
+    m_tcrRepoInfo = _tcrRepoInfo;
+    m_tcrRepoInfoHasBeenSet = true;
+}
+
+bool ImageRepository::TcrRepoInfoHasBeenSet() const
+{
+    return m_tcrRepoInfoHasBeenSet;
+}
+
+int64_t ImageRepository::GetTcrBindingId() const
+{
+    return m_tcrBindingId;
+}
+
+void ImageRepository::SetTcrBindingId(const int64_t& _tcrBindingId)
+{
+    m_tcrBindingId = _tcrBindingId;
+    m_tcrBindingIdHasBeenSet = true;
+}
+
+bool ImageRepository::TcrBindingIdHasBeenSet() const
+{
+    return m_tcrBindingIdHasBeenSet;
+}
+
+string ImageRepository::GetApplicationId() const
+{
+    return m_applicationId;
+}
+
+void ImageRepository::SetApplicationId(const string& _applicationId)
+{
+    m_applicationId = _applicationId;
+    m_applicationIdHasBeenSet = true;
+}
+
+bool ImageRepository::ApplicationIdHasBeenSet() const
+{
+    return m_applicationIdHasBeenSet;
+}
+
+ScalableRule ImageRepository::GetApplicationName() const
+{
+    return m_applicationName;
+}
+
+void ImageRepository::SetApplicationName(const ScalableRule& _applicationName)
+{
+    m_applicationName = _applicationName;
+    m_applicationNameHasBeenSet = true;
+}
+
+bool ImageRepository::ApplicationNameHasBeenSet() const
+{
+    return m_applicationNameHasBeenSet;
 }
 

@@ -136,6 +136,42 @@ namespace TencentCloud
                      */
                     bool DateHasBeenSet() const;
 
+                    /**
+                     * 获取通道唯一标识
+                     * @return ChannelId 通道唯一标识
+                     */
+                    std::string GetChannelId() const;
+
+                    /**
+                     * 设置通道唯一标识
+                     * @param ChannelId 通道唯一标识
+                     */
+                    void SetChannelId(const std::string& _channelId);
+
+                    /**
+                     * 判断参数 ChannelId 是否已赋值
+                     * @return ChannelId 是否已赋值
+                     */
+                    bool ChannelIdHasBeenSet() const;
+
+                    /**
+                     * 获取1: 云端录制 2: 本地录制
+                     * @return Type 1: 云端录制 2: 本地录制
+                     */
+                    int64_t GetType() const;
+
+                    /**
+                     * 设置1: 云端录制 2: 本地录制
+                     * @param Type 1: 云端录制 2: 本地录制
+                     */
+                    void SetType(const int64_t& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -168,6 +204,18 @@ namespace TencentCloud
                      */
                     std::string m_date;
                     bool m_dateHasBeenSet;
+
+                    /**
+                     * 通道唯一标识
+                     */
+                    std::string m_channelId;
+                    bool m_channelIdHasBeenSet;
+
+                    /**
+                     * 1: 云端录制 2: 本地录制
+                     */
+                    int64_t m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

@@ -82,6 +82,28 @@ namespace TencentCloud
                      */
                     bool SubnetIdHasBeenSet() const;
 
+                    /**
+                     * 获取内网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IntranetAddress 内网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIntranetAddress() const;
+
+                    /**
+                     * 设置内网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IntranetAddress 内网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIntranetAddress(const std::string& _intranetAddress);
+
+                    /**
+                     * 判断参数 IntranetAddress 是否已赋值
+                     * @return IntranetAddress 是否已赋值
+                     */
+                    bool IntranetAddressHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +117,13 @@ namespace TencentCloud
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * 内网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_intranetAddress;
+                    bool m_intranetAddressHasBeenSet;
 
                 };
             }

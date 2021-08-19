@@ -25,7 +25,10 @@ using namespace std;
 DescribeImageRepositoryRequest::DescribeImageRepositoryRequest() :
     m_searchWordHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_repoTypeHasBeenSet(false),
+    m_applicationIdHasBeenSet(false),
+    m_tcrRepoInfoHasBeenSet(false)
 {
 }
 
@@ -58,6 +61,31 @@ string DescribeImageRepositoryRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_repoTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepoType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_repoType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_applicationId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tcrRepoInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TcrRepoInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tcrRepoInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -114,6 +142,54 @@ void DescribeImageRepositoryRequest::SetLimit(const int64_t& _limit)
 bool DescribeImageRepositoryRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeImageRepositoryRequest::GetRepoType() const
+{
+    return m_repoType;
+}
+
+void DescribeImageRepositoryRequest::SetRepoType(const string& _repoType)
+{
+    m_repoType = _repoType;
+    m_repoTypeHasBeenSet = true;
+}
+
+bool DescribeImageRepositoryRequest::RepoTypeHasBeenSet() const
+{
+    return m_repoTypeHasBeenSet;
+}
+
+string DescribeImageRepositoryRequest::GetApplicationId() const
+{
+    return m_applicationId;
+}
+
+void DescribeImageRepositoryRequest::SetApplicationId(const string& _applicationId)
+{
+    m_applicationId = _applicationId;
+    m_applicationIdHasBeenSet = true;
+}
+
+bool DescribeImageRepositoryRequest::ApplicationIdHasBeenSet() const
+{
+    return m_applicationIdHasBeenSet;
+}
+
+TcrRepoInfo DescribeImageRepositoryRequest::GetTcrRepoInfo() const
+{
+    return m_tcrRepoInfo;
+}
+
+void DescribeImageRepositoryRequest::SetTcrRepoInfo(const TcrRepoInfo& _tcrRepoInfo)
+{
+    m_tcrRepoInfo = _tcrRepoInfo;
+    m_tcrRepoInfoHasBeenSet = true;
+}
+
+bool DescribeImageRepositoryRequest::TcrRepoInfoHasBeenSet() const
+{
+    return m_tcrRepoInfoHasBeenSet;
 }
 
 

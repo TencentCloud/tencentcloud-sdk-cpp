@@ -29,7 +29,8 @@ GroupDeviceItem::GroupDeviceItem() :
     m_rTSPUrlHasBeenSet(false),
     m_deviceCodeHasBeenSet(false),
     m_isRecordHasBeenSet(false),
-    m_recordableHasBeenSet(false)
+    m_recordableHasBeenSet(false),
+    m_protocolHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome GroupDeviceItem::Deserialize(const rapidjson::Value &value)
         m_recordableHasBeenSet = true;
     }
 
+    if (value.HasMember("Protocol") && !value["Protocol"].IsNull())
+    {
+        if (!value["Protocol"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `GroupDeviceItem.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_protocol = string(value["Protocol"].GetString());
+        m_protocolHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void GroupDeviceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Recordable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_recordable, allocator);
+    }
+
+    if (m_protocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Protocol";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void GroupDeviceItem::SetRecordable(const int64_t& _recordable)
 bool GroupDeviceItem::RecordableHasBeenSet() const
 {
     return m_recordableHasBeenSet;
+}
+
+string GroupDeviceItem::GetProtocol() const
+{
+    return m_protocol;
+}
+
+void GroupDeviceItem::SetProtocol(const string& _protocol)
+{
+    m_protocol = _protocol;
+    m_protocolHasBeenSet = true;
+}
+
+bool GroupDeviceItem::ProtocolHasBeenSet() const
+{
+    return m_protocolHasBeenSet;
 }
 

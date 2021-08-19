@@ -191,14 +191,14 @@ namespace TencentCloud
                     bool JvmOptsHasBeenSet() const;
 
                     /**
-                     * 获取业务容器分配的 CPU 核数，对应 K8S 的 request
-                     * @return CpuRequest 业务容器分配的 CPU 核数，对应 K8S 的 request
+                     * 获取业务容器分配的 CPU 核数，对应 K8S 的 request，默认0.25
+                     * @return CpuRequest 业务容器分配的 CPU 核数，对应 K8S 的 request，默认0.25
                      */
                     std::string GetCpuRequest() const;
 
                     /**
-                     * 设置业务容器分配的 CPU 核数，对应 K8S 的 request
-                     * @param CpuRequest 业务容器分配的 CPU 核数，对应 K8S 的 request
+                     * 设置业务容器分配的 CPU 核数，对应 K8S 的 request，默认0.25
+                     * @param CpuRequest 业务容器分配的 CPU 核数，对应 K8S 的 request，默认0.25
                      */
                     void SetCpuRequest(const std::string& _cpuRequest);
 
@@ -209,14 +209,14 @@ namespace TencentCloud
                     bool CpuRequestHasBeenSet() const;
 
                     /**
-                     * 获取业务容器分配的内存 MiB 数，对应 K8S 的 request
-                     * @return MemRequest 业务容器分配的内存 MiB 数，对应 K8S 的 request
+                     * 获取业务容器分配的内存 MiB 数，对应 K8S 的 request，默认640 MiB
+                     * @return MemRequest 业务容器分配的内存 MiB 数，对应 K8S 的 request，默认640 MiB
                      */
                     std::string GetMemRequest() const;
 
                     /**
-                     * 设置业务容器分配的内存 MiB 数，对应 K8S 的 request
-                     * @param MemRequest 业务容器分配的内存 MiB 数，对应 K8S 的 request
+                     * 设置业务容器分配的内存 MiB 数，对应 K8S 的 request，默认640 MiB
+                     * @param MemRequest 业务容器分配的内存 MiB 数，对应 K8S 的 request，默认640 MiB
                      */
                     void SetMemRequest(const std::string& _memRequest);
 
@@ -568,6 +568,42 @@ namespace TencentCloud
                      */
                     bool SchedulingStrategyHasBeenSet() const;
 
+                    /**
+                     * 获取是否进行增量部署，默认为false，全量更新
+                     * @return IncrementalDeployment 是否进行增量部署，默认为false，全量更新
+                     */
+                    bool GetIncrementalDeployment() const;
+
+                    /**
+                     * 设置是否进行增量部署，默认为false，全量更新
+                     * @param IncrementalDeployment 是否进行增量部署，默认为false，全量更新
+                     */
+                    void SetIncrementalDeployment(const bool& _incrementalDeployment);
+
+                    /**
+                     * 判断参数 IncrementalDeployment 是否已赋值
+                     * @return IncrementalDeployment 是否已赋值
+                     */
+                    bool IncrementalDeploymentHasBeenSet() const;
+
+                    /**
+                     * 获取tcr或者不填
+                     * @return RepoType tcr或者不填
+                     */
+                    std::string GetRepoType() const;
+
+                    /**
+                     * 设置tcr或者不填
+                     * @param RepoType tcr或者不填
+                     */
+                    void SetRepoType(const std::string& _repoType);
+
+                    /**
+                     * 判断参数 RepoType 是否已赋值
+                     * @return RepoType 是否已赋值
+                     */
+                    bool RepoTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -619,13 +655,13 @@ namespace TencentCloud
                     bool m_jvmOptsHasBeenSet;
 
                     /**
-                     * 业务容器分配的 CPU 核数，对应 K8S 的 request
+                     * 业务容器分配的 CPU 核数，对应 K8S 的 request，默认0.25
                      */
                     std::string m_cpuRequest;
                     bool m_cpuRequestHasBeenSet;
 
                     /**
-                     * 业务容器分配的内存 MiB 数，对应 K8S 的 request
+                     * 业务容器分配的内存 MiB 数，对应 K8S 的 request，默认640 MiB
                      */
                     std::string m_memRequest;
                     bool m_memRequestHasBeenSet;
@@ -743,6 +779,18 @@ namespace TencentCloud
                      */
                     SchedulingStrategy m_schedulingStrategy;
                     bool m_schedulingStrategyHasBeenSet;
+
+                    /**
+                     * 是否进行增量部署，默认为false，全量更新
+                     */
+                    bool m_incrementalDeployment;
+                    bool m_incrementalDeploymentHasBeenSet;
+
+                    /**
+                     * tcr或者不填
+                     */
+                    std::string m_repoType;
+                    bool m_repoTypeHasBeenSet;
 
                 };
             }

@@ -155,14 +155,14 @@ TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架�
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取实例分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版、Redis4.0主从版不需要填写。
-                     * @return RedisShardNum 实例分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版、Redis4.0主从版不需要填写。
+                     * 获取实例分片数量，Redis2.8标准架构、CKV标准架构和Redis2.8单机版、Redis4.0标准架构不需要填写。
+                     * @return RedisShardNum 实例分片数量，Redis2.8标准架构、CKV标准架构和Redis2.8单机版、Redis4.0标准架构不需要填写。
                      */
                     int64_t GetRedisShardNum() const;
 
                     /**
-                     * 设置实例分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版、Redis4.0主从版不需要填写。
-                     * @param RedisShardNum 实例分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版、Redis4.0主从版不需要填写。
+                     * 设置实例分片数量，Redis2.8标准架构、CKV标准架构和Redis2.8单机版、Redis4.0标准架构不需要填写。
+                     * @param RedisShardNum 实例分片数量，Redis2.8标准架构、CKV标准架构和Redis2.8单机版、Redis4.0标准架构不需要填写。
                      */
                     void SetRedisShardNum(const int64_t& _redisShardNum);
 
@@ -173,14 +173,14 @@ TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架�
                     bool RedisShardNumHasBeenSet() const;
 
                     /**
-                     * 获取实例副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写。
-                     * @return RedisReplicasNum 实例副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写。
+                     * 获取实例副本数量，Redis2.8标准架构、CKV标准架构和Redis2.8单机版不需要填写。
+                     * @return RedisReplicasNum 实例副本数量，Redis2.8标准架构、CKV标准架构和Redis2.8单机版不需要填写。
                      */
                     int64_t GetRedisReplicasNum() const;
 
                     /**
-                     * 设置实例副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写。
-                     * @param RedisReplicasNum 实例副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写。
+                     * 设置实例副本数量，Redis2.8标准架构、CKV标准架构和Redis2.8单机版不需要填写。
+                     * @param RedisReplicasNum 实例副本数量，Redis2.8标准架构、CKV标准架构和Redis2.8单机版不需要填写。
                      */
                     void SetRedisReplicasNum(const int64_t& _redisReplicasNum);
 
@@ -191,14 +191,14 @@ TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架�
                     bool RedisReplicasNumHasBeenSet() const;
 
                     /**
-                     * 获取是否支持副本只读，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写。
-                     * @return ReplicasReadonly 是否支持副本只读，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写。
+                     * 获取是否支持副本只读，Redis2.8标准架构、CKV标准架构和Redis2.8单机版不需要填写。
+                     * @return ReplicasReadonly 是否支持副本只读，Redis2.8标准架构、CKV标准架构和Redis2.8单机版不需要填写。
                      */
                     bool GetReplicasReadonly() const;
 
                     /**
-                     * 设置是否支持副本只读，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写。
-                     * @param ReplicasReadonly 是否支持副本只读，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写。
+                     * 设置是否支持副本只读，Redis2.8标准架构、CKV标准架构和Redis2.8单机版不需要填写。
+                     * @param ReplicasReadonly 是否支持副本只读，Redis2.8标准架构、CKV标准架构和Redis2.8单机版不需要填写。
                      */
                     void SetReplicasReadonly(const bool& _replicasReadonly);
 
@@ -266,19 +266,19 @@ TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架�
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 实例分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版、Redis4.0主从版不需要填写。
+                     * 实例分片数量，Redis2.8标准架构、CKV标准架构和Redis2.8单机版、Redis4.0标准架构不需要填写。
                      */
                     int64_t m_redisShardNum;
                     bool m_redisShardNumHasBeenSet;
 
                     /**
-                     * 实例副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写。
+                     * 实例副本数量，Redis2.8标准架构、CKV标准架构和Redis2.8单机版不需要填写。
                      */
                     int64_t m_redisReplicasNum;
                     bool m_redisReplicasNumHasBeenSet;
 
                     /**
-                     * 是否支持副本只读，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写。
+                     * 是否支持副本只读，Redis2.8标准架构、CKV标准架构和Redis2.8单机版不需要填写。
                      */
                     bool m_replicasReadonly;
                     bool m_replicasReadonlyHasBeenSet;

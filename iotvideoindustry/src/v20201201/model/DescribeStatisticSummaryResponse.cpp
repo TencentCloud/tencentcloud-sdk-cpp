@@ -27,7 +27,9 @@ DescribeStatisticSummaryResponse::DescribeStatisticSummaryResponse() :
     m_recordingDeviceHasBeenSet(false),
     m_nonRecordingDeviceHasBeenSet(false),
     m_watchFluxHasBeenSet(false),
-    m_storageUsageHasBeenSet(false)
+    m_storageUsageHasBeenSet(false),
+    m_p2PFluxTotalHasBeenSet(false),
+    m_p2PPeakValueHasBeenSet(false)
 {
 }
 
@@ -105,6 +107,26 @@ CoreInternalOutcome DescribeStatisticSummaryResponse::Deserialize(const string &
         m_storageUsageHasBeenSet = true;
     }
 
+    if (rsp.HasMember("P2PFluxTotal") && !rsp["P2PFluxTotal"].IsNull())
+    {
+        if (!rsp["P2PFluxTotal"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `P2PFluxTotal` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_p2PFluxTotal = rsp["P2PFluxTotal"].GetDouble();
+        m_p2PFluxTotalHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("P2PPeakValue") && !rsp["P2PPeakValue"].IsNull())
+    {
+        if (!rsp["P2PPeakValue"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `P2PPeakValue` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_p2PPeakValue = rsp["P2PPeakValue"].GetDouble();
+        m_p2PPeakValueHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +167,22 @@ string DescribeStatisticSummaryResponse::ToJsonString() const
         string key = "StorageUsage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_storageUsage, allocator);
+    }
+
+    if (m_p2PFluxTotalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "P2PFluxTotal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_p2PFluxTotal, allocator);
+    }
+
+    if (m_p2PPeakValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "P2PPeakValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_p2PPeakValue, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -197,6 +235,26 @@ double DescribeStatisticSummaryResponse::GetStorageUsage() const
 bool DescribeStatisticSummaryResponse::StorageUsageHasBeenSet() const
 {
     return m_storageUsageHasBeenSet;
+}
+
+double DescribeStatisticSummaryResponse::GetP2PFluxTotal() const
+{
+    return m_p2PFluxTotal;
+}
+
+bool DescribeStatisticSummaryResponse::P2PFluxTotalHasBeenSet() const
+{
+    return m_p2PFluxTotalHasBeenSet;
+}
+
+double DescribeStatisticSummaryResponse::GetP2PPeakValue() const
+{
+    return m_p2PPeakValue;
+}
+
+bool DescribeStatisticSummaryResponse::P2PPeakValueHasBeenSet() const
+{
+    return m_p2PPeakValueHasBeenSet;
 }
 
 

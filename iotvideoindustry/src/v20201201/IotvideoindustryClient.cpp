@@ -126,6 +126,49 @@ IotvideoindustryClient::ControlDevicePTZOutcomeCallable IotvideoindustryClient::
     return task->get_future();
 }
 
+IotvideoindustryClient::ControlRecordStreamOutcome IotvideoindustryClient::ControlRecordStream(const ControlRecordStreamRequest &request)
+{
+    auto outcome = MakeRequest(request, "ControlRecordStream");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ControlRecordStreamResponse rsp = ControlRecordStreamResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ControlRecordStreamOutcome(rsp);
+        else
+            return ControlRecordStreamOutcome(o.GetError());
+    }
+    else
+    {
+        return ControlRecordStreamOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoindustryClient::ControlRecordStreamAsync(const ControlRecordStreamRequest& request, const ControlRecordStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ControlRecordStream(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoindustryClient::ControlRecordStreamOutcomeCallable IotvideoindustryClient::ControlRecordStreamCallable(const ControlRecordStreamRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ControlRecordStreamOutcome()>>(
+        [this, request]()
+        {
+            return this->ControlRecordStream(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoindustryClient::CreateDeviceOutcome IotvideoindustryClient::CreateDevice(const CreateDeviceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDevice");

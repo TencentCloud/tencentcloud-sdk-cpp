@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tdmq/v20200217/model/Filter.h>
 
 
 namespace TencentCloud
@@ -132,6 +133,36 @@ namespace TencentCloud
                      */
                     bool RoleNameHasBeenSet() const;
 
+                    /**
+                     * 获取* RoleName
+按照角色名进行过滤，精确查询。
+类型：String
+必选：否
+                     * @return Filters * RoleName
+按照角色名进行过滤，精确查询。
+类型：String
+必选：否
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置* RoleName
+按照角色名进行过滤，精确查询。
+类型：String
+必选：否
+                     * @param Filters * RoleName
+按照角色名进行过滤，精确查询。
+类型：String
+必选：否
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +194,15 @@ namespace TencentCloud
                      */
                     std::string m_roleName;
                     bool m_roleNameHasBeenSet;
+
+                    /**
+                     * * RoleName
+按照角色名进行过滤，精确查询。
+类型：String
+必选：否
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

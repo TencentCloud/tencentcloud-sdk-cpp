@@ -25,7 +25,9 @@ using namespace std;
 GetRecordDatesByDevRequest::GetRecordDatesByDevRequest() :
     m_deviceIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_channelIdHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,22 @@ string GetRecordDatesByDevRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_channelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_channelId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_type, allocator);
     }
 
 
@@ -114,6 +132,38 @@ void GetRecordDatesByDevRequest::SetLimit(const int64_t& _limit)
 bool GetRecordDatesByDevRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string GetRecordDatesByDevRequest::GetChannelId() const
+{
+    return m_channelId;
+}
+
+void GetRecordDatesByDevRequest::SetChannelId(const string& _channelId)
+{
+    m_channelId = _channelId;
+    m_channelIdHasBeenSet = true;
+}
+
+bool GetRecordDatesByDevRequest::ChannelIdHasBeenSet() const
+{
+    return m_channelIdHasBeenSet;
+}
+
+int64_t GetRecordDatesByDevRequest::GetType() const
+{
+    return m_type;
+}
+
+void GetRecordDatesByDevRequest::SetType(const int64_t& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool GetRecordDatesByDevRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 

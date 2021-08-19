@@ -33,7 +33,8 @@ ImageTag::ImageTag() :
     m_dockerVersionHasBeenSet(false),
     m_osHasBeenSet(false),
     m_pushTimeHasBeenSet(false),
-    m_sizeByteHasBeenSet(false)
+    m_sizeByteHasBeenSet(false),
+    m_tcrRepoInfoHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,23 @@ CoreInternalOutcome ImageTag::Deserialize(const rapidjson::Value &value)
         m_sizeByteHasBeenSet = true;
     }
 
+    if (value.HasMember("TcrRepoInfo") && !value["TcrRepoInfo"].IsNull())
+    {
+        if (!value["TcrRepoInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `ImageTag.TcrRepoInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_tcrRepoInfo.Deserialize(value["TcrRepoInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_tcrRepoInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +299,15 @@ void ImageTag::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "SizeByte";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sizeByte, allocator);
+    }
+
+    if (m_tcrRepoInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TcrRepoInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tcrRepoInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -492,5 +519,21 @@ void ImageTag::SetSizeByte(const int64_t& _sizeByte)
 bool ImageTag::SizeByteHasBeenSet() const
 {
     return m_sizeByteHasBeenSet;
+}
+
+TcrRepoInfo ImageTag::GetTcrRepoInfo() const
+{
+    return m_tcrRepoInfo;
+}
+
+void ImageTag::SetTcrRepoInfo(const TcrRepoInfo& _tcrRepoInfo)
+{
+    m_tcrRepoInfo = _tcrRepoInfo;
+    m_tcrRepoInfoHasBeenSet = true;
+}
+
+bool ImageTag::TcrRepoInfoHasBeenSet() const
+{
+    return m_tcrRepoInfoHasBeenSet;
 }
 

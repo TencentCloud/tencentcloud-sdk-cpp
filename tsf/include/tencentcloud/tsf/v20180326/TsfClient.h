@@ -177,6 +177,8 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeGroupGatewaysResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeGroupInstancesRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeGroupInstancesResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeGroupReleaseRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeGroupReleaseResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeGroupUseDetailRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeGroupUseDetailResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeGroupsRequest.h>
@@ -293,6 +295,8 @@
 #include <tencentcloud/tsf/v20180326/model/ModifyTaskResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyUploadInfoRequest.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyUploadInfoResponse.h>
+#include <tencentcloud/tsf/v20180326/model/OperateApplicationTcrBindingRequest.h>
+#include <tencentcloud/tsf/v20180326/model/OperateApplicationTcrBindingResponse.h>
 #include <tencentcloud/tsf/v20180326/model/RedoTaskRequest.h>
 #include <tencentcloud/tsf/v20180326/model/RedoTaskResponse.h>
 #include <tencentcloud/tsf/v20180326/model/RedoTaskBatchRequest.h>
@@ -602,6 +606,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeGroupInstancesResponse> DescribeGroupInstancesOutcome;
                 typedef std::future<DescribeGroupInstancesOutcome> DescribeGroupInstancesOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeGroupInstancesRequest&, DescribeGroupInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupInstancesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeGroupReleaseResponse> DescribeGroupReleaseOutcome;
+                typedef std::future<DescribeGroupReleaseOutcome> DescribeGroupReleaseOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeGroupReleaseRequest&, DescribeGroupReleaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupReleaseAsyncHandler;
                 typedef Outcome<Error, Model::DescribeGroupUseDetailResponse> DescribeGroupUseDetailOutcome;
                 typedef std::future<DescribeGroupUseDetailOutcome> DescribeGroupUseDetailOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeGroupUseDetailRequest&, DescribeGroupUseDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupUseDetailAsyncHandler;
@@ -776,6 +783,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyUploadInfoResponse> ModifyUploadInfoOutcome;
                 typedef std::future<ModifyUploadInfoOutcome> ModifyUploadInfoOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::ModifyUploadInfoRequest&, ModifyUploadInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUploadInfoAsyncHandler;
+                typedef Outcome<Error, Model::OperateApplicationTcrBindingResponse> OperateApplicationTcrBindingOutcome;
+                typedef std::future<OperateApplicationTcrBindingOutcome> OperateApplicationTcrBindingOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::OperateApplicationTcrBindingRequest&, OperateApplicationTcrBindingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OperateApplicationTcrBindingAsyncHandler;
                 typedef Outcome<Error, Model::RedoTaskResponse> RedoTaskOutcome;
                 typedef std::future<RedoTaskOutcome> RedoTaskOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::RedoTaskRequest&, RedoTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RedoTaskAsyncHandler;
@@ -1571,6 +1581,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeGroupInstancesOutcomeCallable DescribeGroupInstancesCallable(const Model::DescribeGroupInstancesRequest& request);
 
                 /**
+                 *查询部署组相关的发布信息
+                 * @param req DescribeGroupReleaseRequest
+                 * @return DescribeGroupReleaseOutcome
+                 */
+                DescribeGroupReleaseOutcome DescribeGroupRelease(const Model::DescribeGroupReleaseRequest &request);
+                void DescribeGroupReleaseAsync(const Model::DescribeGroupReleaseRequest& request, const DescribeGroupReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGroupReleaseOutcomeCallable DescribeGroupReleaseCallable(const Model::DescribeGroupReleaseRequest& request);
+
+                /**
                  *查询网关分组监控明细数据
                  * @param req DescribeGroupUseDetailRequest
                  * @return DescribeGroupUseDetailOutcome
@@ -2093,6 +2112,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 ModifyUploadInfoOutcome ModifyUploadInfo(const Model::ModifyUploadInfoRequest &request);
                 void ModifyUploadInfoAsync(const Model::ModifyUploadInfoRequest& request, const ModifyUploadInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyUploadInfoOutcomeCallable ModifyUploadInfoCallable(const Model::ModifyUploadInfoRequest& request);
+
+                /**
+                 *绑定解绑tcr仓库
+                 * @param req OperateApplicationTcrBindingRequest
+                 * @return OperateApplicationTcrBindingOutcome
+                 */
+                OperateApplicationTcrBindingOutcome OperateApplicationTcrBinding(const Model::OperateApplicationTcrBindingRequest &request);
+                void OperateApplicationTcrBindingAsync(const Model::OperateApplicationTcrBindingRequest& request, const OperateApplicationTcrBindingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OperateApplicationTcrBindingOutcomeCallable OperateApplicationTcrBindingCallable(const Model::OperateApplicationTcrBindingRequest& request);
 
                 /**
                  *重新执行任务

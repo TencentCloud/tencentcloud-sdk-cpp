@@ -21,7 +21,8 @@ using namespace TencentCloud::Iotvideoindustry::V20201201::Model;
 using namespace std;
 
 DeviceItem::DeviceItem() :
-    m_deviceIdHasBeenSet(false)
+    m_deviceIdHasBeenSet(false),
+    m_channelIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome DeviceItem::Deserialize(const rapidjson::Value &value)
         m_deviceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ChannelId") && !value["ChannelId"].IsNull())
+    {
+        if (!value["ChannelId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DeviceItem.ChannelId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_channelId = string(value["ChannelId"].GetString());
+        m_channelIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void DeviceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "DeviceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_deviceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_channelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channelId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void DeviceItem::SetDeviceId(const string& _deviceId)
 bool DeviceItem::DeviceIdHasBeenSet() const
 {
     return m_deviceIdHasBeenSet;
+}
+
+string DeviceItem::GetChannelId() const
+{
+    return m_channelId;
+}
+
+void DeviceItem::SetChannelId(const string& _channelId)
+{
+    m_channelId = _channelId;
+    m_channelIdHasBeenSet = true;
+}
+
+bool DeviceItem::ChannelIdHasBeenSet() const
+{
+    return m_channelIdHasBeenSet;
 }
 
