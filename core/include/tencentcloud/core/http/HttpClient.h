@@ -28,7 +28,7 @@ namespace TencentCloud
     class HttpClient
     {
     public:
-        typedef Outcome<Error, HttpResponse> HttpResponseOutcome;
+        typedef Outcome<Core::Error, HttpResponse> HttpResponseOutcome;
 
         HttpClient();
         ~HttpClient();

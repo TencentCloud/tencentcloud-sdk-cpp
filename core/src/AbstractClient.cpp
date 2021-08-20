@@ -118,7 +118,7 @@ HttpClient::HttpResponseOutcome AbstractClient::DoRequest(const std::string &act
     else
     {
         m_service = "unknown";
-        return HttpClient::HttpResponseOutcome(Error("ClientError", "endpoint `"+ endpoint + "` is not valid"));
+        return HttpClient::HttpResponseOutcome(Core::Error("ClientError", "endpoint `"+ endpoint + "` is not valid"));
     }
 
     Url url;

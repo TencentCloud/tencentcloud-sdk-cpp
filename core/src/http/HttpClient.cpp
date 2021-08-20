@@ -184,12 +184,12 @@ HttpClient::HttpResponseOutcome HttpClient::SendRequest(const HttpRequest &reque
         if (response_code != 200)
         {
             std::string errorMsg = "status=" + Utils::int2str(response_code) + ", " + out.str();
-            return HttpResponseOutcome(Error("ServiceNetworkError", errorMsg));
+            return HttpResponseOutcome(Core::Error("ServiceNetworkError", errorMsg));
         }
 
         return HttpResponseOutcome(response);
     }
     default:
-        return HttpResponseOutcome(Error("NetworkError", std::string(errbuf)));
+        return HttpResponseOutcome(Core::Error("NetworkError", std::string(errbuf)));
     }
 }

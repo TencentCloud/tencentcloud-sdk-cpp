@@ -23,7 +23,7 @@
 
 namespace TencentCloud
 {
-    typedef Outcome<Error, bool> CoreInternalOutcome;
+    typedef Outcome<Core::Error, bool> CoreInternalOutcome;
     class AbstractModel
     {
     public:
