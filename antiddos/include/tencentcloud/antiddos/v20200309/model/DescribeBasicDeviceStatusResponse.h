@@ -45,8 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回资源及状态
-                     * @return Data 返回资源及状态
+                     * 获取返回资源及状态，状态码：
+1 - 封堵状态
+2 - 正常状态
+3 - 攻击状态
+                     * @return Data 返回资源及状态，状态码：
+1 - 封堵状态
+2 - 正常状态
+3 - 攻击状态
                      */
                     std::vector<KeyValue> GetData() const;
 
@@ -59,7 +65,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回资源及状态
+                     * 返回资源及状态，状态码：
+1 - 封堵状态
+2 - 正常状态
+3 - 攻击状态
                      */
                     std::vector<KeyValue> m_data;
                     bool m_dataHasBeenSet;

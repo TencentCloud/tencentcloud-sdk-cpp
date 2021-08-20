@@ -42,7 +42,8 @@ SecurityGroupListData::SecurityGroupListData() :
     m_cidrHasBeenSet(false),
     m_serviceTemplateIdHasBeenSet(false),
     m_bothWayInfoHasBeenSet(false),
-    m_directionHasBeenSet(false)
+    m_directionHasBeenSet(false),
+    m_protocolPortTypeHasBeenSet(false)
 {
 }
 
@@ -281,6 +282,16 @@ CoreInternalOutcome SecurityGroupListData::Deserialize(const rapidjson::Value &v
         m_directionHasBeenSet = true;
     }
 
+    if (value.HasMember("ProtocolPortType") && !value["ProtocolPortType"].IsNull())
+    {
+        if (!value["ProtocolPortType"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `SecurityGroupListData.ProtocolPortType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_protocolPortType = value["ProtocolPortType"].GetUint64();
+        m_protocolPortTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -469,6 +480,14 @@ void SecurityGroupListData::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "Direction";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_direction, allocator);
+    }
+
+    if (m_protocolPortTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtocolPortType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_protocolPortType, allocator);
     }
 
 }
@@ -824,5 +843,21 @@ void SecurityGroupListData::SetDirection(const uint64_t& _direction)
 bool SecurityGroupListData::DirectionHasBeenSet() const
 {
     return m_directionHasBeenSet;
+}
+
+uint64_t SecurityGroupListData::GetProtocolPortType() const
+{
+    return m_protocolPortType;
+}
+
+void SecurityGroupListData::SetProtocolPortType(const uint64_t& _protocolPortType)
+{
+    m_protocolPortType = _protocolPortType;
+    m_protocolPortTypeHasBeenSet = true;
+}
+
+bool SecurityGroupListData::ProtocolPortTypeHasBeenSet() const
+{
+    return m_protocolPortTypeHasBeenSet;
 }
 

@@ -26,7 +26,8 @@ ListNamespacesRequest::ListNamespacesRequest() :
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_orderbyHasBeenSet(false),
-    m_orderHasBeenSet(false)
+    m_orderHasBeenSet(false),
+    m_searchKeyHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,21 @@ string ListNamespacesRequest::ToJsonString() const
         string key = "Order";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_order.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_searchKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SearchKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_searchKey.begin(); itr != m_searchKey.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -139,6 +155,22 @@ void ListNamespacesRequest::SetOrder(const string& _order)
 bool ListNamespacesRequest::OrderHasBeenSet() const
 {
     return m_orderHasBeenSet;
+}
+
+vector<SearchKey> ListNamespacesRequest::GetSearchKey() const
+{
+    return m_searchKey;
+}
+
+void ListNamespacesRequest::SetSearchKey(const vector<SearchKey>& _searchKey)
+{
+    m_searchKey = _searchKey;
+    m_searchKeyHasBeenSet = true;
+}
+
+bool ListNamespacesRequest::SearchKeyHasBeenSet() const
+{
+    return m_searchKeyHasBeenSet;
 }
 
 

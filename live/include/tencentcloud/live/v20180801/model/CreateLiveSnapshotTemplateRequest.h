@@ -176,13 +176,17 @@ namespace TencentCloud
 
                     /**
                      * 获取截图宽度。默认：0（原始宽）。
+范围：0-3000 。
                      * @return Width 截图宽度。默认：0（原始宽）。
+范围：0-3000 。
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 设置截图宽度。默认：0（原始宽）。
+范围：0-3000 。
                      * @param Width 截图宽度。默认：0（原始宽）。
+范围：0-3000 。
                      */
                     void SetWidth(const int64_t& _width);
 
@@ -194,13 +198,17 @@ namespace TencentCloud
 
                     /**
                      * 获取截图高度。默认：0（原始高）。
+范围：0-2000 。
                      * @return Height 截图高度。默认：0（原始高）。
+范围：0-2000 。
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 设置截图高度。默认：0（原始高）。
+范围：0-2000 。
                      * @param Height 截图高度。默认：0（原始高）。
+范围：0-2000 。
                      */
                     void SetHeight(const int64_t& _height);
 
@@ -334,12 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 截图宽度。默认：0（原始宽）。
+范围：0-3000 。
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
                      * 截图高度。默认：0（原始高）。
+范围：0-2000 。
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;

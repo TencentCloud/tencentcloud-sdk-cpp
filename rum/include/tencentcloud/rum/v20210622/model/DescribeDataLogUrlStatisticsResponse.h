@@ -14,55 +14,54 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_PDS_V20210701_MODEL_DESCRIBESTOCKESTIMATIONRESPONSE_H_
-#define TENCENTCLOUD_PDS_V20210701_MODEL_DESCRIBESTOCKESTIMATIONRESPONSE_H_
+#ifndef TENCENTCLOUD_RUM_V20210622_MODEL_DESCRIBEDATALOGURLSTATISTICSRESPONSE_H_
+#define TENCENTCLOUD_RUM_V20210622_MODEL_DESCRIBEDATALOGURLSTATISTICSRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/pds/v20210701/model/Score.h>
 
 
 namespace TencentCloud
 {
-    namespace Pds
+    namespace Rum
     {
-        namespace V20210701
+        namespace V20210622
         {
             namespace Model
             {
                 /**
-                * DescribeStockEstimation返回参数结构体
+                * DescribeDataLogUrlStatistics返回参数结构体
                 */
-                class DescribeStockEstimationResponse : public AbstractModel
+                class DescribeDataLogUrlStatisticsResponse : public AbstractModel
                 {
                 public:
-                    DescribeStockEstimationResponse();
-                    ~DescribeStockEstimationResponse() = default;
+                    DescribeDataLogUrlStatisticsResponse();
+                    ~DescribeDataLogUrlStatisticsResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取用户信誉分，1-5从低到高
-                     * @return ServiceRsp 用户信誉分，1-5从低到高
+                     * 获取返回值
+                     * @return Result 返回值
                      */
-                    Score GetServiceRsp() const;
+                    std::string GetResult() const;
 
                     /**
-                     * 判断参数 ServiceRsp 是否已赋值
-                     * @return ServiceRsp 是否已赋值
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
                      */
-                    bool ServiceRspHasBeenSet() const;
+                    bool ResultHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 用户信誉分，1-5从低到高
+                     * 返回值
                      */
-                    Score m_serviceRsp;
-                    bool m_serviceRspHasBeenSet;
+                    std::string m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }
@@ -70,4 +69,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_PDS_V20210701_MODEL_DESCRIBESTOCKESTIMATIONRESPONSE_H_
+#endif // !TENCENTCLOUD_RUM_V20210622_MODEL_DESCRIBEDATALOGURLSTATISTICSRESPONSE_H_

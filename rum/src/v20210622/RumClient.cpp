@@ -83,6 +83,49 @@ RumClient::CreateProjectOutcomeCallable RumClient::CreateProjectCallable(const C
     return task->get_future();
 }
 
+RumClient::DescribeDataLogUrlStatisticsOutcome RumClient::DescribeDataLogUrlStatistics(const DescribeDataLogUrlStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDataLogUrlStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDataLogUrlStatisticsResponse rsp = DescribeDataLogUrlStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDataLogUrlStatisticsOutcome(rsp);
+        else
+            return DescribeDataLogUrlStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDataLogUrlStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeDataLogUrlStatisticsAsync(const DescribeDataLogUrlStatisticsRequest& request, const DescribeDataLogUrlStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDataLogUrlStatistics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RumClient::DescribeDataLogUrlStatisticsOutcomeCallable RumClient::DescribeDataLogUrlStatisticsCallable(const DescribeDataLogUrlStatisticsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDataLogUrlStatisticsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDataLogUrlStatistics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RumClient::DescribeDataPerformancePageOutcome RumClient::DescribeDataPerformancePage(const DescribeDataPerformancePageRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDataPerformancePage");

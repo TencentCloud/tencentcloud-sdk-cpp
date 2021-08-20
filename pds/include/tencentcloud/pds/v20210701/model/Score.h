@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 信誉分
+                * 信誉分，1-5从低到高
                 */
                 class Score : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户信誉分
-                     * @return Star 用户信誉分
+                     * 获取信誉分，1-5从低到高
+                     * @return Star 信誉分，1-5从低到高
                      */
                     int64_t GetStar() const;
 
                     /**
-                     * 设置用户信誉分
-                     * @param Star 用户信誉分
+                     * 设置信誉分，1-5从低到高
+                     * @param Star 信誉分，1-5从低到高
                      */
                     void SetStar(const int64_t& _star);
 
@@ -67,7 +67,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户信誉分
+                     * 信誉分，1-5从低到高
                      */
                     int64_t m_star;
                     bool m_starHasBeenSet;

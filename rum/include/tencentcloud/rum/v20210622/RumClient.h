@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/rum/v20210622/model/CreateProjectRequest.h>
 #include <tencentcloud/rum/v20210622/model/CreateProjectResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataLogUrlStatisticsRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataLogUrlStatisticsResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataPerformancePageRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataPerformancePageResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeErrorRequest.h>
@@ -46,6 +48,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateProjectResponse> CreateProjectOutcome;
                 typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::CreateProjectRequest&, CreateProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProjectAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDataLogUrlStatisticsResponse> DescribeDataLogUrlStatisticsOutcome;
+                typedef std::future<DescribeDataLogUrlStatisticsOutcome> DescribeDataLogUrlStatisticsOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeDataLogUrlStatisticsRequest&, DescribeDataLogUrlStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataLogUrlStatisticsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDataPerformancePageResponse> DescribeDataPerformancePageOutcome;
                 typedef std::future<DescribeDataPerformancePageOutcome> DescribeDataPerformancePageOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeDataPerformancePageRequest&, DescribeDataPerformancePageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataPerformancePageAsyncHandler;
@@ -63,6 +68,15 @@ namespace TencentCloud
                 CreateProjectOutcome CreateProject(const Model::CreateProjectRequest &request);
                 void CreateProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateProjectOutcomeCallable CreateProjectCallable(const Model::CreateProjectRequest& request);
+
+                /**
+                 *获取LogUrlStatistics信息
+                 * @param req DescribeDataLogUrlStatisticsRequest
+                 * @return DescribeDataLogUrlStatisticsOutcome
+                 */
+                DescribeDataLogUrlStatisticsOutcome DescribeDataLogUrlStatistics(const Model::DescribeDataLogUrlStatisticsRequest &request);
+                void DescribeDataLogUrlStatisticsAsync(const Model::DescribeDataLogUrlStatisticsRequest& request, const DescribeDataLogUrlStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataLogUrlStatisticsOutcomeCallable DescribeDataLogUrlStatisticsCallable(const Model::DescribeDataLogUrlStatisticsRequest& request);
 
                 /**
                  *获取PerformancePage信息

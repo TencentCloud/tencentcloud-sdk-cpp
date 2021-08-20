@@ -504,6 +504,24 @@ namespace TencentCloud
                      */
                     bool ServiceTemplateIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否使用端口协议模板，0：否，1：是
+                     * @return ProtocolPortType 是否使用端口协议模板，0：否，1：是
+                     */
+                    uint64_t GetProtocolPortType() const;
+
+                    /**
+                     * 设置是否使用端口协议模板，0：否，1：是
+                     * @param ProtocolPortType 是否使用端口协议模板，0：否，1：是
+                     */
+                    void SetProtocolPortType(const uint64_t& _protocolPortType);
+
+                    /**
+                     * 判断参数 ProtocolPortType 是否已赋值
+                     * @return ProtocolPortType 是否已赋值
+                     */
+                    bool ProtocolPortTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -651,6 +669,12 @@ namespace TencentCloud
                      */
                     std::string m_serviceTemplateId;
                     bool m_serviceTemplateIdHasBeenSet;
+
+                    /**
+                     * 是否使用端口协议模板，0：否，1：是
+                     */
+                    uint64_t m_protocolPortType;
+                    bool m_protocolPortTypeHasBeenSet;
 
                 };
             }

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/scf/v20180416/model/SearchKey.h>
 
 
 namespace TencentCloud
@@ -114,6 +115,24 @@ namespace TencentCloud
                      */
                     bool OrderHasBeenSet() const;
 
+                    /**
+                     * 获取关键字匹配搜索，Key 可选值为 Namespace 和 Description，多个搜索条件之间是与的关系
+                     * @return SearchKey 关键字匹配搜索，Key 可选值为 Namespace 和 Description，多个搜索条件之间是与的关系
+                     */
+                    std::vector<SearchKey> GetSearchKey() const;
+
+                    /**
+                     * 设置关键字匹配搜索，Key 可选值为 Namespace 和 Description，多个搜索条件之间是与的关系
+                     * @param SearchKey 关键字匹配搜索，Key 可选值为 Namespace 和 Description，多个搜索条件之间是与的关系
+                     */
+                    void SetSearchKey(const std::vector<SearchKey>& _searchKey);
+
+                    /**
+                     * 判断参数 SearchKey 是否已赋值
+                     * @return SearchKey 是否已赋值
+                     */
+                    bool SearchKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +158,12 @@ namespace TencentCloud
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
+
+                    /**
+                     * 关键字匹配搜索，Key 可选值为 Namespace 和 Description，多个搜索条件之间是与的关系
+                     */
+                    std::vector<SearchKey> m_searchKey;
+                    bool m_searchKeyHasBeenSet;
 
                 };
             }

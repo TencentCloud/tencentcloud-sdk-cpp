@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户信誉值
-                     * @return ServiceRsp 用户信誉值
+                     * 获取用户信誉分，1-5从低到高
+                     * @return ServiceRsp 用户信誉分，1-5从低到高
                      */
                     Score GetServiceRsp() const;
 
@@ -59,7 +59,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户信誉值
+                     * 用户信誉分，1-5从低到高
                      */
                     Score m_serviceRsp;
                     bool m_serviceRspHasBeenSet;

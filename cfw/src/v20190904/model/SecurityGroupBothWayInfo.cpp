@@ -41,7 +41,8 @@ SecurityGroupBothWayInfo::SecurityGroupBothWayInfo() :
     m_publicIpHasBeenSet(false),
     m_privateIpHasBeenSet(false),
     m_cidrHasBeenSet(false),
-    m_serviceTemplateIdHasBeenSet(false)
+    m_serviceTemplateIdHasBeenSet(false),
+    m_protocolPortTypeHasBeenSet(false)
 {
 }
 
@@ -260,6 +261,16 @@ CoreInternalOutcome SecurityGroupBothWayInfo::Deserialize(const rapidjson::Value
         m_serviceTemplateIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ProtocolPortType") && !value["ProtocolPortType"].IsNull())
+    {
+        if (!value["ProtocolPortType"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `SecurityGroupBothWayInfo.ProtocolPortType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_protocolPortType = value["ProtocolPortType"].GetUint64();
+        m_protocolPortTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -433,6 +444,14 @@ void SecurityGroupBothWayInfo::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "ServiceTemplateId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_serviceTemplateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protocolPortTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtocolPortType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_protocolPortType, allocator);
     }
 
 }
@@ -772,5 +791,21 @@ void SecurityGroupBothWayInfo::SetServiceTemplateId(const string& _serviceTempla
 bool SecurityGroupBothWayInfo::ServiceTemplateIdHasBeenSet() const
 {
     return m_serviceTemplateIdHasBeenSet;
+}
+
+uint64_t SecurityGroupBothWayInfo::GetProtocolPortType() const
+{
+    return m_protocolPortType;
+}
+
+void SecurityGroupBothWayInfo::SetProtocolPortType(const uint64_t& _protocolPortType)
+{
+    m_protocolPortType = _protocolPortType;
+    m_protocolPortTypeHasBeenSet = true;
+}
+
+bool SecurityGroupBothWayInfo::ProtocolPortTypeHasBeenSet() const
+{
+    return m_protocolPortTypeHasBeenSet;
 }
 
