@@ -169,6 +169,8 @@
 #include <tencentcloud/tke/v20180525/model/ModifyClusterNodePoolResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyNodePoolDesiredCapacityAboutAsgRequest.h>
 #include <tencentcloud/tke/v20180525/model/ModifyNodePoolDesiredCapacityAboutAsgResponse.h>
+#include <tencentcloud/tke/v20180525/model/ModifyNodePoolInstanceTypesRequest.h>
+#include <tencentcloud/tke/v20180525/model/ModifyNodePoolInstanceTypesResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyPrometheusAlertRuleRequest.h>
 #include <tencentcloud/tke/v20180525/model/ModifyPrometheusAlertRuleResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyPrometheusTemplateRequest.h>
@@ -418,6 +420,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyNodePoolDesiredCapacityAboutAsgResponse> ModifyNodePoolDesiredCapacityAboutAsgOutcome;
                 typedef std::future<ModifyNodePoolDesiredCapacityAboutAsgOutcome> ModifyNodePoolDesiredCapacityAboutAsgOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyNodePoolDesiredCapacityAboutAsgRequest&, ModifyNodePoolDesiredCapacityAboutAsgOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNodePoolDesiredCapacityAboutAsgAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyNodePoolInstanceTypesResponse> ModifyNodePoolInstanceTypesOutcome;
+                typedef std::future<ModifyNodePoolInstanceTypesOutcome> ModifyNodePoolInstanceTypesOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::ModifyNodePoolInstanceTypesRequest&, ModifyNodePoolInstanceTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNodePoolInstanceTypesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyPrometheusAlertRuleResponse> ModifyPrometheusAlertRuleOutcome;
                 typedef std::future<ModifyPrometheusAlertRuleOutcome> ModifyPrometheusAlertRuleOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyPrometheusAlertRuleRequest&, ModifyPrometheusAlertRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPrometheusAlertRuleAsyncHandler;
@@ -1101,6 +1106,15 @@ namespace TencentCloud
                 ModifyNodePoolDesiredCapacityAboutAsgOutcome ModifyNodePoolDesiredCapacityAboutAsg(const Model::ModifyNodePoolDesiredCapacityAboutAsgRequest &request);
                 void ModifyNodePoolDesiredCapacityAboutAsgAsync(const Model::ModifyNodePoolDesiredCapacityAboutAsgRequest& request, const ModifyNodePoolDesiredCapacityAboutAsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyNodePoolDesiredCapacityAboutAsgOutcomeCallable ModifyNodePoolDesiredCapacityAboutAsgCallable(const Model::ModifyNodePoolDesiredCapacityAboutAsgRequest& request);
+
+                /**
+                 *修改节点池的机型配置
+                 * @param req ModifyNodePoolInstanceTypesRequest
+                 * @return ModifyNodePoolInstanceTypesOutcome
+                 */
+                ModifyNodePoolInstanceTypesOutcome ModifyNodePoolInstanceTypes(const Model::ModifyNodePoolInstanceTypesRequest &request);
+                void ModifyNodePoolInstanceTypesAsync(const Model::ModifyNodePoolInstanceTypesRequest& request, const ModifyNodePoolInstanceTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNodePoolInstanceTypesOutcomeCallable ModifyNodePoolInstanceTypesCallable(const Model::ModifyNodePoolInstanceTypesRequest& request);
 
                 /**
                  *修改告警规则 

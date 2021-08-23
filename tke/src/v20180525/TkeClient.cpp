@@ -3179,6 +3179,49 @@ TkeClient::ModifyNodePoolDesiredCapacityAboutAsgOutcomeCallable TkeClient::Modif
     return task->get_future();
 }
 
+TkeClient::ModifyNodePoolInstanceTypesOutcome TkeClient::ModifyNodePoolInstanceTypes(const ModifyNodePoolInstanceTypesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyNodePoolInstanceTypes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyNodePoolInstanceTypesResponse rsp = ModifyNodePoolInstanceTypesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyNodePoolInstanceTypesOutcome(rsp);
+        else
+            return ModifyNodePoolInstanceTypesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyNodePoolInstanceTypesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ModifyNodePoolInstanceTypesAsync(const ModifyNodePoolInstanceTypesRequest& request, const ModifyNodePoolInstanceTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyNodePoolInstanceTypes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::ModifyNodePoolInstanceTypesOutcomeCallable TkeClient::ModifyNodePoolInstanceTypesCallable(const ModifyNodePoolInstanceTypesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyNodePoolInstanceTypesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyNodePoolInstanceTypes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::ModifyPrometheusAlertRuleOutcome TkeClient::ModifyPrometheusAlertRule(const ModifyPrometheusAlertRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyPrometheusAlertRule");

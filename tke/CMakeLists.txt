@@ -120,6 +120,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/Taint.h
   include/tencentcloud/tke/v20180525/model/CheckInstancesUpgradeAbleRequest.h
   include/tencentcloud/tke/v20180525/model/ExistedInstance.h
+  include/tencentcloud/tke/v20180525/model/ModifyNodePoolInstanceTypesRequest.h
   include/tencentcloud/tke/v20180525/model/AddClusterCIDRRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterNodePoolsResponse.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusAlertRuleRequest.h
@@ -148,6 +149,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/ResourceDeleteOption.h
   include/tencentcloud/tke/v20180525/model/DnsServerConf.h
   include/tencentcloud/tke/v20180525/model/EksCluster.h
+  include/tencentcloud/tke/v20180525/model/ModifyNodePoolInstanceTypesResponse.h
   include/tencentcloud/tke/v20180525/model/CreateClusterNodePoolFromExistingAsgResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeEnableVpcCniProgressRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterEndpointStatusRequest.h
@@ -359,6 +361,7 @@ set(tke_src
   src/v20180525/model/Taint.cpp
   src/v20180525/model/CheckInstancesUpgradeAbleRequest.cpp
   src/v20180525/model/ExistedInstance.cpp
+  src/v20180525/model/ModifyNodePoolInstanceTypesRequest.cpp
   src/v20180525/model/AddClusterCIDRRequest.cpp
   src/v20180525/model/DescribeClusterNodePoolsResponse.cpp
   src/v20180525/model/DescribePrometheusAlertRuleRequest.cpp
@@ -387,6 +390,7 @@ set(tke_src
   src/v20180525/model/ResourceDeleteOption.cpp
   src/v20180525/model/DnsServerConf.cpp
   src/v20180525/model/EksCluster.cpp
+  src/v20180525/model/ModifyNodePoolInstanceTypesResponse.cpp
   src/v20180525/model/CreateClusterNodePoolFromExistingAsgResponse.cpp
   src/v20180525/model/DescribeEnableVpcCniProgressRequest.cpp
   src/v20180525/model/DescribeClusterEndpointStatusRequest.cpp
